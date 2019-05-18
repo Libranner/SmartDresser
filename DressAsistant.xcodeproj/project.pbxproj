@@ -13,6 +13,8 @@
 		EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FE2289FCDB005E5B5C /* Assets.xcassets */; };
 		EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */; };
 		EEF8560D2289FCDC005E5B5C /* DressAsistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */; };
+		EEF8566C228ADA04005E5B5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566B228ADA04005E5B5C /* BaseViewController.swift */; };
+		EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566E228AF0DE005E5B5C /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		EEF856082289FCDB005E5B5C /* DressAsistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DressAsistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DressAsistantUITests.swift; sourceTree = "<group>"; };
 		EEF8560E2289FCDC005E5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF8566B228ADA04005E5B5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EEF8566E228AF0DE005E5B5C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +81,14 @@
 		EEF855F62289FCDA005E5B5C /* DressAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				EEF8566D228AF0D0005E5B5C /* Constants */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
 				EEF855F92289FCDA005E5B5C /* ViewController.swift */,
 				EEF855FB2289FCDA005E5B5C /* Main.storyboard */,
 				EEF855FE2289FCDB005E5B5C /* Assets.xcassets */,
 				EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */,
 				EEF856032289FCDB005E5B5C /* Info.plist */,
+				EEF8566B228ADA04005E5B5C /* BaseViewController.swift */,
 			);
 			path = DressAsistant;
 			sourceTree = "<group>";
@@ -94,6 +100,14 @@
 				EEF8560E2289FCDC005E5B5C /* Info.plist */,
 			);
 			path = DressAsistantUITests;
+			sourceTree = "<group>";
+		};
+		EEF8566D228AF0D0005E5B5C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EEF8566E228AF0DE005E5B5C /* CustomColor.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +213,8 @@
 			files = (
 				EEF855FA2289FCDA005E5B5C /* ViewController.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
+				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
+				EEF8566C228ADA04005E5B5C /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TGA26CY25M;
+				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TGA26CY25M;
+				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
