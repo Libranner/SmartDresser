@@ -10,16 +10,29 @@ import UIKit
 import SnapKit
 
 class ClothesDetailViewController: UIViewController {
+  let clotheImageIdentifier = "Foto de la ropa"
+  let alertSheetMessageStringId = "Ropa identificada. ¿Qué deseas hacer ahora?"
+  let readAgainStringId = "Leer datos nuevamente"
+  let recommendationTextStringId = "Recibir recomendación"
+  let scanAgainStringId = "Escanear otra ropa"
+  let finishStringId = "Terminar"
+  
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    showOptions()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     setupUI()
   }
   
   lazy var imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
+    imageView.accessibilityIdentifier = clotheImageIdentifier
     imageView.image = UIImage(named: "logotipo")
     return imageView
   }()
@@ -46,19 +59,20 @@ class ClothesDetailViewController: UIViewController {
     scrollView.snp.makeConstraints { make in
       make.edges.equalTo(view.safeAreaLayoutGuide)
         .inset(UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10))
+        .labeled("ScrollViewEdges")
     }
     
     imageView.image = UIImage(named: "logotipo")
     scrollView.addSubview(mainStackView)
     
     mainStackView.snp.makeConstraints { make in
-      make.edges.centerX.equalTo(scrollView)
+      make.edges.centerX.equalTo(scrollView).labeled("MainStackViewPosition")
     }
     
     mainStackView.addArrangedSubview(imageView)
     imageView.snp.makeConstraints { make in
-      make.width.centerX.equalToSuperview()
-      make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.45)
+      make.width.centerX.equalToSuperview().labeled("ImageViewWidthAndCenter")
+      make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.45).labeled("ImnageViewHeight")
     }
     
     setupClotheInfo()
@@ -81,8 +95,9 @@ class ClothesDetailViewController: UIViewController {
         rowStackView.axis = .vertical
         rowStackView.spacing = 5
         
-        let infoLabel = UIHelper().makeInfoLabelFor(element.key)
-        let descLabel = UIHelper().makeDescriptionLabelFor(element.value)
+        let identifier = "\(element.key): \(element.value)"
+        let infoLabel = UIHelper().makeInfoLabelFor(element.key, identifier: identifier)
+        let descLabel = UIHelper().makeDescriptionLabelFor(element.value, identifier: identifier)
         
         rowStackView.addArrangedSubview(infoLabel)
         rowStackView.addArrangedSubview(descLabel)
@@ -91,8 +106,8 @@ class ClothesDetailViewController: UIViewController {
         rowStackView.addArrangedSubview(separatorView)
         
         separatorView.snp.makeConstraints { make in
-          make.width.equalToSuperview()
-          make.height.equalTo(1)
+          make.width.equalToSuperview().labeled("SeparatorViewWidth")
+          make.height.equalTo(1).labeled("SeparatorViewHeight")
         }
         
         infoStackView.addArrangedSubview(rowStackView)
@@ -100,5 +115,26 @@ class ClothesDetailViewController: UIViewController {
     }
     
     mainStackView.addArrangedSubview(infoStackView)
-  }  
+  }
+  
+  func showOptions() {
+    let message = NSLocalizedString(alertSheetMessageStringId, comment: "")
+    let readAgainText = NSLocalizedString(readAgainStringId, comment: "")
+    let recommendationText = NSLocalizedString(recommendationTextStringId, comment: "")
+    let continueScanText = NSLocalizedString(scanAgainStringId, comment: "")
+    let finishText = NSLocalizedString(finishStringId, comment: "")
+    
+    let alertVC = UIAlertController(title: nil, message: message, preferredStyle: .actionSheet)
+    let readAgainAction = UIAlertAction(title: readAgainText, style: .default, handler: nil)
+    let recommendationAction = UIAlertAction(title: recommendationText, style: .default, handler: nil)
+    let continueScanningAction = UIAlertAction(title: continueScanText, style: .cancel, handler: nil)
+    let finishAction = UIAlertAction(title: finishText, style: .destructive, handler: nil)
+    
+    alertVC.addAction(readAgainAction)
+    alertVC.addAction(recommendationAction)
+    alertVC.addAction(continueScanningAction)
+    alertVC.addAction(finishAction)
+    
+    present(alertVC, animated: true, completion: nil)
+  }
 }

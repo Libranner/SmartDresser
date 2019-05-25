@@ -17,21 +17,27 @@ struct UIHelper {
     return separatorView
   }
   
-  func makeInfoLabelFor(_ text: String) -> UILabel {
-    let label = UILabel()
+  func makeInfoLabelFor(_ localizationString: String, identifier: String?) -> UILabel {
+    let label = makeLabel(localizationString, identifier: identifier)
     label.font = UIFont.boldSystemFont(ofSize: 12)
     label.textColor = .lightGray
-    label.text = text.uppercased()
+    
+    return label
+  }
+  
+  fileprivate func makeLabel(_ localizationString: String, identifier: String?) -> UILabel{
+    let label = UILabel()
+    let localizeString = NSLocalizedString(localizationString, comment: "")
+    label.accessibilityIdentifier = identifier ?? localizeString
+    label.text = localizeString
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }
   
-  func makeDescriptionLabelFor(_ text: String) -> UILabel {
-    let label = UILabel()
+  func makeDescriptionLabelFor(_ localizationString: String, identifier: String?) -> UILabel {
+    let label = makeLabel(localizationString, identifier: identifier)
     label.font = UIFont.boldSystemFont(ofSize: 14)
     label.textColor = .black
-    label.text = text
-    label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }
 }

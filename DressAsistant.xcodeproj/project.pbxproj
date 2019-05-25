@@ -11,6 +11,8 @@
 		A34C988C65C67DCDFAD2F706 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D1511A035E314A116E1120 /* Pods_DressAsistantUITests.framework */; };
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
+		EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* CustomNotification.swift */; };
+		EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
 		EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F72289FCDA005E5B5C /* AppDelegate.swift */; };
 		EEF855FA2289FCDA005E5B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F92289FCDA005E5B5C /* ViewController.swift */; };
 		EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FB2289FCDA005E5B5C /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		9DF2A20E089D8FD4224F4767 /* Pods-DressAsistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesDetailViewController.swift; sourceTree = "<group>"; };
 		EE83C5242298BC9C0046C43C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		EE83C5262298F7EA0046C43C /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
+		EE83C53022996EFF0046C43C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EEF855F42289FCDA005E5B5C /* DressAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF855F72289FCDA005E5B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF855F92289FCDA005E5B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,8 +107,17 @@
 			isa = PBXGroup;
 			children = (
 				EE83C5242298BC9C0046C43C /* UIHelper.swift */,
+				EE83C5262298F7EA0046C43C /* CustomNotification.swift */,
 			);
 			path = UIHelpers;
+			sourceTree = "<group>";
+		};
+		EE83C52C22996AB30046C43C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE83C53122996EFF0046C43C /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		EEF855EB2289FCDA005E5B5C = {
@@ -130,6 +143,7 @@
 		EEF855F62289FCDA005E5B5C /* DressAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				EE83C52C22996AB30046C43C /* Resources */,
 				EE83C5222298BC7B0046C43C /* Helpers */,
 				EE83C51F229558FB0046C43C /* Controllers */,
 				EEF8566D228AF0D0005E5B5C /* Constants */,
@@ -257,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */,
+				EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
 			);
@@ -345,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
 				EEF855FA2289FCDA005E5B5C /* ViewController.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
 				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
@@ -373,6 +389,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EE83C53122996EFF0046C43C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE83C53022996EFF0046C43C /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EEF855FB2289FCDA005E5B5C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
