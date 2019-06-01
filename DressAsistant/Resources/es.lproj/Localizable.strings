@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  DressAsistant
+
+  Created by Libranner Leonel Santos Espinal on 25/05/2019.
+  Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
+*/
+
+"Ropa identificada. ¿Qué deseas hacer ahora?" = "Ropa identificada. ¿Qué deseas hacer ahora?";
+"Escuchar datos de la ropa" = "Escuchar datos de la ropa";
+"Recibir recomendación" = "Recibir recomendación";
+"Terminar" = "Terminar";
+"Escanear otra ropa" = "Escanear otra ropa";
+
+

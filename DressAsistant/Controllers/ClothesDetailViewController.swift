@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class ClothesDetailViewController: UIViewController {
+class ClothesDetailViewController: BaseViewController {
   let clotheImageIdentifier = "Foto de la ropa"
   let alertSheetMessageStringId = "Ropa identificada. ¿Qué deseas hacer ahora?"
   let readAgainStringId = "Leer datos nuevamente"
@@ -17,11 +17,19 @@ class ClothesDetailViewController: UIViewController {
   let scanAgainStringId = "Escanear otra ropa"
   let finishStringId = "Terminar"
   
-  
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    showOptions()
+    view.backgroundColor = CustomColor.defaultBackgroundColor
+    //showOptions()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    scrollView.transform = CGAffineTransform(translationX: scrollView.bounds.size.width, y: 0)
+    
+    UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseIn, animations: {
+      self.scrollView.transform = CGAffineTransform.identity
+    }, completion: nil)
   }
   
   override func viewDidLayoutSubviews() {
@@ -72,7 +80,7 @@ class ClothesDetailViewController: UIViewController {
     mainStackView.addArrangedSubview(imageView)
     imageView.snp.makeConstraints { make in
       make.width.centerX.equalToSuperview().labeled("ImageViewWidthAndCenter")
-      make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.45).labeled("ImnageViewHeight")
+      make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.45).labeled("ImageViewHeight")
     }
     
     setupClotheInfo()

@@ -40,4 +40,14 @@ struct UIHelper {
     label.textColor = .black
     return label
   }
+  
+  func makeDefaultButton(_ localizationString: String, identifier: String?) -> UIButton {
+    let localizeString = NSLocalizedString(localizationString, comment: "")
+    let button = UIButton()
+    button.accessibilityIdentifier = identifier ?? localizeString
+    button.setTitle(localizeString, for: .normal)
+    button.backgroundColor = CustomColor.defaultButtonBackgroundColor
+    button.setTitleColor(CustomColor.defaultButtonTextColor, for: .normal)
+    return button
+  }
 }

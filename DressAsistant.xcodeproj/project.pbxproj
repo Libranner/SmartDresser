@@ -13,13 +13,22 @@
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
 		EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* CustomNotification.swift */; };
 		EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
+		EE83C53E229979080046C43C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53D229979080046C43C /* BaseViewController.swift */; };
+		EE83C540229985440046C43C /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53F229985440046C43C /* FinderViewController.swift */; };
+		EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C541229986830046C43C /* OptionDetailViewController.swift */; };
+		EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C543229987100046C43C /* RecommendationViewController.swift */; };
+		EE83C54622998D450046C43C /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C54522998D450046C43C /* UIConstants.swift */; };
+		EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C548229B8B580046C43C /* MosaicLayout.swift */; };
+		EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */; };
+		EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C54D229B8BBC0046C43C /* Utilities.swift */; };
+		EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */; };
+		EE95C7C022A2ECDE009BCFDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE95C7BF22A2ECDE009BCFDA /* GoogleService-Info.plist */; };
 		EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F72289FCDA005E5B5C /* AppDelegate.swift */; };
-		EEF855FA2289FCDA005E5B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F92289FCDA005E5B5C /* ViewController.swift */; };
 		EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FB2289FCDA005E5B5C /* Main.storyboard */; };
 		EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FE2289FCDB005E5B5C /* Assets.xcassets */; };
 		EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */; };
 		EEF8560D2289FCDC005E5B5C /* DressAsistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */; };
-		EEF8566C228ADA04005E5B5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566B228ADA04005E5B5C /* BaseViewController.swift */; };
+		EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566B228ADA04005E5B5C /* BaseNavigationViewController.swift */; };
 		EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566E228AF0DE005E5B5C /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +51,21 @@
 		EE83C5242298BC9C0046C43C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		EE83C5262298F7EA0046C43C /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
 		EE83C53022996EFF0046C43C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EE83C539229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		EE83C53A229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EE83C53B229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EE83C53D229979080046C43C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EE83C53F229985440046C43C /* FinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
+		EE83C541229986830046C43C /* OptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailViewController.swift; sourceTree = "<group>"; };
+		EE83C543229987100046C43C /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		EE83C54522998D450046C43C /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		EE83C548229B8B580046C43C /* MosaicLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MosaicLayout.swift; sourceTree = "<group>"; };
+		EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		EE83C54D229B8BBC0046C43C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		EE95C7BF22A2ECDE009BCFDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEF855F42289FCDA005E5B5C /* DressAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF855F72289FCDA005E5B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EEF855F92289FCDA005E5B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EEF855FC2289FCDA005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEF855FE2289FCDB005E5B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEF856012289FCDB005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +73,7 @@
 		EEF856082289FCDB005E5B5C /* DressAsistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DressAsistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DressAsistantUITests.swift; sourceTree = "<group>"; };
 		EEF8560E2289FCDC005E5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEF8566B228ADA04005E5B5C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EEF8566B228ADA04005E5B5C /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		EEF8566E228AF0DE005E5B5C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		F3A4532692108F03D7F11001 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B5C547F8D0CD953183DB0C /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,7 +111,12 @@
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE83C53C229978F30046C43C /* Base */,
 				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
+				EE83C53F229985440046C43C /* FinderViewController.swift */,
+				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
+				EE83C543229987100046C43C /* RecommendationViewController.swift */,
+				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,6 +124,7 @@
 		EE83C5222298BC7B0046C43C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EE83C54D229B8BBC0046C43C /* Utilities.swift */,
 				EE83C5232298BC820046C43C /* UIHelpers */,
 			);
 			path = Helpers;
@@ -106,8 +133,10 @@
 		EE83C5232298BC820046C43C /* UIHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				EEF8566E228AF0DE005E5B5C /* CustomColor.swift */,
 				EE83C5242298BC9C0046C43C /* UIHelper.swift */,
 				EE83C5262298F7EA0046C43C /* CustomNotification.swift */,
+				EE83C54522998D450046C43C /* UIConstants.swift */,
 			);
 			path = UIHelpers;
 			sourceTree = "<group>";
@@ -115,9 +144,28 @@
 		EE83C52C22996AB30046C43C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EE95C7BF22A2ECDE009BCFDA /* GoogleService-Info.plist */,
 				EE83C53122996EFF0046C43C /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE83C53C229978F30046C43C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EEF8566B228ADA04005E5B5C /* BaseNavigationViewController.swift */,
+				EE83C53D229979080046C43C /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EE83C547229B81E00046C43C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */,
+				EE83C548229B8B580046C43C /* MosaicLayout.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EEF855EB2289FCDA005E5B5C = {
@@ -145,15 +193,14 @@
 			children = (
 				EE83C52C22996AB30046C43C /* Resources */,
 				EE83C5222298BC7B0046C43C /* Helpers */,
+				EE83C547229B81E00046C43C /* Views */,
 				EE83C51F229558FB0046C43C /* Controllers */,
 				EEF8566D228AF0D0005E5B5C /* Constants */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
-				EEF855F92289FCDA005E5B5C /* ViewController.swift */,
 				EEF855FB2289FCDA005E5B5C /* Main.storyboard */,
 				EEF855FE2289FCDB005E5B5C /* Assets.xcassets */,
 				EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */,
 				EEF856032289FCDB005E5B5C /* Info.plist */,
-				EEF8566B228ADA04005E5B5C /* BaseViewController.swift */,
 			);
 			path = DressAsistant;
 			sourceTree = "<group>";
@@ -170,7 +217,6 @@
 		EEF8566D228AF0D0005E5B5C /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				EEF8566E228AF0DE005E5B5C /* CustomColor.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -198,6 +244,7 @@
 				EEF855F12289FCDA005E5B5C /* Frameworks */,
 				EEF855F22289FCDA005E5B5C /* Resources */,
 				4846899AFE9FE143F816B0B6 /* [CP] Embed Pods Frameworks */,
+				EE95C7C122A2F098009BCFDA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +300,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = EEF855EB2289FCDA005E5B5C;
 			productRefGroup = EEF855F52289FCDA005E5B5C /* Products */;
@@ -272,6 +320,7 @@
 			files = (
 				EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */,
 				EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */,
+				EE95C7C022A2ECDE009BCFDA /* GoogleService-Info.plist in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
 			);
@@ -318,18 +367,39 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		EE95C7C122A2F098009BCFDA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/Fabric/run\" 2b90be4f25a390bdfd1e5dde484a90bb5bf7b8cc b5f1229a48c9c375904c49d322a87355030863a25fd6af54c21610a122ca8769\n";
 		};
 		F9D158D0073B7496A7AB261F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -361,11 +431,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
-				EEF855FA2289FCDA005E5B5C /* ViewController.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
+				EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */,
 				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
-				EEF8566C228ADA04005E5B5C /* BaseViewController.swift in Sources */,
+				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
+				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
+				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
+				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
+				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
+				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
+				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
+				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,
+				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +471,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EE83C53022996EFF0046C43C /* en */,
+				EE83C53B229970E70046C43C /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -401,6 +480,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EEF855FC2289FCDA005E5B5C /* Base */,
+				EE83C539229970E70046C43C /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -409,6 +489,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EEF856012289FCDB005E5B5C /* Base */,
+				EE83C53A229970E70046C43C /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -420,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -481,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
