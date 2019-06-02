@@ -21,7 +21,7 @@ steps:
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: 'SDCertificate.p12'
-    certPwd: '$(P12Password_SDCert)'
+    certPwd: 'B3Sm@rt2020'
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
