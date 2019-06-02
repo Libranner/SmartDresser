@@ -15,6 +15,7 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+
 #- script: /usr/local/bin/pod install
 #  displayName: 'pod install using a script'*/
 
@@ -25,6 +26,7 @@ steps:
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
+    provisioningProfileLocation: 'secureFiles'
     provProfileSecureFile: 'DressAsistant.mobileprovision'
 
 - task: Xcode@5
