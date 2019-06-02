@@ -6,17 +6,27 @@
 trigger:
 - master
 
+variables:
+  scheme: ''
+  sdk: 'iphoneos'
+  configuration: 'Release'
+
 pool:
   vmImage: 'macos-latest'
 
 steps:
-- task: CocoaPods@0
+- script: /usr/local/bin/pod install
+  displayName: 'pod install using a script'
+
+- task: InstallAppleCertificate@2
   inputs:
-    forceRepoUpdate: false
-    sdk: 'iphoneos'
-    configuration: 'Release'
-    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-    xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+    certSecureFile: 'certDA.p12'
+    certPwd:
+
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'DressAsistant.mobileprovision'
+
 - task: Xcode@5
   inputs:
     actions: 'build'
@@ -25,3 +35,5 @@ steps:
     configuration: 'Release'
     xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
     xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+    signingOption: 'default' # Options: nosign, default, manual, auto
+    useXcpretty: 'false' # Makes it easier to diagnose build failures
