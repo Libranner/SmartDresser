@@ -20,7 +20,7 @@ steps:
 
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: 'certDA.p12'
+    certSecureFile: 'SDCertificate.p12'
     certPwd: $(P12Password_SDCert)
 
 - task: InstallAppleProvisioningProfile@1
