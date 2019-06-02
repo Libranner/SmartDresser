@@ -21,7 +21,6 @@ steps:
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: 'certDA.p12'
-    certPwd:
 
 - task: InstallAppleProvisioningProfile@1
   inputs:
