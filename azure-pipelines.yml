@@ -16,8 +16,8 @@ pool:
 
 steps:
 
-#- script: /usr/local/bin/pod install
-#  displayName: 'pod install using a script'*/
+- script: /usr/local/bin/pod install
+  displayName: 'pod install using a script'
 
 - task: InstallAppleCertificate@2
   inputs:
