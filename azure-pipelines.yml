@@ -24,10 +24,10 @@ steps:
     certSecureFile: 'SDCertificate.p12'
     certPwd: 'B3Sm@rt2020'
 
-#- task: InstallAppleProvisioningProfile@1
-#  inputs:
-#    provisioningProfileLocation: 'secureFiles'
-#    provProfileSecureFile: 'DressAsistant.mobileprovision'
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provisioningProfileLocation: 'secureFiles'
+    provProfileSecureFile: '7ca7bede-578f-4d81-94f6-4d849120e80a.mobileprovision'
 
 - task: Xcode@5
   inputs:
