@@ -27,7 +27,7 @@ steps:
 - task: InstallAppleProvisioningProfile@1
   inputs:
     provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: '7ca7bede-578f-4d81-94f6-4d849120e80a.mobileprovision'
+    provProfileSecureFile: 'e110dfa4-87fa-4386-b06d-094ccb4e1946.mobileprovision'
 
 - task: Xcode@5
   inputs:
