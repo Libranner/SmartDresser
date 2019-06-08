@@ -9,19 +9,26 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        UINavigationBar.appearance().barTintColor = CustomColor.topBarColor
-        UINavigationBar.appearance().titleTextAttributes =
-          [NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor]
-        view.backgroundColor = CustomColor.defaultBackgroundColor
-      
-        navigationController?.navigationItem.leftBarButtonItem?.tintColor = .white
-        navigationController?.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor], for: .normal)
-      
-        navigationController?.navigationItem.backBarButtonItem?.tintColor = .white
-        navigationController?.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor], for: .normal)
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    UINavigationBar.appearance().barTintColor = CustomColor.topBarColor
+    UINavigationBar.appearance().titleTextAttributes =
+      [NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor]
+    view.backgroundColor = CustomColor.defaultBackgroundColor
+    
+    navigationController?.navigationItem.leftBarButtonItem?.tintColor = .white
+    navigationController?.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor], for: .normal)
+    
+    navigationController?.navigationItem.backBarButtonItem?.tintColor = .white
+    navigationController?.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor], for: .normal)
+    
+    let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    view.addGestureRecognizer(recognizer)
+  }
+  
+  @objc func hideKeyboard() {
+    self.view.endEditing(true)
+  }
 }

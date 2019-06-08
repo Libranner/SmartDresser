@@ -22,7 +22,11 @@
 		EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */; };
 		EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C54D229B8BBC0046C43C /* Utilities.swift */; };
 		EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */; };
-		EE95C7C022A2ECDE009BCFDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE95C7BF22A2ECDE009BCFDA /* GoogleService-Info.plist */; };
+		EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD78FB22AAD9350060F3E6 /* AssistantSignUpViewController.swift */; };
+		EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */; };
+		EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */; };
+		EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */; };
+		EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790522AC2B330060F3E6 /* RoundImageView.swift */; };
 		EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F72289FCDA005E5B5C /* AppDelegate.swift */; };
 		EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FB2289FCDA005E5B5C /* Main.storyboard */; };
 		EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FE2289FCDB005E5B5C /* Assets.xcassets */; };
@@ -65,7 +69,12 @@
 		EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		EE83C54D229B8BBC0046C43C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
-		EE95C7BF22A2ECDE009BCFDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEAD78FB22AAD9350060F3E6 /* AssistantSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantSignUpViewController.swift; sourceTree = "<group>"; };
+		EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DressAsistant.entitlements; sourceTree = "<group>"; };
+		EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		EEAD790522AC2B330060F3E6 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		EEF855F42289FCDA005E5B5C /* DressAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF855F72289FCDA005E5B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF855FC2289FCDA005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,7 +153,7 @@
 		EE83C52C22996AB30046C43C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EE95C7BF22A2ECDE009BCFDA /* GoogleService-Info.plist */,
+				EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */,
 				EE83C53122996EFF0046C43C /* Localizable.strings */,
 			);
 			path = Resources;
@@ -164,8 +173,26 @@
 			children = (
 				EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */,
 				EE83C548229B8B580046C43C /* MosaicLayout.swift */,
+				EEAD790522AC2B330060F3E6 /* RoundImageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD78FB22AAD9350060F3E6 /* AssistantSignUpViewController.swift */,
+				EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */,
+			);
+			path = AssistantSignUp;
+			sourceTree = "<group>";
+		};
+		EEAD78FE22AB5BB00060F3E6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		EEF855EB2289FCDA005E5B5C = {
@@ -191,10 +218,13 @@
 		EEF855F62289FCDA005E5B5C /* DressAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				EEAD78FE22AB5BB00060F3E6 /* Services */,
+				EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */,
 				EE83C52C22996AB30046C43C /* Resources */,
 				EE83C5222298BC7B0046C43C /* Helpers */,
 				EE83C547229B81E00046C43C /* Views */,
 				EE83C51F229558FB0046C43C /* Controllers */,
+				EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */,
 				EEF8566D228AF0D0005E5B5C /* Constants */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
 				EEF855FB2289FCDA005E5B5C /* Main.storyboard */,
@@ -286,6 +316,11 @@
 				TargetAttributes = {
 					EEF855F32289FCDA005E5B5C = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 					EEF856072289FCDB005E5B5C = {
 						CreatedOnToolsVersion = 10.1;
@@ -320,9 +355,9 @@
 			files = (
 				EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */,
 				EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */,
-				EE95C7C022A2ECDE009BCFDA /* GoogleService-Info.plist in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
+				EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +470,9 @@
 				EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */,
 				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
 				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
+				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
+				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
+				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
@@ -443,6 +481,7 @@
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
 				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,
+				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
 				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
 			);
@@ -620,6 +659,7 @@
 			baseConfigurationReference = 658E9258D6CDB89813D769B8 /* Pods-DressAsistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
@@ -627,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.DressAsistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.dressasistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -639,6 +679,7 @@
 			baseConfigurationReference = 8D755C251666E3E2294273AC /* Pods-DressAsistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
@@ -646,7 +687,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.DressAsistant;
+				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.dressasistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

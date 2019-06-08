@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>274683900479-94javvt1o82bg14qvpnri9i435q03r51.apps.googleusercontent.com</string>
+	<string>274683900479-tp6097eju2sshbgtdtlm5cbcbqj5ffsv.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.274683900479-94javvt1o82bg14qvpnri9i435q03r51</string>
+	<string>com.googleusercontent.apps.274683900479-tp6097eju2sshbgtdtlm5cbcbqj5ffsv</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBQ2q3upk11aHDT2v-_eHzTMOQVtKVDoIY</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.libranner.DressAsistant</string>
+	<string>com.libranner.dressasistant</string>
 	<key>PROJECT_ID</key>
 	<string>smartdresser-7d3cb</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:274683900479:ios:2fbdeb44dc6e094c</string>
+	<string>1:274683900479:ios:dee953586bb0271b</string>
 	<key>DATABASE_URL</key>
 	<string>https://smartdresser-7d3cb.firebaseio.com</string>
 </dict>
