@@ -17,10 +17,13 @@ class CreateAccountViewController: BaseViewController {
   @IBOutlet weak var profilePicture: UIImageView!
   @IBOutlet weak var nicknameTextfield: UITextField!
   
+  @IBOutlet weak var mainStackView: UIStackView!
+  @IBOutlet weak var saveButton: RoundedButton!
+  @IBOutlet weak var scrollview: UIScrollView!
   @IBOutlet weak var selectPhotoButton: UIButton!
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    nicknameTextfield.delegate = self
     // Do any additional setup after loading the view.
   }
   
@@ -52,7 +55,29 @@ class CreateAccountViewController: BaseViewController {
     alertVC.addAction(cancelAction)
     present(alertVC, animated: true)
   }
+  
+  @IBAction func saveButtonTapped(_ sender: Any) {
+    if let nickname = nicknameTextfield.text {
+      UserService().saveUser(displayName: nickname, photoURL: nil) { saved in
+        
+      }
+    }
+  }
 }
+
+//Mark: - UITextfield delegates
+extension CreateAccountViewController: UITextFieldDelegate {
+  func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    let y = mainStackView.frame.minY + 300.0
+    scrollview.setContentOffset(CGPoint(x: 0, y: y), animated: true);
+    return true
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+     scrollview.setContentOffset(CGPoint(x: 0, y: 0), animated: true);
+  }
+}
+
 
 //Mark: - Image Picker
 extension CreateAccountViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -74,7 +99,6 @@ extension CreateAccountViewController: UINavigationControllerDelegate, UIImagePi
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
     profilePicture.image = pickedImage
-    selectPhotoButton.alpha = 0
     self.dismiss(animated: true, completion: nil)
   }
 }

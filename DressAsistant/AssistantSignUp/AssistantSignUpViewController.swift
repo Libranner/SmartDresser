@@ -20,7 +20,7 @@ class AssistantSignUpViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    AuthService.shared.isAuthenticated { isAuthenticated in
+    AuthService().isAuthenticated { isAuthenticated in
       if !isAuthenticated {
         self.performSegue(withIdentifier: self.CREATE_ACCOUNT_SEGUE_KEY, sender: self)
       }

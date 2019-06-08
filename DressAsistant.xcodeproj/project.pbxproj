@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B55F1929580277CE25F8045 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D345BE5063BF87564CDBAD7F /* Pods_DressAsistant.framework */; };
-		54F76FB7C9937DB759F66327 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC1038DA98A49AA707C2A23 /* Pods_DressAsistantUITests.framework */; };
+		C5A68A66B1724A6E3E322121 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */; };
+		ED8501379C35D7888E1D95E7 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */; };
 		EE56050422AC3F1B00C0096B /* AssistantSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5604FF22AC3E7C00C0096B /* AssistantSignUp.storyboard */; };
+		EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050522AC660E00C0096B /* RoundedButton.swift */; };
+		EE56050822AC6A6A00C0096B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050722AC6A6A00C0096B /* UserService.swift */; };
+		EE56050A22AC706700C0096B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050922AC706700C0096B /* ImageCache.swift */; };
+		EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050B22AC721100C0096B /* AsyncImageView.swift */; };
+		EE56050E22AC72CB00C0096B /* FIleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050D22AC72CB00C0096B /* FIleService.swift */; };
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
 		EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* CustomNotification.swift */; };
@@ -48,15 +53,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4EC1038DA98A49AA707C2A23 /* Pods_DressAsistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		658E9258D6CDB89813D769B8 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
-		70B580B584A8FD26E0C6581B /* Pods-DressAsistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8D755C251666E3E2294273AC /* Pods-DressAsistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.release.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.release.xcconfig"; sourceTree = "<group>"; };
-		D345BE5063BF87564CDBAD7F /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4BA5F8E190A5667824B2651 /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C970D1AAA3866F45768911B /* Pods-DressAsistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2F12DC392DA083A6B72B86E7 /* Pods-DressAsistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.release.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.release.xcconfig"; sourceTree = "<group>"; };
+		A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
 		EE5604FE22AC3E7C00C0096B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AssistantSignUp.storyboard; sourceTree = "<group>"; };
 		EE56050122AC3EAD00C0096B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
 		EE56050322AC3EAE00C0096B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
+		EE56050522AC660E00C0096B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		EE56050722AC6A6A00C0096B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		EE56050922AC706700C0096B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		EE56050B22AC721100C0096B /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		EE56050D22AC72CB00C0096B /* FIleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIleService.swift; sourceTree = "<group>"; };
 		EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesDetailViewController.swift; sourceTree = "<group>"; };
 		EE83C5242298BC9C0046C43C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		EE83C5262298F7EA0046C43C /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
@@ -97,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B55F1929580277CE25F8045 /* Pods_DressAsistant.framework in Frameworks */,
+				ED8501379C35D7888E1D95E7 /* Pods_DressAsistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,18 +115,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54F76FB7C9937DB759F66327 /* Pods_DressAsistantUITests.framework in Frameworks */,
+				C5A68A66B1724A6E3E322121 /* Pods_DressAsistantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10BAF21F5A98C793C5465FD5 /* Frameworks */ = {
+		77EFAE0B506908389CA59218 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D345BE5063BF87564CDBAD7F /* Pods_DressAsistant.framework */,
-				4EC1038DA98A49AA707C2A23 /* Pods_DressAsistantUITests.framework */,
+				A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */,
+				1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,6 +149,7 @@
 			children = (
 				EE83C54D229B8BBC0046C43C /* Utilities.swift */,
 				EE83C5232298BC820046C43C /* UIHelpers */,
+				EE56050922AC706700C0096B /* ImageCache.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -178,6 +189,8 @@
 				EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */,
 				EE83C548229B8B580046C43C /* MosaicLayout.swift */,
 				EEAD790522AC2B330060F3E6 /* RoundImageView.swift */,
+				EE56050522AC660E00C0096B /* RoundedButton.swift */,
+				EE56050B22AC721100C0096B /* AsyncImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */,
+				EE56050722AC6A6A00C0096B /* UserService.swift */,
+				EE56050D22AC72CB00C0096B /* FIleService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,7 +222,7 @@
 				EEF8560B2289FCDB005E5B5C /* DressAsistantUITests */,
 				EEF855F52289FCDA005E5B5C /* Products */,
 				F5B89FA8C265364B634A6C82 /* Pods */,
-				10BAF21F5A98C793C5465FD5 /* Frameworks */,
+				77EFAE0B506908389CA59218 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,10 +274,10 @@
 		F5B89FA8C265364B634A6C82 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				658E9258D6CDB89813D769B8 /* Pods-DressAsistant.debug.xcconfig */,
-				8D755C251666E3E2294273AC /* Pods-DressAsistant.release.xcconfig */,
-				70B580B584A8FD26E0C6581B /* Pods-DressAsistantUITests.debug.xcconfig */,
-				E4BA5F8E190A5667824B2651 /* Pods-DressAsistantUITests.release.xcconfig */,
+				B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */,
+				2F12DC392DA083A6B72B86E7 /* Pods-DressAsistant.release.xcconfig */,
+				1C970D1AAA3866F45768911B /* Pods-DressAsistantUITests.debug.xcconfig */,
+				ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -274,12 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEF856112289FCDC005E5B5C /* Build configuration list for PBXNativeTarget "DressAsistant" */;
 			buildPhases = (
-				042038083382FA4EDF774AF5 /* [CP] Check Pods Manifest.lock */,
+				7A748C53CF1CC0C56A2DB156 /* [CP] Check Pods Manifest.lock */,
 				EEF855F02289FCDA005E5B5C /* Sources */,
 				EEF855F12289FCDA005E5B5C /* Frameworks */,
 				EEF855F22289FCDA005E5B5C /* Resources */,
 				EE95C7C122A2F098009BCFDA /* ShellScript */,
-				7B90F59A1FE89BF98CEA3A71 /* [CP] Embed Pods Frameworks */,
+				ADBA2B1290F550890CB16BA9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,7 +309,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEF856142289FCDC005E5B5C /* Build configuration list for PBXNativeTarget "DressAsistantUITests" */;
 			buildPhases = (
-				206116A66DE10C272FF557AB /* [CP] Check Pods Manifest.lock */,
+				E31D1923CF857C9115644101 /* [CP] Check Pods Manifest.lock */,
 				EEF856042289FCDB005E5B5C /* Sources */,
 				EEF856052289FCDB005E5B5C /* Frameworks */,
 				EEF856062289FCDB005E5B5C /* Resources */,
@@ -377,7 +392,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		042038083382FA4EDF774AF5 /* [CP] Check Pods Manifest.lock */ = {
+		7A748C53CF1CC0C56A2DB156 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -399,7 +414,35 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		206116A66DE10C272FF557AB /* [CP] Check Pods Manifest.lock */ = {
+		ADBA2B1290F550890CB16BA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E31D1923CF857C9115644101 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -419,32 +462,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B90F59A1FE89BF98CEA3A71 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE95C7C122A2F098009BCFDA /* ShellScript */ = {
@@ -471,6 +488,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */,
+				EE56050A22AC706700C0096B /* ImageCache.swift in Sources */,
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
 				EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */,
@@ -482,12 +501,15 @@
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
+				EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */,
 				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
+				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
 				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
+				EE56050E22AC72CB00C0096B /* FIleService.swift in Sources */,
 				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
 			);
@@ -673,14 +695,14 @@
 		};
 		EEF856122289FCDC005E5B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 658E9258D6CDB89813D769B8 /* Pods-DressAsistant.debug.xcconfig */;
+			baseConfigurationReference = B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -694,14 +716,14 @@
 		};
 		EEF856132289FCDC005E5B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D755C251666E3E2294273AC /* Pods-DressAsistant.release.xcconfig */;
+			baseConfigurationReference = 2F12DC392DA083A6B72B86E7 /* Pods-DressAsistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -715,7 +737,7 @@
 		};
 		EEF856152289FCDC005E5B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70B580B584A8FD26E0C6581B /* Pods-DressAsistantUITests.debug.xcconfig */;
+			baseConfigurationReference = 1C970D1AAA3866F45768911B /* Pods-DressAsistantUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -736,7 +758,7 @@
 		};
 		EEF856162289FCDC005E5B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4BA5F8E190A5667824B2651 /* Pods-DressAsistantUITests.release.xcconfig */;
+			baseConfigurationReference = ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

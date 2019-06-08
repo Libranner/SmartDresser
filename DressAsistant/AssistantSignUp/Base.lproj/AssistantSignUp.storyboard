@@ -156,12 +156,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uM-tj-ZAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="807" y="112"/>
+            <point key="canvasLocation" x="1548" y="21"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="LyP-WQ-BSg">
             <objects>
-                <viewController id="TdD-mN-Zz5" sceneMemberID="viewController">
+                <viewController id="TdD-mN-Zz5" customClass="CreateAccountViewController" customModule="DressAsistant" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tpj-ZR-ma0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,14 +172,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-l7-lNn" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primero, vamos crear tu perfil de usuario" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVf-Uz-RhN">
-                                                <rect key="frame" x="43.5" y="137" width="327.5" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.29372738320000003" green="0.39787981770000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IYr-Pt-piV">
-                                                <rect key="frame" x="72.5" y="198.5" width="269" height="339"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IYr-Pt-piV" userLabel="Main Stack View">
+                                                <rect key="frame" x="72.5" y="197.5" width="269" height="341"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xaf-aJ-X87" customClass="RoundImageView" customModule="DressAsistant" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="269" height="269"/>
@@ -188,26 +182,53 @@
                                                             <constraint firstAttribute="width" secondItem="xaf-aJ-X87" secondAttribute="height" multiplier="1:1" id="raB-zO-YoN"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-83-jZ9">
-                                                        <rect key="frame" x="0.0" y="299" width="269" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="FYR-NF-MiA"/>
-                                                        </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-py-KYH">
+                                                        <rect key="frame" x="0.0" y="299" width="269" height="42"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-83-jZ9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="217" height="42"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="42" id="FYR-NF-MiA"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76V-Fs-ixT" customClass="RoundedButton" customModule="DressAsistant">
+                                                                <rect key="frame" x="227" y="0.0" width="42" height="42"/>
+                                                                <color key="backgroundColor" red="0.29372738320000003" green="0.39787981770000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="76V-Fs-ixT" secondAttribute="height" id="one-oI-z35"/>
+                                                                    <constraint firstAttribute="height" constant="42" id="rGk-U2-N5m"/>
+                                                                </constraints>
+                                                                <state key="normal" title="&gt;">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="saveButtonTapped:" destination="TdD-mN-Zz5" eventType="touchUpInside" id="cX5-Wi-0kh"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxK-Mp-fJy">
+                                                <rect key="frame" x="192" y="431.5" width="30" height="30"/>
+                                                <color key="backgroundColor" white="0.88458725739999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" backgroundImage="camera"/>
+                                                <connections>
+                                                    <action selector="selectProfilePhoto:" destination="TdD-mN-Zz5" eventType="touchUpInside" id="MnN-Eb-7iE"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="PVf-Uz-RhN" firstAttribute="bottom" secondItem="IYr-Pt-piV" secondAttribute="top" constant="-40" id="L9k-gc-EvX"/>
                                             <constraint firstItem="IYr-Pt-piV" firstAttribute="width" secondItem="YbB-l7-lNn" secondAttribute="width" multiplier="0.65" id="LzH-I2-JhP"/>
                                             <constraint firstItem="IYr-Pt-piV" firstAttribute="centerX" secondItem="YbB-l7-lNn" secondAttribute="centerX" id="MLV-Jv-GOF"/>
-                                            <constraint firstItem="PVf-Uz-RhN" firstAttribute="centerX" secondItem="YbB-l7-lNn" secondAttribute="centerX" id="MeF-NV-265"/>
                                             <constraint firstItem="IYr-Pt-piV" firstAttribute="centerY" secondItem="YbB-l7-lNn" secondAttribute="centerY" multiplier="0.9" id="NEV-bg-E9q"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IYr-Pt-piV" secondAttribute="bottom" priority="999" constant="280" id="Pf1-xp-X8l"/>
+                                            <constraint firstItem="TxK-Mp-fJy" firstAttribute="bottom" secondItem="xaf-aJ-X87" secondAttribute="bottom" constant="-5" id="tzK-Ko-4Pw"/>
+                                            <constraint firstItem="TxK-Mp-fJy" firstAttribute="centerX" secondItem="xaf-aJ-X87" secondAttribute="centerX" id="ymk-Fg-F8d"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -232,9 +253,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="znr-u8-cr4"/>
                     </view>
+                    <connections>
+                        <outlet property="mainStackView" destination="IYr-Pt-piV" id="Gkp-a4-szC"/>
+                        <outlet property="nicknameTextfield" destination="Gw7-83-jZ9" id="qAF-Dk-2mH"/>
+                        <outlet property="profilePicture" destination="xaf-aJ-X87" id="2xK-QR-piq"/>
+                        <outlet property="saveButton" destination="76V-Fs-ixT" id="wiA-7I-ycU"/>
+                        <outlet property="scrollview" destination="ynf-I4-vn6" id="006-4g-fhc"/>
+                        <outlet property="selectPhotoButton" destination="TxK-Mp-fJy" id="nQc-we-AKr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAm-cZ-HhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="445" y="123"/>
         </scene>
     </scenes>
     <resources>

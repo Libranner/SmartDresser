@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if let link =  userActivity.webpageURL?.absoluteString {
-      return AuthService.shared.isSignIn(withLink: link, updateLink: true)
+      return AuthService().isSignIn(withLink: link, updateLink: true)
     }
     
     return false

@@ -12,7 +12,6 @@ import Firebase
 class AuthService {
   private let LINK_KEY = "Link"
   private let URL_FORMAT = "https://smartdresser-7d3cb.firebaseapp.com?email"
-  static let shared = AuthService()
 
   func isSignIn(withLink link: String, updateLink: Bool = false) -> Bool {
     if Auth.auth().isSignIn(withEmailLink: link) {
@@ -70,7 +69,7 @@ class AuthService {
     let link = "https://smartdresser-7d3cb.firebaseapp.com/?email=libranner@gmail.com&apiKey=AIzaSyCjP7vWXKUVik3XpiWeWJGJoapePdeeHu4&oobCode=G6QinlhQjQiMLIf56ics9vmzimYeS8JX7NSmLmklW-8AAAFrNTTIRQ&mode=signIn&lang=en"
     
     let email = "libranner@gmail.com"
-    var b =  AuthService.shared.isSignIn(withLink: link)
+    var b =  AuthService().isSignIn(withLink: link)
     Auth.auth().signIn(withEmail: email, link: link) { (user, error) in
       // [START_EXCLUDE]
       //TODO: self.hideSpinner {
