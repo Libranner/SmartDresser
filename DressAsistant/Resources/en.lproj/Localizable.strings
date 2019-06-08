@@ -13,3 +13,7 @@
 "Escanear otra ropa" = "Escanear otra ropa";
 "Identificar ropa" = "Identificar ropa";
 
+"select-photo" = "Favor seleccione una foto de perfil";
+"take-photo" = "Tomar foto";
+"choose-gallery-photo" = "Escoger foto de la galería";
+"cancel-action" = "Cancelar";
