@@ -10,6 +10,9 @@ PODS:
     - FirebaseAnalytics (= 6.0.0)
   - Firebase/CoreOnly (6.0.0):
     - FirebaseCore (= 6.0.0)
+  - Firebase/Storage (6.0.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.2.0)
   - FirebaseAnalytics (6.0.0):
     - FirebaseCore (~> 6.0)
     - FirebaseInstanceID (~> 4.0)
@@ -33,6 +36,10 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - FirebaseStorage (3.2.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAppMeasurement (6.0.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -70,6 +77,7 @@ DEPENDENCIES:
   - Fabric
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Storage
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -82,6 +90,7 @@ SPEC REPOS:
     - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseInstanceID
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
@@ -97,12 +106,13 @@ SPEC CHECKSUMS:
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: e38f025287b413255a53acc1945d048a112047f7
   FirebaseInstanceID: 0e0348a3c00a734fa376a070f5ad4533ad975cb5
+  FirebaseStorage: ff1e8f1f6cf1557a8694b0ef39d3e72cb60c42ac
   GoogleAppMeasurement: 7f028ea162b72c8f326daec74afc95d94f7a47d6
   GoogleUtilities: 84df567c76ca84f67b7bb40e769fdd4acc746a10
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: edc3948bbfa3730bc7617017e1208df21fbf639f
+PODFILE CHECKSUM: 12bf4a90d61d3f40964be5dd29be93afe208718b
 
 COCOAPODS: 1.6.2

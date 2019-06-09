@@ -9,19 +9,20 @@
 import UIKit
 import Firebase
 
-class AssistantSignUpViewController: UIViewController {
+class AssistantSignUpViewController: BaseViewController {
   private let CREATE_ACCOUNT_SEGUE_KEY = "showCreateAccount"
   
   @IBOutlet weak var emailTextField: UITextField!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //AuthService().setupEmailSignIn("libranner@gmail.com")
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     AuthService().isAuthenticated { isAuthenticated in
-      if !isAuthenticated {
+      if isAuthenticated {
         self.performSegue(withIdentifier: self.CREATE_ACCOUNT_SEGUE_KEY, sender: self)
       }
     }

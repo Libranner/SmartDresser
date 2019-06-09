@@ -24,13 +24,15 @@ class AuthService {
   }
   
   func isAuthenticated(completion: ((_ authenticated: Bool)-> Void)) {
-    if let link = UserDefaults.standard.string(forKey: LINK_KEY) {
+    let link = "https://smartdresser-7d3cb.firebaseapp.com/?email=libranner@gmail.com&apiKey=AIzaSyCjP7vWXKUVik3XpiWeWJGJoapePdeeHu4&oobCode=avmAzjLb9EPyw1KQXkU-LQrwsEuBYvoLD58IPBEVdQkAAAFrOYDZ_Q&mode=signIn&lang=en"
+    //TODO: Fix this
+    //if let link = UserDefaults.standard.string(forKey: LINK_KEY) {
       completion(isSignIn(withLink: link))
-    }
-    completion(false)
+    //}
+    //completion(false)
   }
   
-  func setupEmailSignIn( _ email: String) {
+  func setupEmailSignIn( _ email: String, completion:@escaping (_ error: Error?)-> Void) {
     // [START action_code_settings]
     let actionCodeSettings = ActionCodeSettings()
     actionCodeSettings.url = URL(string: "\(URL_FORMAT)=\(email)")
@@ -42,49 +44,30 @@ class AuthService {
     // [START send_signin_link]
     Auth.auth().sendSignInLink(toEmail:email,
                                actionCodeSettings: actionCodeSettings) { error in
-                                // [START_EXCLUDE]
-                                //self.hideSpinner {
-                                // [END_EXCLUDE]
-                                if let error = error {
-                                  //TODO: self.showMessagePrompt(error.localizedDescription)
-                                  return
-                                }
-                                // The link was successfully sent. Inform the user.
-                                // Save the email locally so you don't need to ask the user for it again
-                                // if they open the link on the same device.
-                                UserDefaults.standard.set(email, forKey: "Email")
-                                //TODO: self.showMessagePrompt("Check your email for link")
-                                
-                                // [START_EXCLUDE]
-                                //}
-                                // [END_EXCLUDE]
-                                
-                                // [END send_signin_link]
+      if let error = error {
+        completion(error)
+        return
+      }
+      // The link was successfully sent. Inform the user.
+      // Save the email locally so you don't need to ask the user for it again
+      // if they open the link on the same device.
+      UserDefaults.standard.set(email, forKey: "Email")
+      completion(nil)
     }
     
   }
   
-  func signInWithEmail(completion:(()-> Void)?) {
+  func signInWithEmail(completion:@escaping ((_ error: Error?)-> Void)) {
     // [START signin_emaillink]
-    let link = "https://smartdresser-7d3cb.firebaseapp.com/?email=libranner@gmail.com&apiKey=AIzaSyCjP7vWXKUVik3XpiWeWJGJoapePdeeHu4&oobCode=G6QinlhQjQiMLIf56ics9vmzimYeS8JX7NSmLmklW-8AAAFrNTTIRQ&mode=signIn&lang=en"
+    let link = "https://smartdresser-7d3cb.firebaseapp.com/?email=libranner@gmail.com&apiKey=AIzaSyCjP7vWXKUVik3XpiWeWJGJoapePdeeHu4&oobCode=avmAzjLb9EPyw1KQXkU-LQrwsEuBYvoLD58IPBEVdQkAAAFrOYDZ_Q&mode=signIn&lang=en"
     
     let email = "libranner@gmail.com"
-    var b =  AuthService().isSignIn(withLink: link)
     Auth.auth().signIn(withEmail: email, link: link) { (user, error) in
-      // [START_EXCLUDE]
-      //TODO: self.hideSpinner {
       if let error = error {
-        //TODO: self.showMessagePrompt(error.localizedDescription)
+        completion(error)
         return
       }
-      
-      if let completion = completion {
-        completion()
-      }
-      
-      //}
-      // [END_EXCLUDE]
+      completion(nil)
     }
-    // [END signin_emaillink]
   }
 }

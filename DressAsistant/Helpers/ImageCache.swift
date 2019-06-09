@@ -68,7 +68,9 @@ class ImageCache {
         
         // Grabamos la imagen en memoria y en el directorio del Sandbox
         self?.saveInMemory(url: url, image: image)
-        self?.saveInDirectory(url: url, image: image)
+        if let data = image.pngData() {
+          self?.saveInDirectory(url: url, data: data)
+        }
       }
       else {
         // Si la imagen no se pudo contruir retornamos nil en el completion closure
@@ -80,13 +82,11 @@ class ImageCache {
   }
   
   // Guarda en un directorio físico dentro del sandbox del App
-  private func saveInDirectory(url: URL, image: UIImage) {
+  private func saveInDirectory(url: URL, data: Data) {
     let fm = FileManager.default
     if let docs = fm.urls(for: .cachesDirectory, in: .userDomainMask).first {
       let file = docs.appendingPathComponent(url.lastPathComponent)
-      if let data = image.pngData() {
-        try? data.write(to: file)
-      }
+      try? data.write(to: file)
     }
   }
 }

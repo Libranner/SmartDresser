@@ -12,8 +12,22 @@
 "Terminar" = "Terminar";
 "Escanear otra ropa" = "Escanear otra ropa";
 "Identificar ropa" = "Identificar ropa";
+"loading" = "Cargando...";
 
 "select-photo" = "Favor seleccione una foto de perfil";
 "take-photo" = "Tomar foto";
 "choose-gallery-photo" = "Escoger foto de la galería";
 "cancel-action" = "Cancelar";
+"ok-action" = "Ok";
+"error-modal-title" = "Oops!";
+
+//Errors
+"error-generic-title" = "Error";
+"error-generic-msg" = "Ha ocurrido un error inesperado. Intente de nuevo más tarde";
+"error-empty-field-msg" = "Debe llenar el campo %@";
+"error-no-connection-msg" = "No hay conexión a internet";
+"error-could-no-authenticate-msg" = "Usuario debe autenticarse";
+"error-user-not-signed-msg" = "";
+
+//Fields
+"nickname-field" = "nombre";

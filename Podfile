@@ -11,6 +11,7 @@ target 'DressAsistant' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
   target 'DressAsistantUITests' do
     inherit! :search_paths

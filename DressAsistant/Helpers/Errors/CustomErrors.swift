@@ -1,5 +1,5 @@
 //
-//  FIleService.swift
+//  CustomErrors.swift
 //  DressAsistant
 //
 //  Created by Libranner Leonel Santos Espinal on 09/06/2019.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct FileService {
-  
+enum CustomError: Error {
+  case generic
+  case usersNotSignedIn
+  case emptyField(fieldName: String)
 }

@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
 class BaseViewController: UIViewController {
+  //ERROR MESSAGES LOCALIZATIOND IDS
+  internal static let ERROR_MODAL_TITLE_STRING_ID = "error-modal-title"
+  internal static let ERROR_NO_CONNECTION = "error-no-connection-msg"
+  internal static let ERROR_EMPTY_FIELD = "error-empty-field-msg"
+  internal static let ERROR_COULD_NOT_AUTHENTICATE = "error-could-no-authenticate-msg"
+  internal static let ERROR_USER_NOT_SIGNED = "error-user-not-signed-msg"
+  
+  internal static let OK_ACTION_STRING_ID = "ok-action"
+  internal static let CANCEL_ACTION_STRING_ID = "cancel-action"
+  
+  private var loadingView: LoadingView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,4 +43,66 @@ class BaseViewController: UIViewController {
   @objc func hideKeyboard() {
     self.view.endEditing(true)
   }
+  
+  func hideLoading() {
+    UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
+      self.loadingView.alpha = 0
+    }) { _ in
+      self.view.isUserInteractionEnabled = true
+      self.loadingView.removeFromSuperview()
+    }
+  }
+  
+  func showLoading() {
+    view.isUserInteractionEnabled = false
+    loadingView = LoadingView()
+    view.addSubview(loadingView)
+    
+    loadingView.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+      make.height.equalTo(150)
+      make.width.equalTo(loadingView.snp.height)
+    }
+  }
+  
+  fileprivate var connectionErrorMessage: String = {
+    return NSLocalizedString(ERROR_NO_CONNECTION, comment: "")
+  }()
+  
+  fileprivate var userNotSignedInMessage: String = {
+    return NSLocalizedString(ERROR_USER_NOT_SIGNED, comment: "")
+  }()
+  
+  private func emptyFieldMessage(_ fieldName: String) -> String {
+    let localizedString = NSLocalizedString(BaseViewController.ERROR_EMPTY_FIELD, comment: "")
+    return String(format: localizedString, fieldName)
+  }
+  
+  func showErrorMessage( _ error: CustomError) {
+    var message = ""
+    switch error as CustomError {
+      case .generic:
+        message = connectionErrorMessage
+      case .emptyField(let fieldName):
+        message = emptyFieldMessage(fieldName)
+    case .usersNotSignedIn:
+        message = userNotSignedInMessage
+    }
+    
+    let title = NSLocalizedString(BaseViewController.ERROR_MODAL_TITLE_STRING_ID, comment: "")
+    let okString = NSLocalizedString(BaseViewController.OK_ACTION_STRING_ID, comment: "")
+    
+    let alertVC = UIAlertController(title: title,
+                                    message: message,
+                                    preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: okString, style: .default)
+    alertVC.addAction(okAction)
+    
+    present(alertVC, animated: true)
+  }
+}
+
+extension BaseViewController {
+  
 }

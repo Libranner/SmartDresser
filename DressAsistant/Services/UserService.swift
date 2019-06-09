@@ -24,8 +24,4 @@ struct UserService {
       }
     }
   }
-  
-  func uploadUserPhoto() {
-    
-  }
 }

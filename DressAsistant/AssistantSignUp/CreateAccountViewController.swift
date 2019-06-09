@@ -9,10 +9,12 @@
 import UIKit
 
 class CreateAccountViewController: BaseViewController {
-  private let alertSheetTakePhotoStringId = "take-photo"
-  private let alertSheetChoosePhotoStringId = "choose-gallery-photo"
-  private let alertSheetMessageSelectPhotoStringId = "select-photo"
-  private let alertSheetCancelStringId = "cancel-action"
+  private let TAKE_PHOTO_STRING_ID = "take-photo"
+  private let CHOOSE_PHOTO_STRING_ID = "choose-gallery-photo"
+  private let SELECT_PHOTO_STRING_ID = "select-photo"
+  private let NICKNAME_FIELD_NAME_STRING_ID = "nickname-field"
+  
+  private let showMainSegue = "showMain"
   
   @IBOutlet weak var profilePicture: UIImageView!
   @IBOutlet weak var nicknameTextfield: UITextField!
@@ -33,10 +35,10 @@ class CreateAccountViewController: BaseViewController {
   
   @IBAction func selectProfilePhoto(_ sender: Any) {
     
-    let takePhotoString = NSLocalizedString(alertSheetTakePhotoStringId, comment: "")
-    let choosePhotoString = NSLocalizedString(alertSheetChoosePhotoStringId, comment: "")
-    let selectPhotoString = NSLocalizedString(alertSheetMessageSelectPhotoStringId, comment: "")
-    let cancelActionString = NSLocalizedString(alertSheetCancelStringId, comment: "")
+    let takePhotoString = NSLocalizedString(TAKE_PHOTO_STRING_ID, comment: "")
+    let choosePhotoString = NSLocalizedString(CHOOSE_PHOTO_STRING_ID, comment: "")
+    let selectPhotoString = NSLocalizedString(SELECT_PHOTO_STRING_ID, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
     
     let alertVC = UIAlertController(title: "", message: selectPhotoString, preferredStyle: .actionSheet)
     
@@ -56,10 +58,44 @@ class CreateAccountViewController: BaseViewController {
     present(alertVC, animated: true)
   }
   
+  private func saveUser(nickname: String, photoURL: URL?) {
+    UserService().saveUser(displayName: nickname, photoURL: photoURL) { [weak self] saved in
+      self?.hideLoading()
+      guard saved else {
+        self?.showErrorMessage(CustomError.generic)
+        return
+      }
+      if let self = self {
+        self.performSegue(withIdentifier: self.showMainSegue, sender: self)
+      }
+    }
+  }
+  
   @IBAction func saveButtonTapped(_ sender: Any) {
+    
+    guard nicknameTextfield.text != nil && !nicknameTextfield.text!.isEmpty else {
+      let nicknameString = NSLocalizedString(NICKNAME_FIELD_NAME_STRING_ID, comment: "")
+      showErrorMessage(CustomError.emptyField(fieldName: nicknameString))
+      return
+    }
+    
     if let nickname = nicknameTextfield.text {
-      UserService().saveUser(displayName: nickname, photoURL: nil) { saved in
-        
+      showLoading()
+      if let data = profilePicture.image?.pngData() {
+        FileService().uploadUserPhoto(data) { [weak self] error, success, photoURL in
+          if success {
+            self?.saveUser(nickname: nickname, photoURL: photoURL)
+          }
+          else {
+            if let error = error {
+              self?.showErrorMessage(error)
+            }
+            self?.hideLoading()
+          }
+        }
+      }
+      else {
+       saveUser(nickname: nickname, photoURL: nil)
       }
     }
   }

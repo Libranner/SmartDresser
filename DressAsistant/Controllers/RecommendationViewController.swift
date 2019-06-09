@@ -9,7 +9,7 @@
 import UIKit
 
 class RecommendationViewController: UIViewController {
-  private let reuseIdentifier = "ClothesCell"
+  private let REUSE_IDENTIFIER = "ClothesCell"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,7 +19,7 @@ class RecommendationViewController: UIViewController {
   lazy var collectionView: UICollectionView = {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: ColumnFlowLayout())
     collectionView.backgroundColor = .white
-    collectionView.register(ClothesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    collectionView.register(ClothesCollectionViewCell.self, forCellWithReuseIdentifier: REUSE_IDENTIFIER)
     collectionView.delegate = self
     collectionView.dataSource = self
     return collectionView
@@ -162,7 +162,7 @@ extension RecommendationViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER,
                                                   for: indexPath) as! ClothesCollectionViewCell
     
     cell.backgroundColor = .white

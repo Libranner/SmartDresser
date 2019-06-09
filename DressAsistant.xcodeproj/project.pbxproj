@@ -14,7 +14,11 @@
 		EE56050822AC6A6A00C0096B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050722AC6A6A00C0096B /* UserService.swift */; };
 		EE56050A22AC706700C0096B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050922AC706700C0096B /* ImageCache.swift */; };
 		EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050B22AC721100C0096B /* AsyncImageView.swift */; };
-		EE56050E22AC72CB00C0096B /* FIleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050D22AC72CB00C0096B /* FIleService.swift */; };
+		EE56050E22AC72CB00C0096B /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050D22AC72CB00C0096B /* FileService.swift */; };
+		EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051022AC91C500C0096B /* CustomErrors.swift */; };
+		EE56051322ADB58000C0096B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051222ADB58000C0096B /* LoadingView.swift */; };
+		EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE56051522ADC33400C0096B /* Affiliate.storyboard */; };
+		EE56051822ADC7D500C0096B /* CreateAffiliateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */; };
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
 		EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* CustomNotification.swift */; };
@@ -66,7 +70,11 @@
 		EE56050722AC6A6A00C0096B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		EE56050922AC706700C0096B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		EE56050B22AC721100C0096B /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
-		EE56050D22AC72CB00C0096B /* FIleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIleService.swift; sourceTree = "<group>"; };
+		EE56050D22AC72CB00C0096B /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		EE56051022AC91C500C0096B /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
+		EE56051222ADB58000C0096B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EE56051522ADC33400C0096B /* Affiliate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Affiliate.storyboard; sourceTree = "<group>"; };
+		EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAffiliateViewController.swift; sourceTree = "<group>"; };
 		EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesDetailViewController.swift; sourceTree = "<group>"; };
 		EE83C5242298BC9C0046C43C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		EE83C5262298F7EA0046C43C /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
@@ -131,6 +139,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE56050F22AC91B600C0096B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				EE56051022AC91C500C0096B /* CustomErrors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		EE56051422ADC30F00C0096B /* Affiliate */ = {
+			isa = PBXGroup;
+			children = (
+				EE56051522ADC33400C0096B /* Affiliate.storyboard */,
+				EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */,
+			);
+			path = Affiliate;
+			sourceTree = "<group>";
+		};
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +172,7 @@
 		EE83C5222298BC7B0046C43C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EE56050F22AC91B600C0096B /* Errors */,
 				EE83C54D229B8BBC0046C43C /* Utilities.swift */,
 				EE83C5232298BC820046C43C /* UIHelpers */,
 				EE56050922AC706700C0096B /* ImageCache.swift */,
@@ -191,6 +217,7 @@
 				EEAD790522AC2B330060F3E6 /* RoundImageView.swift */,
 				EE56050522AC660E00C0096B /* RoundedButton.swift */,
 				EE56050B22AC721100C0096B /* AsyncImageView.swift */,
+				EE56051222ADB58000C0096B /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,7 +237,7 @@
 			children = (
 				EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */,
 				EE56050722AC6A6A00C0096B /* UserService.swift */,
-				EE56050D22AC72CB00C0096B /* FIleService.swift */,
+				EE56050D22AC72CB00C0096B /* FileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +271,7 @@
 				EE83C5222298BC7B0046C43C /* Helpers */,
 				EE83C547229B81E00046C43C /* Views */,
 				EE83C51F229558FB0046C43C /* Controllers */,
+				EE56051422ADC30F00C0096B /* Affiliate */,
 				EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */,
 				EEF8566D228AF0D0005E5B5C /* Constants */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
@@ -378,6 +406,7 @@
 				EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
+				EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */,
 				EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE56051822ADC7D500C0096B /* CreateAffiliateViewController.swift in Sources */,
 				EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */,
+				EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */,
 				EE56050A22AC706700C0096B /* ImageCache.swift in Sources */,
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
@@ -498,6 +529,7 @@
 				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
 				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
 				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
+				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
@@ -509,7 +541,7 @@
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
 				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
-				EE56050E22AC72CB00C0096B /* FIleService.swift in Sources */,
+				EE56050E22AC72CB00C0096B /* FileService.swift in Sources */,
 				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
 			);
