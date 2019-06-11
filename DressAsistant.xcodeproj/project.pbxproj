@@ -19,6 +19,8 @@
 		EE56051322ADB58000C0096B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051222ADB58000C0096B /* LoadingView.swift */; };
 		EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE56051522ADC33400C0096B /* Affiliate.storyboard */; };
 		EE56051822ADC7D500C0096B /* CreateAffiliateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */; };
+		EE56051A22ADE48E00C0096B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051922ADE48E00C0096B /* GradientView.swift */; };
+		EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051C22ADF1E800C0096B /* Affiliate.swift */; };
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
 		EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* CustomNotification.swift */; };
@@ -75,6 +77,8 @@
 		EE56051222ADB58000C0096B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EE56051522ADC33400C0096B /* Affiliate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Affiliate.storyboard; sourceTree = "<group>"; };
 		EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAffiliateViewController.swift; sourceTree = "<group>"; };
+		EE56051922ADE48E00C0096B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		EE56051C22ADF1E800C0096B /* Affiliate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affiliate.swift; sourceTree = "<group>"; };
 		EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesDetailViewController.swift; sourceTree = "<group>"; };
 		EE83C5242298BC9C0046C43C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		EE83C5262298F7EA0046C43C /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
@@ -156,6 +160,14 @@
 			path = Affiliate;
 			sourceTree = "<group>";
 		};
+		EE56051B22ADF1D400C0096B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE56051C22ADF1E800C0096B /* Affiliate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +230,7 @@
 				EE56050522AC660E00C0096B /* RoundedButton.swift */,
 				EE56050B22AC721100C0096B /* AsyncImageView.swift */,
 				EE56051222ADB58000C0096B /* LoadingView.swift */,
+				EE56051922ADE48E00C0096B /* GradientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +278,7 @@
 		EEF855F62289FCDA005E5B5C /* DressAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				EE56051B22ADF1D400C0096B /* Models */,
 				EEAD78FE22AB5BB00060F3E6 /* Services */,
 				EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */,
 				EE83C52C22996AB30046C43C /* Resources */,
@@ -520,6 +534,7 @@
 				EE56051822ADC7D500C0096B /* CreateAffiliateViewController.swift in Sources */,
 				EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */,
 				EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */,
+				EE56051A22ADE48E00C0096B /* GradientView.swift in Sources */,
 				EE56050A22AC706700C0096B /* ImageCache.swift in Sources */,
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
@@ -537,6 +552,7 @@
 				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
 				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
+				EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */,
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
 				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,

@@ -17,7 +17,7 @@ import UIKit
   
   private func setup() {
     let width = frame.size.width
-    let cornerRadius = width / 4
+    let cornerRadius = width / 2
     layer.cornerRadius = cornerRadius
     layer.masksToBounds = true
     layer.borderWidth = 2.0
