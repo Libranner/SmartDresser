@@ -81,7 +81,7 @@ class BaseViewController: UIViewController {
   func showErrorMessage( _ error: CustomError) {
     var message = ""
     switch error as CustomError {
-      case .generic:
+      case .generic, .errorSavingData, .errorGettingData:
         message = connectionErrorMessage
       case .emptyField(let fieldName):
         message = emptyFieldMessage(fieldName)

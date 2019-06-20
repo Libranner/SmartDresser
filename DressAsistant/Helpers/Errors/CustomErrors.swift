@@ -12,4 +12,6 @@ enum CustomError: Error {
   case generic
   case usersNotSignedIn
   case emptyField(fieldName: String)
+  case errorGettingData
+  case errorSavingData
 }

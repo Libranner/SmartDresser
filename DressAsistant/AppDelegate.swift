@@ -30,8 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func setupFirebase() {
     FirebaseApp.configure()
+    configureFirestore()
   }
   
+  private func configureFirestore() {
+    let settings = Firestore.firestore().settings
+    settings.isPersistenceEnabled = true
+    settings.cacheSizeBytes = FirestoreCacheSizeUnlimited
+    Firestore.firestore().settings = settings
+  }
   
   func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if let link =  userActivity.webpageURL?.absoluteString {

@@ -12,6 +12,9 @@ import UIKit
   
   override func awakeFromNib() {
     super.awakeFromNib()
+  }
+  
+  override func layoutSubviews() {
     setup()
   }
   

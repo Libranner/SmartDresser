@@ -34,6 +34,15 @@
 		EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */; };
 		EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C54D229B8BBC0046C43C /* Utilities.swift */; };
 		EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */; };
+		EEACC06F22B6DE5B00C37990 /* AffiliateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC06E22B6DE5B00C37990 /* AffiliateService.swift */; };
+		EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07022B6FC5600C37990 /* ChoosePictureAlertViewController.swift */; };
+		EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07222B873C000C37990 /* HairStyleService.swift */; };
+		EEACC07522B9CED600C37990 /* HairStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07422B9CED600C37990 /* HairStyle.swift */; };
+		EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07622BAAAA800C37990 /* EyeColorService.swift */; };
+		EEACC07922BAAADD00C37990 /* EyeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07822BAAADD00C37990 /* EyeColor.swift */; };
+		EEACC07B22BBE81D00C37990 /* OptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07A22BBE81D00C37990 /* OptionPickerViewController.swift */; };
+		EEACC07F22BBEB4A00C37990 /* OptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07E22BBEB4A00C37990 /* OptionCollectionViewCell.swift */; };
+		EEACC08122BBEF4C00C37990 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC08022BBEF4C00C37990 /* Option.swift */; };
 		EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD78FB22AAD9350060F3E6 /* AssistantSignUpViewController.swift */; };
 		EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */; };
 		EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */; };
@@ -95,6 +104,15 @@
 		EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		EE83C54D229B8BBC0046C43C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		EEACC06E22B6DE5B00C37990 /* AffiliateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateService.swift; sourceTree = "<group>"; };
+		EEACC07022B6FC5600C37990 /* ChoosePictureAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePictureAlertViewController.swift; sourceTree = "<group>"; };
+		EEACC07222B873C000C37990 /* HairStyleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairStyleService.swift; sourceTree = "<group>"; };
+		EEACC07422B9CED600C37990 /* HairStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairStyle.swift; sourceTree = "<group>"; };
+		EEACC07622BAAAA800C37990 /* EyeColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColorService.swift; sourceTree = "<group>"; };
+		EEACC07822BAAADD00C37990 /* EyeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColor.swift; sourceTree = "<group>"; };
+		EEACC07A22BBE81D00C37990 /* OptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPickerViewController.swift; sourceTree = "<group>"; };
+		EEACC07E22BBEB4A00C37990 /* OptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEACC08022BBEF4C00C37990 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		EEAD78FB22AAD9350060F3E6 /* AssistantSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantSignUpViewController.swift; sourceTree = "<group>"; };
 		EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DressAsistant.entitlements; sourceTree = "<group>"; };
 		EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -154,6 +172,7 @@
 		EE56051422ADC30F00C0096B /* Affiliate */ = {
 			isa = PBXGroup;
 			children = (
+				EEACC07D22BBEB2E00C37990 /* OptionPicker */,
 				EE56051522ADC33400C0096B /* Affiliate.storyboard */,
 				EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */,
 			);
@@ -164,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				EE56051C22ADF1E800C0096B /* Affiliate.swift */,
+				EEACC07422B9CED600C37990 /* HairStyle.swift */,
+				EEACC07822BAAADD00C37990 /* EyeColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +209,7 @@
 				EE83C54D229B8BBC0046C43C /* Utilities.swift */,
 				EE83C5232298BC820046C43C /* UIHelpers */,
 				EE56050922AC706700C0096B /* ImageCache.swift */,
+				EEACC07022B6FC5600C37990 /* ChoosePictureAlertViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -195,8 +217,8 @@
 		EE83C5232298BC820046C43C /* UIHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				EEF8566E228AF0DE005E5B5C /* CustomColor.swift */,
 				EE83C5242298BC9C0046C43C /* UIHelper.swift */,
+				EEF8566E228AF0DE005E5B5C /* CustomColor.swift */,
 				EE83C5262298F7EA0046C43C /* CustomNotification.swift */,
 				EE83C54522998D450046C43C /* UIConstants.swift */,
 			);
@@ -235,6 +257,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EEACC07D22BBEB2E00C37990 /* OptionPicker */ = {
+			isa = PBXGroup;
+			children = (
+				EEACC07A22BBE81D00C37990 /* OptionPickerViewController.swift */,
+				EEACC07E22BBEB4A00C37990 /* OptionCollectionViewCell.swift */,
+				EEACC08022BBEF4C00C37990 /* Option.swift */,
+			);
+			path = OptionPicker;
+			sourceTree = "<group>";
+		};
 		EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +283,9 @@
 				EEAD78FF22AB5BCC0060F3E6 /* AuthService.swift */,
 				EE56050722AC6A6A00C0096B /* UserService.swift */,
 				EE56050D22AC72CB00C0096B /* FileService.swift */,
+				EEACC06E22B6DE5B00C37990 /* AffiliateService.swift */,
+				EEACC07222B873C000C37990 /* HairStyleService.swift */,
+				EEACC07622BAAAA800C37990 /* EyeColorService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -466,18 +501,30 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,14 +583,21 @@
 				EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */,
 				EE56051A22ADE48E00C0096B /* GradientView.swift in Sources */,
 				EE56050A22AC706700C0096B /* ImageCache.swift in Sources */,
+				EEACC07522B9CED600C37990 /* HairStyle.swift in Sources */,
+				EEACC08122BBEF4C00C37990 /* Option.swift in Sources */,
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
+				EEACC07922BAAADD00C37990 /* EyeColor.swift in Sources */,
+				EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
+				EEACC06F22B6DE5B00C37990 /* AffiliateService.swift in Sources */,
 				EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */,
 				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
 				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
+				EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */,
 				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
 				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
 				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
+				EEACC07F22BBEB4A00C37990 /* OptionCollectionViewCell.swift in Sources */,
 				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
@@ -552,6 +606,7 @@
 				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
 				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
+				EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */,
 				EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */,
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
@@ -559,6 +614,7 @@
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
 				EE56050E22AC72CB00C0096B /* FileService.swift in Sources */,
 				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
+				EEACC07B22BBE81D00C37990 /* OptionPickerViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
