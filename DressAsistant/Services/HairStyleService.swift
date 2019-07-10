@@ -13,7 +13,7 @@ import CodableFirebase
 struct HairStyleService {
   private let root = "hairStyles"
   
-  func get(completion:@escaping (_ error: CustomError?,
+  func getAll(completion:@escaping (_ error: CustomError?,
     _ data: [HairStyle]) -> Void) {
     
     let db = Firestore.firestore()

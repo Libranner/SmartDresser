@@ -22,11 +22,11 @@ class OptionPickerViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    data.append(Option(itemId: "1", name: "Prueba 1", imageURL: URL(string: "https://www.google.com")!))
+    /*data.append(Option(itemId: "1", name: "Prueba 1", imageURL: URL(string: "https://www.google.com")!))
     data.append(Option(itemId: "2", name: "Prueba 2", imageURL: URL(string: "https://www.google.com")!))
     data.append(Option(itemId: "3", name: "Prueba 3", imageURL: URL(string: "https://www.google.com")!))
     data.append(Option(itemId: "4", name: "Prueba 4", imageURL: URL(string: "https://www.google.com")!))
-    data.append(Option(itemId: "5", name: "Prueba 5", imageURL: URL(string: "https://www.google.com")!))
+    data.append(Option(itemId: "5", name: "Prueba 5", imageURL: URL(string: "https://www.google.com")!))*/
     
     setupCollectionView()
     self.clearsSelectionOnViewWillAppear = false
@@ -51,10 +51,14 @@ class OptionPickerViewController: UICollectionViewController {
     return data.count
   }
   
+  @IBAction func closeButtonTapped(_ sender: Any) {
+    self.dismiss(animated: true)
+  }
+  
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: REUSE_IDENTIFIER, for: indexPath) as! OptionCollectionViewCell
     let item = data[indexPath.row]
-    cell.configureCell(name: item.name, imageURL: item.imageURL, backgroundColor: .blue)
+    cell.configureCell(name: item.name, imageURL: item.imageURL, backgroundColor: item.backgroundColor)
     return cell
   }
   

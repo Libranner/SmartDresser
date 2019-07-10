@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -172,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="635" y="430"/>
         </scene>
-        <!--Affiliate-->
+        <!--Main-->
         <scene sceneID="Xg9-bp-e9G">
             <objects>
-                <viewControllerPlaceholder storyboardName="Affiliate" id="3M4-g8-OCZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="3M4-g8-OCZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCH-LH-VQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414" y="440"/>

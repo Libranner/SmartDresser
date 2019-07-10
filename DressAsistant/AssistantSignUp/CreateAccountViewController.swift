@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CreateAccountViewController: BaseViewController {
+class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
+  lazy var loadingView = LoadingView()
+  
   private let TAKE_PHOTO_STRING_ID = "take-photo"
   private let CHOOSE_PHOTO_STRING_ID = "choose-gallery-photo"
   private let SELECT_PHOTO_STRING_ID = "select-photo"
@@ -116,21 +118,7 @@ extension CreateAccountViewController: UITextFieldDelegate {
 
 
 //Mark: - Image Picker
-extension CreateAccountViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
-  func takePhoto() {
-    let imagePickerController = UIImagePickerController()
-    imagePickerController.delegate = self
-    imagePickerController.sourceType = .camera
-    self.present(imagePickerController, animated: true, completion: nil)
-  }
-  
-  func selectPhotoFromGallery() {
-    let imagePickerController = UIImagePickerController()
-    imagePickerController.delegate = self
-    imagePickerController.sourceType = .photoLibrary
-    self.present(imagePickerController, animated: true, completion: nil)
-  }
+extension CreateAccountViewController: PhotoPickerDelegate {
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage

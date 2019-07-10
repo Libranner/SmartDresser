@@ -1,14 +1,14 @@
 //
-//  RoundImageView.swift
+//  RoundedView.swift
 //  DressAsistant
 //
-//  Created by Libranner Leonel Santos Espinal on 08/06/2019.
+//  Created by Libranner Leonel Santos Espinal on 06/07/2019.
 //  Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable final class RoundImageView: AsyncImageView {
+@IBDesignable final class RoundedView: UIView {
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -27,6 +27,3 @@ import UIKit
     layer.borderColor = UIColor.gray.cgColor
   }
 }
-
-
-

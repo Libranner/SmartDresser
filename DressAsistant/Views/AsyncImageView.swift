@@ -14,7 +14,7 @@ class AsyncImageView: UIImageView {
   var lastMark : UUID? = nil
   
   // Método que se encarga de asignar la imagen al UIImageView
-  func fillWithURL(_ url: URL, placeholder: String?) {
+  func fillWithURL(_ url: URL, placeholder: String?, completion: ((_ success: Bool) -> Void)? = nil) {
     self.image = placeholder != nil ? UIImage(named: placeholder!) : nil
     
     lastMark = UUID()
@@ -30,17 +30,26 @@ class AsyncImageView: UIImageView {
       
       // Hacemos un unwrap de la variable para aegurar que no sea nil
       guard let unWrappedImage = image else {
+        if let completion = completion {
+          completion(false)
+        }
         return
       }
       
       // Si estamos en el main thread hacemos la asignación de inmediato
       if Thread.isMainThread {
         self?.image = unWrappedImage
+        if let completion = completion {
+          completion(true)
+        }
       }
       else {
         // Si no estamos en el main thread, cambiamos al main queque y luego hacemos la asignación
         DispatchQueue.main.async {
           self?.image = unWrappedImage
+          if let completion = completion {
+            completion(true)
+          }
         }
       }
     }

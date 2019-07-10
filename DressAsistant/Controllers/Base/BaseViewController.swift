@@ -20,8 +20,6 @@ class BaseViewController: UIViewController {
   internal static let OK_ACTION_STRING_ID = "ok-action"
   internal static let CANCEL_ACTION_STRING_ID = "cancel-action"
   
-  private var loadingView: LoadingView!
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -44,27 +42,6 @@ class BaseViewController: UIViewController {
     self.view.endEditing(true)
   }
   
-  func hideLoading() {
-    UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut, animations: {
-      self.loadingView.alpha = 0
-    }) { _ in
-      self.view.isUserInteractionEnabled = true
-      self.loadingView.removeFromSuperview()
-    }
-  }
-  
-  func showLoading() {
-    view.isUserInteractionEnabled = false
-    loadingView = LoadingView()
-    view.addSubview(loadingView)
-    
-    loadingView.snp.makeConstraints { make in
-      make.center.equalToSuperview()
-      make.height.equalTo(150)
-      make.width.equalTo(loadingView.snp.height)
-    }
-  }
-  
   fileprivate var connectionErrorMessage: String = {
     return NSLocalizedString(ERROR_NO_CONNECTION, comment: "")
   }()
@@ -81,12 +58,12 @@ class BaseViewController: UIViewController {
   func showErrorMessage( _ error: CustomError) {
     var message = ""
     switch error as CustomError {
-      case .generic, .errorSavingData, .errorGettingData:
-        message = connectionErrorMessage
-      case .emptyField(let fieldName):
-        message = emptyFieldMessage(fieldName)
+    case .generic, .errorSavingData, .errorGettingData:
+      message = connectionErrorMessage
+    case .emptyField(let fieldName):
+      message = emptyFieldMessage(fieldName)
     case .usersNotSignedIn:
-        message = userNotSignedInMessage
+      message = userNotSignedInMessage
     }
     
     let title = NSLocalizedString(BaseViewController.ERROR_MODAL_TITLE_STRING_ID, comment: "")
@@ -103,6 +80,32 @@ class BaseViewController: UIViewController {
   }
 }
 
-extension BaseViewController {
-  
+protocol LoadingScreenDelegate {
+  var loadingView: LoadingView { get set }
+  func hideLoading()
+  func showLoading()
+}
+
+extension LoadingScreenDelegate where Self: UIViewController {
+
+  func hideLoading() {
+    UIView.animate(withDuration: 0.6, delay: 0,
+                   options: .curveEaseOut, animations: {
+      self.loadingView.alpha = 0
+    }) { _ in
+      self.view.isUserInteractionEnabled = true
+      self.loadingView.removeFromSuperview()
+    }
+  }
+
+  func showLoading() {
+    view.isUserInteractionEnabled = false
+    view.addSubview(loadingView)
+    
+    loadingView.snp.makeConstraints { make in
+      make.center.equalToSuperview()
+      make.height.equalTo(150)
+      make.width.equalTo(loadingView.snp.height)
+    }
+  }
 }

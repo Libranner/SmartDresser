@@ -27,7 +27,19 @@
 "error-empty-field-msg" = "Debe llenar el campo %@";
 "error-no-connection-msg" = "No hay conexión a internet";
 "error-could-no-authenticate-msg" = "Usuario debe autenticarse";
-"error-user-not-signed-msg" = "";
+"error-user-not-signed-msg" = "Usuario no ha iniciado sesión";
 
 //Fields
 "nickname-field" = "nombre";
+
+//Field Affiliate
+"profile-picture-field" = "foto";
+"name-field" = "nombre";
+"birthdate-field" = "fecha de nacimiento";
+"sex-field" = "sexo";
+"height-field" = "altura";
+"weight-field" = "peso";
+"eye-color-field" = "color de ojos";
+"skin-color-field" = "color de piel";
+"hair-color-field" = "color de pelo";
+

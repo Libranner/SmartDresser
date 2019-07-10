@@ -8,19 +8,24 @@
 
 import Foundation
 
-enum Sex: Int, Codable {
-  case female = 1
-  case male
+enum Sex: String, Codable, CaseIterable {
+  case none = ""
+  case female = "Female"
+  case male = "Male"
+  
+  init?(id : Int) {
+    switch id {
+    case 1: self = .none
+    case 2: self = .female
+    case 3: self = .male
+    default: return nil
+    }
+  }
 }
 
 struct ItemData {
   var name: String
   var imageURL: URL?
-}
-
-enum SkinColor: Int, Codable {
-  case Female
-  case Male
 }
 
 struct Affiliate: Codable {
@@ -31,9 +36,11 @@ struct Affiliate: Codable {
   var height: Float
   var weight: Float
   var sex: Sex
-  var hairColor: String
-  var eyeColor: String
-  var skinColor: SkinColor
+  var hairColor: String?
+  var eyeColor: String?
+  var skinColor: String?
+  
+  
   
   private enum CodingKeys: String, CodingKey {
     case name
