@@ -20,17 +20,48 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
     super.viewDidLoad()
     tableView.delegate = self
     tableView.dataSource = self
-
-    showLoading()
+    
+    setupRefreshControl()
+  }
+  
+  private func setupRefreshControl() {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(loadAffiliates), for: .valueChanged)
+    tableView.refreshControl = refreshControl
+    tableView.refreshControl?.beginRefreshing()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    tableView.refreshControl?.beginRefreshing()
+    loadAffiliates()
+  }
+  
+  @objc private func loadAffiliates() {
     AffiliateService().getAll { [weak self] (error, affiliates) in
       self?.affiliates = affiliates
       self?.tableView.reloadData()
-      self?.hideLoading()
+      self?.tableView?.refreshControl?.endRefreshing()
     }
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  @IBAction func addAffiliateAction() {
+    performSegue(withIdentifier: showDetailSegueName, sender: self)
+  }
+  
+  var selectedAffiliate: Affiliate? {
+    if let indexPath = tableView.indexPathForSelectedRow {
+      return affiliates[indexPath.row]
+    }
     
+    return nil
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let affiliate = selectedAffiliate {
+      let destinationVC = segue.destination as! AffiliateViewController
+      destinationVC.existingAffiliate = affiliate
+      destinationVC.editMode = true
+    }
   }
 }
 
@@ -63,6 +94,6 @@ extension AffiliatesListViewController: UITableViewDelegate, UITableViewDataSour
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: showDetailSegueName, sender: self)
-    //self.tableView.deselectRow(at: indexPath, animated: false)
+    self.tableView.deselectRow(at: indexPath, animated: false)
   }
 }

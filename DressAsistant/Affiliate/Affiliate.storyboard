@@ -111,7 +111,7 @@
         <!--Crear Afiliado-->
         <scene sceneID="Y9v-Vt-EZt">
             <objects>
-                <viewController id="3jT-Lt-wvP" customClass="CreateAffiliateViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3jT-Lt-wvP" customClass="AffiliateViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9n-uf-ECi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,6 +355,19 @@
                                                             <constraint firstAttribute="height" constant="135" id="jdP-Lc-FuC"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-Fm-RZE">
+                                                        <rect key="frame" x="0.0" y="557.5" width="352" height="42"/>
+                                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="42" id="lm4-Hy-kqA"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Eliminar">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="deleteAffiliate" destination="3jT-Lt-wvP" eventType="touchUpInside" id="2uY-dZ-Rz2"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="a6U-Yp-5t8" firstAttribute="centerX" secondItem="wFq-RA-kxs" secondAttribute="centerX" id="0TY-Zf-Mt6"/>
@@ -405,6 +418,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Crear Afiliado" id="ytI-7K-m6W">
                         <barButtonItem key="rightBarButtonItem" title="Guardar" id="Sck-Og-DLe">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="saveAffiliate" destination="3jT-Lt-wvP" id="CMX-Wc-iwV"/>
                             </connections>
@@ -418,6 +432,7 @@
                         <outlet property="heightTextfield" destination="Czc-T5-tmG" id="PIk-Xd-zJw"/>
                         <outlet property="nameTextfield" destination="rKX-cJ-iZw" id="tBP-nj-2iv"/>
                         <outlet property="profilePicture" destination="KnW-J5-9J3" id="kE4-nf-xyn"/>
+                        <outlet property="removeButton" destination="Jme-Fm-RZE" id="Ka0-dy-V74"/>
                         <outlet property="scrollView" destination="cpb-nc-g5I" id="KhU-Dj-rEF"/>
                         <outlet property="sexTextfield" destination="Akd-sa-Vvw" id="kGd-7o-HsK"/>
                         <outlet property="skinColorView" destination="lsE-jN-jNP" id="WMx-pu-z2Z"/>
@@ -468,10 +483,26 @@
                                 <color key="textColor" name="headerColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O6y-1x-y9Y">
+                                <rect key="frame" x="52" y="646.5" width="310.5" height="42"/>
+                                <color key="backgroundColor" red="0.29372738320000003" green="0.39787981770000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="PR9-w4-CQc"/>
+                                </constraints>
+                                <state key="normal" title="Ir al listado de Afiliados">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToListTapped:" destination="hRj-Rs-8ja" eventType="touchUpInside" id="Q5o-OS-Kua"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="O6y-1x-y9Y" firstAttribute="centerX" secondItem="5bC-C9-fRf" secondAttribute="centerX" id="0ri-wK-NiG"/>
+                            <constraint firstItem="O6y-1x-y9Y" firstAttribute="top" secondItem="oHH-zV-LIz" secondAttribute="bottom" constant="50" id="5eh-nl-IeE"/>
                             <constraint firstItem="oHH-zV-LIz" firstAttribute="width" secondItem="fNS-FB-gu5" secondAttribute="width" id="8XB-ir-a4B"/>
+                            <constraint firstItem="O6y-1x-y9Y" firstAttribute="width" secondItem="fNS-FB-gu5" secondAttribute="width" id="Lvb-Ym-ITI"/>
                             <constraint firstItem="oHH-zV-LIz" firstAttribute="centerX" secondItem="fNS-FB-gu5" secondAttribute="centerX" id="On8-Fd-Hzg"/>
                             <constraint firstItem="fNS-FB-gu5" firstAttribute="centerX" secondItem="5bC-C9-fRf" secondAttribute="centerX" id="jnz-OZ-IXO"/>
                             <constraint firstItem="fNS-FB-gu5" firstAttribute="centerY" secondItem="5bC-C9-fRf" secondAttribute="centerY" multiplier="0.8" id="l7d-EC-yuI"/>
@@ -484,6 +515,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="q6A-n8-L5I"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="goToListButton" destination="O6y-1x-y9Y" id="hj3-dE-tyE"/>
                         <outlet property="qrImageView" destination="fNS-FB-gu5" id="lih-KP-ZAg"/>
                     </connections>
                 </viewController>
@@ -491,10 +523,10 @@
             </objects>
             <point key="canvasLocation" x="2610.144927536232" y="548.4375"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation View Controller-->
         <scene sceneID="51X-K1-Wbf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MPc-qE-tzY" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MPc-qE-tzY" customClass="BaseNavigationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZPC-BC-Ezl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -567,7 +599,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z1i-lG-bqy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Listado de Afiliados" id="447-d1-Bln"/>
+                    <navigationItem key="navigationItem" title="Listado de Afiliados" id="447-d1-Bln">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yI0-Ib-Xfe">
+                            <connections>
+                                <action selector="addAffiliateAction" destination="vEy-J2-xKU" id="oEr-JY-Fje"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YZh-W8-m18" id="dbg-87-fvH"/>
                         <segue destination="3jT-Lt-wvP" kind="show" identifier="showDetail" id="IkY-PC-LlB"/>

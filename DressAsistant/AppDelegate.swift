@@ -18,9 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    setupGlobalUI()
     setupFirebase()
     setupFabric()
+    
     return true
   }
   
@@ -46,6 +48,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     return false
+  }
+  
+  private func setupGlobalUI() {
+    UINavigationBar.appearance().barTintColor = CustomColor.topBarColor
+    UINavigationBar.appearance().tintColor = CustomColor.topBarTextColor
+    
+    let titleColor =  [NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor]
+    UINavigationBar.appearance().titleTextAttributes = titleColor
+    UIBarButtonItem.appearance().setTitleTextAttributes(titleColor, for: .normal)
+    
+    UIRefreshControl.appearance().tintColor = CustomColor.mainColor
   }
   
   func applicationWillResignActive(_ application: UIApplication) {

@@ -10,8 +10,11 @@ import UIKit
 
 class AffiliateCardViewController: UIViewController {
   
+  @IBOutlet weak var goToListButton: UIButton!
   @IBOutlet var qrImageView: UIImageView!
+  
   var affiliateId: String?
+  var shouldGoToRoot = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +23,18 @@ class AffiliateCardViewController: UIViewController {
       let image = generateQRCode(from: affiliateId)
       qrImageView.image = image
     }
+    
+    if shouldGoToRoot {
+      goToListButton.isHidden = false
+      navigationItem.hidesBackButton = true
+    }
+    else {
+      goToListButton.isHidden = true
+    }
+  }
+  
+  @IBAction func goToListTapped(_ sender: Any) {
+    navigationController?.popToRootViewController(animated: true)
   }
   
   func generateQRCode(from string: String) -> UIImage? {

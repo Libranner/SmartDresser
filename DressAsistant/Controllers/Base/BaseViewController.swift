@@ -19,6 +19,7 @@ class BaseViewController: UIViewController {
   
   internal static let OK_ACTION_STRING_ID = "ok-action"
   internal static let CANCEL_ACTION_STRING_ID = "cancel-action"
+  internal static let REMOVE_ACTION_STRING_ID = "remove-action"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -95,6 +96,7 @@ extension LoadingScreenDelegate where Self: UIViewController {
     }) { _ in
       self.view.isUserInteractionEnabled = true
       self.loadingView.removeFromSuperview()
+      self.loadingView.alpha = 1
     }
   }
 

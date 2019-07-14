@@ -19,7 +19,12 @@
 "choose-gallery-photo" = "Escoger foto de la galería";
 "cancel-action" = "Cancelar";
 "ok-action" = "Ok";
+"remove-action" = "Eliminar";
 "error-modal-title" = "Oops!";
+"remove-item" = "¿Está seguro que desea eliminar %@?";
+
+//Entitites
+"affiliate" = "Afiliado";
 
 //Errors
 "error-generic-title" = "Error";

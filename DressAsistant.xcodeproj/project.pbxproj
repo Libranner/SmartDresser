@@ -18,7 +18,7 @@
 		EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051022AC91C500C0096B /* CustomErrors.swift */; };
 		EE56051322ADB58000C0096B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051222ADB58000C0096B /* LoadingView.swift */; };
 		EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE56051522ADC33400C0096B /* Affiliate.storyboard */; };
-		EE56051822ADC7D500C0096B /* CreateAffiliateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */; };
+		EE56051822ADC7D500C0096B /* AffiliateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051722ADC7D500C0096B /* AffiliateViewController.swift */; };
 		EE56051A22ADE48E00C0096B /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051922ADE48E00C0096B /* GradientView.swift */; };
 		EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051C22ADF1E800C0096B /* Affiliate.swift */; };
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
@@ -43,7 +43,7 @@
 		EEACC06F22B6DE5B00C37990 /* AffiliateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC06E22B6DE5B00C37990 /* AffiliateService.swift */; };
 		EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07022B6FC5600C37990 /* ChoosePictureAlertViewController.swift */; };
 		EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07222B873C000C37990 /* HairStyleService.swift */; };
-		EEACC07522B9CED600C37990 /* HairStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07422B9CED600C37990 /* HairStyle.swift */; };
+		EEACC07522B9CED600C37990 /* HairColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07422B9CED600C37990 /* HairColor.swift */; };
 		EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07622BAAAA800C37990 /* EyeColorService.swift */; };
 		EEACC07922BAAADD00C37990 /* EyeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07822BAAADD00C37990 /* EyeColor.swift */; };
 		EEACC07B22BBE81D00C37990 /* OptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEACC07A22BBE81D00C37990 /* OptionPickerViewController.swift */; };
@@ -93,7 +93,7 @@
 		EE56051022AC91C500C0096B /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		EE56051222ADB58000C0096B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		EE56051522ADC33400C0096B /* Affiliate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Affiliate.storyboard; sourceTree = "<group>"; };
-		EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAffiliateViewController.swift; sourceTree = "<group>"; };
+		EE56051722ADC7D500C0096B /* AffiliateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateViewController.swift; sourceTree = "<group>"; };
 		EE56051922ADE48E00C0096B /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		EE56051C22ADF1E800C0096B /* Affiliate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affiliate.swift; sourceTree = "<group>"; };
 		EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesDetailViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		EEACC06E22B6DE5B00C37990 /* AffiliateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateService.swift; sourceTree = "<group>"; };
 		EEACC07022B6FC5600C37990 /* ChoosePictureAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePictureAlertViewController.swift; sourceTree = "<group>"; };
 		EEACC07222B873C000C37990 /* HairStyleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairStyleService.swift; sourceTree = "<group>"; };
-		EEACC07422B9CED600C37990 /* HairStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairStyle.swift; sourceTree = "<group>"; };
+		EEACC07422B9CED600C37990 /* HairColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HairColor.swift; sourceTree = "<group>"; };
 		EEACC07622BAAAA800C37990 /* EyeColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColorService.swift; sourceTree = "<group>"; };
 		EEACC07822BAAADD00C37990 /* EyeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeColor.swift; sourceTree = "<group>"; };
 		EEACC07A22BBE81D00C37990 /* OptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionPickerViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			children = (
 				EEACC07D22BBEB2E00C37990 /* OptionPicker */,
 				EE56051522ADC33400C0096B /* Affiliate.storyboard */,
-				EE56051722ADC7D500C0096B /* CreateAffiliateViewController.swift */,
+				EE56051722ADC7D500C0096B /* AffiliateViewController.swift */,
 				EEA6702022D11D1B0002FE3D /* AffiliateCardViewController.swift */,
 				EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */,
 				EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */,
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				EE56051C22ADF1E800C0096B /* Affiliate.swift */,
-				EEACC07422B9CED600C37990 /* HairStyle.swift */,
+				EEACC07422B9CED600C37990 /* HairColor.swift */,
 				EEACC07822BAAADD00C37990 /* EyeColor.swift */,
 				EEA6701822D0E3A40002FE3D /* SkinColor.swift */,
 			);
@@ -611,13 +611,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEA6701B22D0E4210002FE3D /* UIColor+Hex.swift in Sources */,
-				EE56051822ADC7D500C0096B /* CreateAffiliateViewController.swift in Sources */,
+				EE56051822ADC7D500C0096B /* AffiliateViewController.swift in Sources */,
 				EEA6701D22D1013C0002FE3D /* RoundedView.swift in Sources */,
 				EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */,
 				EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */,
 				EE56051A22ADE48E00C0096B /* GradientView.swift in Sources */,
 				EE56050A22AC706700C0096B /* ImageCache.swift in Sources */,
-				EEACC07522B9CED600C37990 /* HairStyle.swift in Sources */,
+				EEACC07522B9CED600C37990 /* HairColor.swift in Sources */,
 				EEACC08122BBEF4C00C37990 /* Option.swift in Sources */,
 				EEA6701F22D10AF20002FE3D /* PhotoPickerDelegate.swift in Sources */,
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,

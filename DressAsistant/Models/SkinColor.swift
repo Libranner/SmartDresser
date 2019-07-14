@@ -12,5 +12,15 @@ import UIKit
 struct SkinColor: Codable {
   var documentID: String?
   var name: String
-  var colorString: [CGFloat]
+  var colorComponents: [CGFloat]
+  
+  func rgbColor() -> UIColor {
+    let color = UIColor(red: colorComponents[0]/255,
+            green: colorComponents[1]/255,
+            blue: colorComponents[2]/255,
+            alpha: 1.0)
+    
+    return color
+  }
+  
 }

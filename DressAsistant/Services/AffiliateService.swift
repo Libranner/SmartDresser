@@ -26,6 +26,7 @@ struct AffiliateService {
         completion(CustomError.errorGettingData, data)
       } else {
         for document in querySnapshot!.documents {
+          
           var model = document.data()
           var affiliate = Affiliate(key: document.documentID,
                                     name: model["name"] as! String,
@@ -34,9 +35,24 @@ struct AffiliateService {
                                     height: model["height"] as! Float,
                                     weight: model["weight"] as! Float,
                                     sex: .none,
-                                    hairColor: model["hairColor"] as? String,
-                                    eyeColor: model["eyeColor"] as? String,
-                                    skinColor: model["skinColor"] as? String)
+                                    hairColor: nil,
+                                    eyeColor: nil,
+                                    skinColor: nil)
+          
+          if let data = model["hairColor"] as? [String : Any] {
+            affiliate.hairColor = try! FirestoreDecoder().decode(HairColor.self,
+                                                                 from: data)
+          }
+          
+          if let data = model["skinColor"] as? [String : Any] {
+            affiliate.skinColor = try! FirestoreDecoder().decode(SkinColor.self,
+                                                                 from: data)
+          }
+          
+          if let data = model["eyeColor"] as? [String : Any] {
+            affiliate.eyeColor = try! FirestoreDecoder().decode(EyeColor.self,
+                                                                from: data)
+          }
           
           if let avatarURL = model["avatarUrl"] as? String {
             affiliate.avatarUrl = URL(string: avatarURL)
@@ -61,17 +77,7 @@ struct AffiliateService {
     _ success: Bool) -> Void) -> String {
     
     let db = Firestore.firestore()
-    var docData = try! FirestoreEncoder().encode(affiliate)
-    
-    let hairStyleRef = db.document("hairStyles/\(affiliate.hairColor!)")
-    let eyeColorRef = db.document("eyeColors/\(affiliate.eyeColor!)")
-    let skinColorRef = db.document("skinColors/\(affiliate.skinColor!)")
-    
-    let references: [String : Any] = ["hairColor": hairStyleRef,
-                                      "eyeColor" : eyeColorRef,
-                                      "skinColor" : skinColorRef]
-    
-    docData.merge(references) { (_, s) in s }
+    let docData = try! FirestoreEncoder().encode(affiliate)
     
     let ref = db.collection(root).addDocument(data: docData) {
       error in
@@ -86,4 +92,44 @@ struct AffiliateService {
     
     return ref.documentID
   }
+  
+  func update(_ affiliate: Affiliate, completion:@escaping (_ error: CustomError?,
+    _ success: Bool) -> Void) {
+    
+    let db = Firestore.firestore()
+    let docData = try! FirestoreEncoder().encode(affiliate)
+    
+    if let key = affiliate.key {
+      db.collection(root).document(key).setData(docData) {
+        error in
+        if let error = error {
+          print("Error updating document: \(error)")
+          completion(CustomError.errorSavingData, false)
+        }
+        else {
+          completion(nil, true)
+        }
+      }
+    }
+    else {
+      print("Error updating document: No Key")
+      completion(CustomError.errorSavingData, false)
+    }
+  }
+  
+  func delete(_ affiliateId: String, completion:@escaping (_ error: CustomError?,
+    _ success: Bool) -> Void) {
+    let db = Firestore.firestore()
+    db.collection(root).document(affiliateId).delete {
+      error in
+      if let error = error {
+        print("Error deleting document: \(error)")
+        completion(CustomError.errorSavingData, false)
+      }
+      else {
+        completion(nil, true)
+      }
+    }
+  }
+  
 }

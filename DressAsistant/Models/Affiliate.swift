@@ -36,11 +36,9 @@ struct Affiliate: Codable {
   var height: Float
   var weight: Float
   var sex: Sex
-  var hairColor: String?
-  var eyeColor: String?
-  var skinColor: String?
-  
-  
+  var hairColor: HairColor?
+  var eyeColor: EyeColor?
+  var skinColor: SkinColor?
   
   private enum CodingKeys: String, CodingKey {
     case name

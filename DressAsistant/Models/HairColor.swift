@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HairStyle: Codable {
+struct HairColor: Codable {
   var documentID: String?
   var name: String
   var imageURL: URL

@@ -8,16 +8,21 @@
 
 import UIKit
 
-class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
+class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   lazy var loadingView = LoadingView()
+  var existingAffiliate: Affiliate?
   
   private let TAKE_PHOTO_STRING_ID = "take-photo"
   private let CHOOSE_PHOTO_STRING_ID = "choose-gallery-photo"
   private let SELECT_PHOTO_STRING_ID = "select-photo"
   private let NICKNAME_FIELD_NAME_STRING_ID = "nickname-field"
+  private let REMOVE_ITEM_STRING_ID = "remove-item"
+  private let AFFILIATE_STRING_ID = "affiliate"
   
   private let affiliateCardSegueName = "showAffiliateCard"
   private let optionPickerSegueName = "showOptionPicker"
+  
+  @IBOutlet var scrollView: UIScrollView!
   
   @IBOutlet var profilePicture: RoundImageView!
   @IBOutlet var nameTextfield: UITextField!
@@ -29,31 +34,58 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
   @IBOutlet weak var eyeColorImageView: RoundImageView!
   @IBOutlet weak var skinColorView: RoundedView!
   @IBOutlet weak var hairColorImageView: RoundImageView!
+  @IBOutlet weak var removeButton: UIButton!
   
-  fileprivate var sexSelected: Sex = .none
-  fileprivate var birthdateSelected: Date? = nil
-  fileprivate var eyeColorSelectedId: String?
-  fileprivate var skinColorSelectedId: String?
-  fileprivate var hairColorSelectedId: String?
+  fileprivate var sexSelected: Sex = .none {
+    didSet {
+      sexTextfield.text = sexSelected.rawValue
+    }
+  }
+  
+  fileprivate var birthdateSelected: Date? = nil {
+    didSet {
+      if let birthdateSelected = birthdateSelected  {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let selectedDate = dateFormatter.string(from: birthdateSelected)
+        birthdateTextfield.text = selectedDate
+      }
+    }
+  }
+  
+  fileprivate var eyeColorSelected: EyeColor? {
+    didSet {
+      if let eyeColor = eyeColorSelected {
+        eyeColorImageView.fillWithURL(eyeColor.imageURL, placeholder: nil)
+      }
+    }
+  }
+  fileprivate var skinColorSelected: SkinColor? {
+    didSet {
+      if let skinColor = skinColorSelected {
+        skinColorView.backgroundColor = skinColor.rgbColor()
+      }
+    }
+  }
+  
+  fileprivate var hairColorSelected: HairColor? {
+    didSet {
+      if let hairColor = hairColorSelected {
+        hairColorImageView.fillWithURL(hairColor.imageURL, placeholder: nil)
+      }
+    }
+  }
   
   fileprivate var affiliateId: String?
-  
   fileprivate var availableOptions = [Option]()
+  fileprivate var optionPickerMode: OptionPickerMode?
+  
+  var editMode = false
   
   enum OptionPickerMode {
     case eyeColorPicker
     case hairColorPicker
     case skinColorPicker
-  }
-  
-  fileprivate var optionPickerMode: OptionPickerMode?
-  
-  @IBOutlet var scrollView: UIScrollView!
-
-  // MARK: - Keyboard Delegates
-  func textFieldShouldReturn(textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    return true
   }
   
   override func viewDidLoad() {
@@ -65,6 +97,39 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
       #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector:
       #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+    
+    removeButton.isHidden = !editMode
+    
+    if existingAffiliate != nil {
+      fillUpForm()
+    }
+  }
+
+  private func fillUpForm() {
+    if let affiliate = existingAffiliate {
+      nameTextfield.text = affiliate.name
+      birthdateSelected =  affiliate.birthdate
+      sexSelected = affiliate.sex
+      heightTextfield.text = "\(affiliate.height)"
+      weightTextfield.text = "\(affiliate.weight)"
+      
+      skinColorSelected  = affiliate.skinColor
+      eyeColorSelected = affiliate.eyeColor
+      hairColorSelected = affiliate.hairColor
+      
+      if let avatarURL = affiliate.avatarUrl {
+        profilePicture.fillWithURL(avatarURL, placeholder: nil)
+      }
+    }
+    else {
+      showErrorMessage(.errorGettingData)
+    }
+  }
+  
+  // MARK: - Keyboard Delegates
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
   }
   
   private func setupSexPickerView() {
@@ -116,12 +181,6 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
   
   @objc func datePickerValueChanged(_ sender: UIDatePicker){
     birthdateSelected = sender.date
-
-    let dateFormatter: DateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy"
-    let selectedDate = dateFormatter.string(from: sender.date)
-    
-    birthdateTextfield.text = selectedDate
   }
   
   private func validateFields() -> Bool {
@@ -147,13 +206,13 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
       return false
     }
     
-    guard !birthdateTextfield.text!.isEmpty else {
+    guard !birthdateTextfield.text!.isEmpty && birthdateSelected != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(BIRTHDATE_ID, comment: "")))
       return false
     }
     
-    guard !sexTextfield.text!.isEmpty else {
+    guard !sexTextfield.text!.isEmpty && sexSelected != .none else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(SEX_ID, comment: "")))
       return false
@@ -171,19 +230,19 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
       return false
     }
     
-    guard eyeColorSelectedId != nil && !eyeColorSelectedId!.isEmpty else {
+    guard eyeColorSelected != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(EYE_COLOR_FIELD_ID, comment: "")))
       return false
     }
     
-    guard skinColorSelectedId != nil && !skinColorSelectedId!.isEmpty else {
+    guard skinColorSelected != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(SKIN_COLOR_FIELD_ID, comment: "")))
       return false
     }
     
-    guard hairColorSelectedId != nil && !hairColorSelectedId!.isEmpty else {
+    guard hairColorSelected != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(HAIR_COLOR_FIELD_ID, comment: "")))
       return false
@@ -202,7 +261,6 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
             completion(photoURL)
           }
           else {
-            self?.hideLoading()
             self?.showErrorMessage(.errorSavingData)
           }
         }
@@ -210,41 +268,55 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
           if let error = error {
             self?.showErrorMessage(error)
           }
-          self?.hideLoading()
         }
       }
+    }
+  }
+  
+  fileprivate func createAffiliateWithAvatar(_ avatarURL: URL) -> Affiliate {
+    return Affiliate(key: nil,
+                     name: nameTextfield.text!,
+                     avatarUrl: avatarURL,
+                     birthdate: birthdateSelected!,
+                     height: Float(heightTextfield.text!)!,
+                     weight: Float(weightTextfield.text!)!,
+                     sex: sexSelected,
+                     hairColor: hairColorSelected!,
+                     eyeColor: eyeColorSelected!,
+                     skinColor: skinColorSelected!)
+  }
+  
+  func handleResponse(error: CustomError?, success: Bool) {
+    hideLoading()
+    if success {
+      DispatchQueue.main.async {
+        self.performSegue(withIdentifier: self.affiliateCardSegueName,
+                          sender: self)
+      }
+    }
+    else {
+      print(error ?? "")
     }
   }
   
   fileprivate func persistAffialiate(avatarURL: URL) {
-    let affiliate = Affiliate(key: nil,
-                              name: nameTextfield.text!,
-                              avatarUrl: avatarURL,
-                              birthdate: birthdateSelected!,
-                              height: Float(heightTextfield.text!)!,
-                              weight: Float(weightTextfield.text!)!,
-                              sex: sexSelected,
-                              hairColor: hairColorSelectedId!,
-                              eyeColor: eyeColorSelectedId!,
-                              skinColor: skinColorSelectedId!)
-    
-    affiliateId = AffiliateService().save(affiliate) { [weak self] error, success in
-      self?.hideLoading()
-      if success {
-        DispatchQueue.main.async {
-          if let self = self {
-            self.performSegue(withIdentifier: self.affiliateCardSegueName,
-                              sender: self)
-          }
-        }
+    showLoading()
+    var newAffiliate = createAffiliateWithAvatar(avatarURL)
+    if existingAffiliate == nil {
+      affiliateId = AffiliateService().save(newAffiliate) { [weak self] error, success in
+        self?.handleResponse(error: error, success: success)
       }
-      else {
-        print(error ?? "")
+    }
+    else {
+      affiliateId = existingAffiliate!.key
+      newAffiliate.key = existingAffiliate!.key
+      AffiliateService().update(newAffiliate) { [weak self] error, success in
+        self?.handleResponse(error: error, success: success)
       }
     }
   }
   
-  @IBAction func saveAffiliate() {
+  @IBAction private func saveAffiliate() {
     if validateFields() {
       showLoading()
       uploadPhoto { [weak self] photoURL in
@@ -252,6 +324,48 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
       }
     }
   }
+  
+  @IBAction private func deleteAffiliate() {
+    askUserBeforeDeletion()
+  }
+  
+  private func delete() {
+    showLoading()
+    if let key = existingAffiliate?.key {
+      AffiliateService().delete(key) { [weak self] error, success in
+        self?.hideLoading()
+        if success {
+          DispatchQueue.main.async {
+            self?.navigationController?.popToRootViewController(animated: true)
+          }
+        }
+        else {
+          print(error ?? "")
+        }
+      }
+    }
+  }
+  
+  private func askUserBeforeDeletion() {
+    var removeTitleString = NSLocalizedString(REMOVE_ITEM_STRING_ID, comment: "")
+    let affiliateString = NSLocalizedString(AFFILIATE_STRING_ID, comment: "")
+    removeTitleString = String(format: removeTitleString, affiliateString)
+    let removeActionString = NSLocalizedString(BaseViewController.REMOVE_ACTION_STRING_ID, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    
+    let alertVC = UIAlertController(title: "", message: removeTitleString, preferredStyle: .actionSheet)
+    
+    let removeAction = UIAlertAction(title: removeActionString, style: .destructive) { [weak self] _ in
+      self?.delete()
+    }
+    
+    let cancelAction = UIAlertAction(title: cancelActionString, style: .default)
+    
+    alertVC.addAction(removeAction)
+    alertVC.addAction(cancelAction)
+    present(alertVC, animated: true)
+  }
+  
   
   @IBAction func selectProfilePhoto(_ sender: Any) {
     let takePhotoString = NSLocalizedString(TAKE_PHOTO_STRING_ID, comment: "")
@@ -288,6 +402,7 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
     else if (segue.identifier == affiliateCardSegueName) {
       if let destinationVC = segue.destination as? AffiliateCardViewController {
         destinationVC.affiliateId = affiliateId
+        destinationVC.shouldGoToRoot = true
       }
     }
   }
@@ -310,7 +425,16 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
+  fileprivate func resignAllTextFields() {
+    nameTextfield.resignFirstResponder()
+    birthdateTextfield.resignFirstResponder()
+    sexTextfield.resignFirstResponder()
+    heightTextfield.resignFirstResponder()
+    weightTextfield.resignFirstResponder()
+  }
+  
   fileprivate func showPickerWithOptions(_ options: [Option]) {
+    resignAllTextFields()
     availableOptions = options
     hideLoading()
     performSegue(withIdentifier: optionPickerSegueName, sender: self)
@@ -343,13 +467,8 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
       }
       
       let opts = data.compactMap({ (item) -> Option? in
-        let color = UIColor(red: item.colorString[0]/255,
-                            green: item.colorString[1]/255,
-                            blue: item.colorString[2]/255,
-                            alpha: 1.0)
-        
         return Option(itemId: item.documentID!, name: item.name,
-                 backgroundColor: color)
+                      backgroundColor: item.rgbColor())
       })
       
       DispatchQueue.main.async {
@@ -385,26 +504,38 @@ class CreateAffiliateViewController: BaseViewController, LoadingScreenDelegate {
 }
 
 //Mark: - Option Picker delegate
-extension CreateAffiliateViewController: OptionPickerDelegate {
+extension AffiliateViewController: OptionPickerDelegate {
   func optionPicker(didSelectItem item: Option) {
     if let optionPickerMode = optionPickerMode {
       switch optionPickerMode {
       case .eyeColorPicker:
-        eyeColorImageView.fillWithURL(item.imageURL!, placeholder: nil)
-        eyeColorSelectedId = item.itemId
+        eyeColorSelected = EyeColor(documentID: item.itemId,
+                                    name: item.name,
+                                    imageURL: item.imageURL!)
       case .hairColorPicker:
-        hairColorImageView.fillWithURL(item.imageURL!, placeholder: nil)
-        hairColorSelectedId = item.itemId
+        hairColorSelected = HairColor(documentID: item.itemId,
+                                      name: item.name,
+                                      imageURL: item.imageURL!)
       case .skinColorPicker:
-        skinColorView.backgroundColor = item.backgroundColor
-        skinColorSelectedId = item.itemId
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        item.backgroundColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        skinColorSelected = SkinColor(documentID: item.itemId,
+                                      name: item.name,
+                                      colorComponents: [red*255,
+                                                        green*255,
+                                                        blue*255,
+                                                        alpha])
       }
     }
   }
 }
 
 //Mark: - Option Picker delegate and datasource
-extension CreateAffiliateViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension AffiliateViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   private static let sexOptions = Sex.allCases
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -412,23 +543,22 @@ extension CreateAffiliateViewController: UIPickerViewDelegate, UIPickerViewDataS
   }
   
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return CreateAffiliateViewController.sexOptions.count
+    return AffiliateViewController.sexOptions.count
   }
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    let options = CreateAffiliateViewController.sexOptions
+    let options = AffiliateViewController.sexOptions
     return options[row].rawValue
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    let options = CreateAffiliateViewController.sexOptions
+    let options = AffiliateViewController.sexOptions
     sexSelected = options[row]
-    sexTextfield.text = sexSelected.rawValue
   }
 }
 
 //Mark: - Image Picker Delegate
-extension CreateAffiliateViewController: PhotoPickerDelegate {
+extension AffiliateViewController: PhotoPickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
     profilePicture.image = pickedImage

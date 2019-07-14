@@ -14,19 +14,19 @@ struct HairStyleService {
   private let root = "hairStyles"
   
   func getAll(completion:@escaping (_ error: CustomError?,
-    _ data: [HairStyle]) -> Void) {
+    _ data: [HairColor]) -> Void) {
     
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     
     docRef.getDocuments { (querySnapshot, err) in
-      var data = [HairStyle]()
+      var data = [HairColor]()
       if let err = err {
         print("Error getting documents: \(err)")
         completion(CustomError.errorGettingData, data)
       } else {
         for document in querySnapshot!.documents {
-          var model = try! FirestoreDecoder().decode(HairStyle.self, from: document.data())
+          var model = try! FirestoreDecoder().decode(HairColor.self, from: document.data())
           model.documentID = document.documentID
           data.append(model)
         }
