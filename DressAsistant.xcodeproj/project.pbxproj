@@ -57,6 +57,7 @@
 		EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */; };
 		EECB329B22DC1263009D91BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329A22DC1263009D91BF /* Item.swift */; };
 		EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329C22DC1456009D91BF /* ItemViewController.swift */; };
+		EECB329F22DCC7A3009D91BF /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
@@ -140,6 +141,7 @@
 		EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerScrollable.swift; sourceTree = "<group>"; };
 		EECB329A22DC1263009D91BF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EECB329C22DC1456009D91BF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
@@ -226,7 +228,7 @@
 				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
 				EE83C543229987100046C43C /* RecommendationViewController.swift */,
 				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
-				EEE1D49222DAA8C400EF78D0 /* Clothes */,
+				EEE1D49222DAA8C400EF78D0 /* Inventory */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -340,13 +342,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		EEE1D49222DAA8C400EF78D0 /* Clothes */ = {
+		EEE1D49222DAA8C400EF78D0 /* Inventory */ = {
 			isa = PBXGroup;
 			children = (
 				EECB329C22DC1456009D91BF /* ItemViewController.swift */,
 				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
+				EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */,
 			);
-			path = Clothes;
+			path = Inventory;
 			sourceTree = "<group>";
 		};
 		EEF855EB2289FCDA005E5B5C = {
@@ -675,6 +678,7 @@
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
 				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
 				EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */,
+				EECB329F22DCC7A3009D91BF /* InventoryViewController.swift in Sources */,
 				EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */,
 				EEA6701922D0E3A40002FE3D /* SkinColor.swift in Sources */,
 				EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */,

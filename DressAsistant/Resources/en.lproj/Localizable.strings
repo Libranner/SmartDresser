@@ -24,8 +24,10 @@
 "remove-item" = "¿Está seguro que desea eliminar %@?";
 "save-title" = "Guardar";
 "new-item-title" = "Nuevo Item";
+"remove-button-title" = "Eliminar";
 
 //Entitites
+"item" = "Item";
 "affiliate" = "Afiliado";
 
 //Errors

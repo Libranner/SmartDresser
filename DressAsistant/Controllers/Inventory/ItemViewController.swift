@@ -21,6 +21,9 @@ class ItemViewController: BaseViewController {
     static let saveTitle = "save-title"
     static let selectPhoto = "select-photo"
     static let newItemTitle = "new-item-title"
+    static let deleteButtonTitle = "remove-button-title"
+    static let removeItem = "remove-item"
+    static let item = "item"
   }
   
   enum PickerMode: Int {
@@ -34,6 +37,10 @@ class ItemViewController: BaseViewController {
   var nfcCode: String?
   lazy var loadingView = LoadingView()
   var existingItem: Item?
+  
+  fileprivate var editMode: Bool {
+    return existingItem != nil
+  }
   
   fileprivate var selectedMaterial: Material = .none {
     didSet {
@@ -129,6 +136,16 @@ class ItemViewController: BaseViewController {
     return button
   }()
   
+  fileprivate lazy var deleteButton: UIButton = {
+    let button =  UIButton(type: .custom)
+    let title = NSLocalizedString(Localizations.deleteButtonTitle, comment: "")
+    button.setTitle(title, for: .normal)
+    button.backgroundColor = .red
+    button.addTarget(self, action: #selector(askUserBeforeDeletion), for: .touchUpInside)
+    
+    return button
+  }()
+  
   fileprivate lazy var mainStackView: UIStackView = {
     let mainStackView = UIStackView()
     mainStackView.axis = .vertical
@@ -172,7 +189,6 @@ class ItemViewController: BaseViewController {
   }
   
   @objc fileprivate func save() {
-    
     if (validateFields()) {
       showLoading()
       uploadPhoto { [weak self] photoURL in
@@ -245,11 +261,14 @@ class ItemViewController: BaseViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    scrollView.transform = CGAffineTransform(translationX: scrollView.bounds.size.width, y: 0)
+    
+    /*
+     //TODO: Check this animation
+     scrollView.transform = CGAffineTransform(translationX: scrollView.bounds.size.width, y: 0)
     
     UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseIn, animations: {
       self.scrollView.transform = CGAffineTransform.identity
-    }, completion: nil)
+    }, completion: nil)*/
   }
   
   fileprivate func setupUI() {
@@ -334,6 +353,51 @@ class ItemViewController: BaseViewController {
     }
     
     mainStackView.addArrangedSubview(infoStackView)
+    
+    if editMode {
+      mainStackView.addArrangedSubview(deleteButton)
+      
+      deleteButton.snp.makeConstraints { make in
+        make.width.equalToSuperview()
+        make.height.equalTo(UIConstants.defaultButtonHeight).labeled("DeleteButtonHeight")
+      }
+    }
+  }
+  
+  private func delete() {
+    showLoading()
+    if let key = existingItem?.key {
+      AffiliateService().delete(key) { [weak self] error, success in
+        self?.hideLoading()
+        if success {
+          DispatchQueue.main.async {
+            self?.navigationController?.popToRootViewController(animated: true)
+          }
+        }
+        else {
+          print(error ?? "")
+        }
+      }
+    }
+  }
+  
+  @objc private func askUserBeforeDeletion() {
+    var removeTitleString = NSLocalizedString(Localizations.removeItem, comment: "")
+    let itemString = NSLocalizedString(Localizations.item, comment: "")
+    removeTitleString = String(format: removeTitleString, itemString)
+    
+    let removeActionString = NSLocalizedString(BaseViewController.REMOVE_ACTION_STRING_ID, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    
+    let alertVC = UIAlertController(title: "", message: removeTitleString, preferredStyle: .actionSheet)
+    let removeAction = UIAlertAction(title: removeActionString, style: .destructive) { [weak self] _ in
+      self?.delete()
+    }
+    let cancelAction = UIAlertAction(title: cancelActionString, style: .default)
+    
+    alertVC.addAction(removeAction)
+    alertVC.addAction(cancelAction)
+    present(alertVC, animated: true)
   }
   
   func validateFields() -> Bool {
@@ -490,12 +554,10 @@ extension ItemViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
 //Mark: - Loading
 extension ItemViewController: LoadingScreenDelegate {
-  
 }
 
 //Mark: - Scrollable
 extension ItemViewController: UIViewControllerScrollable {
-  
 }
 
 //Mark: - Image Picker Delegate

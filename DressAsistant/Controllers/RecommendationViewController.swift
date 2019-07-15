@@ -172,7 +172,7 @@ extension RecommendationViewController: UICollectionViewDataSource {
   }
 }
 
-class ClothesCollectionViewCell: UICollectionViewCell {
+private class ClothesCollectionViewCell: UICollectionViewCell {
   var imageView: UIImageView = UIImageView()
   
   override init(frame: CGRect) {
