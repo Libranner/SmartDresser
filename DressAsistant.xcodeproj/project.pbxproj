@@ -54,8 +54,12 @@
 		EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */; };
 		EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */; };
 		EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790522AC2B330060F3E6 /* RoundImageView.swift */; };
+		EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
+		EEE1D49422DAB03400EF78D0 /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49322DAB03400EF78D0 /* Clothes.swift */; };
+		EEE1D49622DAC11700EF78D0 /* CreateClothesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49522DAC11700EF78D0 /* CreateClothesViewController.swift */; };
+		EEE1D49822DBA28700EF78D0 /* ClothesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ClothesService.swift */; };
 		EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F72289FCDA005E5B5C /* AppDelegate.swift */; };
 		EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FB2289FCDA005E5B5C /* Main.storyboard */; };
 		EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FE2289FCDB005E5B5C /* Assets.xcassets */; };
@@ -133,8 +137,12 @@
 		EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		EEAD790522AC2B330060F3E6 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerScrollable.swift; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
+		EEE1D49322DAB03400EF78D0 /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		EEE1D49522DAC11700EF78D0 /* CreateClothesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClothesViewController.swift; sourceTree = "<group>"; };
+		EEE1D49722DBA28700EF78D0 /* ClothesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesService.swift; sourceTree = "<group>"; };
 		EEF855F42289FCDA005E5B5C /* DressAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF855F72289FCDA005E5B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF855FC2289FCDA005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 				EEACC07422B9CED600C37990 /* HairColor.swift */,
 				EEACC07822BAAADD00C37990 /* EyeColor.swift */,
 				EEA6701822D0E3A40002FE3D /* SkinColor.swift */,
+				EEE1D49322DAB03400EF78D0 /* Clothes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,12 +222,11 @@
 			isa = PBXGroup;
 			children = (
 				EE83C53C229978F30046C43C /* Base */,
-				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
 				EE83C53F229985440046C43C /* FinderViewController.swift */,
 				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
 				EE83C543229987100046C43C /* RecommendationViewController.swift */,
 				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
-				EEA6701E22D10AF20002FE3D /* PhotoPickerDelegate.swift */,
+				EEE1D49222DAA8C400EF78D0 /* Clothes */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -318,8 +326,27 @@
 				EEACC07222B873C000C37990 /* HairStyleService.swift */,
 				EEACC07622BAAAA800C37990 /* EyeColorService.swift */,
 				EEA6701622D0E35F0002FE3D /* SkinColorService.swift */,
+				EEE1D49722DBA28700EF78D0 /* ClothesService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		EEE1D49122DAA89E00EF78D0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6701E22D10AF20002FE3D /* PhotoPickerDelegate.swift */,
+				EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EEE1D49222DAA8C400EF78D0 /* Clothes */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1D49522DAC11700EF78D0 /* CreateClothesViewController.swift */,
+				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
+			);
+			path = Clothes;
 			sourceTree = "<group>";
 		};
 		EEF855EB2289FCDA005E5B5C = {
@@ -351,6 +378,7 @@
 				EE83C52C22996AB30046C43C /* Resources */,
 				EE83C5222298BC7B0046C43C /* Helpers */,
 				EE83C547229B81E00046C43C /* Views */,
+				EEE1D49122DAA89E00EF78D0 /* Protocols */,
 				EE83C51F229558FB0046C43C /* Controllers */,
 				EE56051422ADC30F00C0096B /* Affiliate */,
 				EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */,
@@ -629,11 +657,14 @@
 				EEACC06F22B6DE5B00C37990 /* AffiliateService.swift in Sources */,
 				EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */,
 				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
+				EEE1D49622DAC11700EF78D0 /* CreateClothesViewController.swift in Sources */,
+				EEE1D49422DAB03400EF78D0 /* Clothes.swift in Sources */,
 				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
 				EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */,
 				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
 				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
 				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
+				EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */,
 				EEACC07F22BBEB4A00C37990 /* OptionCollectionViewCell.swift in Sources */,
 				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
@@ -641,6 +672,7 @@
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
 				EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */,
 				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
+				EEE1D49822DBA28700EF78D0 /* ClothesService.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
 				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
 				EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */,

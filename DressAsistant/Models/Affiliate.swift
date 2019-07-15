@@ -23,11 +23,6 @@ enum Sex: String, Codable, CaseIterable {
   }
 }
 
-struct ItemData {
-  var name: String
-  var imageURL: URL?
-}
-
 struct Affiliate: Codable {
   var key: String?
   var name: String

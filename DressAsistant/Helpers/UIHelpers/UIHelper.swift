@@ -17,6 +17,18 @@ struct UIHelper {
     return separatorView
   }
   
+  func makeTextFieldFor(_ localizationStringId: String, identifier: String?) -> UITextField {
+    let textfield = UITextField()
+    textfield.borderStyle = .roundedRect
+    textfield.translatesAutoresizingMaskIntoConstraints = false
+    
+    let localizeString = NSLocalizedString(localizationStringId, comment: "")
+    textfield.accessibilityIdentifier = identifier ?? localizeString
+    textfield.placeholder = localizeString
+    
+    return textfield
+  }
+  
   func makeInfoLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
     let label = makeLabel(localizationStringId, identifier: identifier)
     label.font = UIFont.boldSystemFont(ofSize: 12)
@@ -49,5 +61,26 @@ struct UIHelper {
     button.backgroundColor = CustomColor.defaultButtonBackgroundColor
     button.setTitleColor(CustomColor.defaultButtonTextColor, for: .normal)
     return button
+  }
+  
+  func defaultAccessoryView(action: Selector) -> UIView{
+    let localizeString = NSLocalizedString("hecho", comment: "")
+    let customView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 44))
+    customView.backgroundColor = CustomColor.defaultButtonBackgroundColor
+    
+    let doneButton = UIButton(type: .system)
+    doneButton.setTitle(localizeString, for: .normal)
+    doneButton.setTitleColor(.white, for: .normal)
+    doneButton.translatesAutoresizingMaskIntoConstraints = false
+    doneButton.addTarget(self, action: action, for: .touchUpInside)
+    
+    customView.addSubview(doneButton)
+    
+    NSLayoutConstraint.activate([
+      doneButton.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -20),
+      doneButton.centerYAnchor.constraint(equalTo: customView.centerYAnchor)
+      ])
+    
+    return customView
   }
 }

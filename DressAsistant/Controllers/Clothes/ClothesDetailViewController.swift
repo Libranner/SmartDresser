@@ -20,21 +20,16 @@ class ClothesDetailViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = CustomColor.defaultBackgroundColor
-    //showOptions()
+    setupUI()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     scrollView.transform = CGAffineTransform(translationX: scrollView.bounds.size.width, y: 0)
-    
+
     UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseIn, animations: {
       self.scrollView.transform = CGAffineTransform.identity
     }, completion: nil)
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    setupUI()
   }
   
   lazy var imageView: UIImageView = {
@@ -108,7 +103,17 @@ class ClothesDetailViewController: BaseViewController {
         let descLabel = UIHelper().makeDescriptionLabelFor(element.value, identifier: identifier)
         
         rowStackView.addArrangedSubview(infoLabel)
-        rowStackView.addArrangedSubview(descLabel)
+        //rowStackView.addArrangedSubview(descLabel)
+        
+        let textfield = UITextField()
+        textfield.borderStyle = .roundedRect
+        textfield.placeholder = element.key
+        rowStackView.addArrangedSubview(textfield)
+        
+        textfield.snp.makeConstraints { make in
+          make.width.equalToSuperview()
+          make.height.equalTo(UIConstants.textfieldSize).labeled("TextFieldViewHeight")
+        }
         
         let separatorView = UIHelper().makeSeparatorView()
         rowStackView.addArrangedSubview(separatorView)

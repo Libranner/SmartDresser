@@ -14,7 +14,7 @@
 "Identificar ropa" = "Identificar ropa";
 "loading" = "Cargando...";
 
-"select-photo" = "Favor seleccione una foto de perfil";
+"select-photo" = "Favor seleccione una foto";
 "take-photo" = "Tomar foto";
 "choose-gallery-photo" = "Escoger foto de la galería";
 "cancel-action" = "Cancelar";
@@ -22,6 +22,7 @@
 "remove-action" = "Eliminar";
 "error-modal-title" = "Oops!";
 "remove-item" = "¿Está seguro que desea eliminar %@?";
+"save-title" = "Guardar";
 
 //Entitites
 "affiliate" = "Afiliado";
@@ -34,10 +35,12 @@
 "error-could-no-authenticate-msg" = "Usuario debe autenticarse";
 "error-user-not-signed-msg" = "Usuario no ha iniciado sesión";
 
+"hecho" = "Hecho";
+
 //Fields
 "nickname-field" = "nombre";
 
-//Field Affiliate
+//Fields Affiliate
 "profile-picture-field" = "foto";
 "name-field" = "nombre";
 "birthdate-field" = "fecha de nacimiento";
@@ -47,4 +50,12 @@
 "eye-color-field" = "color de ojos";
 "skin-color-field" = "color de piel";
 "hair-color-field" = "color de pelo";
+
+//Fields Clothes
+"detail-field" = "Detalle";
+"material-field" = "Material";
+"clothes-size-field" = "Tamaño";
+"clothes-color-field" = "Color";
+"print-type-field" = "Estampado";
+"pattern-type-field" = "Patrón";
 

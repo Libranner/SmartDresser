@@ -30,6 +30,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   @IBOutlet var sexTextfield: UITextField!
   @IBOutlet var heightTextfield: UITextField!
   @IBOutlet var weightTextfield: UITextField!
+  @IBOutlet weak var showQrButton: UIButton!
   
   @IBOutlet weak var eyeColorImageView: RoundImageView!
   @IBOutlet weak var skinColorView: RoundedView!
@@ -102,9 +103,15 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     
     if existingAffiliate != nil {
       fillUpForm()
+      showQrButton.isHidden = false
     }
   }
 
+  @IBAction func showQrButtonTapped(_ sender: Any) {
+    self.performSegue(withIdentifier: self.affiliateCardSegueName,
+                      sender: self)
+  }
+  
   private func fillUpForm() {
     if let affiliate = existingAffiliate {
       nameTextfield.text = affiliate.name
@@ -137,7 +144,8 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     sexPickerView.dataSource = self
     sexPickerView.delegate = self
     sexTextfield.inputView = sexPickerView
-    sexTextfield.inputAccessoryView = defaultAccessoryView
+    sexTextfield.inputAccessoryView = UIHelper().defaultAccessoryView(action:
+      #selector(doneButtonTapped(_:)))
   }
   
   private func setupBirthdatePickerView() {
@@ -152,28 +160,9 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     birthdatePickerView.minimumDate = minimumDate
     birthdatePickerView.maximumDate = maximumDate
     birthdateTextfield.inputView = birthdatePickerView
-    birthdateTextfield.inputAccessoryView = defaultAccessoryView
+    birthdateTextfield.inputAccessoryView = UIHelper().defaultAccessoryView(action:
+      #selector(doneButtonTapped(_:)))
   }
-  
-  private lazy var defaultAccessoryView: UIView = {
-    let customView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 44))
-    customView.backgroundColor = CustomColor.defaultButtonBackgroundColor
-    
-    let doneButton = UIButton(type: .system)
-    doneButton.setTitle("Hecho", for: .normal)
-    doneButton.setTitleColor(.white, for: .normal)
-    doneButton.translatesAutoresizingMaskIntoConstraints = false
-    doneButton.addTarget(self, action: #selector(doneButtonTapped(_:)), for: .touchUpInside)
-    
-    customView.addSubview(doneButton)
-    
-    NSLayoutConstraint.activate([
-      doneButton.trailingAnchor.constraint(equalTo: customView.trailingAnchor, constant: -20),
-      doneButton.centerYAnchor.constraint(equalTo: customView.centerYAnchor)
-      ])
-    
-    return customView
-  }()
   
   @objc func doneButtonTapped(_ sender: UIButton) {
     hideKeyboard()

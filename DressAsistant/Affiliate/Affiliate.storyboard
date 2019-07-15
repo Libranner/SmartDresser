@@ -124,9 +124,25 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2Y-Py-dZf" customClass="GradientView" customModule="DressAsistant" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                <subviews>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-G2-xSg">
+                                                        <rect key="frame" x="334" y="30" width="50" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="SR6-iO-nSP"/>
+                                                            <constraint firstAttribute="width" secondItem="SXh-G2-xSg" secondAttribute="height" multiplier="1:1" id="UcP-qi-pyd"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="qrCode"/>
+                                                        <connections>
+                                                            <action selector="showQrButtonTapped:" destination="3jT-Lt-wvP" eventType="touchUpInside" id="410-dR-dyV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="SXh-G2-xSg" firstAttribute="top" secondItem="w2Y-Py-dZf" secondAttribute="top" constant="30" id="9wc-vL-a6A"/>
                                                     <constraint firstAttribute="height" constant="120" id="ZRx-nN-h3w"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SXh-G2-xSg" secondAttribute="trailing" constant="30" id="jan-pS-UNP"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-J5-9J3" customClass="RoundImageView" customModule="DressAsistant" customModuleProvider="target">
@@ -435,6 +451,7 @@
                         <outlet property="removeButton" destination="Jme-Fm-RZE" id="Ka0-dy-V74"/>
                         <outlet property="scrollView" destination="cpb-nc-g5I" id="KhU-Dj-rEF"/>
                         <outlet property="sexTextfield" destination="Akd-sa-Vvw" id="kGd-7o-HsK"/>
+                        <outlet property="showQrButton" destination="SXh-G2-xSg" id="xdq-9J-zlP"/>
                         <outlet property="skinColorView" destination="lsE-jN-jNP" id="WMx-pu-z2Z"/>
                         <outlet property="weightTextfield" destination="OkY-eu-ay5" id="8hE-CQ-6kL"/>
                         <segue destination="Sa6-RJ-N3L" kind="presentation" identifier="showOptionPicker" id="BUj-5r-IWd"/>
@@ -619,6 +636,7 @@
     <resources>
         <image name="camera" width="30" height="30"/>
         <image name="default-user" width="165" height="165"/>
+        <image name="qrCode" width="30" height="30"/>
         <namedColor name="InfoLabelTitle">
             <color red="0.50199997425079346" green="0.50199997425079346" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
