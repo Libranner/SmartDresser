@@ -1,5 +1,5 @@
 //
-//  CreateClothesViewController.swift
+//  ItemViewController.swift
 //  DressAsistant
 //
 //  Created by Libranner Leonel Santos Espinal on 14/07/2019.
@@ -9,30 +9,31 @@
 import UIKit
 import SnapKit
 
-class CreateClothesViewController: BaseViewController {
+class ItemViewController: BaseViewController {
   
   enum Localizations {
     static let detailField = "detail-field"
     static let materialField = "material-field"
-    static let clothesSizeField = "clothes-size-field"
-    static let clothesColorField = "clothes-color-field"
+    static let itemTypeField = "item-type-field"
+    static let itemColorField = "item-color-field"
     static let printTypeField = "print-type-field"
     static let patternTypeField = "pattern-type-field"
     static let saveTitle = "save-title"
     static let selectPhoto = "select-photo"
+    static let newItemTitle = "new-item-title"
   }
   
   enum PickerMode: Int {
     case materialPicker = 0
     case patternTypePicker
     case printTypePicker
-    case clothesColorPicker
-    case clothesSizePicker
+    case colorPicker
+    case itemTypePicker
   }
   
   var nfcCode: String?
   lazy var loadingView = LoadingView()
-  var existingClothes: Clothes?
+  var existingItem: Item?
   
   fileprivate var selectedMaterial: Material = .none {
     didSet {
@@ -52,15 +53,15 @@ class CreateClothesViewController: BaseViewController {
     }
   }
   
-  fileprivate var selectedClothesColor: ClothesColor = .none {
+  fileprivate var selectedColor: ItemColor = .none {
     didSet {
-      clothesColorTextField.text = selectedClothesColor.rawValue
+      itemColorTextField.text = selectedColor.rawValue
     }
   }
   
-  fileprivate var selectedClothesSize: ClothesSize = .none {
+  fileprivate var selectedItemType: ItemType = .none {
     didSet {
-      clothesSizeTextField.text = selectedClothesSize.rawValue
+      itemTypeTextField.text = selectedItemType.rawValue
     }
   }
   
@@ -75,14 +76,14 @@ class CreateClothesViewController: BaseViewController {
                            pickerMode: .materialPicker)
   }()
 
-  fileprivate lazy var clothesSizeTextField: UITextField = {
-    return createTextField(localizeStringId: Localizations.clothesSizeField,
-                           pickerMode: .clothesSizePicker)
+  fileprivate lazy var itemTypeTextField: UITextField = {
+    return createTextField(localizeStringId: Localizations.itemTypeField,
+                           pickerMode: .itemTypePicker)
   }()
   
-  fileprivate lazy var clothesColorTextField: UITextField = {
-    return createTextField(localizeStringId: Localizations.clothesColorField,
-                           pickerMode: .clothesColorPicker)
+  fileprivate lazy var itemColorTextField: UITextField = {
+    return createTextField(localizeStringId: Localizations.itemColorField,
+                           pickerMode: .colorPicker)
   }()
   
   fileprivate lazy var printTypeTextField: UITextField = {
@@ -113,7 +114,7 @@ class CreateClothesViewController: BaseViewController {
     return pickerView
   }
   
-  fileprivate lazy var clothesImageView: UIImageView = {
+  fileprivate lazy var itemImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleToFill
     imageView.layer.cornerRadius = UIConstants.defaultRadiusForBorder
@@ -124,7 +125,7 @@ class CreateClothesViewController: BaseViewController {
   fileprivate lazy var choosePhotoButton: UIButton = {
     let button =  UIButton(type: .custom)
     button.setBackgroundImage(UIImage(named: "camera"), for: .normal)
-    button.addTarget(self, action: #selector(chooseClothesPhoto), for: .touchUpInside)
+    button.addTarget(self, action: #selector(choosePhoto), for: .touchUpInside)
     return button
   }()
   
@@ -146,9 +147,9 @@ class CreateClothesViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let title = NSLocalizedString(Localizations.saveTitle, comment: "")
-    let saveButton = UIBarButtonItem(title: title, style: .plain,
-                                     target: self, action: #selector(saveClothes))
+    let saveButtontitle = NSLocalizedString(Localizations.saveTitle, comment: "")
+    let saveButton = UIBarButtonItem(title: saveButtontitle, style: .plain,
+                                     target: self, action: #selector(save))
     
     navigationItem.rightBarButtonItem = saveButton
     
@@ -156,6 +157,8 @@ class CreateClothesViewController: BaseViewController {
       #selector(showingKeyboard), name:UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector:
       #selector(hidingKeyboard), name:UIResponder.keyboardWillHideNotification, object: nil)
+    
+    self.title = NSLocalizedString(Localizations.newItemTitle, comment: "")
     
     setupUI()
   }
@@ -168,23 +171,24 @@ class CreateClothesViewController: BaseViewController {
     keyboardWillHide(notification: notification)
   }
   
-  @objc fileprivate func saveClothes() {
+  @objc fileprivate func save() {
     
     if (validateFields()) {
       showLoading()
       uploadPhoto { [weak self] photoURL in
         if let self = self {
-          let clothes = Clothes(key: nil,
+          self.nfcCode = "123"
+          let item = Item(key: nil,
                                 nfcCode: self.nfcCode!,
                                 imageURL: photoURL,
                                 detail: self.detailTextField.text!,
                                 material: self.selectedMaterial,
                                 patternType: self.selectedPatternType,
                                 printType: self.selectedPrintType,
-                                color: self.selectedClothesColor,
-                                size: self.selectedClothesSize)
+                                color: self.selectedColor,
+                                type: self.selectedItemType)
           
-          self.persist(clothes: clothes)
+          self.persist(item)
         }
       }
     }
@@ -202,15 +206,15 @@ class CreateClothesViewController: BaseViewController {
     }
   }
   
-  fileprivate func persist(clothes: Clothes) {
+  fileprivate func persist(_ item: Item) {
     showLoading()
-    if existingClothes != nil {
-      _ = ClothesService().save(clothes) { [weak self] error, success in
+    if existingItem == nil {
+      _ = ItemService().save(item) { [weak self] error, success in
         self?.handleResponse(error: error, success: success)
       }
     }
     else {
-      ClothesService().update(key: existingClothes!.key!, clothes: clothes) {
+      ItemService().update(key: existingItem!.key!, item: item) {
         [weak self] error, success in
         self?.handleResponse(error: error, success: success)
       }
@@ -218,7 +222,7 @@ class CreateClothesViewController: BaseViewController {
   }
   
   fileprivate func uploadPhoto(completion: @escaping (_ photoURL: URL)-> Void) {
-    if let data = clothesImageView.image?.pngData() {
+    if let data = itemImageView.image?.pngData() {
       FileService().uploadAffiliatePhoto(data) { [weak self] error,
         success, photoURL in
         
@@ -265,11 +269,11 @@ class CreateClothesViewController: BaseViewController {
       make.centerX.equalTo(scrollView).labeled("MainStackViewPosition")
     }
     
-    mainStackView.addArrangedSubview(clothesImageView)
-    clothesImageView.layer.borderColor = UIColor.gray.cgColor
-    clothesImageView.layer.borderWidth = 1
+    mainStackView.addArrangedSubview(itemImageView)
+    itemImageView.layer.borderColor = UIColor.gray.cgColor
+    itemImageView.layer.borderWidth = 1
     
-    clothesImageView.snp.makeConstraints { make in
+    itemImageView.snp.makeConstraints { make in
       make.centerX.equalToSuperview().labeled("ImageViewWidthAndCenter")
       make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.35)
     }
@@ -278,17 +282,17 @@ class CreateClothesViewController: BaseViewController {
     choosePhotoButton.snp.makeConstraints { make in
       make.height.equalTo(UIConstants.defaultButtonHeight)
       make.width.equalTo(choosePhotoButton.snp.height)
-      make.centerX.bottom.equalTo(clothesImageView)
+      make.centerX.bottom.equalTo(itemImageView)
     }
 
-    setupClotheForm()
+    setupForm()
   }
   
-  func setupClotheForm() {
+  func setupForm() {
     let data = [Localizations.detailField: detailTextField,
                 Localizations.materialField: materialTextField,
-                Localizations.clothesSizeField: clothesSizeTextField,
-                Localizations.clothesColorField: clothesColorTextField,
+                Localizations.itemTypeField: itemTypeTextField,
+                Localizations.itemColorField: itemColorTextField,
                 Localizations.patternTypeField: patternTypeTextField,
                 Localizations.printTypeField: printTypeTextField
     ]
@@ -300,7 +304,7 @@ class CreateClothesViewController: BaseViewController {
     infoStackView.spacing = 10
     
     let keys = [Localizations.detailField, Localizations.materialField,
-                Localizations.clothesSizeField, Localizations.clothesColorField,
+                Localizations.itemTypeField, Localizations.itemColorField,
                 Localizations.patternTypeField, Localizations.printTypeField
     ]
     
@@ -333,7 +337,7 @@ class CreateClothesViewController: BaseViewController {
   }
   
   func validateFields() -> Bool {
-    guard clothesImageView.image != nil else {
+    guard itemImageView.image != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(Localizations.selectPhoto, comment: "")))
       return false
@@ -345,9 +349,9 @@ class CreateClothesViewController: BaseViewController {
       return false
     }
     
-    guard selectedClothesSize != .none else {
+    guard selectedItemType != .none else {
       showErrorMessage(CustomError.emptyField(fieldName:
-        NSLocalizedString(Localizations.clothesSizeField, comment: "")))
+        NSLocalizedString(Localizations.itemTypeField, comment: "")))
       return false
     }
     
@@ -363,9 +367,9 @@ class CreateClothesViewController: BaseViewController {
       return false
     }
     
-    guard selectedClothesColor != .none else {
+    guard selectedColor != .none else {
       showErrorMessage(CustomError.emptyField(fieldName:
-        NSLocalizedString(Localizations.clothesColorField, comment: "")))
+        NSLocalizedString(Localizations.itemColorField, comment: "")))
       return false
     }
     
@@ -380,12 +384,12 @@ class CreateClothesViewController: BaseViewController {
 }
 
 //Mark: - Option Picker delegate and datasource
-extension CreateClothesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension ItemViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   private static let patternTypes = PatternType.allCases
   private static let printTypes = PrintType.allCases
-  private static let clothesColors = ClothesColor.allCases
+  private static let itemColors = ItemColor.allCases
   private static let materials = Material.allCases
-  private static let clothesSize = ClothesSize.allCases
+  private static let types = ItemType.allCases
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
@@ -400,15 +404,15 @@ extension CreateClothesViewController: UIPickerViewDelegate, UIPickerViewDataSou
     
     switch pickerMode! {
     case .materialPicker:
-      return CreateClothesViewController.materials.count
-    case .clothesColorPicker:
-      return CreateClothesViewController.clothesColors.count
+      return ItemViewController.materials.count
+    case .colorPicker:
+      return ItemViewController.itemColors.count
     case .patternTypePicker:
-      return CreateClothesViewController.patternTypes.count
+      return ItemViewController.patternTypes.count
     case .printTypePicker:
-      return CreateClothesViewController.printTypes.count
-    case .clothesSizePicker:
-      return CreateClothesViewController.clothesSize.count
+      return ItemViewController.printTypes.count
+    case .itemTypePicker:
+      return ItemViewController.types.count
     }
   }
   
@@ -422,15 +426,15 @@ extension CreateClothesViewController: UIPickerViewDelegate, UIPickerViewDataSou
     
     switch pickerMode! {
     case .materialPicker:
-      return CreateClothesViewController.materials[index].rawValue
-    case .clothesColorPicker:
-      return CreateClothesViewController.clothesColors[index].rawValue
+      return ItemViewController.materials[index].rawValue
+    case .colorPicker:
+      return ItemViewController.itemColors[index].rawValue
     case .patternTypePicker:
-      return CreateClothesViewController.patternTypes[index].rawValue
+      return ItemViewController.patternTypes[index].rawValue
     case .printTypePicker:
-      return CreateClothesViewController.printTypes[index].rawValue
-    case .clothesSizePicker:
-      return CreateClothesViewController.clothesSize[index].rawValue
+      return ItemViewController.printTypes[index].rawValue
+    case .itemTypePicker:
+      return ItemViewController.types[index].rawValue
     }
   }
   
@@ -447,19 +451,19 @@ extension CreateClothesViewController: UIPickerViewDelegate, UIPickerViewDataSou
     
     switch pickerMode! {
     case .materialPicker:
-      selectedMaterial = CreateClothesViewController.materials[row]
-    case .clothesColorPicker:
-      selectedClothesColor = CreateClothesViewController.clothesColors[row]
+      selectedMaterial = ItemViewController.materials[row]
+    case .colorPicker:
+      selectedColor = ItemViewController.itemColors[row]
     case .patternTypePicker:
-      selectedPatternType = CreateClothesViewController.patternTypes[row]
+      selectedPatternType = ItemViewController.patternTypes[row]
     case .printTypePicker:
-      selectedPrintType = CreateClothesViewController.printTypes[row]
-    case .clothesSizePicker:
-      selectedClothesSize = CreateClothesViewController.clothesSize[row]
+      selectedPrintType = ItemViewController.printTypes[row]
+    case .itemTypePicker:
+      selectedItemType = ItemViewController.types[row]
     }
   }
   
-  @objc func chooseClothesPhoto(_ sender: Any) {
+  @objc func choosePhoto(_ sender: Any) {
     let takePhotoString = NSLocalizedString("take-photo", comment: "")
     let choosePhotoString = NSLocalizedString("choose-gallery-photo", comment: "")
     let selectPhotoString = NSLocalizedString("select-photo", comment: "")
@@ -485,20 +489,20 @@ extension CreateClothesViewController: UIPickerViewDelegate, UIPickerViewDataSou
 }
 
 //Mark: - Loading
-extension CreateClothesViewController: LoadingScreenDelegate {
+extension ItemViewController: LoadingScreenDelegate {
   
 }
 
 //Mark: - Scrollable
-extension CreateClothesViewController: UIViewControllerScrollable {
+extension ItemViewController: UIViewControllerScrollable {
   
 }
 
 //Mark: - Image Picker Delegate
-extension CreateClothesViewController: PhotoPickerDelegate {
+extension ItemViewController: PhotoPickerDelegate {
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-    clothesImageView.image = pickedImage
+    itemImageView.image = pickedImage
     self.dismiss(animated: true, completion: nil)
   }
 }

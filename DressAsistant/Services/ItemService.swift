@@ -1,5 +1,5 @@
 //
-//  ClothesService.swift
+//  ItemService.swift
 //  DressAsistant
 //
 //  Created by Libranner Leonel Santos Espinal on 14/07/2019.
@@ -10,17 +10,17 @@ import Foundation
 import FirebaseFirestore
 import CodableFirebase
 
-struct ClothesService {
-  private let root = "clothes"
+struct ItemService {
+  private let root = "items"
   
   func getAll(completion:@escaping (_ error: CustomError?,
-    _ data: [Clothes]) -> Void) {
+    _ data: [Item]) -> Void) {
     
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     
     docRef.getDocuments { (querySnapshot, err) in
-      var data = [Clothes]()
+      var data = [Item]()
       if let err = err {
         print("Error getting documents: \(err)")
         completion(CustomError.errorGettingData, data)
@@ -28,25 +28,25 @@ struct ClothesService {
         for document in querySnapshot!.documents {
           
           var model = document.data()
-          var clothes = try! FirestoreDecoder().decode(Clothes.self,
+          var item = try! FirestoreDecoder().decode(Item.self,
                                                        from: document.data())
           
           if let imageURL = model["imageUrl"] as? String {
-            clothes.imageURL = URL(string: imageURL)!
+            item.imageURL = URL(string: imageURL)!
           }
           
-          data.append(clothes)
+          data.append(item)
         }
         completion(nil, data)
       }
     }
   }
   
-  func save(_ clothes: Clothes, completion:@escaping (_ error: CustomError?,
+  func save(_ item: Item, completion:@escaping (_ error: CustomError?,
     _ success: Bool) -> Void) -> String {
     
     let db = Firestore.firestore()
-    let docData = try! FirestoreEncoder().encode(clothes)
+    let docData = try! FirestoreEncoder().encode(item)
     
     let ref = db.collection(root).addDocument(data: docData) {
       error in
@@ -62,11 +62,11 @@ struct ClothesService {
     return ref.documentID
   }
   
-  func update(key: String, clothes: Clothes, completion:@escaping (_ error: CustomError?,
+  func update(key: String, item: Item, completion:@escaping (_ error: CustomError?,
     _ success: Bool) -> Void) {
     
     let db = Firestore.firestore()
-    let docData = try! FirestoreEncoder().encode(clothes)
+    let docData = try! FirestoreEncoder().encode(item)
 
     db.collection(root).document(key).setData(docData) {
       error in
@@ -80,10 +80,10 @@ struct ClothesService {
     }
   }
   
-  func delete(_ clothesId: String, completion:@escaping (_ error: CustomError?,
+  func delete(_ itemId: String, completion:@escaping (_ error: CustomError?,
     _ success: Bool) -> Void) {
     let db = Firestore.firestore()
-    db.collection(root).document(clothesId).delete {
+    db.collection(root).document(itemId).delete {
       error in
       if let error = error {
         print("Error deleting document: \(error)")

@@ -23,6 +23,7 @@
 "error-modal-title" = "Oops!";
 "remove-item" = "¿Está seguro que desea eliminar %@?";
 "save-title" = "Guardar";
+"new-item-title" = "Nuevo Item";
 
 //Entitites
 "affiliate" = "Afiliado";
@@ -51,11 +52,12 @@
 "skin-color-field" = "color de piel";
 "hair-color-field" = "color de pelo";
 
-//Fields Clothes
+//Fields Item
 "detail-field" = "Detalle";
 "material-field" = "Material";
-"clothes-size-field" = "Tamaño";
-"clothes-color-field" = "Color";
+"item-size-field" = "Tamaño";
+"item-color-field" = "Color";
 "print-type-field" = "Estampado";
 "pattern-type-field" = "Patrón";
+"item-type-field" = "Tipo";
 

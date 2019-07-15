@@ -78,10 +78,10 @@ class ClothesDetailViewController: BaseViewController {
       make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.45).labeled("ImageViewHeight")
     }
     
-    setupClotheInfo()
+    setupInfo()
   }
   
-  func setupClotheInfo() {
+  func setupInfo() {
     let data = ["Description":"Test Test Test", "Size": "sdfsdf"]
     
     let infoStackView = UIStackView()

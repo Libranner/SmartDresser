@@ -1,5 +1,5 @@
 //
-//  Clothes.swift
+//  Item.swift
 //  DressAsistant
 //
 //  Created by Libranner Leonel Santos Espinal on 14/07/2019.
@@ -25,12 +25,12 @@ enum PrintType: String, Codable, CaseIterable {
   case uno
 }
 
-enum ClothesColor: String, Codable, CaseIterable {
+enum ItemColor: String, Codable, CaseIterable {
   case none = ""
   case blanco
 }
 
-enum ClothesSize: String, Codable, CaseIterable {
+enum itemSize: String, Codable, CaseIterable {
   case none = ""
   case s
   case m
@@ -40,7 +40,14 @@ enum ClothesSize: String, Codable, CaseIterable {
   case xxxl
 }
 
-struct Clothes: Codable {
+enum ItemType: String, Codable, CaseIterable {
+  case none = ""
+  case shoes
+  case accessory
+  case clothes
+}
+
+struct Item: Codable {
   var key: String?
   var nfcCode: String
   var imageURL: URL
@@ -48,6 +55,6 @@ struct Clothes: Codable {
   var material: Material
   var patternType: PatternType
   var printType: PrintType
-  var color: ClothesColor
-  var size: ClothesSize
+  var color: ItemColor
+  var type: ItemType
 }
