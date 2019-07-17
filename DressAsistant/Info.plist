@@ -65,6 +65,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Necesitamos permisos para tomar la foto</string>
+	<key>NFCReaderUsageDescription</key>
+	<string>Acerca el celular a la pieza de ropa</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

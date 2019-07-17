@@ -46,6 +46,15 @@ struct UIHelper {
     return label
   }
   
+  func makeActivityIndicatior() -> UIActivityIndicatorView {
+    let activityIndicatorView = UIActivityIndicatorView()
+    activityIndicatorView.translatesAutoresizingMaskIntoConstraints = false
+    activityIndicatorView.hidesWhenStopped = true
+    activityIndicatorView.startAnimating()
+    
+    return activityIndicatorView
+  }
+  
   func makeDescriptionLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
     let label = makeLabel(localizationStringId, identifier: identifier)
     label.font = UIFont.boldSystemFont(ofSize: 14)

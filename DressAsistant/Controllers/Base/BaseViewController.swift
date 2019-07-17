@@ -36,6 +36,7 @@ class BaseViewController: UIViewController {
     navigationController?.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : CustomColor.topBarTextColor], for: .normal)
     
     let recognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+    recognizer.cancelsTouchesInView = false
     view.addGestureRecognizer(recognizer)
   }
   

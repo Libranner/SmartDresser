@@ -38,6 +38,11 @@ class ItemViewController: BaseViewController {
   lazy var loadingView = LoadingView()
   var existingItem: Item?
   
+  convenience init(item: Item) {
+    self.init()
+    existingItem = item
+  }
+  
   fileprivate var editMode: Bool {
     return existingItem != nil
   }
@@ -121,8 +126,8 @@ class ItemViewController: BaseViewController {
     return pickerView
   }
   
-  fileprivate lazy var itemImageView: UIImageView = {
-    let imageView = UIImageView()
+  fileprivate lazy var itemImageView: AsyncImageView = {
+    let imageView = AsyncImageView()
     imageView.contentMode = .scaleToFill
     imageView.layer.cornerRadius = UIConstants.defaultRadiusForBorder
     imageView.clipsToBounds = true
@@ -161,6 +166,8 @@ class ItemViewController: BaseViewController {
     return scrollView
   }()
   
+  fileprivate lazy var activityIndicatorView = UIHelper().makeActivityIndicatior()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -178,6 +185,35 @@ class ItemViewController: BaseViewController {
     self.title = NSLocalizedString(Localizations.newItemTitle, comment: "")
     
     setupUI()
+    
+    if existingItem != nil {
+      fillUpForm()
+      deleteButton.isHidden = false
+    }
+  }
+  
+  private func fillUpForm() {
+    if let item = existingItem {
+      detailTextField.text = item.detail
+      selectedMaterial = item.material
+      selectedItemType = item.type
+      selectedColor = item.color
+      selectedPatternType = item.patternType
+      selectedPrintType = item.printType
+      
+      scrollView.addSubview(activityIndicatorView)
+      activityIndicatorView.snp.makeConstraints { make in
+        make.center.equalTo(itemImageView)
+      }
+      
+      activityIndicatorView.startAnimating()
+      itemImageView.fillWithURL(item.imageURL, placeholder: nil) { [weak self] _ in
+        self?.activityIndicatorView.stopAnimating()
+      }
+    }
+    else {
+      showErrorMessage(.errorGettingData)
+    }
   }
   
   @objc func showingKeyboard(notification: NSNotification) {
@@ -239,7 +275,7 @@ class ItemViewController: BaseViewController {
   
   fileprivate func uploadPhoto(completion: @escaping (_ photoURL: URL)-> Void) {
     if let data = itemImageView.image?.pngData() {
-      FileService().uploadAffiliatePhoto(data) { [weak self] error,
+      FileService().uploadItemPhoto(data) { [weak self] error,
         success, photoURL in
         
         if success {
@@ -365,9 +401,9 @@ class ItemViewController: BaseViewController {
   }
   
   private func delete() {
-    showLoading()
     if let key = existingItem?.key {
-      AffiliateService().delete(key) { [weak self] error, success in
+      showLoading()
+      ItemService().delete(key) { [weak self] error, success in
         self?.hideLoading()
         if success {
           DispatchQueue.main.async {
@@ -378,6 +414,9 @@ class ItemViewController: BaseViewController {
           print(error ?? "")
         }
       }
+    }
+    else {
+      showErrorMessage(CustomError.generic)
     }
   }
   

@@ -25,6 +25,7 @@
 "save-title" = "Guardar";
 "new-item-title" = "Nuevo Item";
 "remove-button-title" = "Eliminar";
+"inventory-title" = "Inventario";
 
 //Entitites
 "item" = "Item";

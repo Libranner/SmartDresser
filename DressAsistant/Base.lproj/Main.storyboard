@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="-7927.1999999999998" y="-2883.2512315270938"/>
         </scene>
-        <!--Item View Controller-->
+        <!--Inventory View Controller-->
         <scene sceneID="xhU-zr-UD8">
             <objects>
-                <viewController id="jqN-n7-ecn" customClass="ItemViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jqN-n7-ecn" customClass="InventoryViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3R-mt-g2r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7r5-8D-itq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7406" y="-3327"/>
+            <point key="canvasLocation" x="-8391" y="-3598"/>
         </scene>
         <!--Armario-->
         <scene sceneID="B2j-Nu-rT2">

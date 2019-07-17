@@ -13,6 +13,29 @@ import CodableFirebase
 struct ItemService {
   private let root = "items"
   
+  func get(withId id:String, completion:@escaping (_ error: ItemError?,
+    _ data: Item?) -> Void) {
+    
+    let db = Firestore.firestore()
+    let docRef = db.collection(root)
+    
+    docRef.document(id).getDocument { (snapshot, error) in
+      guard error == nil else {
+        print("Error getting documents: \(String(describing: error))")
+        completion(ItemError.generic, nil)
+        return
+      }
+
+      if let snapshot = snapshot {
+        let item = self.convertToItem(document: snapshot)
+        completion(nil, item)
+      }
+      else {
+        completion(ItemError.notFound, nil)
+      }
+    }
+  }
+  
   func getAll(completion:@escaping (_ error: CustomError?,
     _ data: [Item]) -> Void) {
     
@@ -26,20 +49,28 @@ struct ItemService {
         completion(CustomError.errorGettingData, data)
       } else {
         for document in querySnapshot!.documents {
-          
-          var model = document.data()
-          var item = try! FirestoreDecoder().decode(Item.self,
-                                                       from: document.data())
-          
-          if let imageURL = model["imageUrl"] as? String {
-            item.imageURL = URL(string: imageURL)!
+          if let item = self.convertToItem(document: document) {
+            data.append(item)
           }
-          
-          data.append(item)
         }
         completion(nil, data)
       }
     }
+  }
+  
+  private func convertToItem(document: DocumentSnapshot) -> Item? {
+    guard let model = document.data() else {
+      return nil
+    }
+
+    var item = try! FirestoreDecoder().decode(Item.self,
+                                              from: model)
+    item.key = document.documentID
+    if let imageURL = model["imageUrl"] as? String {
+      item.imageURL = URL(string: imageURL)!
+    }
+    
+    return item
   }
   
   func save(_ item: Item, completion:@escaping (_ error: CustomError?,

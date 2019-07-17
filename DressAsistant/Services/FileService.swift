@@ -11,7 +11,8 @@ import Firebase
 
 struct FileService {
   fileprivate let userPhotosPath = "userPhotos"
-  fileprivate let affiliatePhotosPath = "affiliatePhotos"
+  fileprivate let affiliatesPhotosPath = "affiliatePhotos"
+  fileprivate let itemsPhotosPath = "itemPhotos"
   
   fileprivate func uploadFile(path: String, data: Data, completion:@escaping (_ error: CustomError?,
     _ success: Bool, _ photoURL: URL?)->Void) {
@@ -65,7 +66,14 @@ struct FileService {
   func uploadAffiliatePhoto(_ data: Data, completion:@escaping (_ error: CustomError?,
     _ success: Bool, _ photoURL: URL?)->Void) {
     let uuid = UUID()
-    let path = "\(affiliatePhotosPath)/\(uuid)"
+    let path = "\(affiliatesPhotosPath)/\(uuid)"
+    uploadFile(path: path, data: data, completion: completion)
+  }
+  
+  func uploadItemPhoto(_ data: Data, completion:@escaping (_ error: CustomError?,
+    _ success: Bool, _ photoURL: URL?)->Void) {
+    let uuid = UUID()
+    let path = "\(itemsPhotosPath)/\(uuid)"
     uploadFile(path: path, data: data, completion: completion)
   }
 }

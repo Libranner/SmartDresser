@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C5A68A66B1724A6E3E322121 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */; };
 		ED8501379C35D7888E1D95E7 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */; };
+		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
+		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
 		EE56050422AC3F1B00C0096B /* AssistantSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5604FF22AC3E7C00C0096B /* AssistantSignUp.storyboard */; };
 		EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050522AC660E00C0096B /* RoundedButton.swift */; };
 		EE56050822AC6A6A00C0096B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050722AC6A6A00C0096B /* UserService.swift */; };
@@ -87,6 +89,8 @@
 		A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		EE5604FE22AC3E7C00C0096B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AssistantSignUp.storyboard; sourceTree = "<group>"; };
 		EE56050122AC3EAD00C0096B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
 		EE56050322AC3EAE00C0096B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				EE83C543229987100046C43C /* RecommendationViewController.swift */,
 				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
 				EEE1D49222DAA8C400EF78D0 /* Inventory */,
+				EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				EECB329C22DC1456009D91BF /* ItemViewController.swift */,
 				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
 				EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */,
+				EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -477,6 +483,9 @@
 					EEF855F32289FCDA005E5B5C = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
 							com.apple.SafariKeychain = {
 								enabled = 1;
 							};
@@ -656,6 +665,7 @@
 				EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */,
 				EEA6701722D0E35F0002FE3D /* SkinColorService.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
+				EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */,
 				EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */,
 				EEACC06F22B6DE5B00C37990 /* AffiliateService.swift in Sources */,
 				EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */,
@@ -666,6 +676,7 @@
 				EECB329B22DC1263009D91BF /* Item.swift in Sources */,
 				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
 				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
+				EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */,
 				EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */,
 				EEACC07F22BBEB4A00C37990 /* OptionCollectionViewCell.swift in Sources */,
 				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,

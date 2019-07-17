@@ -15,3 +15,8 @@ enum CustomError: Error {
   case errorGettingData
   case errorSavingData
 }
+
+enum ItemError: Error {
+  case notFound
+  case generic
+}
