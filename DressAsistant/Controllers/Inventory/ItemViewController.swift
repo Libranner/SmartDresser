@@ -43,6 +43,11 @@ class ItemViewController: BaseViewController {
     existingItem = item
   }
   
+  convenience init(nfcCode: String) {
+    self.init()
+    self.nfcCode = nfcCode
+  }
+  
   fileprivate var editMode: Bool {
     return existingItem != nil
   }
@@ -425,8 +430,8 @@ class ItemViewController: BaseViewController {
     let itemString = NSLocalizedString(Localizations.item, comment: "")
     removeTitleString = String(format: removeTitleString, itemString)
     
-    let removeActionString = NSLocalizedString(BaseViewController.REMOVE_ACTION_STRING_ID, comment: "")
-    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    let removeActionString = NSLocalizedString(BaseViewController.Localizations.removeAction, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.Localizations.cancelAction, comment: "")
     
     let alertVC = UIAlertController(title: "", message: removeTitleString, preferredStyle: .actionSheet)
     let removeAction = UIAlertAction(title: removeActionString, style: .destructive) { [weak self] _ in
@@ -570,7 +575,7 @@ extension ItemViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     let takePhotoString = NSLocalizedString("take-photo", comment: "")
     let choosePhotoString = NSLocalizedString("choose-gallery-photo", comment: "")
     let selectPhotoString = NSLocalizedString("select-photo", comment: "")
-    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.Localizations.cancelAction, comment: "")
     
     let alertVC = UIAlertController(title: "", message: selectPhotoString, preferredStyle: .actionSheet)
     

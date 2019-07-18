@@ -13,6 +13,29 @@ import CodableFirebase
 struct ItemService {
   private let root = "items"
   
+  func get(withNFC nfcCode:String, completion:@escaping (_ error: ItemError?,
+    _ data: Item?) -> Void) {
+    
+    let db = Firestore.firestore()
+    let docRef = db.collection(root)
+    
+    docRef.whereField("nfcCode", isEqualTo: nfcCode).limit(to: 1).getDocuments { (querySnapshot, error) in
+      guard error == nil else {
+        print("Error getting documents: \(String(describing: error))")
+        completion(ItemError.generic, nil)
+        return
+      }
+      
+      if let snapshot = querySnapshot?.documents.first {
+        let item = self.convertToItem(document: snapshot)
+        completion(nil, item)
+      }
+      else {
+        completion(ItemError.notFound, nil)
+      }
+    }
+  }
+  
   func get(withId id:String, completion:@escaping (_ error: ItemError?,
     _ data: Item?) -> Void) {
     

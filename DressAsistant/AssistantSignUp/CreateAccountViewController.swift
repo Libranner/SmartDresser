@@ -11,10 +11,12 @@ import UIKit
 class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
   lazy var loadingView = LoadingView()
   
-  private let TAKE_PHOTO_STRING_ID = "take-photo"
-  private let CHOOSE_PHOTO_STRING_ID = "choose-gallery-photo"
-  private let SELECT_PHOTO_STRING_ID = "select-photo"
-  private let NICKNAME_FIELD_NAME_STRING_ID = "nickname-field"
+  enum Localizations {
+    static let takePhoto = "take-photo"
+    static let choosePhoto = "choose-gallery-photo"
+    static let selectPhoto = "select-photo"
+    static let nicknameField = "nickname-field"
+  }
   
   private let showMainSegue = "showMain"
   
@@ -37,10 +39,11 @@ class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
   
   @IBAction func selectProfilePhoto(_ sender: Any) {
     
-    let takePhotoString = NSLocalizedString(TAKE_PHOTO_STRING_ID, comment: "")
-    let choosePhotoString = NSLocalizedString(CHOOSE_PHOTO_STRING_ID, comment: "")
-    let selectPhotoString = NSLocalizedString(SELECT_PHOTO_STRING_ID, comment: "")
-    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    let takePhotoString = NSLocalizedString(Localizations.takePhoto, comment: "")
+    let choosePhotoString = NSLocalizedString(Localizations.choosePhoto, comment: "")
+    let selectPhotoString = NSLocalizedString(Localizations.selectPhoto, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.Localizations
+      .cancelAction, comment: "")
     
     let alertVC = UIAlertController(title: "", message: selectPhotoString, preferredStyle: .actionSheet)
     
@@ -76,7 +79,7 @@ class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
   @IBAction func saveButtonTapped(_ sender: Any) {
     
     guard nicknameTextfield.text != nil && !nicknameTextfield.text!.isEmpty else {
-      let nicknameString = NSLocalizedString(NICKNAME_FIELD_NAME_STRING_ID, comment: "")
+      let nicknameString = NSLocalizedString(Localizations.nicknameField, comment: "")
       showErrorMessage(CustomError.emptyField(fieldName: nicknameString))
       return
     }

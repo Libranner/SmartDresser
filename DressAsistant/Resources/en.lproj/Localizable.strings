@@ -18,6 +18,7 @@
 "take-photo" = "Tomar foto";
 "choose-gallery-photo" = "Escoger foto de la galería";
 "cancel-action" = "Cancelar";
+"yes-action" = "Sí";
 "ok-action" = "Ok";
 "remove-action" = "Eliminar";
 "error-modal-title" = "Oops!";
@@ -38,6 +39,7 @@
 "error-no-connection-msg" = "No hay conexión a internet";
 "error-could-no-authenticate-msg" = "Usuario debe autenticarse";
 "error-user-not-signed-msg" = "Usuario no ha iniciado sesión";
+"error-getting-data" = "No se puede obtener la data. Favor verifique su conexión.";
 
 "hecho" = "Hecho";
 
@@ -64,3 +66,6 @@
 "pattern-type-field" = "Patrón";
 "item-type-field" = "Tipo";
 
+//Alerts
+"item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";
+"item-exists-message" = "Item existe. ¿Desea actualizarlo?";

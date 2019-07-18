@@ -12,13 +12,15 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   lazy var loadingView = LoadingView()
   var existingAffiliate: Affiliate?
   
-  private let TAKE_PHOTO_STRING_ID = "take-photo"
-  private let CHOOSE_PHOTO_STRING_ID = "choose-gallery-photo"
-  private let SELECT_PHOTO_STRING_ID = "select-photo"
-  private let NICKNAME_FIELD_NAME_STRING_ID = "nickname-field"
-  private let REMOVE_ITEM_STRING_ID = "remove-item"
-  private let AFFILIATE_STRING_ID = "affiliate"
-  
+  enum Localizations {
+    static let takePhoto = "take-photo"
+    static let choosePhoto = "choose-gallery-photo"
+    static let selectPhoto = "select-photo"
+    static let nicknameField = "nickname-field"
+    static let removeItem = "remove-item"
+    static let affiliate = "affiliate"
+  }
+
   private let affiliateCardSegueName = "showAffiliateCard"
   private let optionPickerSegueName = "showOptionPicker"
   
@@ -336,11 +338,13 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   }
   
   private func askUserBeforeDeletion() {
-    var removeTitleString = NSLocalizedString(REMOVE_ITEM_STRING_ID, comment: "")
-    let affiliateString = NSLocalizedString(AFFILIATE_STRING_ID, comment: "")
+    var removeTitleString = NSLocalizedString(Localizations.removeItem, comment: "")
+    let affiliateString = NSLocalizedString(Localizations.affiliate, comment: "")
     removeTitleString = String(format: removeTitleString, affiliateString)
-    let removeActionString = NSLocalizedString(BaseViewController.REMOVE_ACTION_STRING_ID, comment: "")
-    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    let removeActionString = NSLocalizedString(BaseViewController.Localizations
+      .removeAction, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.Localizations
+      .cancelAction, comment: "")
     
     let alertVC = UIAlertController(title: "", message: removeTitleString, preferredStyle: .actionSheet)
     
@@ -357,10 +361,10 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   
   
   @IBAction func selectProfilePhoto(_ sender: Any) {
-    let takePhotoString = NSLocalizedString(TAKE_PHOTO_STRING_ID, comment: "")
-    let choosePhotoString = NSLocalizedString(CHOOSE_PHOTO_STRING_ID, comment: "")
-    let selectPhotoString = NSLocalizedString(SELECT_PHOTO_STRING_ID, comment: "")
-    let cancelActionString = NSLocalizedString(BaseViewController.CANCEL_ACTION_STRING_ID, comment: "")
+    let takePhotoString = NSLocalizedString(Localizations.takePhoto, comment: "")
+    let choosePhotoString = NSLocalizedString(Localizations.choosePhoto, comment: "")
+    let selectPhotoString = NSLocalizedString(Localizations.selectPhoto, comment: "")
+    let cancelActionString = NSLocalizedString(BaseViewController.Localizations.cancelAction, comment: "")
     
     let alertVC = UIAlertController(title: "", message: selectPhotoString, preferredStyle: .actionSheet)
     

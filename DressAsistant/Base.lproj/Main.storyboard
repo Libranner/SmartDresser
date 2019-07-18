@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKD-62-9zR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tfC-Q5-ws2">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Identificar Ropa-->
         <scene sceneID="VBt-cQ-R6W">
             <objects>
-                <viewController id="YYK-AG-lht" sceneMemberID="viewController">
+                <viewController id="YYK-AG-lht" customClass="NFCReaderViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JCm-j5-mOg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="gBN-22-Hg5" kind="show" id="4Cd-b6-fYH"/>
+                                    <action selector="startScanning" destination="YYK-AG-lht" eventType="touchUpInside" id="aw7-Lv-rGl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,9 +47,6 @@
                         <viewLayoutGuide key="safeArea" id="7rK-YZ-PnV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Identificar Ropa" id="pya-e5-wxZ"/>
-                    <connections>
-                        <segue destination="gBN-22-Hg5" kind="show" identifier="showDetail" id="5zP-gP-s0S"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fq-H4-uSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eg-cU-r3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2666.4000000000001" y="-2590.6403940886698"/>
+            <point key="canvasLocation" x="-639" y="-2628"/>
         </scene>
         <!--Agregar Nueva Pieza-->
         <scene sceneID="ivH-JZ-h3g">
@@ -110,7 +107,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abs-xq-tv4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5482.3999999999996" y="-2256.6502463054189"/>
+            <point key="canvasLocation" x="-7297" y="-2096"/>
         </scene>
         <!--Affiliate-->
         <scene sceneID="nWP-ZW-el8">
@@ -224,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="-7927.1999999999998" y="-2883.2512315270938"/>
         </scene>
-        <!--Inventory View Controller-->
+        <!--Reader View Controller-->
         <scene sceneID="xhU-zr-UD8">
             <objects>
-                <viewController id="jqN-n7-ecn" customClass="InventoryViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jqN-n7-ecn" customClass="NFCReaderViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3R-mt-g2r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,7 +265,4 @@
         <image name="tapToScan" width="83" height="34"/>
         <image name="user-tab-icon" width="34" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="4Cd-b6-fYH"/>
-    </inferredMetricsTieBreakers>
 </document>

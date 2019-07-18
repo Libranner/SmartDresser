@@ -11,16 +11,20 @@ import SnapKit
 
 class BaseViewController: UIViewController {
   //ERROR MESSAGES LOCALIZATIOND IDS
-  internal static let ERROR_MODAL_TITLE_STRING_ID = "error-modal-title"
-  internal static let ERROR_NO_CONNECTION = "error-no-connection-msg"
-  internal static let ERROR_EMPTY_FIELD = "error-empty-field-msg"
-  internal static let ERROR_COULD_NOT_AUTHENTICATE = "error-could-no-authenticate-msg"
-  internal static let ERROR_USER_NOT_SIGNED = "error-user-not-signed-msg"
-  
-  internal static let OK_ACTION_STRING_ID = "ok-action"
-  internal static let CANCEL_ACTION_STRING_ID = "cancel-action"
-  internal static let REMOVE_ACTION_STRING_ID = "remove-action"
-  
+  enum Localizations {
+    static let errorModalTitle = "error-modal-title"
+    static let errorNoConnection = "error-no-connection-msg"
+    static let errorEmptyField = "error-empty-field-msg"
+    static let errorCouldNotAuthenticate = "error-could-no-authenticate-msg"
+    static let errorUserNotSigned = "error-user-not-signed-msg"
+    static let errorGettingData = "error-getting-data"
+    
+    static let okAction = "ok-action"
+    static let yesAction = "ok-action"
+    static let cancelAction = "cancel-action"
+    static let removeAction = "remove-action"
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -45,31 +49,37 @@ class BaseViewController: UIViewController {
   }
   
   fileprivate var connectionErrorMessage: String = {
-    return NSLocalizedString(ERROR_NO_CONNECTION, comment: "")
+    return NSLocalizedString(Localizations.errorGettingData, comment: "")
+  }()
+  
+  fileprivate var errorGettingDataMessage: String = {
+    return NSLocalizedString(Localizations.errorGettingData, comment: "")
   }()
   
   fileprivate var userNotSignedInMessage: String = {
-    return NSLocalizedString(ERROR_USER_NOT_SIGNED, comment: "")
+    return NSLocalizedString(Localizations.errorUserNotSigned, comment: "")
   }()
   
   private func emptyFieldMessage(_ fieldName: String) -> String {
-    let localizedString = NSLocalizedString(BaseViewController.ERROR_EMPTY_FIELD, comment: "")
+    let localizedString = NSLocalizedString(Localizations.errorEmptyField, comment: "")
     return String(format: localizedString, fieldName)
   }
   
   func showErrorMessage( _ error: CustomError) {
     var message = ""
     switch error as CustomError {
-    case .generic, .errorSavingData, .errorGettingData:
+    case .generic, .errorSavingData:
       message = connectionErrorMessage
+    case .errorGettingData:
+      message = errorGettingDataMessage
     case .emptyField(let fieldName):
       message = emptyFieldMessage(fieldName)
     case .usersNotSignedIn:
       message = userNotSignedInMessage
     }
     
-    let title = NSLocalizedString(BaseViewController.ERROR_MODAL_TITLE_STRING_ID, comment: "")
-    let okString = NSLocalizedString(BaseViewController.OK_ACTION_STRING_ID, comment: "")
+    let title = NSLocalizedString(Localizations.errorModalTitle, comment: "")
+    let okString = NSLocalizedString(Localizations.okAction, comment: "")
     
     let alertVC = UIAlertController(title: title,
                                     message: message,
