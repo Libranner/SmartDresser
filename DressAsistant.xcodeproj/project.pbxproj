@@ -60,6 +60,7 @@
 		EECB329B22DC1263009D91BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329A22DC1263009D91BF /* Item.swift */; };
 		EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329C22DC1456009D91BF /* ItemViewController.swift */; };
 		EECB329F22DCC7A3009D91BF /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */; };
+		EED297E322E3E13800710814 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E222E3E13800710814 /* ModalView.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
@@ -146,6 +147,7 @@
 		EECB329A22DC1263009D91BF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EECB329C22DC1456009D91BF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		EED297E222E3E13800710814 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				EE56051222ADB58000C0096B /* LoadingView.swift */,
 				EE56051922ADE48E00C0096B /* GradientView.swift */,
 				EEA6701C22D1013C0002FE3D /* RoundedView.swift */,
+				EED297E222E3E13800710814 /* ModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -700,6 +703,7 @@
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
 				EE56050E22AC72CB00C0096B /* FileService.swift in Sources */,
 				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
+				EED297E322E3E13800710814 /* ModalView.swift in Sources */,
 				EEACC07B22BBE81D00C37990 /* OptionPickerViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
 				EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */,

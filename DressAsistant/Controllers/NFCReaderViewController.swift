@@ -22,6 +22,11 @@ class NFCReaderViewController: BaseViewController {
     super.viewDidLoad()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    let modal = ModalView(type: .success, title: "titulo de pruebatitulo de pruebatitulo de pruebatitulo de prueba", message: "titulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de pruebatitulo de prueba")
+    view.addSubview(modal)
+  }
+  
   @IBAction func startScanning() {
     session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true)
     session?.begin()
@@ -106,5 +111,12 @@ extension NFCReaderViewController: NFCNDEFReaderSessionDelegate {
         }
       }
     }
+  }
+}
+
+
+extension NFCReaderViewController: ModalViewDelegate {
+  func modalClosed(modalView: ModalView) {
+    
   }
 }

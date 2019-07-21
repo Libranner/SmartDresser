@@ -29,6 +29,14 @@ struct UIHelper {
     return textfield
   }
   
+  func makeTitleLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
+    let label = makeLabel(localizationStringId, identifier: identifier)
+    label.font = UIFont.boldSystemFont(ofSize: 14)
+    label.textColor = CustomColor.mainColor
+    
+    return label
+  }
+  
   func makeInfoLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
     let label = makeLabel(localizationStringId, identifier: identifier)
     label.font = UIFont.boldSystemFont(ofSize: 12)
