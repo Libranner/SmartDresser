@@ -5,7 +5,6 @@
 //  Created by Libranner Leonel Santos Espinal on 25/05/2019.
 //  Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
 //
-
 import UIKit
 import SnapKit
 
@@ -18,7 +17,6 @@ class BaseViewController: UIViewController {
     static let errorCouldNotAuthenticate = "error-could-no-authenticate-msg"
     static let errorUserNotSigned = "error-user-not-signed-msg"
     static let errorGettingData = "error-getting-data"
-    
     static let okAction = "ok-action"
     static let yesAction = "ok-action"
     static let cancelAction = "cancel-action"
