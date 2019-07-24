@@ -21,6 +21,8 @@ class ItemViewController: BaseViewController {
     static let saveTitle = "save-title"
     static let selectPhoto = "select-photo"
     static let newItemTitle = "new-item-title"
+    static let editItemTitle = "edit-item-title"
+    static let itemTitle = "item-title"
     static let deleteButtonTitle = "remove-button-title"
     static let removeItem = "remove-item"
     static let item = "item"
@@ -37,19 +39,22 @@ class ItemViewController: BaseViewController {
   var nfcCode: String?
   lazy var loadingView = LoadingView()
   var existingItem: Item?
+  var previewMode: Bool = false
   
-  convenience init(item: Item) {
+  convenience init(item: Item, previewMode: Bool = false) {
     self.init()
     existingItem = item
+    self.previewMode = previewMode
   }
   
-  convenience init(nfcCode: String) {
+  convenience init(nfcCode: String, previewMode: Bool = true) {
     self.init()
     self.nfcCode = nfcCode
+    self.previewMode = previewMode
   }
   
   fileprivate var editMode: Bool {
-    return existingItem != nil
+    return existingItem != nil && !previewMode
   }
   
   fileprivate var selectedMaterial: Material = .none {
@@ -176,24 +181,35 @@ class ItemViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let saveButtontitle = NSLocalizedString(Localizations.saveTitle, comment: "")
-    let saveButton = UIBarButtonItem(title: saveButtontitle, style: .plain,
-                                     target: self, action: #selector(save))
-    
-    navigationItem.rightBarButtonItem = saveButton
-    
     NotificationCenter.default.addObserver(self, selector:
       #selector(showingKeyboard), name:UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector:
       #selector(hidingKeyboard), name:UIResponder.keyboardWillHideNotification, object: nil)
     
-    self.title = NSLocalizedString(Localizations.newItemTitle, comment: "")
+    
     
     setupUI()
+    deleteButton.isHidden = !editMode
+    
+    if editMode {
+      let saveButtontitle = NSLocalizedString(Localizations.saveTitle, comment: "")
+      let saveButton = UIBarButtonItem(title: saveButtontitle, style: .plain,
+                                       target: self, action: #selector(save))
+      
+      navigationItem.rightBarButtonItem = saveButton
+      self.title = NSLocalizedString(Localizations.editItemTitle, comment: "")
+    }
+    else {
+      if previewMode {
+        self.title = NSLocalizedString(Localizations.itemTitle, comment: "")
+      }
+      else {
+        self.title = NSLocalizedString(Localizations.newItemTitle, comment: "")
+      }
+    }
     
     if existingItem != nil {
       fillUpForm()
-      deleteButton.isHidden = false
     }
   }
   
@@ -265,7 +281,7 @@ class ItemViewController: BaseViewController {
   
   fileprivate func persist(_ item: Item) {
     showLoading()
-    if existingItem == nil {
+    if !editMode {
       _ = ItemService().save(item) { [weak self] error, success in
         self?.handleResponse(error: error, success: success)
       }
@@ -570,6 +586,23 @@ extension ItemViewController: UIPickerViewDelegate, UIPickerViewDataSource {
       selectedItemType = ItemViewController.types[row]
     }
   }
+}
+
+//Mark: - Loading
+extension ItemViewController: LoadingScreenDelegate {
+}
+
+//Mark: - Scrollable
+extension ItemViewController: UIViewControllerScrollable {
+}
+
+//Mark: - Image Picker Delegate
+extension ItemViewController: PhotoPickerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+    itemImageView.image = pickedImage
+    self.dismiss(animated: true, completion: nil)
+  }
   
   @objc func choosePhoto(_ sender: Any) {
     let takePhotoString = NSLocalizedString("take-photo", comment: "")
@@ -593,22 +626,5 @@ extension ItemViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     alertVC.addAction(choosePhotoAction)
     alertVC.addAction(cancelAction)
     present(alertVC, animated: true)
-  }
-}
-
-//Mark: - Loading
-extension ItemViewController: LoadingScreenDelegate {
-}
-
-//Mark: - Scrollable
-extension ItemViewController: UIViewControllerScrollable {
-}
-
-//Mark: - Image Picker Delegate
-extension ItemViewController: PhotoPickerDelegate {
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-    itemImageView.image = pickedImage
-    self.dismiss(animated: true, completion: nil)
   }
 }

@@ -25,12 +25,17 @@
 "remove-item" = "¿Está seguro que desea eliminar %@?";
 "save-title" = "Guardar";
 "new-item-title" = "Nuevo Item";
+"edit-item-title" = "Editar Item";
+"item-title" = "Detalles del Item";
+"new-outfit-title" = "Nuevo Atuendo";
 "remove-button-title" = "Eliminar";
 "inventory-title" = "Inventario";
+"inventory-selection-title" = "Items seleccionados (%d)";
 
 //Entitites
 "item" = "Item";
 "affiliate" = "Afiliado";
+"outfit" = "Atuendo";
 
 //Errors
 "error-generic-title" = "Error";
@@ -57,6 +62,10 @@
 "skin-color-field" = "color de piel";
 "hair-color-field" = "color de pelo";
 
+//Titles
+"items-title" = "Items";
+"outfits-list-title" = "Listado de Atuendos";
+
 //Fields Item
 "detail-field" = "Detalle";
 "material-field" = "Material";
@@ -65,6 +74,10 @@
 "print-type-field" = "Estampado";
 "pattern-type-field" = "Patrón";
 "item-type-field" = "Tipo";
+"weather-field" = "Clima";
+"season-field" = "Estación";
+"event-type-field" = "Tipo de evento";
+"time-of-day-field" = "Tiempo";
 
 //Alerts
 "item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";

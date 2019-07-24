@@ -9,12 +9,14 @@
 import Foundation
 
 enum TimeOfDay: String, Codable, CaseIterable {
+  case none = ""
   case morning
   case afternoon
   case evening
 }
 
 enum Season: String, Codable, CaseIterable {
+  case none = ""
   case fall
   case spring
   case summer
@@ -22,6 +24,7 @@ enum Season: String, Codable, CaseIterable {
 }
 
 enum Weather: String, Codable, CaseIterable {
+  case none = ""
   case windy
   case rainy
   case sunny
@@ -29,6 +32,7 @@ enum Weather: String, Codable, CaseIterable {
 }
 
 enum EventType: String, Codable, CaseIterable {
+  case none = ""
   case gala
   case wedding
   case workRelated

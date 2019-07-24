@@ -59,7 +59,7 @@ class NFCReaderViewController: BaseViewController {
                                     preferredStyle: .alert)
     
     let okAction = UIAlertAction(title: okString, style: .default) { [weak self] _ in
-      let itemVC = ItemViewController(item: item)
+      let itemVC = ItemViewController(item: item, previewMode: true)
       self?.navigationController?.pushViewController(itemVC, animated: true)
     }
     alertVC.addAction(okAction)
@@ -82,7 +82,7 @@ class NFCReaderViewController: BaseViewController {
         return
       }
       
-      let itemVC = ItemViewController(item: unWrappedData)
+      let itemVC = ItemViewController(item: unWrappedData, previewMode: true)
       self?.navigationController?.pushViewController(itemVC, animated: true)
     }
   }

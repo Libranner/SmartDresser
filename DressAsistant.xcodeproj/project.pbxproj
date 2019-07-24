@@ -11,6 +11,10 @@
 		ED8501379C35D7888E1D95E7 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */; };
 		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
 		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
+		EE55C72822E878000075803C /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72722E878000075803C /* OutfitViewController.swift */; };
+		EE55C72A22E8C1EC0075803C /* ItemsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */; };
+		EE55C72C22E8E7CC0075803C /* OutfitsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72B22E8E7CC0075803C /* OutfitsCollectionViewController.swift */; };
+		EE55C72E22E8EA570075803C /* OutfitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72D22E8EA570075803C /* OutfitCollectionViewCell.swift */; };
 		EE56050422AC3F1B00C0096B /* AssistantSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5604FF22AC3E7C00C0096B /* AssistantSignUp.storyboard */; };
 		EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050522AC660E00C0096B /* RoundedButton.swift */; };
 		EE56050822AC6A6A00C0096B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050722AC6A6A00C0096B /* UserService.swift */; };
@@ -94,6 +98,10 @@
 		B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
+		EE55C72722E878000075803C /* OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
+		EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionLayout.swift; sourceTree = "<group>"; };
+		EE55C72B22E8E7CC0075803C /* OutfitsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsCollectionViewController.swift; sourceTree = "<group>"; };
+		EE55C72D22E8EA570075803C /* OutfitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE5604FE22AC3E7C00C0096B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AssistantSignUp.storyboard; sourceTree = "<group>"; };
 		EE56050122AC3EAD00C0096B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
 		EE56050322AC3EAE00C0096B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
@@ -197,6 +205,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE55C72622E877CE0075803C /* Outfit */ = {
+			isa = PBXGroup;
+			children = (
+				EE55C72722E878000075803C /* OutfitViewController.swift */,
+				EE55C72B22E8E7CC0075803C /* OutfitsCollectionViewController.swift */,
+				EE55C72D22E8EA570075803C /* OutfitCollectionViewCell.swift */,
+			);
+			path = Outfit;
+			sourceTree = "<group>";
+		};
 		EE56050F22AC91B600C0096B /* Errors */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +252,7 @@
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE55C72622E877CE0075803C /* Outfit */,
 				EE83C53C229978F30046C43C /* Base */,
 				EE83C53F229985440046C43C /* FinderViewController.swift */,
 				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
@@ -363,6 +382,7 @@
 				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
 				EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */,
 				EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */,
+				EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -670,6 +690,7 @@
 				EED297E522E5257F00710814 /* Outfit.swift in Sources */,
 				EEACC08122BBEF4C00C37990 /* Option.swift in Sources */,
 				EEA6701F22D10AF20002FE3D /* PhotoPickerDelegate.swift in Sources */,
+				EE55C72E22E8EA570075803C /* OutfitCollectionViewCell.swift in Sources */,
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
 				EEACC07922BAAADD00C37990 /* EyeColor.swift in Sources */,
 				EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */,
@@ -683,6 +704,7 @@
 				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
 				EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */,
 				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
+				EE55C72C22E8E7CC0075803C /* OutfitsCollectionViewController.swift in Sources */,
 				EECB329B22DC1263009D91BF /* Item.swift in Sources */,
 				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
 				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
@@ -693,9 +715,11 @@
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
+				EE55C72822E878000075803C /* OutfitViewController.swift in Sources */,
 				EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */,
 				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */,
+				EE55C72A22E8C1EC0075803C /* ItemsCollectionLayout.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
 				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
 				EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */,

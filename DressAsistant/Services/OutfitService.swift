@@ -15,7 +15,6 @@ struct OutfitService {
   
   func get(withId id:String, completion:@escaping (_ error: CustomError?,
     _ data: Outfit?) -> Void) {
-    
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     

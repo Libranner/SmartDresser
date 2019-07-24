@@ -1,14 +1,14 @@
 //
-//  ItemCollectionViewCell.swift
+//  OutfitCollectionViewCell.swift
 //  DressAsistant
 //
-//  Created by Libranner Leonel Santos Espinal on 17/07/2019.
+//  Created by Libranner Leonel Santos Espinal on 24/07/2019.
 //  Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
 //
 
 import UIKit
 
-class ItemCollectionViewCell: UICollectionViewCell {
+class OutfitCollectionViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupUI()
@@ -35,14 +35,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
     imageview.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     
     return imageview
-  }()
-  
-  lazy var nameLabel: UILabel = {
-    let nameLabel = UIHelper().makeInfoLabelFor("", identifier: nil)
-    nameLabel.numberOfLines = 0
-    nameLabel.translatesAutoresizingMaskIntoConstraints = false
-    
-    return nameLabel
   }()
   
   private lazy var labelContainerView: UIView = {
@@ -82,7 +74,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     let button = UIButton()
     button.setBackgroundImage(UIImage(named: "select-item-icon"), for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
-   
+    
     return button
   }()
   
@@ -103,15 +95,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
   }
   
   override func prepareForReuse() {
-    formatCell(showAsSelected: false)
+    
   }
-
+  
   private func setupUI() {
-    formatCell(showAsSelected: false)
     contentView.addSubview(mainStackView)
     contentView.addSubview(activityIndicatorView)
     contentView.backgroundColor = .white
-    
     contentView.translatesAutoresizingMaskIntoConstraints = false
     contentView.addSubview(mainStackView)
     contentView.addSubview(activityIndicatorView)
@@ -149,3 +139,4 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
   }
 }
+

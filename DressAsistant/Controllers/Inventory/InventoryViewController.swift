@@ -11,25 +11,43 @@ import UIKit
 class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   enum Localizations {
     static let inventoryTitle = "inventory-title"
+    static let inventorySelectionTitle = "inventory-selection-title"
   }
   
   lazy var loadingView = LoadingView()
   private let reuseIdentifier = "ItemCell"
   private var items = [Item]()
+  private var selectedItems = [Item]()
+  private var isInSelectMode = false
+  
+  convenience init(isInSelectMode: Bool) {
+    self.init()
+    self.isInSelectMode = isInSelectMode
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = NSLocalizedString(Localizations.inventoryTitle, comment: "")
+    self.title = NSLocalizedString(Localizations.inventoryTitle,
+                                   comment: "")
     
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItem))
+    let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                    target: self, action: #selector(addItem))
     navigationItem.rightBarButtonItem = addButton
+    
+    let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh,
+                                        target: self, action: #selector(refreshData))
+    navigationItem.leftBarButtonItem = refreshButton
     
     setupUI()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
+    loadData()
+  }
+  
+  @objc private func refreshData() {
+    selectedItems.removeAll()
     loadData()
   }
   
@@ -48,14 +66,7 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   }
   
   private lazy var collectionView: UICollectionView = {
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .vertical
-    layout.minimumLineSpacing = 20
-    layout.minimumInteritemSpacing = 5
-    layout.estimatedItemSize = CGSize(width: 1, height: 1)
-    layout.sectionInset = UIEdgeInsets(top: CGFloat(UIConstants.defaultTopSpace),
-                                       left: 5.0, bottom: 5.0, right: 5.0)
-    
+    let layout = ItemsCollectionLayout(direction: .vertical)
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     collectionView.backgroundColor = .white
     collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -93,16 +104,66 @@ extension InventoryViewController: UICollectionViewDataSource {
     
     let item = dataForIndex(indexPath.row)
     
+    if isInSelectMode {
+      let isAlreadySelected = isItemAlreadySelected(item)
+      cell.formatCell(showAsSelected: isAlreadySelected)
+    }
+
     cell.activityIndicatorView.startAnimating()
     cell.imageView.fillWithURL(item.imageURL, placeholder: nil) { _ in
       cell.activityIndicatorView.stopAnimating()
     }
 
     cell.nameLabel.text = item.detail
+    cell.selectItemButton.tag = indexPath.row
+    cell.selectItemButton.isHidden = !isInSelectMode
+    
+    if isInSelectMode {
+      cell.selectItemButton.addTarget(self, action: #selector(itemSelected), for: .touchUpInside)
+    }
+    
     return cell
+  }
+  
+  @objc private func itemSelected(sender: Any?) {
+    let button = sender as! UIButton
+    let selectedItem = dataForIndex(button.tag)
+    var isAdded = false
+    
+    if isItemAlreadySelected(selectedItem) {
+      selectedItems.removeAll { (item) -> Bool in
+        return item.key == selectedItem.key
+      }
+    }
+    else {
+      selectedItems.append(selectedItem)
+      isAdded = true
+    }
+    
+    if selectedItems.count > 0 {
+      let localizedString = NSLocalizedString(Localizations.inventorySelectionTitle, comment: "")
+      self.title = String(format: localizedString, selectedItems.count)
+    }
+    else {
+      self.title = NSLocalizedString(Localizations.inventoryTitle,
+                                     comment: "")
+    }
+    
+    if let cell = button.superview?.superview as? ItemCollectionViewCell {
+      cell.formatCell(showAsSelected: isAdded)
+    }
+  }
+  
+  private func isItemAlreadySelected(_ item: Item) -> Bool {
+    let result = selectedItems.first(where: { it -> Bool in
+      return it.key == item.key
+    })
+    
+    return result != nil
   }
   
   private func dataForIndex(_ index: Int) -> Item {
     return items[index]
   }
 }
+
