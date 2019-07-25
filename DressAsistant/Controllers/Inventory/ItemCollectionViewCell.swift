@@ -126,10 +126,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
       make.height.equalTo(UIConstants.separatorViewHeight)
     }
     
-    snp.makeConstraints { make in
-      make.edges.equalTo(contentView)
-    }
-    
     mainStackView.snp.makeConstraints { make in
       make.top.leading.trailing.equalToSuperview()
       make.bottom.equalTo(contentView).offset(-5)
