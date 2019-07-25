@@ -161,7 +161,7 @@ class ItemViewController: BaseViewController {
     return button
   }()
   
-  fileprivate lazy var mainStackView: UIStackView = {
+  private lazy var mainStackView: UIStackView = {
     let mainStackView = UIStackView()
     mainStackView.axis = .vertical
     mainStackView.distribution = .equalSpacing

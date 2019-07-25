@@ -60,7 +60,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     return view
   }()
   
-  fileprivate var separatorView: UIView = {
+  private var separatorView: UIView = {
     let view = UIHelper().makeSeparatorView()
     view.translatesAutoresizingMaskIntoConstraints = false
     
@@ -108,10 +108,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
 
   private func setupUI() {
     formatCell(showAsSelected: false)
-    contentView.addSubview(mainStackView)
-    contentView.addSubview(activityIndicatorView)
-    contentView.backgroundColor = .white
-    
     contentView.translatesAutoresizingMaskIntoConstraints = false
     contentView.addSubview(mainStackView)
     contentView.addSubview(activityIndicatorView)
