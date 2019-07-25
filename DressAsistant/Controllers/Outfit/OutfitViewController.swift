@@ -487,8 +487,6 @@ extension OutfitViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                   for: indexPath) as! ItemCollectionViewCell
-    
-
     let item = items[indexPath.row]
     
     cell.activityIndicatorView.startAnimating()
@@ -496,7 +494,7 @@ extension OutfitViewController: UICollectionViewDataSource {
       cell.activityIndicatorView.stopAnimating()
     }
     
-    cell.nameLabel.text = "\(indexPath.row) item.detail"
+    cell.nameLabel.text = item.detail
     cell.selectItemButton.isHidden = true
     
     return cell

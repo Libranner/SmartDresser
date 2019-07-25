@@ -27,41 +27,46 @@ class OutfitCollectionViewCell: UICollectionViewCell {
     return activityIndicatorView
   }()
   
-  lazy var imageView: AsyncImageView = {
-    let imageview = AsyncImageView()
-    imageview.translatesAutoresizingMaskIntoConstraints = false
-    imageview.clipsToBounds = true
-    imageview.layer.cornerRadius = 10
-    imageview.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-    
-    return imageview
+  lazy var dataLabel: UILabel = {
+    let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    label.numberOfLines = 0
+    label.translatesAutoresizingMaskIntoConstraints = false
+    return label
   }()
   
-  private lazy var labelContainerView: UIView = {
-    let view = UIView()
-    view.translatesAutoresizingMaskIntoConstraints = false
+  private var carousel: ItemsPictureViewController = {
+    let carousel = ItemsPictureViewController(picturesURLs: [])
     
-    view.addSubview(nameLabel)
-    view.snp.makeConstraints { make in
-      make.top.equalTo(nameLabel).offset(-5)
-      make.bottom.equalTo(nameLabel)
-      make.leading.equalTo(nameLabel).offset(-5)
-      make.trailing.equalTo(nameLabel).offset(5)
-    }
-    
-    return view
+    return carousel
   }()
   
-  fileprivate var separatorView: UIView = {
+  private var separatorView: UIView = {
     let view = UIHelper().makeSeparatorView()
     view.translatesAutoresizingMaskIntoConstraints = false
     
     return view
   }()
   
+  private lazy var carouselContainerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .white
+    view.clipsToBounds = true
+    view.layer.cornerRadius = 10
+    view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    
+    view.addSubview(carousel.view)
+    
+    carousel.view.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    
+    return view
+  }()
+  
   private lazy var mainStackView: UIStackView = {
-    let stackview = UIStackView(arrangedSubviews:
-      [imageView, separatorView, labelContainerView])
+    let stackview = UIStackView(arrangedSubviews: [carouselContainerView,
+                                                   separatorView,
+                                                   dataLabel])
     stackview.distribution = .equalSpacing
     stackview.axis = .vertical
     stackview.spacing = 0
@@ -70,20 +75,10 @@ class OutfitCollectionViewCell: UICollectionViewCell {
     return stackview
   }()
   
-  lazy var selectItemButton: UIButton = {
-    let button = UIButton()
-    button.setBackgroundImage(UIImage(named: "select-item-icon"), for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    
-    return button
-  }()
-  
-  func formatCell(showAsSelected: Bool) {
-    let borderColor = showAsSelected ? CustomColor.selectedItemColor.cgColor :
-      UIColor.lightGray.cgColor
-    let borderWidth: CGFloat = showAsSelected ? 2.0 : 1.0
-    let shadowColor = showAsSelected ? CustomColor.selectedItemColor.cgColor :
-      UIColor.black.cgColor
+  private func formatCell() {
+    let borderColor = UIColor.lightGray.cgColor
+    let borderWidth: CGFloat = 2.0
+    let shadowColor = UIColor.black.cgColor
     
     contentView.layer.cornerRadius = 10
     contentView.layer.borderWidth = borderWidth
@@ -95,48 +90,38 @@ class OutfitCollectionViewCell: UICollectionViewCell {
   }
   
   override func prepareForReuse() {
-    
+
+  }
+  
+  func setPictures(_ urls:[URL]) {
+    carousel.picturesURLs = urls
   }
   
   private func setupUI() {
-    contentView.addSubview(mainStackView)
-    contentView.addSubview(activityIndicatorView)
-    contentView.backgroundColor = .white
+    formatCell()
+
     contentView.translatesAutoresizingMaskIntoConstraints = false
     contentView.addSubview(mainStackView)
-    contentView.addSubview(activityIndicatorView)
-    contentView.addSubview(selectItemButton)
     contentView.backgroundColor = .white
     
-    activityIndicatorView.snp.makeConstraints { make in
-      make.center.equalTo(imageView)
+    contentView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
     }
     
     separatorView.snp.makeConstraints { make in
       make.height.equalTo(UIConstants.separatorViewHeight)
     }
     
-    snp.makeConstraints { make in
-      make.edges.equalTo(contentView)
+    let width = Int(UIScreen.main.bounds.width * 0.7)
+    let height = Float(width) * 1.2
+    
+    carouselContainerView.snp.makeConstraints { make in
+      make.width.equalTo(width)
+      make.height.equalTo(height)
     }
     
     mainStackView.snp.makeConstraints { make in
-      make.top.leading.trailing.equalToSuperview()
-      make.bottom.equalTo(contentView).offset(-5)
-    }
-    
-    selectItemButton.snp.makeConstraints { make in
-      make.width.equalTo(25)
-      make.height.equalTo(selectItemButton.snp.width)
-      make.trailing.equalToSuperview().offset(-5)
-      make.bottom.equalTo(imageView).offset(-5)
-    }
-    
-    let width = Int((((UIScreen.main.bounds.width * 0.90) - 25) / 2))
-    imageView.snp.makeConstraints { make in
-      make.width.equalTo(width)
-      make.height.equalTo(imageView.snp.width)
+      make.edges.equalToSuperview()
     }
   }
 }
-
