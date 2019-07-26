@@ -66,6 +66,11 @@
 "items-title" = "Items";
 "outfits-list-title" = "Listado de Atuendos";
 
+//Segments
+"accesories-segment" = "📿 accesorios";
+"shoes-segment" = "👟 zapatos";
+"clothes-segment" = "🥼 vestimenta";
+
 //Fields Item
 "detail-field" = "Detalle";
 "material-field" = "Material";

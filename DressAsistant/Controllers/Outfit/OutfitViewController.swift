@@ -132,11 +132,6 @@ class OutfitViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    ItemService().getAll { (error, items) in
-      self.items = items
-      self.collectionView.reloadData()
-    }
-    
     let saveButtontitle = NSLocalizedString(Localizations.saveTitle, comment: "")
     let saveButton = UIBarButtonItem(title: saveButtontitle, style: .plain,
                                      target: self, action: #selector(save))
@@ -192,6 +187,9 @@ class OutfitViewController: BaseViewController {
       selectedSeason = outfit.season
       selectedEventType = outfit.eventType
       selectedWeather = outfit.weather
+      
+      self.items = outfit.items
+      self.collectionView.reloadData()
     }
     else {
       

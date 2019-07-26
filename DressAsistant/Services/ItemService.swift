@@ -59,24 +59,37 @@ struct ItemService {
     }
   }
   
-  func getAll(completion:@escaping (_ error: CustomError?,
+  fileprivate func parseData(_ err: Error?,
+                             _ querySnapshot: QuerySnapshot?,
+                             completion:(_ error: CustomError?, _ data: [Item])-> Void) {
+    var data = [Item]()
+    if let err = err {
+      print("Error getting documents: \(err)")
+      completion(CustomError.errorGettingData, data)
+    } else {
+      for document in querySnapshot!.documents {
+        if let item = self.convertToItem(document: document) {
+          data.append(item)
+        }
+      }
+      completion(nil, data)
+    }
+  }
+  
+  func getAll(type: ItemType?, completion:@escaping (_ error: CustomError?,
     _ data: [Item]) -> Void) {
     
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     
-    docRef.getDocuments { (querySnapshot, err) in
-      var data = [Item]()
-      if let err = err {
-        print("Error getting documents: \(err)")
-        completion(CustomError.errorGettingData, data)
-      } else {
-        for document in querySnapshot!.documents {
-          if let item = self.convertToItem(document: document) {
-            data.append(item)
-          }
-        }
-        completion(nil, data)
+    if type != nil {
+      docRef.whereField("type", isEqualTo: type!.rawValue).getDocuments { (querySnapshot, err) in
+          self.parseData(err, querySnapshot, completion: completion)
+      }
+    }
+    else {
+      docRef.getDocuments { (querySnapshot, err) in
+        self.parseData(err, querySnapshot, completion: completion)
       }
     }
   }
