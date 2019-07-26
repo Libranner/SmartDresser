@@ -47,8 +47,12 @@ class OutfitsCollectionViewController: BaseViewController {
                                     target: self, action: #selector(addItem))
     navigationItem.rightBarButtonItem = addButton
     
-    loadData()
     setupUI()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    loadData()
   }
   
   private func setupUI() {
@@ -89,13 +93,15 @@ extension OutfitsCollectionViewController: UICollectionViewDataSource {
                                                   for: indexPath) as! OutfitCollectionViewCell
     
     let outfit = outfits[indexPath.row]
-    cell.dataLabel.text = outfit.eventType.rawValue
+    cell.weatherLabel.text = outfit.weather.rawValue
+    cell.seasonLabel.text = outfit.season.rawValue
+    cell.eventTypeLabel.text = outfit.eventType.rawValue
+    cell.timeOfDayLabel.text = outfit.timeOfDay.rawValue
+    cell.messageLabel.text = "\(outfit.items.count) piezas de ropa"
     
     let picturesURLs = [URL(string: "https://www.boden.co.uk/content/dam/boden/homepage-and-landing-pages/drop-7_19/2-womens/WW_WK1_CB31.jpg.rendition.290.870.jpg")!, URL(string: "https://media.kohlsimg.com/is/image/kohls/wo-dtm-b4-20190704-d2?scl=1&fmt=pjpeg&qlt=80,1")! ]
     
     cell.setPictures(picturesURLs)
-    
-    cell.contentView.backgroundColor = .red
     return cell
   }
 }
@@ -103,7 +109,8 @@ extension OutfitsCollectionViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension OutfitsCollectionViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+    let outfit = outfits[indexPath.row]
+    navigationController?.pushViewController(OutfitViewController(outfit: outfit), animated: true)
   }
 }
 

@@ -27,16 +27,48 @@ class OutfitCollectionViewCell: UICollectionViewCell {
     return activityIndicatorView
   }()
   
-  lazy var dataLabel: UILabel = {
+  lazy var timeOfDayLabel: UILabel = {
+    let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    label.textColor = .white
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textAlignment = .center
+    return label
+  }()
+  
+  lazy var weatherLabel: UILabel = {
+    let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    label.textColor = .white
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textAlignment = .center
+    return label
+  }()
+  
+  lazy var seasonLabel: UILabel = {
+    let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    label.textColor = .white
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textAlignment = .center
+    return label
+  }()
+  
+  lazy var eventTypeLabel: UILabel = {
+    let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    label.textColor = .white
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textAlignment = .center
+    return label
+  }()
+  
+  lazy var messageLabel: UILabel = {
     let label = UIHelper().makeInfoLabelFor("", identifier: nil)
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.textAlignment = .center
     return label
   }()
   
   private var carousel: ItemsPictureViewController = {
     let carousel = ItemsPictureViewController(picturesURLs: [])
-    
     return carousel
   }()
   
@@ -55,7 +87,6 @@ class OutfitCollectionViewCell: UICollectionViewCell {
     view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     
     view.addSubview(carousel.view)
-    
     carousel.view.snp.makeConstraints { make in
       make.edges.equalToSuperview()
     }
@@ -63,16 +94,48 @@ class OutfitCollectionViewCell: UICollectionViewCell {
     return view
   }()
   
-  private lazy var mainStackView: UIStackView = {
-    let stackview = UIStackView(arrangedSubviews: [carouselContainerView,
-                                                   separatorView,
-                                                   dataLabel])
-    stackview.distribution = .equalSpacing
-    stackview.axis = .vertical
-    stackview.spacing = 0
-    stackview.translatesAutoresizingMaskIntoConstraints = false
+  private func makePillView(_ label: UILabel) -> UIView {
+    let pillView = UIView()
+    pillView.translatesAutoresizingMaskIntoConstraints = false
     
-    return stackview
+    let padding: CGFloat = 5
+    let height = label.font.pointSize + padding * 2
+    
+    pillView.layer.cornerRadius = height/2
+    pillView.backgroundColor = CustomColor.secondaryColor
+    pillView.addSubview(label)
+    
+    label.snp.makeConstraints { make in
+      make.top.equalToSuperview().offset(padding)
+      make.bottom.equalToSuperview().offset(-padding)
+      make.centerX.equalToSuperview()
+    }
+    
+    return pillView
+  }
+  
+  private lazy var dataStackView: UIStackView = {
+    let topStack = UIStackView(arrangedSubviews: [makePillView(timeOfDayLabel),
+                                                  makePillView(eventTypeLabel)])
+    topStack.distribution = .fillProportionally
+    topStack.spacing = 10
+    topStack.axis = .horizontal
+    topStack.translatesAutoresizingMaskIntoConstraints = false
+    
+    let middleStack = UIStackView(arrangedSubviews: [makePillView(weatherLabel),
+                                                     makePillView(seasonLabel)])
+    middleStack.distribution = .fillProportionally
+    middleStack.spacing = 10
+    middleStack.axis = .horizontal
+    middleStack.translatesAutoresizingMaskIntoConstraints = false
+    
+    let dataStackView = UIStackView(arrangedSubviews: [topStack, middleStack, messageLabel])
+    dataStackView.distribution = .fill
+    dataStackView.spacing = 7
+    dataStackView.axis = .vertical
+    dataStackView.translatesAutoresizingMaskIntoConstraints = false
+    
+    return dataStackView
   }()
   
   private func formatCell() {
@@ -90,7 +153,7 @@ class OutfitCollectionViewCell: UICollectionViewCell {
   }
   
   override func prepareForReuse() {
-
+    
   }
   
   func setPictures(_ urls:[URL]) {
@@ -99,29 +162,39 @@ class OutfitCollectionViewCell: UICollectionViewCell {
   
   private func setupUI() {
     formatCell()
-
+    
     contentView.translatesAutoresizingMaskIntoConstraints = false
-    contentView.addSubview(mainStackView)
+    //contentView.addSubview(mainStackView)
+    
+    contentView.addSubview(carouselContainerView)
+    contentView.addSubview(separatorView)
+    contentView.addSubview(dataStackView)
     contentView.backgroundColor = .white
     
     contentView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
-    }
-    
-    separatorView.snp.makeConstraints { make in
-      make.height.equalTo(UIConstants.separatorViewHeight)
+      make.width.equalTo(carouselContainerView)
     }
     
     let width = Int(UIScreen.main.bounds.width * 0.7)
     let height = Float(width) * 1.2
     
     carouselContainerView.snp.makeConstraints { make in
+      make.top.equalToSuperview()
       make.width.equalTo(width)
       make.height.equalTo(height)
     }
     
-    mainStackView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+    separatorView.snp.makeConstraints { make in
+      make.height.equalTo(UIConstants.separatorViewHeight)
+      make.leading.trailing.equalToSuperview()
+      make.top.equalTo(carouselContainerView.snp.bottom)
+    }
+    
+    dataStackView.snp.makeConstraints { make in
+      make.leading.equalToSuperview().offset(10)
+      make.bottom.trailing.equalToSuperview().offset(-10)
+      make.top.equalTo(separatorView.snp.bottom).offset(10)
     }
   }
 }

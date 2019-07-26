@@ -108,10 +108,12 @@ extension LoadingScreenDelegate where Self: UIViewController {
       self.loadingView.alpha = 1
     }
   }
-
+  
   func showLoading() {
     view.isUserInteractionEnabled = false
-    view.addSubview(loadingView)
+    
+    let window = UIApplication.shared.keyWindow!
+    window.addSubview(loadingView)
     
     loadingView.snp.makeConstraints { make in
       make.center.equalToSuperview()
