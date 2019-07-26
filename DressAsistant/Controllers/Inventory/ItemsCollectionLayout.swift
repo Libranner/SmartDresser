@@ -12,7 +12,8 @@ class ItemsCollectionLayout: UICollectionViewFlowLayout {
   convenience init(direction: UICollectionView.ScrollDirection) {
     self.init()
     scrollDirection = direction
-    estimatedItemSize = CGSize(width: 1, height: 1)
+    let width = Int((((UIScreen.main.bounds.width * 0.90) - 25) / 2))
+    estimatedItemSize = CGSize(width: width, height: width + 31)
     
     if direction == .horizontal {
       sectionInset = UIEdgeInsets(top: 5.0,

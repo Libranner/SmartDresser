@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="-7927.1999999999998" y="-2883.2512315270938"/>
         </scene>
-        <!--Inventory View Controller-->
+        <!--Outfits Collection View Controller-->
         <scene sceneID="xhU-zr-UD8">
             <objects>
-                <viewController id="jqN-n7-ecn" customClass="InventoryViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jqN-n7-ecn" customClass="OutfitsCollectionViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3R-mt-g2r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

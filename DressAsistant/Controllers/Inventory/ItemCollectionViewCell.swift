@@ -39,7 +39,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
   
   lazy var nameLabel: UILabel = {
     let nameLabel = UIHelper().makeInfoLabelFor("", identifier: nil)
-    nameLabel.numberOfLines = 0
+    nameLabel.numberOfLines = 1
     nameLabel.translatesAutoresizingMaskIntoConstraints = false
     
     return nameLabel
@@ -51,10 +51,13 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     view.addSubview(nameLabel)
     view.snp.makeConstraints { make in
-      make.top.equalTo(nameLabel).offset(-5)
-      make.bottom.equalTo(nameLabel)
-      make.leading.equalTo(nameLabel).offset(-5)
-      make.trailing.equalTo(nameLabel).offset(5)
+      make.height.equalTo(30)
+    }
+    
+    nameLabel.snp.makeConstraints { make in
+      make.centerY.equalToSuperview()
+      make.leading.equalToSuperview().offset(5)
+      make.trailing.equalToSuperview().offset(-5)
     }
     
     return view
@@ -114,6 +117,10 @@ class ItemCollectionViewCell: UICollectionViewCell {
     contentView.addSubview(selectItemButton)
     contentView.backgroundColor = .white
     
+    contentView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    
     activityIndicatorView.snp.makeConstraints { make in
       make.center.equalTo(imageView)
     }
@@ -123,8 +130,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     }
     
     mainStackView.snp.makeConstraints { make in
-      make.top.leading.trailing.equalToSuperview()
-      make.bottom.equalTo(contentView).offset(-5)
+      make.edges.equalToSuperview()
     }
     
     selectItemButton.snp.makeConstraints { make in

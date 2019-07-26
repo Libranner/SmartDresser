@@ -12,6 +12,9 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   enum Localizations {
     static let inventoryTitle = "inventory-title"
     static let inventorySelectionTitle = "inventory-selection-title"
+    static let accessoriesSegmentTitle = "accesories-segment"
+    static let shoesSegmentTitle = "shoes-segment"
+    static let clothesSegmentTitle = "clothes-segment"
   }
   
   lazy var loadingView = LoadingView()
@@ -51,12 +54,16 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
     loadData()
   }
   
-  private func loadData() {
+  @objc private func loadData() {
     showLoading()
-    ItemService().getAll { [weak self] (error, items) in
-      self?.items = items
-      self?.collectionView.reloadData()
-      self?.hideLoading()
+    
+    let type = ItemType.allCases[segmentedControl.selectedSegmentIndex + 1]
+    ItemService().getAll(type: type) { [weak self] (error, items) in
+      DispatchQueue.main.async {
+        self?.items = items
+        self?.collectionView.reloadData()
+        self?.hideLoading()
+      }
     }
   }
   
@@ -67,18 +74,55 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   
   private lazy var collectionView: UICollectionView = {
     let layout = ItemsCollectionLayout(direction: .vertical)
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    let collectionView = UICollectionView(frame: .zero,
+                                          collectionViewLayout: layout)
     collectionView.backgroundColor = .white
-    collectionView.register(ItemCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    collectionView.register(ItemCollectionViewCell.self,
+                            forCellWithReuseIdentifier: reuseIdentifier)
     collectionView.delegate = self
     collectionView.dataSource = self
     return collectionView
   }()
   
+  lazy var segmentedControl: UISegmentedControl = {
+    var segments = ItemType.allCases.compactMap({ it -> String? in
+      guard it != .none else {
+        return nil
+      }
+      
+      var localizationString = ""
+      switch it {
+      case .clothes:
+        localizationString = NSLocalizedString(Localizations.clothesSegmentTitle, comment: "")
+      case .shoes:
+        localizationString = NSLocalizedString(Localizations.shoesSegmentTitle, comment: "")
+      case .accessory:
+        localizationString = NSLocalizedString(Localizations.accessoriesSegmentTitle, comment: "")
+      default: break
+      }
+      
+      return localizationString
+    })
+    
+    let segmentedControl = UISegmentedControl(items: segments)
+    segmentedControl.selectedSegmentIndex = 0
+    segmentedControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    return segmentedControl
+  }()
+  
   private func setupUI() {
+    view.addSubview(segmentedControl)
     view.addSubview(collectionView)
+
+    segmentedControl.snp.makeConstraints { make in
+      make.top.leading.equalTo(view.safeAreaLayoutGuide).offset(10)
+      make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-10)
+      make.height.equalTo(UIConstants.defaultButtonHeight)
+    }
+    
     collectionView.snp.makeConstraints { make in
-      make.top.bottom.centerX.equalToSuperview().labeled("CollectionViewWidthAndCenter")
+      make.top.equalTo(segmentedControl.snp.bottom).offset(2)
+      make.bottom.centerX.equalToSuperview().labeled("CollectionViewWidthAndCenter")
       make.width.equalToSuperview().multipliedBy(0.90)
     }
   }
