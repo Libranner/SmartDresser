@@ -71,6 +71,7 @@
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
 		EEF6C8CE22EA02E400D62FC4 /* ItemsPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6C8CD22EA02E400D62FC4 /* ItemsPictureViewController.swift */; };
+		EEF6C8D022EBDED200D62FC4 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */; };
 		EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F72289FCDA005E5B5C /* AppDelegate.swift */; };
 		EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FB2289FCDA005E5B5C /* Main.storyboard */; };
 		EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FE2289FCDB005E5B5C /* Assets.xcassets */; };
@@ -165,6 +166,7 @@
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		EEF6C8CD22EA02E400D62FC4 /* ItemsPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPictureViewController.swift; sourceTree = "<group>"; };
+		EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		EEF855F42289FCDA005E5B5C /* DressAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF855F72289FCDA005E5B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF855FC2289FCDA005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				EE56051922ADE48E00C0096B /* GradientView.swift */,
 				EEA6701C22D1013C0002FE3D /* RoundedView.swift */,
 				EED297E222E3E13800710814 /* ModalView.swift */,
+				EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */,
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EEA6702122D11D1B0002FE3D /* AffiliateCardViewController.swift in Sources */,
+				EEF6C8D022EBDED200D62FC4 /* UIStackView+RemoveAll.swift in Sources */,
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
 				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
@@ -930,7 +934,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -940,6 +944,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.dressasistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DressAsistant;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -951,7 +956,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KH7D2YUBPG;
 				INFOPLIST_FILE = DressAsistant/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -961,6 +966,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.dressasistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = DressAsistant;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

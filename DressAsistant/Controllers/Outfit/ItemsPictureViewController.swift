@@ -19,6 +19,7 @@ class ItemsPictureViewController: UIViewController {
   
   var picturesURLs = [URL]() {
     didSet {
+      mainStackView.removeAllArrangedSubviews()
       for url in picturesURLs {
         let imageView = AsyncImageView()
         imageView.fillWithURL(url, placeholder: nil)

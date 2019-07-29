@@ -15,6 +15,7 @@ class OutfitsCollectionViewController: BaseViewController {
   private let reuseIdentifier = "OutfitCell"
   enum Localizations {
     static let outfitsTitle = "outfits-list-title"
+    static let outfitsNumberOfItems = "number-of-items"
   }
   
   private lazy var collectionView: UICollectionView = {
@@ -97,11 +98,12 @@ extension OutfitsCollectionViewController: UICollectionViewDataSource {
     cell.seasonLabel.text = outfit.season.rawValue
     cell.eventTypeLabel.text = outfit.eventType.rawValue
     cell.timeOfDayLabel.text = outfit.timeOfDay.rawValue
-    cell.messageLabel.text = "\(outfit.items.count) piezas de ropa"
+    let localizationString =  NSLocalizedString(Localizations.outfitsNumberOfItems, comment: "")
+    cell.messageLabel.text = String.init(format: localizationString, outfit.items.count)
     
-    let picturesURLs = [URL(string: "https://www.boden.co.uk/content/dam/boden/homepage-and-landing-pages/drop-7_19/2-womens/WW_WK1_CB31.jpg.rendition.290.870.jpg")!, URL(string: "https://media.kohlsimg.com/is/image/kohls/wo-dtm-b4-20190704-d2?scl=1&fmt=pjpeg&qlt=80,1")! ]
+    let urls = outfit.items.compactMap { $0.imageURL }
+    cell.setPictures(urls)
     
-    cell.setPictures(picturesURLs)
     return cell
   }
 }

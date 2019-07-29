@@ -153,7 +153,12 @@ class OutfitCollectionViewCell: UICollectionViewCell {
   }
   
   override func prepareForReuse() {
-    
+    setPictures([])
+    seasonLabel.text = ""
+    weatherLabel.text = ""
+    messageLabel.text = ""
+    timeOfDayLabel.text = ""
+    eventTypeLabel.text = ""
   }
   
   func setPictures(_ urls:[URL]) {
