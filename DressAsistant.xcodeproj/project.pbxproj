@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C5A68A66B1724A6E3E322121 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */; };
-		ED8501379C35D7888E1D95E7 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */; };
+		6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */; };
+		D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */; };
 		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
 		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
 		EE55C72822E878000075803C /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72722E878000075803C /* OutfitViewController.swift */; };
@@ -93,12 +93,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C970D1AAA3866F45768911B /* Pods-DressAsistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2F12DC392DA083A6B72B86E7 /* Pods-DressAsistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.release.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.release.xcconfig"; sourceTree = "<group>"; };
-		A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
+		19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A3F34D6CF30EE7E75D549F5 /* Pods-DressAsistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4038FA6893DA35F1C67AB3E0 /* Pods-DressAsistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.release.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.release.xcconfig"; sourceTree = "<group>"; };
+		A48AD236D1B6D5E046922A68 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
+		AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		EE55C72722E878000075803C /* OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED8501379C35D7888E1D95E7 /* Pods_DressAsistant.framework in Frameworks */,
+				6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,18 +195,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5A68A66B1724A6E3E322121 /* Pods_DressAsistantUITests.framework in Frameworks */,
+				D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77EFAE0B506908389CA59218 /* Frameworks */ = {
+		A5FADC2F02D8A4DEBBED8783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8D1E0225C3D514B1FCDCF07 /* Pods_DressAsistant.framework */,
-				1C1A11C3F2AECDAA344AB8A9 /* Pods_DressAsistantUITests.framework */,
+				AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */,
+				19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				EEF8560B2289FCDB005E5B5C /* DressAsistantUITests */,
 				EEF855F52289FCDA005E5B5C /* Products */,
 				F5B89FA8C265364B634A6C82 /* Pods */,
-				77EFAE0B506908389CA59218 /* Frameworks */,
+				A5FADC2F02D8A4DEBBED8783 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -458,10 +458,10 @@
 		F5B89FA8C265364B634A6C82 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */,
-				2F12DC392DA083A6B72B86E7 /* Pods-DressAsistant.release.xcconfig */,
-				1C970D1AAA3866F45768911B /* Pods-DressAsistantUITests.debug.xcconfig */,
-				ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */,
+				A48AD236D1B6D5E046922A68 /* Pods-DressAsistant.debug.xcconfig */,
+				4038FA6893DA35F1C67AB3E0 /* Pods-DressAsistant.release.xcconfig */,
+				1A3F34D6CF30EE7E75D549F5 /* Pods-DressAsistantUITests.debug.xcconfig */,
+				BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -473,12 +473,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEF856112289FCDC005E5B5C /* Build configuration list for PBXNativeTarget "DressAsistant" */;
 			buildPhases = (
-				7A748C53CF1CC0C56A2DB156 /* [CP] Check Pods Manifest.lock */,
+				8D5425086F10D3B0593CAB2A /* [CP] Check Pods Manifest.lock */,
 				EEF855F02289FCDA005E5B5C /* Sources */,
 				EEF855F12289FCDA005E5B5C /* Frameworks */,
 				EEF855F22289FCDA005E5B5C /* Resources */,
 				EE95C7C122A2F098009BCFDA /* ShellScript */,
-				ADBA2B1290F550890CB16BA9 /* [CP] Embed Pods Frameworks */,
+				BCDA921D601C11E3B9231736 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -493,7 +493,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EEF856142289FCDC005E5B5C /* Build configuration list for PBXNativeTarget "DressAsistantUITests" */;
 			buildPhases = (
-				E31D1923CF857C9115644101 /* [CP] Check Pods Manifest.lock */,
+				C3EDC396796B3B46C5650822 /* [CP] Check Pods Manifest.lock */,
 				EEF856042289FCDB005E5B5C /* Sources */,
 				EEF856052289FCDB005E5B5C /* Frameworks */,
 				EEF856062289FCDB005E5B5C /* Resources */,
@@ -580,7 +580,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7A748C53CF1CC0C56A2DB156 /* [CP] Check Pods Manifest.lock */ = {
+		8D5425086F10D3B0593CAB2A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -602,47 +602,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADBA2B1290F550890CB16BA9 /* [CP] Embed Pods Frameworks */ = {
+		BCDA921D601C11E3B9231736 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/CodableFirebase/CodableFirebase.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CodableFirebase.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E31D1923CF857C9115644101 /* [CP] Check Pods Manifest.lock */ = {
+		C3EDC396796B3B46C5650822 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -934,7 +911,7 @@
 		};
 		EEF856122289FCDC005E5B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0246A15E235B77E5B0DFFE4 /* Pods-DressAsistant.debug.xcconfig */;
+			baseConfigurationReference = A48AD236D1B6D5E046922A68 /* Pods-DressAsistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
@@ -956,7 +933,7 @@
 		};
 		EEF856132289FCDC005E5B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F12DC392DA083A6B72B86E7 /* Pods-DressAsistant.release.xcconfig */;
+			baseConfigurationReference = 4038FA6893DA35F1C67AB3E0 /* Pods-DressAsistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DressAsistant/DressAsistant.entitlements;
@@ -978,7 +955,7 @@
 		};
 		EEF856152289FCDC005E5B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C970D1AAA3866F45768911B /* Pods-DressAsistantUITests.debug.xcconfig */;
+			baseConfigurationReference = 1A3F34D6CF30EE7E75D549F5 /* Pods-DressAsistantUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -999,7 +976,7 @@
 		};
 		EEF856162289FCDC005E5B5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABFA477C10CD3DF9E23EB47D /* Pods-DressAsistantUITests.release.xcconfig */;
+			baseConfigurationReference = BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

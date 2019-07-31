@@ -639,20 +639,6 @@
             </objects>
             <point key="canvasLocation" x="6384.057971014493" y="-1728.3482142857142"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="3Gj-Ie-pkC">
-            <objects>
-                <tabBarController id="hVx-Dj-aCz" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="lsB-R5-t0u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sLk-dL-q5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-6260" y="-2520"/>
-        </scene>
         <!--Title-->
         <scene sceneID="ZOY-dv-A67">
             <objects>
