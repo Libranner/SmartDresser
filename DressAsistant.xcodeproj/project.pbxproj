@@ -64,6 +64,7 @@
 		EECB329B22DC1263009D91BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329A22DC1263009D91BF /* Item.swift */; };
 		EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329C22DC1456009D91BF /* ItemViewController.swift */; };
 		EECB329F22DCC7A3009D91BF /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */; };
+		EECB9BA522F0F7C600100234 /* OutfitsFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB9BA422F0F7C600100234 /* OutfitsFilterTableViewController.swift */; };
 		EED297E322E3E13800710814 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E222E3E13800710814 /* ModalView.swift */; };
 		EED297E522E5257F00710814 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E422E5257F00710814 /* Outfit.swift */; };
 		EED297E722E52B1700710814 /* OutfitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E622E52B1700710814 /* OutfitService.swift */; };
@@ -159,6 +160,7 @@
 		EECB329A22DC1263009D91BF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EECB329C22DC1456009D91BF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		EECB9BA422F0F7C600100234 /* OutfitsFilterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsFilterTableViewController.swift; sourceTree = "<group>"; };
 		EED297E222E3E13800710814 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		EED297E422E5257F00710814 /* Outfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
 		EED297E622E52B1700710814 /* OutfitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitService.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				EE55C72B22E8E7CC0075803C /* OutfitsCollectionViewController.swift */,
 				EE55C72D22E8EA570075803C /* OutfitCollectionViewCell.swift */,
 				EEF6C8CD22EA02E400D62FC4 /* ItemsPictureViewController.swift */,
+				EECB9BA422F0F7C600100234 /* OutfitsFilterTableViewController.swift */,
 			);
 			path = Outfit;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				EED297E322E3E13800710814 /* ModalView.swift in Sources */,
 				EEACC07B22BBE81D00C37990 /* OptionPickerViewController.swift in Sources */,
 				EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */,
+				EECB9BA522F0F7C600100234 /* OutfitsFilterTableViewController.swift in Sources */,
 				EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

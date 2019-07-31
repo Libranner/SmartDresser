@@ -66,6 +66,7 @@
 //Titles
 "items-title" = "Items";
 "outfits-list-title" = "Listado de Atuendos";
+"filter-outfits-title" = "Filtrar Atuendos";
 
 //Segments
 "accesories-segment" = "📿 accesorios";

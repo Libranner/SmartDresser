@@ -48,7 +48,21 @@ class OutfitsCollectionViewController: BaseViewController {
                                     target: self, action: #selector(addItem))
     navigationItem.rightBarButtonItem = addButton
     
+    /*let filterButton = UIBarButtonItem(barButtonSystemItem: .edit,
+                                    target: self, action: #selector(filter))*/
+    
+    navigationItem.rightBarButtonItem = addButton
+    
     setupUI()
+  }
+  
+  @objc
+  private func filter() {
+    let filterVC = OutfitsFilterTableViewController()
+    let nav = UINavigationController(rootViewController: filterVC)
+    navigationController?.present(nav, animated: true, completion: {
+      
+    })
   }
   
   override func viewDidAppear(_ animated: Bool) {

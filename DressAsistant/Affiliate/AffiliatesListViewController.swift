@@ -58,9 +58,9 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let affiliate = selectedAffiliate {
-      let destinationVC = segue.destination as! AffiliateViewController
-      destinationVC.existingAffiliate = affiliate
-      destinationVC.editMode = true
+      //let destinationVC = segue.destination as! AffiliateViewController
+      //destinationVC.existingAffiliate = affiliate
+      //destinationVC.editMode = true
     }
   }
 }
