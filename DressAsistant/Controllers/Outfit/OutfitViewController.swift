@@ -80,7 +80,7 @@ class OutfitViewController: BaseViewController {
                            pickerMode: .timeOfDayPicker)
   }()
   
-  private var selectedWeather: Weather = .none {
+  private var selectedWeather: WeatherCondition = .none {
     didSet {
       weatherTextField.text = selectedWeather.rawValue
     }
@@ -388,7 +388,7 @@ class OutfitViewController: BaseViewController {
 
 //Mark: - Option Picker delegate and datasource
 extension OutfitViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-  private static let weathers = Weather.allCases
+  private static let weathers = WeatherCondition.allCases
   private static let seasons = Season.allCases
   private static let eventTypes = EventType.allCases
   private static let timesOfDay = TimeOfDay.allCases

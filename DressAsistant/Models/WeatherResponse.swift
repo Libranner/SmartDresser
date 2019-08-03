@@ -20,6 +20,28 @@ struct WeatherData: Decodable {
     case largeDescription = "description"
     case iconPath = "icon"
   }
+  
+  var condition: WeatherCondition {
+    let conditionId: Int = weatherId / 100
+    
+    switch conditionId {
+    case 2:
+      return .thunderstorm
+    case 3:
+      return .drizzle
+    case 5:
+      return .rain
+    case 6:
+      return .snow
+    case 7:
+      return .atmosphere
+    default:
+      if weatherId == 800 {
+        return .clear
+      }
+      return .cloudy
+    }
+  }
 }
 
 struct Temperature: Decodable {
@@ -31,19 +53,19 @@ struct Temperature: Decodable {
 }
 
 struct WeatherResponse: Decodable {
-  var conditions: [WeatherData]
+  private var weatherData: [WeatherData]
   var temperature: Temperature
   
   var currentWeather: WeatherData? {
-    guard !conditions.isEmpty else {
+    guard !weatherData.isEmpty else {
       return nil
     }
     
-    return conditions[0]
+    return weatherData[0]
   }
   
   enum CodingKeys: String, CodingKey {
-    case conditions = "weather"
+    case weatherData = "weather"
     case temperature = "main"
   }
 }

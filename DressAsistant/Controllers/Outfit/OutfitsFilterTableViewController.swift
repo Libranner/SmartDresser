@@ -49,7 +49,7 @@ class OutfitsFilterTableViewController: UITableViewController {
     case 0:
       return Season.allCases[indexPath.row].rawValue
     case 1:
-      return Weather.allCases[indexPath.row].rawValue
+      return WeatherCondition.allCases[indexPath.row].rawValue
     case 2:
       return EventType.allCases[indexPath.row].rawValue
     case 3:
@@ -64,7 +64,7 @@ class OutfitsFilterTableViewController: UITableViewController {
     case 0:
       return Season.allCases.count
     case 1:
-      return Weather.allCases.count
+      return WeatherCondition.allCases.count
     case 2:
       return EventType.allCases.count
     case 3:

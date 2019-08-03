@@ -23,12 +23,15 @@ enum Season: String, Codable, CaseIterable {
   case winter
 }
 
-enum Weather: String, Codable, CaseIterable {
+enum WeatherCondition: String, Codable, CaseIterable {
   case none = ""
-  case windy
-  case rainy
-  case sunny
+  case atmosphere
+  case clear
   case cloudy
+  case drizzle
+  case rain
+  case snow
+  case thunderstorm
 }
 
 enum EventType: String, Codable, CaseIterable {
@@ -43,7 +46,7 @@ enum EventType: String, Codable, CaseIterable {
 struct Outfit: Codable {
   var key: String?
   var season: Season
-  var weather: Weather
+  var weather: WeatherCondition
   var eventType: EventType
   var timeOfDay: TimeOfDay
   var items: [Item]
