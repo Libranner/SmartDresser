@@ -19,10 +19,11 @@ class OutfitsCollectionViewController: BaseViewController {
   }
   
   private lazy var collectionView: UICollectionView = {
-    
+    let width = Int(UIScreen.main.bounds.width * 0.7)
+    let height = Int(Float(width) * 1.2 + 100)
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
-    layout.estimatedItemSize = CGSize(width: 1, height: 1)
+    layout.estimatedItemSize = CGSize(width: width, height: height)
     layout.scrollDirection = .vertical
     layout.sectionInset = UIEdgeInsets(top: CGFloat(UIConstants.defaultTopSpace),
                                 left: 5.0, bottom: 5.0, right: 5.0)
