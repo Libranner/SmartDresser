@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol InventoryDelegate {
+  func inventory(_ inventory: InventoryViewController, didSelect items: [Item])
+}
+
 class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   enum Localizations {
     static let inventoryTitle = "inventory-title"
@@ -22,6 +26,7 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   private var items = [Item]()
   private var selectedItems = [Item]()
   private var isInSelectMode = false
+  var delegate: InventoryDelegate?
   
   convenience init(isInSelectMode: Bool) {
     self.init()
@@ -33,15 +38,36 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
     self.title = NSLocalizedString(Localizations.inventoryTitle,
                                    comment: "")
     
-    let addButton = UIBarButtonItem(barButtonSystemItem: .add,
-                                    target: self, action: #selector(addItem))
-    navigationItem.rightBarButtonItem = addButton
-    
-    let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh,
-                                        target: self, action: #selector(refreshData))
-    navigationItem.leftBarButtonItem = refreshButton
-    
+    if isInSelectMode {
+      let chevronImage = UIImage(named: "chevron")
+      let backButton = UIBarButtonItem(image: chevronImage, style: .plain, target: self, action: #selector(dismissAction))
+      navigationItem.leftBarButtonItem = backButton
+      
+      let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                      target: self, action: #selector(itemSelectedAction))
+      navigationItem.rightBarButtonItem = doneButton
+    }
+    else {
+      let addButton = UIBarButtonItem(barButtonSystemItem: .add,
+                                      target: self, action: #selector(addItem))
+      navigationItem.rightBarButtonItem = addButton
+      
+      let refreshButton = UIBarButtonItem(barButtonSystemItem: .refresh,
+                                          target: self, action: #selector(refreshData))
+      navigationItem.leftBarButtonItem = refreshButton
+    }
+
     setupUI()
+  }
+  
+  @objc func itemSelectedAction(_ sender: Any) {
+    dismiss(animated: true) {
+      self.delegate?.inventory(self, didSelect: self.selectedItems)
+    }
+  }
+  
+  @objc func dismissAction(_ sender: Any) {
+    self.dismiss(animated: true)
   }
   
   override func viewDidAppear(_ animated: Bool) {

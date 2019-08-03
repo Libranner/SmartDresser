@@ -295,7 +295,9 @@ class ItemViewController: BaseViewController {
   }
   
   fileprivate func uploadPhoto(completion: @escaping (_ photoURL: URL)-> Void) {
-    if let data = itemImageView.image?.pngData() {
+    let compressedImage = itemImageView.image!.jpegData(compressionQuality: 0.6)
+    
+    if let data = compressedImage {
       FileService().uploadItemPhoto(data) { [weak self] error,
         success, photoURL in
         

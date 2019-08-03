@@ -39,13 +39,13 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   @IBOutlet weak var hairColorImageView: RoundImageView!
   @IBOutlet weak var removeButton: UIButton!
   
-  fileprivate var sexSelected: Sex = .none {
+  private var sexSelected: Sex = .none {
     didSet {
       sexTextfield.text = sexSelected.rawValue
     }
   }
   
-  fileprivate var birthdateSelected: Date? = nil {
+  private var birthdateSelected: Date? = nil {
     didSet {
       if let birthdateSelected = birthdateSelected  {
         let dateFormatter: DateFormatter = DateFormatter()
@@ -56,14 +56,14 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
-  fileprivate var eyeColorSelected: EyeColor? {
+  private var eyeColorSelected: EyeColor? {
     didSet {
       if let eyeColor = eyeColorSelected {
         eyeColorImageView.fillWithURL(eyeColor.imageURL, placeholder: nil)
       }
     }
   }
-  fileprivate var skinColorSelected: SkinColor? {
+  private var skinColorSelected: SkinColor? {
     didSet {
       if let skinColor = skinColorSelected {
         skinColorView.backgroundColor = skinColor.rgbColor()
@@ -71,7 +71,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
-  fileprivate var hairColorSelected: HairColor? {
+  private var hairColorSelected: HairColor? {
     didSet {
       if let hairColor = hairColorSelected {
         hairColorImageView.fillWithURL(hairColor.imageURL, placeholder: nil)
@@ -79,9 +79,9 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
-  fileprivate var affiliateId: String?
-  fileprivate var availableOptions = [Option]()
-  fileprivate var optionPickerMode: OptionPickerMode?
+  private var affiliateId: String?
+  private var availableOptions = [Option]()
+  private var optionPickerMode: OptionPickerMode?
   
   var editMode = false
   
@@ -102,13 +102,21 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
       #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     
     removeButton.isHidden = !editMode
+    existingAffiliate = AffiliateManager.shared.currentAffiliate
     
     if existingAffiliate != nil {
       fillUpForm()
       showQrButton.isHidden = false
+      let chevronImage = UIImage(named: "chevron")
+      let backButton = UIBarButtonItem(image: chevronImage, style: .plain, target: self, action: #selector(dismissAction))
+      navigationItem.leftBarButtonItem = backButton
     }
   }
 
+  @objc func dismissAction(_ sender: Any) {
+    self.dismiss(animated: true)
+  }
+  
   @IBAction func showQrButtonTapped(_ sender: Any) {
     self.performSegue(withIdentifier: self.affiliateCardSegueName,
                       sender: self)
@@ -242,7 +250,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     return true
   }
   
-  fileprivate func uploadPhoto(completion: @escaping (_ photoURL: URL)-> Void) {
+  private func uploadPhoto(completion: @escaping (_ photoURL: URL)-> Void) {
     if let data = profilePicture.image?.pngData() {
       FileService().uploadAffiliatePhoto(data) { [weak self] error,
         success, photoURL in
@@ -264,7 +272,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
-  fileprivate func createAffiliateWithAvatar(_ avatarURL: URL) -> Affiliate {
+  private func createAffiliateWithAvatar(_ avatarURL: URL) -> Affiliate {
     return Affiliate(key: nil,
                      name: nameTextfield.text!,
                      avatarUrl: avatarURL,
@@ -290,7 +298,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
-  fileprivate func persistAffialiate(avatarURL: URL) {
+  private func persistAffialiate(avatarURL: URL) {
     showLoading()
     var newAffiliate = createAffiliateWithAvatar(avatarURL)
     if existingAffiliate == nil {
@@ -418,7 +426,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
   }
   
-  fileprivate func resignAllTextFields() {
+  private func resignAllTextFields() {
     nameTextfield.resignFirstResponder()
     birthdateTextfield.resignFirstResponder()
     sexTextfield.resignFirstResponder()
@@ -426,7 +434,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     weightTextfield.resignFirstResponder()
   }
   
-  fileprivate func showPickerWithOptions(_ options: [Option]) {
+  private func showPickerWithOptions(_ options: [Option]) {
     resignAllTextFields()
     availableOptions = options
     hideLoading()

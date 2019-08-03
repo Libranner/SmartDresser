@@ -56,7 +56,7 @@
         <!--Crear Afiliado-->
         <scene sceneID="Y9v-Vt-EZt">
             <objects>
-                <viewController id="3jT-Lt-wvP" customClass="AffiliateViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AffiliateViewController" id="3jT-Lt-wvP" customClass="AffiliateViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I9n-uf-ECi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,7 +410,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Gvk-FF-b5X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="unx-e0-fLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sa6-RJ-N3L" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t20-wa-wQC">
@@ -422,6 +421,7 @@
                         <segue destination="Y5W-5s-xnV" kind="relationship" relationship="rootViewController" id="eiP-LP-bUV"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unx-e0-fLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4430.434782608696" y="-231.02678571428569"/>
         </scene>
@@ -488,7 +488,6 @@
         <!--Base Navigation View Controller-->
         <scene sceneID="51X-K1-Wbf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FWH-mQ-CI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MPc-qE-tzY" customClass="BaseNavigationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZPC-BC-Ezl">
@@ -500,13 +499,13 @@
                         <segue destination="vEy-J2-xKU" kind="relationship" relationship="rootViewController" id="aqc-ps-Es5"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWH-mQ-CI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-242.0289855072464" y="6.6964285714285712"/>
         </scene>
         <!--Listado de Afiliados-->
         <scene sceneID="029-We-jrJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="voR-lm-Szn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="vEy-J2-xKU" customClass="AffiliatesListViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FWn-TW-IUj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -575,6 +574,7 @@
                         <segue destination="gmR-QL-Qhp" kind="presentation" identifier="showDetail" id="IkY-PC-LlB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voR-lm-Szn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="601" y="7"/>
         </scene>
@@ -584,6 +584,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gmR-QL-Qhp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MRV-k3-y7E">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

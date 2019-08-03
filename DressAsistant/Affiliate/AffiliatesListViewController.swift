@@ -33,6 +33,7 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   
   override func viewDidAppear(_ animated: Bool) {
     tableView.refreshControl?.beginRefreshing()
+    AffiliateManager.shared.currentAffiliate = nil
     loadAffiliates()
   }
   
@@ -45,7 +46,10 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   }
   
   @IBAction func addAffiliateAction() {
-    performSegue(withIdentifier: showDetailSegueName, sender: self)
+    let affiliateCV = storyboard?.instantiateViewController(withIdentifier: "AffiliateViewController")
+    let nav = BaseNavigationViewController(rootViewController: affiliateCV!)
+    
+    navigationController?.pushViewController(affiliateCV!, animated: true)
   }
   
   var selectedAffiliate: Affiliate? {
@@ -58,9 +62,7 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let affiliate = selectedAffiliate {
-      //let destinationVC = segue.destination as! AffiliateViewController
-      //destinationVC.existingAffiliate = affiliate
-      //destinationVC.editMode = true
+      AffiliateManager.shared.currentAffiliate = affiliate
     }
   }
 }

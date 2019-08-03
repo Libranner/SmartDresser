@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -68,6 +68,7 @@
 		EED297E322E3E13800710814 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E222E3E13800710814 /* ModalView.swift */; };
 		EED297E522E5257F00710814 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E422E5257F00710814 /* Outfit.swift */; };
 		EED297E722E52B1700710814 /* OutfitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E622E52B1700710814 /* OutfitService.swift */; };
+		EED5CE4022F5DD6800257AA1 /* AffiliateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
@@ -164,6 +165,7 @@
 		EED297E222E3E13800710814 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		EED297E422E5257F00710814 /* Outfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
 		EED297E622E52B1700710814 /* OutfitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitService.swift; sourceTree = "<group>"; };
+		EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateManager.swift; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
@@ -375,6 +377,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		EED5CE3E22F5DD3A00257AA1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		EEE1D49122DAA89E00EF78D0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +429,7 @@
 		EEF855F62289FCDA005E5B5C /* DressAsistant */ = {
 			isa = PBXGroup;
 			children = (
+				EED5CE3E22F5DD3A00257AA1 /* Managers */,
 				EE56051B22ADF1D400C0096B /* Models */,
 				EEAD78FE22AB5BB00060F3E6 /* Services */,
 				EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */,
@@ -714,6 +725,7 @@
 				EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */,
 				EEA6701922D0E3A40002FE3D /* SkinColor.swift in Sources */,
 				EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */,
+				EED5CE4022F5DD6800257AA1 /* AffiliateManager.swift in Sources */,
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EEA6702122D11D1B0002FE3D /* AffiliateCardViewController.swift in Sources */,
 				EEF6C8D022EBDED200D62FC4 /* UIStackView+RemoveAll.swift in Sources */,

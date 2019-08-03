@@ -88,8 +88,18 @@ class OutfitsCollectionViewController: BaseViewController {
   }
   
   @objc private func addItem() {
-    let vc = OutfitViewController()
-    navigationController?.pushViewController(vc, animated: true)
+    let inventoryVC = InventoryViewController(isInSelectMode: true)
+    inventoryVC.delegate = self
+    let nav = UINavigationController(rootViewController: inventoryVC)
+    present(nav, animated: true)
+  }
+}
+
+// MARK: InventoryController Delegate
+extension OutfitsCollectionViewController: InventoryDelegate {
+  func inventory(_ inventory: InventoryViewController, didSelect items: [Item]) {
+    let outfitVC = OutfitViewController(items: items)
+    navigationController?.pushViewController(outfitVC, animated: true)
   }
 }
 
