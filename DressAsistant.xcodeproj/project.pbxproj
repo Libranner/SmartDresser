@@ -69,6 +69,10 @@
 		EED297E522E5257F00710814 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E422E5257F00710814 /* Outfit.swift */; };
 		EED297E722E52B1700710814 /* OutfitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E622E52B1700710814 /* OutfitService.swift */; };
 		EED5CE4022F5DD6800257AA1 /* AffiliateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */; };
+		EED5CE4222F5F7E900257AA1 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4122F5F7E900257AA1 /* WeatherService.swift */; };
+		EED5CE4422F6257B00257AA1 /* RecomendationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */; };
+		EED5CE4822F631B900257AA1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4722F631B900257AA1 /* WeatherResponse.swift */; };
+		EED5CE4A22F63AB500257AA1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4922F63AB500257AA1 /* HomeViewController.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
@@ -166,6 +170,10 @@
 		EED297E422E5257F00710814 /* Outfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
 		EED297E622E52B1700710814 /* OutfitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitService.swift; sourceTree = "<group>"; };
 		EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateManager.swift; sourceTree = "<group>"; };
+		EED5CE4122F5F7E900257AA1 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationItemViewController.swift; sourceTree = "<group>"; };
+		EED5CE4722F631B900257AA1 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		EED5CE4922F63AB500257AA1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
@@ -255,6 +263,7 @@
 				EEA6701822D0E3A40002FE3D /* SkinColor.swift */,
 				EECB329A22DC1263009D91BF /* Item.swift */,
 				EED297E422E5257F00710814 /* Outfit.swift */,
+				EED5CE4722F631B900257AA1 /* WeatherResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,14 +271,14 @@
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EED5CE4622F6259900257AA1 /* User */,
+				EED5CE4522F6257F00257AA1 /* Recomendation */,
 				EE55C72622E877CE0075803C /* Outfit */,
 				EE83C53C229978F30046C43C /* Base */,
 				EE83C53F229985440046C43C /* FinderViewController.swift */,
 				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
-				EE83C543229987100046C43C /* RecommendationViewController.swift */,
-				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
 				EEE1D49222DAA8C400EF78D0 /* Inventory */,
-				EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */,
+				EED5CE4922F63AB500257AA1 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 				EEA6701622D0E35F0002FE3D /* SkinColorService.swift */,
 				EEE1D49722DBA28700EF78D0 /* ItemService.swift */,
 				EED297E622E52B1700710814 /* OutfitService.swift */,
+				EED5CE4122F5F7E900257AA1 /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -383,6 +393,23 @@
 				EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		EED5CE4522F6257F00257AA1 /* Recomendation */ = {
+			isa = PBXGroup;
+			children = (
+				EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */,
+				EE83C543229987100046C43C /* RecommendationViewController.swift */,
+			);
+			path = Recomendation;
+			sourceTree = "<group>";
+		};
+		EED5CE4622F6259900257AA1 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		EEE1D49122DAA89E00EF78D0 /* Protocols */ = {
@@ -397,6 +424,7 @@
 		EEE1D49222DAA8C400EF78D0 /* Inventory */ = {
 			isa = PBXGroup;
 			children = (
+				EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */,
 				EECB329C22DC1456009D91BF /* ItemViewController.swift */,
 				EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */,
 				EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */,
@@ -679,6 +707,7 @@
 				EEA6701B22D0E4210002FE3D /* UIColor+Hex.swift in Sources */,
 				EE56051822ADC7D500C0096B /* AffiliateViewController.swift in Sources */,
 				EEA6701D22D1013C0002FE3D /* RoundedView.swift in Sources */,
+				EED5CE4A22F63AB500257AA1 /* HomeViewController.swift in Sources */,
 				EEF6C8CE22EA02E400D62FC4 /* ItemsPictureViewController.swift in Sources */,
 				EE56050C22AC721100C0096B /* AsyncImageView.swift in Sources */,
 				EE56051122AC91C500C0096B /* CustomErrors.swift in Sources */,
@@ -692,6 +721,7 @@
 				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
 				EEACC07922BAAADD00C37990 /* EyeColor.swift in Sources */,
 				EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */,
+				EED5CE4422F6257B00257AA1 /* RecomendationItemViewController.swift in Sources */,
 				EEA6701722D0E35F0002FE3D /* SkinColorService.swift in Sources */,
 				EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */,
 				EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */,
@@ -701,6 +731,7 @@
 				EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */,
 				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
 				EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */,
+				EED5CE4222F5F7E900257AA1 /* WeatherService.swift in Sources */,
 				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
 				EE55C72C22E8E7CC0075803C /* OutfitsCollectionViewController.swift in Sources */,
 				EECB329B22DC1263009D91BF /* Item.swift in Sources */,
@@ -731,6 +762,7 @@
 				EEF6C8D022EBDED200D62FC4 /* UIStackView+RemoveAll.swift in Sources */,
 				EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */,
 				EE83C54622998D450046C43C /* UIConstants.swift in Sources */,
+				EED5CE4822F631B900257AA1 /* WeatherResponse.swift in Sources */,
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
 				EE56050E22AC72CB00C0096B /* FileService.swift in Sources */,
 				EED297E722E52B1700710814 /* OutfitService.swift in Sources */,

@@ -49,7 +49,8 @@ class OutfitsCollectionViewController: BaseViewController {
                                     target: self, action: #selector(addItem))
     navigationItem.rightBarButtonItem = addButton
     
-    /*let filterButton = UIBarButtonItem(barButtonSystemItem: .edit,
+    /* TODO: Add filtering
+     let filterButton = UIBarButtonItem(barButtonSystemItem: .edit,
                                     target: self, action: #selector(filter))*/
     
     navigationItem.rightBarButtonItem = addButton

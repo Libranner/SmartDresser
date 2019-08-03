@@ -72,7 +72,7 @@ struct UIHelper {
   
   func makeDefaultButton(_ localizationStringId: String, identifier: String?) -> UIButton {
     let localizeString = NSLocalizedString(localizationStringId, comment: "")
-    let button = UIButton()
+    let button = RoundedButton()
     button.accessibilityIdentifier = identifier ?? localizeString
     button.setTitle(localizeString, for: .normal)
     button.backgroundColor = CustomColor.defaultButtonBackgroundColor

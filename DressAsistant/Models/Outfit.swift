@@ -17,7 +17,7 @@ enum TimeOfDay: String, Codable, CaseIterable {
 
 enum Season: String, Codable, CaseIterable {
   case none = ""
-  case fall
+  case autumn
   case spring
   case summer
   case winter
