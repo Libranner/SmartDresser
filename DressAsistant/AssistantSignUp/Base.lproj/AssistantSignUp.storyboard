@@ -75,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IYr-Pt-piV" userLabel="Main Stack View">
-                                                <rect key="frame" x="72.5" y="222" width="269" height="292"/>
+                                                <rect key="frame" x="72.5" y="181" width="269" height="292"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user" translatesAutoresizingMaskIntoConstraints="NO" id="xaf-aJ-X87" customClass="RoundImageView" customModule="DressAsistant" customModuleProvider="target">
                                                         <rect key="frame" x="24.5" y="0.0" width="220" height="220"/>
@@ -119,20 +119,33 @@
                                                 </constraints>
                                             </stackView>
                                             <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxK-Mp-fJy">
-                                                <rect key="frame" x="192" y="407" width="30" height="30"/>
+                                                <rect key="frame" x="192" y="366" width="30" height="30"/>
                                                 <color key="backgroundColor" white="0.88458725739999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="camera"/>
                                                 <connections>
                                                     <action selector="selectProfilePhoto:" destination="TdD-mN-Zz5" eventType="touchUpInside" id="MnN-Eb-7iE"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="por-QD-0pt" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
+                                                <rect key="frame" x="72.5" y="746" width="269" height="42"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="OOn-bB-dju"/>
+                                                </constraints>
+                                                <state key="normal" title="Cerrar sesión">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="por-QD-0pt" firstAttribute="centerX" secondItem="IYr-Pt-piV" secondAttribute="centerX" id="4Ao-dG-a7S"/>
                                             <constraint firstItem="IYr-Pt-piV" firstAttribute="width" secondItem="YbB-l7-lNn" secondAttribute="width" multiplier="0.65" id="LzH-I2-JhP"/>
                                             <constraint firstItem="IYr-Pt-piV" firstAttribute="centerX" secondItem="YbB-l7-lNn" secondAttribute="centerX" id="MLV-Jv-GOF"/>
-                                            <constraint firstItem="IYr-Pt-piV" firstAttribute="centerY" secondItem="YbB-l7-lNn" secondAttribute="centerY" multiplier="0.9" id="NEV-bg-E9q"/>
+                                            <constraint firstItem="IYr-Pt-piV" firstAttribute="centerY" secondItem="YbB-l7-lNn" secondAttribute="centerY" multiplier="0.8" id="NEV-bg-E9q"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IYr-Pt-piV" secondAttribute="bottom" priority="999" constant="280" id="Pf1-xp-X8l"/>
+                                            <constraint firstAttribute="bottom" secondItem="por-QD-0pt" secondAttribute="bottom" constant="30" id="gBo-Rl-b9Q"/>
+                                            <constraint firstItem="por-QD-0pt" firstAttribute="width" secondItem="IYr-Pt-piV" secondAttribute="width" id="s3c-sR-nfV"/>
                                             <constraint firstItem="TxK-Mp-fJy" firstAttribute="bottom" secondItem="xaf-aJ-X87" secondAttribute="bottom" constant="-5" id="tzK-Ko-4Pw"/>
                                             <constraint firstItem="TxK-Mp-fJy" firstAttribute="centerX" secondItem="xaf-aJ-X87" secondAttribute="centerX" id="ymk-Fg-F8d"/>
                                         </constraints>
@@ -179,7 +192,7 @@
                 <viewControllerPlaceholder storyboardName="Affiliate" id="3M4-g8-OCZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCH-LH-VQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="440"/>
+            <point key="canvasLocation" x="1301" y="430"/>
         </scene>
     </scenes>
     <resources>

@@ -135,6 +135,9 @@
                                         <state key="normal" title="Iniciar sesión como Asistente">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="RkG-j3-Zej" kind="show" id="URI-Ee-Stc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8f-16-wuH" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="300" height="100"/>
@@ -168,6 +171,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QgF-j6-V6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6429.6000000000004" y="-785.46798029556658"/>
+        </scene>
+        <!--AssistantSignUp-->
+        <scene sceneID="Y7h-dA-pIc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AssistantSignUp" id="RkG-j3-Zej" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="txw-Py-gOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5802" y="-1345"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="bzw-xd-fu3">

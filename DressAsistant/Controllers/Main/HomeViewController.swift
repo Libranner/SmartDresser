@@ -58,6 +58,9 @@ class HomeViewController: BaseViewController {
           }
         }
       }
+      else {
+        self?.showNoWeatherAlert()
+      }
     }
   }
   
