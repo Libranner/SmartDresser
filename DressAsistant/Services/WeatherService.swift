@@ -13,6 +13,7 @@ struct WeatherService {
   private let url = "https://api.openweathermap.org/data/2.5/weather"
   private let cityId = 3104323
   private let iconBaseUrl = "https://openweathermap.org/img/wn/"
+  
   func getIconUrlFromPath(_ path: String) -> URL {
     return URL(string: "\(iconBaseUrl)\(path)@2x.png")!
   }
@@ -50,7 +51,7 @@ struct WeatherService {
     return .evening
   }
   
-  func getCurrentWeather(completion:@escaping (_ response: WeatherResponse?) -> Void) {
+  func downloadCurrentWeather(completion:@escaping (_ response: WeatherResponse?) -> Void) {
     let weatherUrl = "\(url)?id=\(cityId)&lang=sp&units=metric&appid=\(apiKey)"
     let request = URLRequest(url: URL(string: weatherUrl)!,  cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 0.0)
     let session = URLSession.shared

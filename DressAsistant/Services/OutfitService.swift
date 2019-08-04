@@ -35,6 +35,14 @@ struct OutfitService {
     }
   }
   
+  func getRecomendationsForWeather( _ weather: WeatherCondition,
+                                    timeOfDay: TimeOfDay,
+                                    eventType: EventType,
+                                    season: Season, completion:(_ outfits: [Outfit]) -> Void) {
+    
+    completion([Outfit]())
+  }
+  
   func getAll(completion:@escaping (_ error: CustomError?,
     _ data: [Outfit]) -> Void) {
     

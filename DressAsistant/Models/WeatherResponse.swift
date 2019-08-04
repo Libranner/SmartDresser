@@ -25,21 +25,21 @@ struct WeatherData: Decodable {
     let conditionId: Int = weatherId / 100
     
     switch conditionId {
-    case 2:
-      return .thunderstorm
-    case 3:
-      return .drizzle
-    case 5:
-      return .rain
-    case 6:
-      return .snow
-    case 7:
-      return .atmosphere
-    default:
-      if weatherId == 800 {
-        return .clear
-      }
-      return .cloudy
+      case 2:
+        return .thunderstorm
+      case 3:
+        return .drizzle
+      case 5:
+        return .rain
+      case 6:
+        return .snow
+      case 7:
+        return .atmosphere
+      default:
+        if weatherId == 800 {
+          return .clear
+        }
+        return .cloudy
     }
   }
 }

@@ -46,6 +46,9 @@
 "error-could-no-authenticate-msg" = "Usuario debe autenticarse";
 "error-user-not-signed-msg" = "Usuario no ha iniciado sesión";
 "error-getting-data" = "No se puede obtener la data. Favor verifique su conexión.";
+"no-weather-msg" = "No se ha podido obtener el clima, favor verifique su conexión a internet.";
+"no-weather-title" = "No clima disponible";
+"no-outfits-title" = "No recomendaciones disponibles";
 
 "hecho" = "Hecho";
 
@@ -67,6 +70,11 @@
 "items-title" = "Items";
 "outfits-list-title" = "Listado de Atuendos";
 "filter-outfits-title" = "Filtrar Atuendos";
+"welcome" = "Bienvenido!";
+"welcome-morning" = "Buen día";
+"welcome-afternoon" = "Buenas tardes";
+"welcome-evening" = "Buenas noches";
+"event-picker-title" = "Seleccione el tipo de evento";
 
 //Segments
 "accesories-segment" = "📿 accesorios";
@@ -89,3 +97,6 @@
 //Alerts
 "item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";
 "item-exists-message" = "Item existe. ¿Desea actualizarlo?";
+
+//Miscelaneous
+"close-modal" = "Cerrar";

@@ -14,7 +14,7 @@ class RecommendationViewController: BaseViewController {
   private var index = -1
   private let showItemSegue = "showItems"
   
-  private var currentOutfit: Outfit {
+  private var currentOutfit: Outfit {    
     if index >= outfits.count || index < 0 {
       index = 0
     }
@@ -32,9 +32,11 @@ class RecommendationViewController: BaseViewController {
     
     OutfitService().getAll(completion: { (error, outfits) in
       self.outfits = outfits
-      self.loadData()
-      self.setupUI()
-      self.performSegue(withIdentifier: self.showItemSegue, sender: self)
+      if !outfits.isEmpty {
+        self.loadData()
+        self.setupUI()
+        self.performSegue(withIdentifier: self.showItemSegue, sender: self)
+      }
     })
   }
   

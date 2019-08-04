@@ -73,6 +73,7 @@
 		EED5CE4422F6257B00257AA1 /* RecomendationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */; };
 		EED5CE4822F631B900257AA1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4722F631B900257AA1 /* WeatherResponse.swift */; };
 		EED5CE4A22F63AB500257AA1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4922F63AB500257AA1 /* HomeViewController.swift */; };
+		EED5CE4D22F6B47B00257AA1 /* EventTypePicker TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
@@ -174,6 +175,7 @@
 		EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationItemViewController.swift; sourceTree = "<group>"; };
 		EED5CE4722F631B900257AA1 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		EED5CE4922F63AB500257AA1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventTypePicker TableViewController.swift"; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EED5CE4B22F6B45A00257AA1 /* Main */,
 				EED5CE4622F6259900257AA1 /* User */,
 				EED5CE4522F6257F00257AA1 /* Recomendation */,
 				EE55C72622E877CE0075803C /* Outfit */,
@@ -278,7 +281,6 @@
 				EE83C53F229985440046C43C /* FinderViewController.swift */,
 				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
 				EEE1D49222DAA8C400EF78D0 /* Inventory */,
-				EED5CE4922F63AB500257AA1 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -410,6 +412,15 @@
 				EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		EED5CE4B22F6B45A00257AA1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EED5CE4922F63AB500257AA1 /* HomeViewController.swift */,
+				EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		EEE1D49122DAA89E00EF78D0 /* Protocols */ = {
@@ -742,6 +753,7 @@
 				EEACC07F22BBEB4A00C37990 /* OptionCollectionViewCell.swift in Sources */,
 				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
+				EED5CE4D22F6B47B00257AA1 /* EventTypePicker TableViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
 				EE55C72822E878000075803C /* OutfitViewController.swift in Sources */,

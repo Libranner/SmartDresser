@@ -211,17 +211,17 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAM-Pk-hvD" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
-                                <rect key="frame" x="56.5" y="467.5" width="262.5" height="100"/>
+                                <rect key="frame" x="56.5" y="467.5" width="262.5" height="80"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Ghl-KZ-kpc"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ghl-KZ-kpc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Solicitar Recomendación">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oMt-Hy-vGU" kind="show" id="7mI-oe-fOZ"/>
+                                    <action selector="requestRecomendations:" destination="DmF-jf-cLe" eventType="touchUpInside" id="CX3-gG-u3M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -276,13 +276,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-kz-O0b" customClass="AsyncImageView" customModule="DressAsistant" customModuleProvider="target">
-                                <rect key="frame" x="65.5" y="97.5" width="244" height="243.5"/>
+                                <rect key="frame" x="65.5" y="84" width="244" height="244"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nz5-kz-O0b" secondAttribute="height" multiplier="1:1" id="jtW-KA-Qtc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THN-1v-JCZ">
-                                <rect key="frame" x="65.5" y="351" width="244" height="120"/>
+                                <rect key="frame" x="65.5" y="338" width="244" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="vNp-Pq-j1g"/>
                                 </constraints>
@@ -313,7 +313,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oty-d7-MTi" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
-                                <rect key="frame" x="65.5" y="481" width="244" height="42"/>
+                                <rect key="frame" x="65.5" y="468" width="244" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="GbT-XF-6gI"/>
