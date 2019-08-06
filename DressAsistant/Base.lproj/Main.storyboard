@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63N-07-18H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKD-62-9zR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pk0-iq-YBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7927" y="-3970"/>
+            <point key="canvasLocation" x="-6260" y="-3642"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AjC-1S-tiG">
@@ -448,12 +448,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh5-KK-Q1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7927.1999999999998" y="-2883.2512315270938"/>
+            <point key="canvasLocation" x="-9254" y="-2808"/>
         </scene>
-        <!--Outfits Collection View Controller-->
+        <!--Inventory View Controller-->
         <scene sceneID="xhU-zr-UD8">
             <objects>
-                <viewController id="jqN-n7-ecn" customClass="OutfitsCollectionViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jqN-n7-ecn" customClass="InventoryViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3R-mt-g2r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

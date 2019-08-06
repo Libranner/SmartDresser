@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import CoreNFC
 
 class ItemViewController: BaseViewController {
   
@@ -40,6 +41,7 @@ class ItemViewController: BaseViewController {
   lazy var loadingView = LoadingView()
   var existingItem: Item?
   var previewMode: Bool = false
+  var session: NFCNDEFReaderSession?
   
   convenience init(item: Item, previewMode: Bool = false) {
     self.init()
@@ -185,9 +187,7 @@ class ItemViewController: BaseViewController {
       #selector(showingKeyboard), name:UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector:
       #selector(hidingKeyboard), name:UIResponder.keyboardWillHideNotification, object: nil)
-    
-    
-    
+
     setupUI()
     deleteButton.isHidden = !editMode
     
@@ -205,6 +205,8 @@ class ItemViewController: BaseViewController {
       }
       else {
         self.title = NSLocalizedString(Localizations.newItemTitle, comment: "")
+        session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true)
+        session?.begin()
       }
     }
     
@@ -250,7 +252,6 @@ class ItemViewController: BaseViewController {
       showLoading()
       uploadPhoto { [weak self] photoURL in
         if let self = self {
-          self.nfcCode = "123"
           let item = Item(key: nil,
                                 nfcCode: self.nfcCode!,
                                 imageURL: photoURL,
@@ -628,5 +629,40 @@ extension ItemViewController: PhotoPickerDelegate {
     alertVC.addAction(choosePhotoAction)
     alertVC.addAction(cancelAction)
     present(alertVC, animated: true)
+  }
+}
+
+// MARK: NFCNDEReaderSessionDelegate
+extension ItemViewController: NFCNDEFReaderSessionDelegate {
+  func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+    navigationController?.popViewController(animated: true)
+    print(error)
+  }
+  
+  func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+    for message in messages {
+      for record in message.records {
+        if let itemNFC = String(data: record.payload.advanced(by: 3), encoding: .utf8) {
+          DispatchQueue.global(qos: .userInteractive).async {
+            ItemService().get(withNFC: itemNFC, completion: { [weak self] error, item in
+              guard error != .generic else {
+                self?.showErrorMessage(CustomError.generic)
+                return
+              }
+              
+              guard error == .notFound else {
+                self?.showErrorMessage("Item ya existe")
+                self?.navigationController?.popViewController(animated: true)
+                return
+              }
+              
+              self?.nfcCode = item?.nfcCode
+            })
+          }
+
+          session.invalidate()
+        }
+      }
+    }
   }
 }

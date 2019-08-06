@@ -63,6 +63,20 @@ class BaseViewController: UIViewController {
     return String(format: localizedString, fieldName)
   }
   
+  func showErrorMessage( _ message: String) {
+    let title = NSLocalizedString(Localizations.errorModalTitle, comment: "")
+    let okString = NSLocalizedString(Localizations.okAction, comment: "")
+    
+    let alertVC = UIAlertController(title: title,
+                                    message: message,
+                                    preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: okString, style: .default)
+    alertVC.addAction(okAction)
+    
+    present(alertVC, animated: true)
+  }
+  
   func showErrorMessage( _ error: CustomError) {
     var message = ""
     switch error as CustomError {
