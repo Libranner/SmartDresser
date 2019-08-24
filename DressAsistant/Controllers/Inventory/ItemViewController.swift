@@ -258,7 +258,7 @@ class ItemViewController: BaseViewController {
       uploadPhoto { [weak self] photoURL in
         if let self = self {
           let userId = AuthService().currentUserId
-          let affiliateId = AffiliateManager.shared.currentAffiliate?.key
+          let affiliateId = AppManager.shared.currentAffiliate?.key
           
           let item = Item(key: nil,
                                 nfcCode: self.nfcCode!,

@@ -209,7 +209,7 @@ class OutfitViewController: BaseViewController {
     if (validateFields()) {
       showLoading()
       let userId = AuthService().currentUserId
-      let affiliateId = AffiliateManager.shared.currentAffiliate?.key
+      let affiliateId = AppManager.shared.currentAffiliate?.key
       
       let outfit = Outfit(key: nil,
                         season: selectedSeason,

@@ -60,6 +60,7 @@
 		EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */; };
 		EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */; };
 		EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790522AC2B330060F3E6 /* RoundImageView.swift */; };
+		EEC003A22311F31D00827769 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC003A12311F31D00827769 /* ScannerViewController.swift */; };
 		EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */; };
 		EECB329B22DC1263009D91BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329A22DC1263009D91BF /* Item.swift */; };
 		EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329C22DC1456009D91BF /* ItemViewController.swift */; };
@@ -68,7 +69,7 @@
 		EED297E322E3E13800710814 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E222E3E13800710814 /* ModalView.swift */; };
 		EED297E522E5257F00710814 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E422E5257F00710814 /* Outfit.swift */; };
 		EED297E722E52B1700710814 /* OutfitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED297E622E52B1700710814 /* OutfitService.swift */; };
-		EED5CE4022F5DD6800257AA1 /* AffiliateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */; };
+		EED5CE4022F5DD6800257AA1 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE3F22F5DD6800257AA1 /* AppManager.swift */; };
 		EED5CE4222F5F7E900257AA1 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4122F5F7E900257AA1 /* WeatherService.swift */; };
 		EED5CE4422F6257B00257AA1 /* RecomendationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */; };
 		EED5CE4822F631B900257AA1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4722F631B900257AA1 /* WeatherResponse.swift */; };
@@ -162,6 +163,7 @@
 		EEAD790122AC06800060F3E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		EEAD790522AC2B330060F3E6 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		EEC003A12311F31D00827769 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerScrollable.swift; sourceTree = "<group>"; };
 		EECB329A22DC1263009D91BF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EECB329C22DC1456009D91BF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 		EED297E222E3E13800710814 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		EED297E422E5257F00710814 /* Outfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
 		EED297E622E52B1700710814 /* OutfitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitService.swift; sourceTree = "<group>"; };
-		EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateManager.swift; sourceTree = "<group>"; };
+		EED5CE3F22F5DD6800257AA1 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		EED5CE4122F5F7E900257AA1 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationItemViewController.swift; sourceTree = "<group>"; };
 		EED5CE4722F631B900257AA1 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
@@ -392,7 +394,7 @@
 		EED5CE3E22F5DD3A00257AA1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				EED5CE3F22F5DD6800257AA1 /* AffiliateManager.swift */,
+				EED5CE3F22F5DD6800257AA1 /* AppManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -419,6 +421,7 @@
 			children = (
 				EED5CE4922F63AB500257AA1 /* HomeViewController.swift */,
 				EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */,
+				EEF855FB2289FCDA005E5B5C /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -481,7 +484,7 @@
 				EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */,
 				EEF8566D228AF0D0005E5B5C /* Constants */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
-				EEF855FB2289FCDA005E5B5C /* Main.storyboard */,
+				EEC003A12311F31D00827769 /* ScannerViewController.swift */,
 				EEF855FE2289FCDB005E5B5C /* Assets.xcassets */,
 				EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */,
 				EEF856032289FCDB005E5B5C /* Info.plist */,
@@ -768,7 +771,7 @@
 				EEACC07322B873C000C37990 /* HairStyleService.swift in Sources */,
 				EEA6701922D0E3A40002FE3D /* SkinColor.swift in Sources */,
 				EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */,
-				EED5CE4022F5DD6800257AA1 /* AffiliateManager.swift in Sources */,
+				EED5CE4022F5DD6800257AA1 /* AppManager.swift in Sources */,
 				EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */,
 				EEA6702122D11D1B0002FE3D /* AffiliateCardViewController.swift in Sources */,
 				EEF6C8D022EBDED200D62FC4 /* UIStackView+RemoveAll.swift in Sources */,
@@ -778,6 +781,7 @@
 				EEAD790022AB5BCC0060F3E6 /* AuthService.swift in Sources */,
 				EE56050E22AC72CB00C0096B /* FileService.swift in Sources */,
 				EED297E722E52B1700710814 /* OutfitService.swift in Sources */,
+				EEC003A22311F31D00827769 /* ScannerViewController.swift in Sources */,
 				EE83C53E229979080046C43C /* BaseViewController.swift in Sources */,
 				EED297E322E3E13800710814 /* ModalView.swift in Sources */,
 				EEACC07B22BBE81D00C37990 /* OptionPickerViewController.swift in Sources */,

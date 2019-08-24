@@ -13,6 +13,31 @@ import CodableFirebase
 struct AffiliateService {
   private let root = "affiliates"
   
+  func get(withId id:String, completion:@escaping (_ error: ItemError?,
+    _ data: Item?) -> Void) {
+    
+    let db = Firestore.firestore()
+    let docRef = db.collection(root)
+    
+    docRef.document(id).getDocument { (snapshot, error) in
+      guard error == nil else {
+        print("Error getting documents: \(String(describing: error))")
+        completion(ItemError.generic, nil)
+        return
+      }
+      
+      //TODO:SE NECESITA OBTENER EL AFFILIADO PARA PODER CHEQUIAR SUS DATOS Y SABER SI YA SE CONECTO CON EL ASISTENTE
+      //ESTO DEBERIA HACER EN CONJUNTO CON - [ ] Recordar tipo de usuario que inicio sesión
+      /*if let snapshot = snapshot {
+        let item = self.convertToItem(document: snapshot)
+        completion(nil, item)
+      }
+      else {
+        completion(ItemError.notFound, nil)
+      }*/
+    }
+  }
+  
   func getAll(completion:@escaping (_ error: CustomError?,
     _ data: [Affiliate]) -> Void) {
     
@@ -40,7 +65,10 @@ struct AffiliateService {
                                     hairColor: nil,
                                     eyeColor: nil,
                                     skinColor: nil,
-                                    userId: model["userId"] as? String)
+                                    userId: model["userId"] as? String,
+                                    isConnected: false)
+          
+          affiliate.isConnected = model["isConnected"] as? Bool ?? false
           
           if let data = model["hairColor"] as? [String : Any] {
             affiliate.hairColor = try! FirestoreDecoder().decode(HairColor.self,
@@ -74,6 +102,22 @@ struct AffiliateService {
         completion(nil, data)
       }
     }
+  }
+  
+  func createRelation(affiliateId: String,
+                      completion: @escaping (_ error: CustomError?) -> Void) {
+    let db = Firestore.firestore()
+    
+    db.collection(root).document(affiliateId).updateData(["isConnected" : true]) {
+        error in
+        if let error = error {
+          print("Error updating document: \(error)")
+          completion(CustomError.errorSavingData)
+        }
+        else {
+          completion(nil)
+        }
+      }
   }
   
   func save(_ affiliate: Affiliate, completion:@escaping (_ error: CustomError?,

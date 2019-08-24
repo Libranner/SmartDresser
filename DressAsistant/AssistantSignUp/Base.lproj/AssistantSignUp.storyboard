@@ -24,6 +24,10 @@
                                     <constraint firstAttribute="height" constant="100" id="qwc-H5-bqX"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aiD-b7-H34">
+                                <rect key="frame" x="188.5" y="396.5" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-Ig-cRw">
                                 <rect key="frame" x="31" y="396.5" width="352" height="132"/>
                                 <subviews>
@@ -57,27 +61,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-JL-Rrm">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5uw-Ig-cRw" firstAttribute="centerY" secondItem="irL-EB-zix" secondAttribute="centerY" multiplier="0.8" constant="100" id="0NK-Zp-ImB"/>
                             <constraint firstItem="odP-EN-GV3" firstAttribute="centerX" secondItem="irL-EB-zix" secondAttribute="centerX" id="6da-w3-Gie"/>
                             <constraint firstItem="5uw-Ig-cRw" firstAttribute="top" secondItem="odP-EN-GV3" secondAttribute="bottom" constant="50" id="C0h-Oz-aVi"/>
-                            <constraint firstAttribute="top" secondItem="D4d-JL-Rrm" secondAttribute="top" id="HYz-PL-2j4"/>
+                            <constraint firstItem="aiD-b7-H34" firstAttribute="top" secondItem="5uw-Ig-cRw" secondAttribute="top" id="H4c-oR-k8F"/>
                             <constraint firstItem="odP-EN-GV3" firstAttribute="width" secondItem="fzy-nQ-qfu" secondAttribute="width" id="I1D-Wx-6f2"/>
                             <constraint firstItem="5uw-Ig-cRw" firstAttribute="width" secondItem="fzy-nQ-qfu" secondAttribute="width" multiplier="0.85" id="KH8-4e-PIK"/>
-                            <constraint firstItem="irL-EB-zix" firstAttribute="trailing" secondItem="D4d-JL-Rrm" secondAttribute="trailing" id="PX1-iF-HeR"/>
-                            <constraint firstAttribute="bottom" secondItem="D4d-JL-Rrm" secondAttribute="bottom" id="nb7-X9-JN0"/>
-                            <constraint firstItem="D4d-JL-Rrm" firstAttribute="leading" secondItem="fzy-nQ-qfu" secondAttribute="leading" id="suh-nO-HUI"/>
+                            <constraint firstItem="aiD-b7-H34" firstAttribute="centerX" secondItem="irL-EB-zix" secondAttribute="centerX" id="fTl-Lw-W8w"/>
                             <constraint firstItem="5uw-Ig-cRw" firstAttribute="centerX" secondItem="irL-EB-zix" secondAttribute="centerX" id="v0y-kp-EGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="irL-EB-zix"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="D4d-JL-Rrm" id="mMF-9e-fpB"/>
+                        <outlet property="activityIndicatorView" destination="aiD-b7-H34" id="93G-5N-bd6"/>
                         <outlet property="emailTextField" destination="fen-YM-4em" id="5cI-56-ocd"/>
                         <outlet property="mainStackView" destination="5uw-Ig-cRw" id="3Yh-SI-ljl"/>
                         <segue destination="TdD-mN-Zz5" kind="show" identifier="showCreateAccount" id="tUf-LH-Rps"/>
@@ -224,7 +223,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="375" height="667"/>
         <image name="camera" width="30" height="30"/>
         <image name="default-user" width="165" height="165"/>
         <image name="logotipo" width="273" height="88"/>

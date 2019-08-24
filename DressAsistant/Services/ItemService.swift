@@ -82,7 +82,7 @@ struct ItemService {
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     
-    let affiliateId = AffiliateManager.shared.currentAffiliate?.key as Any
+    let affiliateId = AppManager.shared.currentAffiliate?.key as Any
     let userId = AuthService().currentUserId as Any
     
     if type != nil {

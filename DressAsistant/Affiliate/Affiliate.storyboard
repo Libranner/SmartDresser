@@ -503,7 +503,7 @@
             </objects>
             <point key="canvasLocation" x="-242.0289855072464" y="6.6964285714285712"/>
         </scene>
-        <!--Listado de Afiliados-->
+        <!--Mis Afiliados-->
         <scene sceneID="029-We-jrJ">
             <objects>
                 <viewController id="vEy-J2-xKU" customClass="AffiliatesListViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -561,8 +561,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z1i-lG-bqy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Listado de Afiliados" id="447-d1-Bln">
+                    <navigationItem key="navigationItem" title="Mis Afiliados" id="447-d1-Bln">
                         <barButtonItem key="backBarButtonItem" title=" " id="9FS-Hi-0dD"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar sesión" id="UJ4-QQ-GJH">
+                            <connections>
+                                <action selector="logout:" destination="vEy-J2-xKU" id="jHu-On-6jw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yI0-Ib-Xfe">
                             <connections>
                                 <action selector="addAffiliateAction" destination="vEy-J2-xKU" id="oEr-JY-Fje"/>

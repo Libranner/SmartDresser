@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 
 struct UserService {
+  
   func saveUser(displayName: String, photoURL: URL?, completion:@escaping (_ saved: Bool)->Void) {
     if let request = Auth.auth().currentUser?.createProfileChangeRequest() {
       request.displayName = displayName

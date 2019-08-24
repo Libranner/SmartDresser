@@ -15,7 +15,7 @@ class AssistantSignUpViewController: BaseViewController {
   
   @IBOutlet var mainStackView: UIStackView!
   @IBOutlet var emailTextField: UITextField!
-  @IBOutlet var backgroundImageView: UIImageView!
+  @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,7 +23,7 @@ class AssistantSignUpViewController: BaseViewController {
     NotificationCenter.default.addObserver(forName: CustomNotificationName.userHasSigned,
                                            object: nil, queue: nil) {_ in
       DispatchQueue.main.async {
-        self.performSegue(withIdentifier: self.CREATE_ACCOUNT_SEGUE_KEY, sender: self)
+        self.signIn()
       }
     }
   }
@@ -67,22 +67,27 @@ class AssistantSignUpViewController: BaseViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-
+    self.activityIndicatorView.isHidden = false
+    
     AuthService().isAuthenticated { isAuthenticated in
       if isAuthenticated {
         self.performSegue(withIdentifier: self.SHOW_MAIN_SEGUE_KEY, sender: self)
       }
       else {
-        AuthService().signInWithEmail { error in
-          if error == nil {
-            self.performSegue(withIdentifier: self.CREATE_ACCOUNT_SEGUE_KEY, sender: self)
-          }
-          else {
-            DispatchQueue.main.async {
-              self.backgroundImageView.isHidden = true
-              self.mainStackView.isHidden = false
-            }
-          }
+        self.signIn()
+      }
+    }
+  }
+  
+  private func signIn() {
+    AuthService().signInWithEmail { error in
+      if error == nil {
+        self.performSegue(withIdentifier: self.CREATE_ACCOUNT_SEGUE_KEY, sender: self)
+      }
+      else {
+        DispatchQueue.main.async {
+          self.activityIndicatorView.isHidden = true
+          self.mainStackView.isHidden = false
         }
       }
     }

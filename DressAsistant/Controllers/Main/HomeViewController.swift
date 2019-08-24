@@ -14,10 +14,12 @@ class HomeViewController: BaseViewController {
   @IBOutlet weak var iconImageView: RoundImageView!
   @IBOutlet weak var weatherLabel: UILabel!
   
+  @IBOutlet var affiliateToButton: RoundedButton!
   private let showRecomendationSegue = "showRecomendations"
   private var weatherResponse: WeatherResponse?
   private var outfits = [Outfit]()
   
+  @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
   lazy var loadingView = LoadingView()
   
   enum Localizations {
@@ -62,6 +64,15 @@ class HomeViewController: BaseViewController {
         self?.showNoWeatherAlert()
       }
     }
+  }
+  
+  @IBAction func scanQRButtonTapped(_ sender: Any) {
+    affiliateToButton.isUserInteractionEnabled = false
+    activityIndicatorView.isHidden = false
+    activityIndicatorView.startAnimating()
+    let scannerVC = ScannerViewController()
+    scannerVC.delegate = self
+    present(scannerVC, animated: true)
   }
   
   @IBAction func requestRecomendations(_ sender: Any) {
@@ -122,6 +133,22 @@ class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: LoadingScreenDelegate {
+}
+
+extension HomeViewController: ScannerViewControllerDelegate {
+  func scannedCode(_ code: String) {
+    AffiliateService().createRelation(affiliateId: code) { [weak self] error in
+      if error != nil {
+        self?.activityIndicatorView.stopAnimating()
+        self?.showAlreadyAffiliatedText()
+      }
+      self?.affiliateToButton.isUserInteractionEnabled = true
+    }
+  }
+  
+  func showAlreadyAffiliatedText() {
+    affiliateToButton.setTitle("Desafiliar", for: .normal)
+  }
 }
 
 extension HomeViewController: EventPickerDelegate {

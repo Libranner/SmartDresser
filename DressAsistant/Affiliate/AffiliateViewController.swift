@@ -103,7 +103,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
       #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     
     removeButton.isHidden = !editMode
-    existingAffiliate = AffiliateManager.shared.currentAffiliate
+    existingAffiliate = AppManager.shared.currentAffiliate
     
     if existingAffiliate != nil {
       fillUpForm()
@@ -285,7 +285,8 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
                      hairColor: hairColorSelected!,
                      eyeColor: eyeColorSelected!,
                      skinColor: skinColorSelected!,
-                     userId: userId)
+                     userId: userId,
+                    isConnected: false)
   }
   
   func handleResponse(error: CustomError?, success: Bool) {

@@ -33,10 +33,6 @@ class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
     // Do any additional setup after loading the view.
   }
   
-  private func animateUI() {
-    
-  }
-  
   @IBAction func selectProfilePhoto(_ sender: Any) {
     
     let takePhotoString = NSLocalizedString(Localizations.takePhoto, comment: "")

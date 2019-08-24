@@ -13,10 +13,15 @@ class AuthService {
   private let LINK_KEY = "Link"
   private let EMAIL_KEY = "Email"
   private let URL_FORMAT = "https://smartdresser-7d3cb.firebaseapp.com?email"
-
   
   var currentUserId: String? {
     return Auth.auth().currentUser?.uid
+  }
+  
+  func logout() {
+    try? Auth.auth().signOut()
+    UserDefaults.standard.removeObject(forKey: self.EMAIL_KEY)
+    UserDefaults.standard.removeObject(forKey: self.LINK_KEY)
   }
   
   func isSignIn(withLink link: String, updateLink: Bool = false) -> Bool {

@@ -38,16 +38,38 @@ struct OutfitService {
   func getRecomendationsForWeather( _ weather: WeatherCondition,
                                     timeOfDay: TimeOfDay,
                                     eventType: EventType,
-                                    season: Season, completion:(_ outfits: [Outfit]) -> Void) {
+                                    season: Season, completion:@escaping (_ outfits: [Outfit]) -> Void) {
     
-    //TODO: Get outfits
-    completion([Outfit]())
+    let affiliateId = AppManager.shared.currentAffiliate?.key as Any
+    
+    let db = Firestore.firestore()
+    let docRef = db.collection(root)
+      .whereField("affiliateId", isEqualTo: affiliateId)
+      .whereField("weather", isEqualTo: weather.rawValue)
+      .whereField("timeOfDay", isEqualTo: timeOfDay.rawValue)
+      .whereField("eventType", isEqualTo: eventType.rawValue)
+      .whereField("season", isEqualTo: season.rawValue)
+    
+    docRef.getDocuments { (querySnapshot, err) in
+      var data = [Outfit]()
+      if let err = err {
+        print("Error getting documents: \(err)")
+        completion(data)
+      } else {
+        for document in querySnapshot!.documents {
+          if let outfit = self.convertToOutfit(document: document) {
+            data.append(outfit)
+          }
+        }
+        completion(data)
+      }
+    }
   }
   
   func getAll(completion:@escaping (_ error: CustomError?,
     _ data: [Outfit]) -> Void) {
     
-    let affiliateId = AffiliateManager.shared.currentAffiliate?.key as Any
+    let affiliateId = AppManager.shared.currentAffiliate?.key as Any
     let userId = AuthService().currentUserId as Any
     
     let db = Firestore.firestore()

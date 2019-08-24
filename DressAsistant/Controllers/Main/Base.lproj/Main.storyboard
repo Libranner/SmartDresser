@@ -201,7 +201,7 @@
                                                     <constraint firstAttribute="width" constant="60" id="e80-Nv-Y08"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-4e-JUn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00 C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="0Xz-4e-JUn">
                                                 <rect key="frame" x="67" y="0.0" width="254" height="119.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                                 <nil key="textColor"/>
@@ -222,10 +222,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAM-Pk-hvD" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
-                                <rect key="frame" x="56.5" y="467.5" width="262.5" height="80"/>
+                                <rect key="frame" x="56.5" y="467.5" width="262.5" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="Ghl-KZ-kpc"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ghl-KZ-kpc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Solicitar Recomendación">
@@ -235,19 +235,43 @@
                                     <action selector="requestRecomendations:" destination="DmF-jf-cLe" eventType="touchUpInside" id="CX3-gG-u3M"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0a-Gl-e86" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
+                                <rect key="frame" x="56.5" y="557.5" width="262.5" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dsR-5O-sQj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Afiliarse a un asistente">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="scanQRButtonTapped:" destination="DmF-jf-cLe" eventType="touchUpInside" id="O5w-IJ-Yrt"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ey7-fc-v2d">
+                                <rect key="frame" x="169" y="569" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bsl-jQ-gPF" firstAttribute="centerY" secondItem="GmZ-ze-QSf" secondAttribute="centerY" multiplier="0.8" id="KsE-DB-jrn"/>
                             <constraint firstItem="BAM-Pk-hvD" firstAttribute="centerX" secondItem="GmZ-ze-QSf" secondAttribute="centerX" id="N59-my-YdX"/>
+                            <constraint firstItem="Ey7-fc-v2d" firstAttribute="centerX" secondItem="K0a-Gl-e86" secondAttribute="centerX" id="Q92-sC-9hr"/>
                             <constraint firstItem="BAM-Pk-hvD" firstAttribute="top" secondItem="bsl-jQ-gPF" secondAttribute="bottom" constant="100" id="deE-F2-qV6"/>
+                            <constraint firstItem="K0a-Gl-e86" firstAttribute="width" secondItem="BAM-Pk-hvD" secondAttribute="width" id="h6u-mE-h6P"/>
                             <constraint firstItem="BAM-Pk-hvD" firstAttribute="width" secondItem="Zer-0X-VAl" secondAttribute="width" multiplier="0.7" id="hyQ-nl-dZj"/>
+                            <constraint firstItem="K0a-Gl-e86" firstAttribute="top" secondItem="BAM-Pk-hvD" secondAttribute="bottom" constant="30" id="jRD-sT-0Zp"/>
                             <constraint firstItem="bsl-jQ-gPF" firstAttribute="centerX" secondItem="GmZ-ze-QSf" secondAttribute="centerX" id="ouU-p9-rHB"/>
                             <constraint firstItem="bsl-jQ-gPF" firstAttribute="width" secondItem="Zer-0X-VAl" secondAttribute="width" multiplier="0.9" id="uva-Gx-TLd"/>
+                            <constraint firstItem="Ey7-fc-v2d" firstAttribute="centerY" secondItem="K0a-Gl-e86" secondAttribute="centerY" id="wFn-ST-qX7"/>
+                            <constraint firstItem="K0a-Gl-e86" firstAttribute="centerX" secondItem="BAM-Pk-hvD" secondAttribute="centerX" id="xEA-Sy-shB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GmZ-ze-QSf"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="Ey7-fc-v2d" id="Wjf-YK-eOs"/>
+                        <outlet property="affiliateToButton" destination="K0a-Gl-e86" id="Vjt-sY-2EG"/>
                         <outlet property="iconImageView" destination="Ynm-m0-Nc1" id="aGe-4u-GY9"/>
                         <outlet property="temperatureLabel" destination="0Xz-4e-JUn" id="uYa-q3-9n1"/>
                         <outlet property="weatherLabel" destination="Jzx-9C-ZIL" id="HrP-9m-lWb"/>
@@ -303,7 +327,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3er-6I-2mq">
-                                <rect key="frame" x="259.5" y="597" width="50" height="50"/>
+                                <rect key="frame" x="259.5" y="582" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7Lg-uW-UwZ"/>
                                     <constraint firstAttribute="width" constant="50" id="n9c-M9-jbC"/>
@@ -314,7 +338,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8F-yc-NxI">
-                                <rect key="frame" x="65.5" y="597" width="50" height="50"/>
+                                <rect key="frame" x="65.5" y="582" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aoi-1b-qpa"/>
                                     <constraint firstAttribute="width" constant="50" id="fNr-Ho-lU8"/>
@@ -353,7 +377,7 @@
                             <constraint firstItem="3er-6I-2mq" firstAttribute="trailing" secondItem="nz5-kz-O0b" secondAttribute="trailing" id="Yhf-gF-Acz"/>
                             <constraint firstItem="m8F-yc-NxI" firstAttribute="leading" secondItem="nz5-kz-O0b" secondAttribute="leading" id="ZDz-9W-4Ul"/>
                             <constraint firstItem="nz5-kz-O0b" firstAttribute="centerY" secondItem="pTS-HQ-mjU" secondAttribute="centerY" multiplier="0.6" id="ZNO-13-aCh"/>
-                            <constraint firstItem="pTS-HQ-mjU" firstAttribute="bottom" secondItem="3er-6I-2mq" secondAttribute="bottom" constant="20" id="dNm-BC-zGW"/>
+                            <constraint firstItem="pTS-HQ-mjU" firstAttribute="bottom" secondItem="3er-6I-2mq" secondAttribute="bottom" constant="35" id="dNm-BC-zGW"/>
                             <constraint firstItem="nz5-kz-O0b" firstAttribute="centerX" secondItem="pTS-HQ-mjU" secondAttribute="centerX" id="lTG-Y5-cHA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pTS-HQ-mjU"/>

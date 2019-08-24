@@ -12,9 +12,9 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   lazy var loadingView = LoadingView()
   
   @IBOutlet var tableView: UITableView!
-  var affiliates = [Affiliate]()
-  let cellIdentifier = "AffiliateCell"
-  let showDetailSegueName = "showDetail"
+  private var affiliates = [Affiliate]()
+  private let cellIdentifier = "AffiliateCell"
+  private let showDetailSegueName = "showDetail"
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,6 +22,11 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
     tableView.dataSource = self
     
     setupRefreshControl()
+  }
+  
+  @IBAction func logout(_ sender: Any) {
+    AuthService().logout()
+    self.dismiss(animated: true)
   }
   
   private func setupRefreshControl() {
@@ -33,7 +38,7 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   
   override func viewDidAppear(_ animated: Bool) {
     tableView.refreshControl?.beginRefreshing()
-    AffiliateManager.shared.currentAffiliate = nil
+    AppManager.shared.currentAffiliate = nil
     loadAffiliates()
   }
   
@@ -47,8 +52,6 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   
   @IBAction func addAffiliateAction() {
     let affiliateCV = storyboard?.instantiateViewController(withIdentifier: "AffiliateViewController")
-    let nav = BaseNavigationViewController(rootViewController: affiliateCV!)
-    
     navigationController?.pushViewController(affiliateCV!, animated: true)
   }
   
@@ -62,7 +65,7 @@ class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let affiliate = selectedAffiliate {
-      AffiliateManager.shared.currentAffiliate = affiliate
+      AppManager.shared.currentAffiliate = affiliate
     }
   }
 }

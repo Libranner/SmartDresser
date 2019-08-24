@@ -8,9 +8,8 @@
 
 import UIKit
 
-class AffiliateManager {
+class AppManager {
   
-  static let shared = AffiliateManager()
+  static let shared = AppManager()
   var currentAffiliate: Affiliate?
-  
 }
