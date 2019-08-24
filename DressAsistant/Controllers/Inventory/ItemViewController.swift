@@ -321,14 +321,6 @@ class ItemViewController: BaseViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-    /*
-     //TODO: Check this animation
-     scrollView.transform = CGAffineTransform(translationX: scrollView.bounds.size.width, y: 0)
-    
-    UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseIn, animations: {
-      self.scrollView.transform = CGAffineTransform.identity
-    }, completion: nil)*/
   }
   
   fileprivate func setupUI() {

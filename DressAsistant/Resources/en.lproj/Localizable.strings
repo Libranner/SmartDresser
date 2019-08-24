@@ -65,6 +65,7 @@
 "eye-color-field" = "color de ojos";
 "skin-color-field" = "color de piel";
 "hair-color-field" = "color de pelo";
+"email-field" = "correo electrónico";
 
 //Titles
 "items-title" = "Items";
@@ -97,6 +98,7 @@
 //Alerts
 "item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";
 "item-exists-message" = "Item existe. ¿Desea actualizarlo?";
+"email-sent" = "Se ha enviado un email a su correo. Favor verificar.";
 
 //Miscelaneous
 "close-modal" = "Cerrar";

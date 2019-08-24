@@ -8,4 +8,7 @@
 
 import Foundation
 
+struct CustomNotificationName {
+  static let userHasSigned = Notification.Name("userHasSigned")
+}
 

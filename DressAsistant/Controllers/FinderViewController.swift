@@ -13,6 +13,5 @@ class FinderViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
-  
+
 }

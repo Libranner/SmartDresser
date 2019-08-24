@@ -44,7 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
     if let link =  userActivity.webpageURL?.absoluteString {
-      return AuthService().isSignIn(withLink: link, updateLink: true)
+      if AuthService().isSignIn(withLink: link, updateLink: true) {
+        NotificationCenter.default.post(name: CustomNotificationName.userHasSigned,
+                                        object: nil)
+      }
+      return true
     }
     
     return false

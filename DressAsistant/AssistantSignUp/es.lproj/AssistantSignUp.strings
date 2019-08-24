@@ -9,6 +9,6 @@
 "eZ4-OF-IFp.placeholder" = "Nombre";
 
 /* Class = "UILabel"; text = "Indique el email"; ObjectID = "g5x-sp-QMf"; */
-"g5x-sp-QMf.text" = "Indique el email";
+"g5x-sp-QMf.text" = "Indique su correo electrónico";
 
 "take-photo" = "Tomar foto";

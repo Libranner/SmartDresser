@@ -29,7 +29,7 @@
 		EE56051D22ADF1E800C0096B /* Affiliate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56051C22ADF1E800C0096B /* Affiliate.swift */; };
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
-		EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* CustomNotification.swift */; };
+		EE83C5272298F7EA0046C43C /* NotificationsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* NotificationsName.swift */; };
 		EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
 		EE83C53E229979080046C43C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53D229979080046C43C /* BaseViewController.swift */; };
 		EE83C540229985440046C43C /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53F229985440046C43C /* FinderViewController.swift */; };
@@ -127,7 +127,7 @@
 		EE56051C22ADF1E800C0096B /* Affiliate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affiliate.swift; sourceTree = "<group>"; };
 		EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesDetailViewController.swift; sourceTree = "<group>"; };
 		EE83C5242298BC9C0046C43C /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
-		EE83C5262298F7EA0046C43C /* CustomNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotification.swift; sourceTree = "<group>"; };
+		EE83C5262298F7EA0046C43C /* NotificationsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsName.swift; sourceTree = "<group>"; };
 		EE83C53022996EFF0046C43C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EE83C539229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		EE83C53A229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 			children = (
 				EE83C5242298BC9C0046C43C /* UIHelper.swift */,
 				EEF8566E228AF0DE005E5B5C /* CustomColor.swift */,
-				EE83C5262298F7EA0046C43C /* CustomNotification.swift */,
+				EE83C5262298F7EA0046C43C /* NotificationsName.swift */,
 				EE83C54522998D450046C43C /* UIConstants.swift */,
 				EEA6701A22D0E4210002FE3D /* UIColor+Hex.swift */,
 			);
@@ -729,7 +729,7 @@
 				EEACC08122BBEF4C00C37990 /* Option.swift in Sources */,
 				EEA6701F22D10AF20002FE3D /* PhotoPickerDelegate.swift in Sources */,
 				EE55C72E22E8EA570075803C /* OutfitCollectionViewCell.swift in Sources */,
-				EE83C5272298F7EA0046C43C /* CustomNotification.swift in Sources */,
+				EE83C5272298F7EA0046C43C /* NotificationsName.swift in Sources */,
 				EEACC07922BAAADD00C37990 /* EyeColor.swift in Sources */,
 				EEACC07122B6FC5600C37990 /* ChoosePictureAlertViewController.swift in Sources */,
 				EED5CE4422F6257B00257AA1 /* RecomendationItemViewController.swift in Sources */,

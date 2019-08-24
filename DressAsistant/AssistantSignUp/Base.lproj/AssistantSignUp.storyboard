@@ -18,42 +18,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-Ig-cRw">
-                                <rect key="frame" x="31" y="322" width="352" height="80.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logotipo" translatesAutoresizingMaskIntoConstraints="NO" id="odP-EN-GV3">
+                                <rect key="frame" x="0.0" y="246.5" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qwc-H5-bqX"/>
+                                </constraints>
+                            </imageView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5uw-Ig-cRw">
+                                <rect key="frame" x="31" y="396.5" width="352" height="132"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indique el email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5x-sp-QMf">
-                                        <rect key="frame" x="0.0" y="0.0" width="352" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indique su correo electrónico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5x-sp-QMf">
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.50100886821746826" green="0.67591375112533569" blue="0.79217392206192017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fen-YM-4em">
-                                        <rect key="frame" x="0.0" y="20.5" width="352" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="correo electrónico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fen-YM-4em">
+                                        <rect key="frame" x="0.0" y="33" width="352" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="mKO-sc-IbX"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wF-YR-emk">
-                                        <rect key="frame" x="0.0" y="50.5" width="352" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wF-YR-emk" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="352" height="42"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="TL9-BP-l5Y"/>
+                                        </constraints>
+                                        <state key="normal" title="Crear usuario">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
-                                            <action selector="signInButtonTapped:" destination="4iI-NT-U1h" eventType="touchUpInside" id="NyI-5p-wnw"/>
+                                            <action selector="signInButtonTapped:" destination="4iI-NT-U1h" eventType="touchUpInside" id="f7u-cW-CIn"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-JL-Rrm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5uw-Ig-cRw" firstAttribute="centerY" secondItem="irL-EB-zix" secondAttribute="centerY" multiplier="0.8" id="0NK-Zp-ImB"/>
+                            <constraint firstItem="5uw-Ig-cRw" firstAttribute="centerY" secondItem="irL-EB-zix" secondAttribute="centerY" multiplier="0.8" constant="100" id="0NK-Zp-ImB"/>
+                            <constraint firstItem="odP-EN-GV3" firstAttribute="centerX" secondItem="irL-EB-zix" secondAttribute="centerX" id="6da-w3-Gie"/>
+                            <constraint firstItem="5uw-Ig-cRw" firstAttribute="top" secondItem="odP-EN-GV3" secondAttribute="bottom" constant="50" id="C0h-Oz-aVi"/>
+                            <constraint firstAttribute="top" secondItem="D4d-JL-Rrm" secondAttribute="top" id="HYz-PL-2j4"/>
+                            <constraint firstItem="odP-EN-GV3" firstAttribute="width" secondItem="fzy-nQ-qfu" secondAttribute="width" id="I1D-Wx-6f2"/>
                             <constraint firstItem="5uw-Ig-cRw" firstAttribute="width" secondItem="fzy-nQ-qfu" secondAttribute="width" multiplier="0.85" id="KH8-4e-PIK"/>
+                            <constraint firstItem="irL-EB-zix" firstAttribute="trailing" secondItem="D4d-JL-Rrm" secondAttribute="trailing" id="PX1-iF-HeR"/>
+                            <constraint firstAttribute="bottom" secondItem="D4d-JL-Rrm" secondAttribute="bottom" id="nb7-X9-JN0"/>
+                            <constraint firstItem="D4d-JL-Rrm" firstAttribute="leading" secondItem="fzy-nQ-qfu" secondAttribute="leading" id="suh-nO-HUI"/>
                             <constraint firstItem="5uw-Ig-cRw" firstAttribute="centerX" secondItem="irL-EB-zix" secondAttribute="centerX" id="v0y-kp-EGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="irL-EB-zix"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="D4d-JL-Rrm" id="mMF-9e-fpB"/>
                         <outlet property="emailTextField" destination="fen-YM-4em" id="5cI-56-ocd"/>
+                        <outlet property="mainStackView" destination="5uw-Ig-cRw" id="3Yh-SI-ljl"/>
                         <segue destination="TdD-mN-Zz5" kind="show" identifier="showCreateAccount" id="tUf-LH-Rps"/>
+                        <segue destination="3M4-g8-OCZ" kind="show" identifier="showMain" id="Iqo-tI-V1q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0B-zv-Iwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,7 +154,7 @@
                                                     <action selector="selectProfilePhoto:" destination="TdD-mN-Zz5" eventType="touchUpInside" id="MnN-Eb-7iE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="por-QD-0pt" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="por-QD-0pt" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
                                                 <rect key="frame" x="72.5" y="746" width="269" height="42"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -192,11 +220,16 @@
                 <viewControllerPlaceholder storyboardName="Affiliate" id="3M4-g8-OCZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCH-LH-VQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="430"/>
+            <point key="canvasLocation" x="321" y="-90"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="375" height="667"/>
         <image name="camera" width="30" height="30"/>
         <image name="default-user" width="165" height="165"/>
+        <image name="logotipo" width="273" height="88"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Iqo-tI-V1q"/>
+    </inferredMetricsTieBreakers>
 </document>
