@@ -50,4 +50,6 @@ struct Outfit: Codable {
   var eventType: EventType
   var timeOfDay: TimeOfDay
   var items: [Item]
+  var affiliateId: String?
+  var userId: String?
 }

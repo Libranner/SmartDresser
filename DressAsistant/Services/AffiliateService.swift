@@ -19,14 +19,16 @@ struct AffiliateService {
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     
-    docRef.getDocuments { (querySnapshot, err) in
+    let userId = AuthService().currentUserId as Any
+    docRef
+      .whereField("userId", isEqualTo: userId)
+      .getDocuments { (querySnapshot, err) in
       var data = [Affiliate]()
       if let err = err {
         print("Error getting documents: \(err)")
         completion(CustomError.errorGettingData, data)
       } else {
         for document in querySnapshot!.documents {
-          
           var model = document.data()
           var affiliate = Affiliate(key: document.documentID,
                                     name: model["name"] as! String,
@@ -37,7 +39,8 @@ struct AffiliateService {
                                     sex: .none,
                                     hairColor: nil,
                                     eyeColor: nil,
-                                    skinColor: nil)
+                                    skinColor: nil,
+                                    userId: model["userId"] as? String)
           
           if let data = model["hairColor"] as? [String : Any] {
             affiliate.hairColor = try! FirestoreDecoder().decode(HairColor.self,

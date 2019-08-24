@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   lazy var loadingView = LoadingView()
   var existingAffiliate: Affiliate?
-  
+
   enum Localizations {
     static let takePhoto = "take-photo"
     static let choosePhoto = "choose-gallery-photo"
@@ -273,6 +274,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   }
   
   private func createAffiliateWithAvatar(_ avatarURL: URL) -> Affiliate {
+    let userId = AuthService().currentUserId
     return Affiliate(key: nil,
                      name: nameTextfield.text!,
                      avatarUrl: avatarURL,
@@ -282,7 +284,8 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
                      sex: sexSelected,
                      hairColor: hairColorSelected!,
                      eyeColor: eyeColorSelected!,
-                     skinColor: skinColorSelected!)
+                     skinColor: skinColorSelected!,
+                     userId: userId)
   }
   
   func handleResponse(error: CustomError?, success: Bool) {

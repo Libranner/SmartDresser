@@ -82,13 +82,23 @@ struct ItemService {
     let db = Firestore.firestore()
     let docRef = db.collection(root)
     
+    let affiliateId = AffiliateManager.shared.currentAffiliate?.key as Any
+    let userId = AuthService().currentUserId as Any
+    
     if type != nil {
-      docRef.whereField("type", isEqualTo: type!.rawValue).getDocuments { (querySnapshot, err) in
+      docRef
+        .whereField("type", isEqualTo: type!.rawValue)
+        .whereField("userId", isEqualTo: userId)
+        .whereField("affiliateId", isEqualTo: affiliateId)
+        .getDocuments { (querySnapshot, err) in
           self.parseData(err, querySnapshot, completion: completion)
       }
     }
     else {
-      docRef.getDocuments { (querySnapshot, err) in
+      docRef
+        .whereField("userId", isEqualTo: userId)
+        .whereField("affiliateId", isEqualTo: affiliateId)
+        .getDocuments { (querySnapshot, err) in
         self.parseData(err, querySnapshot, completion: completion)
       }
     }

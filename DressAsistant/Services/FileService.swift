@@ -53,7 +53,7 @@ struct FileService {
   func uploadUserPhoto(_ data: Data, completion:@escaping (_ error: CustomError?,
     _ success: Bool, _ photoURL: URL?)->Void) {
     
-    if let userID = Auth.auth().currentUser?.uid {
+    if let userID = AuthService().currentUserId {
       let path = "\(userPhotosPath)/\(userID)"
       uploadFile(path: path, data: data, completion: completion)
     }

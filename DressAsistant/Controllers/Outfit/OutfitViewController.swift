@@ -208,12 +208,17 @@ class OutfitViewController: BaseViewController {
   @objc private func save() {
     if (validateFields()) {
       showLoading()
+      let userId = AuthService().currentUserId
+      let affiliateId = AffiliateManager.shared.currentAffiliate?.key
+      
       let outfit = Outfit(key: nil,
                         season: selectedSeason,
                         weather: selectedWeather,
                         eventType: selectedEventType,
                         timeOfDay: selectedTimeOfDay,
-                        items: items)
+                        items: items,
+                        affiliateId: affiliateId,
+                        userId: userId)
       
       self.persist(outfit)
     }

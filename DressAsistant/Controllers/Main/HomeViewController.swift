@@ -23,7 +23,7 @@ class HomeViewController: BaseViewController {
   enum Localizations {
     static let welcomeMorning = "welcome-morning"
     static let welcomeAfternoon = "welcome-afternoon"
-    static let welcomeEvening = "welcome-night"
+    static let welcomeEvening = "welcome-evening"
     static let noWeatherMessage = "no-weather-msg"
     static let noWeatherTitle = "no-weather-title"
     static let noOutfitsMessage = "no-outfits-title"

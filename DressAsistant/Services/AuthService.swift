@@ -14,6 +14,11 @@ class AuthService {
   private let EMAIL_KEY = "Email"
   private let URL_FORMAT = "https://smartdresser-7d3cb.firebaseapp.com?email"
 
+  
+  var currentUserId: String? {
+    return Auth.auth().currentUser?.uid
+  }
+  
   func isSignIn(withLink link: String, updateLink: Bool = false) -> Bool {
   
     if Auth.auth().isSignIn(withEmailLink: link) {

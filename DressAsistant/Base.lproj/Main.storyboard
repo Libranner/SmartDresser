@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nKD-62-9zR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="63N-07-18H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eg-cU-r3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639" y="-2628"/>
+            <point key="canvasLocation" x="-8391" y="-4531"/>
         </scene>
         <!--Agregar Nueva Pieza-->
         <scene sceneID="ivH-JZ-h3g">
@@ -251,6 +251,7 @@
                         <outlet property="iconImageView" destination="Ynm-m0-Nc1" id="aGe-4u-GY9"/>
                         <outlet property="temperatureLabel" destination="0Xz-4e-JUn" id="uYa-q3-9n1"/>
                         <outlet property="weatherLabel" destination="Jzx-9C-ZIL" id="HrP-9m-lWb"/>
+                        <segue destination="oMt-Hy-vGU" kind="show" identifier="showRecomendations" id="J9Z-5S-rsX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH3-0J-52G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -287,13 +288,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-kz-O0b" customClass="AsyncImageView" customModule="DressAsistant" customModuleProvider="target">
-                                <rect key="frame" x="65.5" y="84" width="244" height="244"/>
+                                <rect key="frame" x="65.5" y="97.5" width="244" height="243.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nz5-kz-O0b" secondAttribute="height" multiplier="1:1" id="jtW-KA-Qtc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THN-1v-JCZ">
-                                <rect key="frame" x="65.5" y="338" width="244" height="120"/>
+                                <rect key="frame" x="65.5" y="351" width="244" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="vNp-Pq-j1g"/>
                                 </constraints>
@@ -324,7 +325,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oty-d7-MTi" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
-                                <rect key="frame" x="65.5" y="468" width="244" height="42"/>
+                                <rect key="frame" x="65.5" y="481" width="244" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="GbT-XF-6gI"/>
@@ -448,7 +449,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh5-KK-Q1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9254" y="-2808"/>
+            <point key="canvasLocation" x="-9478" y="-3601"/>
         </scene>
         <!--Inventory View Controller-->
         <scene sceneID="xhU-zr-UD8">

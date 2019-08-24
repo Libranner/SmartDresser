@@ -34,6 +34,7 @@ struct Affiliate: Codable {
   var hairColor: HairColor?
   var eyeColor: EyeColor?
   var skinColor: SkinColor?
+  var userId: String?
   
   private enum CodingKeys: String, CodingKey {
     case name
@@ -45,5 +46,6 @@ struct Affiliate: Codable {
     case hairColor
     case eyeColor
     case skinColor
+    case userId
   }
 }

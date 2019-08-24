@@ -40,14 +40,20 @@ struct OutfitService {
                                     eventType: EventType,
                                     season: Season, completion:(_ outfits: [Outfit]) -> Void) {
     
+    //TODO: Get outfits
     completion([Outfit]())
   }
   
   func getAll(completion:@escaping (_ error: CustomError?,
     _ data: [Outfit]) -> Void) {
     
+    let affiliateId = AffiliateManager.shared.currentAffiliate?.key as Any
+    let userId = AuthService().currentUserId as Any
+    
     let db = Firestore.firestore()
     let docRef = db.collection(root)
+      .whereField("userId", isEqualTo: userId)
+      .whereField("affiliateId", isEqualTo: affiliateId)
     
     docRef.getDocuments { (querySnapshot, err) in
       var data = [Outfit]()

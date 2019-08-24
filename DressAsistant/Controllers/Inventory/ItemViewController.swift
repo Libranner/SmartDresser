@@ -192,11 +192,7 @@ class ItemViewController: BaseViewController {
     deleteButton.isHidden = !editMode
     
     if editMode {
-      let saveButtontitle = NSLocalizedString(Localizations.saveTitle, comment: "")
-      let saveButton = UIBarButtonItem(title: saveButtontitle, style: .plain,
-                                       target: self, action: #selector(save))
-      
-      navigationItem.rightBarButtonItem = saveButton
+      setupSaveButton()
       self.title = NSLocalizedString(Localizations.editItemTitle, comment: "")
     }
     else {
@@ -205,6 +201,7 @@ class ItemViewController: BaseViewController {
       }
       else {
         self.title = NSLocalizedString(Localizations.newItemTitle, comment: "")
+        setupSaveButton()
         session = NFCNDEFReaderSession(delegate: self, queue: DispatchQueue.main, invalidateAfterFirstRead: true)
         session?.begin()
       }
@@ -213,6 +210,14 @@ class ItemViewController: BaseViewController {
     if existingItem != nil {
       fillUpForm()
     }
+  }
+  
+  private func setupSaveButton() {
+    let saveButtontitle = NSLocalizedString(Localizations.saveTitle, comment: "")
+    let saveButton = UIBarButtonItem(title: saveButtontitle, style: .plain,
+                                     target: self, action: #selector(save))
+    
+    navigationItem.rightBarButtonItem = saveButton
   }
   
   private func fillUpForm() {
@@ -252,6 +257,9 @@ class ItemViewController: BaseViewController {
       showLoading()
       uploadPhoto { [weak self] photoURL in
         if let self = self {
+          let userId = AuthService().currentUserId
+          let affiliateId = AffiliateManager.shared.currentAffiliate?.key
+          
           let item = Item(key: nil,
                                 nfcCode: self.nfcCode!,
                                 imageURL: photoURL,
@@ -260,7 +268,9 @@ class ItemViewController: BaseViewController {
                                 patternType: self.selectedPatternType,
                                 printType: self.selectedPrintType,
                                 color: self.selectedColor,
-                                type: self.selectedItemType)
+                                type: self.selectedItemType,
+                                affiliateId: affiliateId,
+                                userId: userId)
           
           self.persist(item)
         }
@@ -627,7 +637,10 @@ extension ItemViewController: PhotoPickerDelegate {
 // MARK: NFCNDEReaderSessionDelegate
 extension ItemViewController: NFCNDEFReaderSessionDelegate {
   func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-    navigationController?.popViewController(animated: true)
+    let err = error as! NFCReaderError
+    if err.code.rawValue == 200 {
+      self.navigationController?.popViewController(animated: true)
+    }
     print(error)
   }
   
@@ -648,10 +661,9 @@ extension ItemViewController: NFCNDEFReaderSessionDelegate {
                 return
               }
               
-              self?.nfcCode = item?.nfcCode
+              self?.nfcCode = itemNFC
             })
           }
-
           session.invalidate()
         }
       }
