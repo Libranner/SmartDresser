@@ -109,7 +109,10 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
       fillUpForm()
       showQrButton.isHidden = false
       let chevronImage = UIImage(named: "chevron")
-      let backButton = UIBarButtonItem(image: chevronImage, style: .plain, target: self, action: #selector(dismissAction))
+      let backButton = UIBarButtonItem(image: chevronImage,
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(dismissAction))
       navigationItem.leftBarButtonItem = backButton
     }
   }

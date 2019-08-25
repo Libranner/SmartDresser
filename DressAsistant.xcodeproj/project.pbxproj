@@ -61,6 +61,7 @@
 		EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */; };
 		EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790522AC2B330060F3E6 /* RoundImageView.swift */; };
 		EEC003A22311F31D00827769 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC003A12311F31D00827769 /* ScannerViewController.swift */; };
+		EEC004122312E51D00827769 /* SelectUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC004112312E51D00827769 /* SelectUserTypeViewController.swift */; };
 		EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */; };
 		EECB329B22DC1263009D91BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329A22DC1263009D91BF /* Item.swift */; };
 		EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329C22DC1456009D91BF /* ItemViewController.swift */; };
@@ -74,7 +75,7 @@
 		EED5CE4422F6257B00257AA1 /* RecomendationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */; };
 		EED5CE4822F631B900257AA1 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4722F631B900257AA1 /* WeatherResponse.swift */; };
 		EED5CE4A22F63AB500257AA1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4922F63AB500257AA1 /* HomeViewController.swift */; };
-		EED5CE4D22F6B47B00257AA1 /* EventTypePicker TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */; };
+		EED5CE4D22F6B47B00257AA1 /* EventTypePickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED5CE4C22F6B47B00257AA1 /* EventTypePickerTableViewController.swift */; };
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
@@ -164,6 +165,7 @@
 		EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		EEAD790522AC2B330060F3E6 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		EEC003A12311F31D00827769 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		EEC004112312E51D00827769 /* SelectUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTypeViewController.swift; sourceTree = "<group>"; };
 		EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerScrollable.swift; sourceTree = "<group>"; };
 		EECB329A22DC1263009D91BF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EECB329C22DC1456009D91BF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +179,7 @@
 		EED5CE4322F6257B00257AA1 /* RecomendationItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomendationItemViewController.swift; sourceTree = "<group>"; };
 		EED5CE4722F631B900257AA1 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		EED5CE4922F63AB500257AA1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventTypePicker TableViewController.swift"; sourceTree = "<group>"; };
+		EED5CE4C22F6B47B00257AA1 /* EventTypePickerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypePickerTableViewController.swift; sourceTree = "<group>"; };
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
@@ -420,8 +422,9 @@
 			isa = PBXGroup;
 			children = (
 				EED5CE4922F63AB500257AA1 /* HomeViewController.swift */,
-				EED5CE4C22F6B47B00257AA1 /* EventTypePicker TableViewController.swift */,
+				EED5CE4C22F6B47B00257AA1 /* EventTypePickerTableViewController.swift */,
 				EEF855FB2289FCDA005E5B5C /* Main.storyboard */,
+				EEC004112312E51D00827769 /* SelectUserTypeViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -750,13 +753,14 @@
 				EE55C72C22E8E7CC0075803C /* OutfitsCollectionViewController.swift in Sources */,
 				EECB329B22DC1263009D91BF /* Item.swift in Sources */,
 				EEAD790422AC10550060F3E6 /* CreateAccountViewController.swift in Sources */,
+				EEC004122312E51D00827769 /* SelectUserTypeViewController.swift in Sources */,
 				EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */,
 				EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */,
 				EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */,
 				EEACC07F22BBEB4A00C37990 /* OptionCollectionViewCell.swift in Sources */,
 				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
-				EED5CE4D22F6B47B00257AA1 /* EventTypePicker TableViewController.swift in Sources */,
+				EED5CE4D22F6B47B00257AA1 /* EventTypePickerTableViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
 				EE55C72822E878000075803C /* OutfitViewController.swift in Sources */,

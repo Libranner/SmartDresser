@@ -40,7 +40,10 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
     
     if isInSelectMode {
       let chevronImage = UIImage(named: "chevron")
-      let backButton = UIBarButtonItem(image: chevronImage, style: .plain, target: self, action: #selector(dismissAction))
+      let backButton = UIBarButtonItem(image: chevronImage,
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(dismissAction))
       navigationItem.leftBarButtonItem = backButton
       
       let doneButton = UIBarButtonItem(barButtonSystemItem: .done,

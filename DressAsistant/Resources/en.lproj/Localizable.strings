@@ -21,7 +21,7 @@
 "yes-action" = "Sí";
 "ok-action" = "Ok";
 "remove-action" = "Eliminar";
-"error-modal-title" = "Oops!";
+"error-modal-title" = "Algo anda mal";
 "remove-item" = "¿Está seguro que desea eliminar %@?";
 "save-title" = "Guardar";
 "new-item-title" = "Nuevo Item";
@@ -32,6 +32,7 @@
 "inventory-title" = "Inventario";
 "inventory-selection-title" = "Items seleccionados (%d)";
 "number-of-items" = "%d piezas de ropa";
+"scan-QR-title" = "Escanear código";
 
 //Entitites
 "item" = "Item";
@@ -99,6 +100,13 @@
 "item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";
 "item-exists-message" = "Item existe. ¿Desea actualizarlo?";
 "email-sent" = "Se ha enviado un email a su correo. Favor verificar.";
+"no-affiliated-message" = "Debe afiliarse a un asistente para solicitar recomendaciones.";
 
 //Miscelaneous
 "close-modal" = "Cerrar";
+
+
+//Buttons
+"affiliate-to-text" = "Afiliarse a un asistente";
+"deaffiliate-to-text" = "Desafiliarse al asistente";
+

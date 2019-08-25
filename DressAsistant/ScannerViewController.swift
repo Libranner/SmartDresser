@@ -13,6 +13,7 @@ import UIKit
 
 protocol ScannerViewControllerDelegate  {
   func scannedCode(_ code: String)
+  func dismissScan()
 }
 
 class ScannerViewController: UIViewController {
@@ -20,11 +21,28 @@ class ScannerViewController: UIViewController {
   private var previewLayer: AVCaptureVideoPreviewLayer!
   var delegate: ScannerViewControllerDelegate?
   
+  enum Localizations {
+    static let closeModal = "close-modal"
+    static let scanQRTitle = "scan-QR-title"
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    let closeButton = UIBarButtonItem(title: NSLocalizedString(Localizations.closeModal, comment: ""),
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(dismissAction))
+    
+    navigationItem.leftBarButtonItem = closeButton
+    title = NSLocalizedString(Localizations.scanQRTitle, comment: "")
     
     view.backgroundColor = UIColor.black
     configureSession()
+  }
+  
+  @objc func dismissAction(_ sender: Any) {
+    self.dismiss(animated: true)
+    delegate?.dismissScan()
   }
   
   private func configureSession() {
