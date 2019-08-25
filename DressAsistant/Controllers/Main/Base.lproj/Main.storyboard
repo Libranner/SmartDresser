@@ -295,10 +295,10 @@
             </objects>
             <point key="canvasLocation" x="-5460" y="-786.20689655172418"/>
         </scene>
-        <!--Recommendation View Controller-->
+        <!--Recomendaciones-->
         <scene sceneID="oI3-TK-280">
             <objects>
-                <viewController id="oMt-Hy-vGU" customClass="RecommendationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Recomendaciones" id="oMt-Hy-vGU" customClass="RecommendationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Gn-qh-Ghr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -50,6 +50,7 @@ class ModalView: UIView {
   
   fileprivate lazy var titleLabel: UILabel = {
     let label = UIHelper().makeTitleLabelFor("", identifier: nil)
+    label.font = UIFont.boldSystemFont(ofSize: 30)
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .center
@@ -59,6 +60,7 @@ class ModalView: UIView {
   fileprivate lazy var messageLabel: UILabel = {
     let label = UIHelper().makeInfoLabelFor("", identifier: nil)
     label.numberOfLines = 0
+    label.font = UIFont.boldSystemFont(ofSize: 20)
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .center
     return label

@@ -30,14 +30,10 @@ class RecommendationViewController: BaseViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    OutfitService().getAll(completion: { (error, outfits) in
-      self.outfits = outfits
-      if !outfits.isEmpty {
-        self.loadData()
-        self.setupUI()
-        self.performSegue(withIdentifier: self.showItemSegue, sender: self)
-      }
-    })
+    if !outfits.isEmpty {
+      self.loadData()
+      self.setupUI()
+    }
   }
   
   private lazy var collectionView: UICollectionView = {
@@ -219,12 +215,17 @@ class RecommendationViewController: BaseViewController {
       make.width.equalToSuperview().multipliedBy(0.8)
       make.centerX.equalToSuperview()
     }
+    
+    selectButton.addTarget(self, action: #selector(selectRecomendation(_:)), for: .touchUpInside)
+  }
+  
+  @objc private func selectRecomendation(_ sender: Any?) {
+    performSegue(withIdentifier: showItemSegue, sender: self)
   }
 }
 
 extension RecommendationViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
   }
 }
 

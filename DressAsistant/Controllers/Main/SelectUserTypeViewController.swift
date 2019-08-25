@@ -31,6 +31,7 @@ class SelectUserTypeViewController: UIViewController {
   
   @IBAction func startAsAssistant(_ sender: Any) {
     AppManager.shared.saveUserType(userType: .assistant)
+    AppManager.shared.removeAffiliate()
     performSegue(withIdentifier: showAsistantSegueName, sender: self)
   }
 }

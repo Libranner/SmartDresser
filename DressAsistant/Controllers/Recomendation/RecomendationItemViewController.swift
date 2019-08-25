@@ -58,6 +58,10 @@ class RecomendationItemViewController: BaseViewController {
   }
   
   @IBAction func nextButtonTapped(_ sender: Any) {
+    showNextItem()
+  }
+  
+  private func showNextItem() {
     index += 1
     loadData()
   }
@@ -79,31 +83,45 @@ extension RecomendationItemViewController: NFCNDEFReaderSessionDelegate {
       for record in message.records {
         if let itemNFC = String(data: record.payload.advanced(by: 3), encoding: .utf8) {
           if itemNFC == self.currentItem.nfcCode {
-            print("Found")
             let exists = self.itemsIdentified.first(where: { (it) -> Bool in
               return it.nfcCode == itemNFC
             })
-            
-            if exists != nil {
+          
+            if exists == nil {
               self.itemsIdentified.append(self.currentItem)
+              if self.itemsIdentified.count == self.items.count {
+                session.invalidate()
+                DispatchQueue.main.async {
+                  self.allItemsFound()
+                }
+                return
+              }
             }
+            self.showNextItem()
           }
-          session.invalidate()
+          else {
+            print("No Item")
+          }
         }
       }
     }
-    
-    if 1 == 1 {
-      if let vc = navigationController?.viewControllers[1] {
-        navigationController?.popToViewController(vc, animated: true)
-      }
-    }
+    session.invalidate()
+  }
+  
+  private func allItemsFound() {
+    let modal = ModalView(type: .success,
+                          title: "Todo listo",
+                          message: "Haz identificado todas las piezas de ropa.")
+    modal.delegate = self
+    view.addSubview(modal)
   }
 }
 
 
 extension RecomendationItemViewController: ModalViewDelegate {
   func modalClosed(modalView: ModalView) {
-    
+    if let vc = navigationController?.viewControllers[1] {
+     navigationController?.popToViewController(vc, animated: true)
+    }
   }
 }
