@@ -27,7 +27,49 @@ enum PrintType: String, Codable, CaseIterable {
 
 enum ItemColor: String, Codable, CaseIterable {
   case none = ""
+  case amarillo
+  case ambar
+  case azul
+  case beis
   case blanco
+  case burdeos
+  case caoba
+  case caqui
+  case carmesí
+  case cartujo
+  case castaño
+  case celeste
+  case cereza
+  case champán
+  case cian
+  case cobre
+  case coral
+  case crema
+  case dorado
+  case fucsia
+  case granate
+  case gris
+  case hueso
+  case indigo
+  case lavanda
+  case lila
+  case magenta
+  case marrón
+  case morado
+  case naranja
+  case negro
+  case ocre
+  case pardo
+  case plata
+  case púrpura
+  case rojo
+  case rosa
+  case salmón
+  case turquesa
+  case verde
+  case verdeagua
+  case vino
+  case violeta
 }
 
 enum itemSize: String, Codable, CaseIterable {

@@ -409,8 +409,8 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     }
     else if (segue.identifier == affiliateCardSegueName) {
       if let destinationVC = segue.destination as? AffiliateCardViewController {
-        destinationVC.affiliateId = affiliateId
-        destinationVC.shouldGoToRoot = true
+        destinationVC.affiliateId = affiliateId ?? existingAffiliate?.key
+        destinationVC.shouldGoToRoot = affiliateId != nil
       }
     }
   }

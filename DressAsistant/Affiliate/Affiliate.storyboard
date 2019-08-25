@@ -69,25 +69,9 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2Y-Py-dZf" customClass="GradientView" customModule="DressAsistant" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
-                                                <subviews>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-G2-xSg">
-                                                        <rect key="frame" x="334" y="30" width="50" height="50"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="SR6-iO-nSP"/>
-                                                            <constraint firstAttribute="width" secondItem="SXh-G2-xSg" secondAttribute="height" multiplier="1:1" id="UcP-qi-pyd"/>
-                                                        </constraints>
-                                                        <state key="normal" backgroundImage="qrCode"/>
-                                                        <connections>
-                                                            <action selector="showQrButtonTapped:" destination="3jT-Lt-wvP" eventType="touchUpInside" id="410-dR-dyV"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="SXh-G2-xSg" firstAttribute="top" secondItem="w2Y-Py-dZf" secondAttribute="top" constant="30" id="9wc-vL-a6A"/>
                                                     <constraint firstAttribute="height" constant="120" id="ZRx-nN-h3w"/>
-                                                    <constraint firstAttribute="trailing" secondItem="SXh-G2-xSg" secondAttribute="trailing" constant="30" id="jan-pS-UNP"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-J5-9J3" customClass="RoundImageView" customModule="DressAsistant" customModuleProvider="target">
@@ -337,15 +321,29 @@
                                                     <constraint firstItem="a6U-Yp-5t8" firstAttribute="leading" secondItem="wFq-RA-kxs" secondAttribute="leading" id="Bsp-Fg-BcR"/>
                                                 </constraints>
                                             </stackView>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXh-G2-xSg">
+                                                <rect key="frame" x="344" y="20" width="50" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="SR6-iO-nSP"/>
+                                                    <constraint firstAttribute="width" secondItem="SXh-G2-xSg" secondAttribute="height" multiplier="1:1" id="UcP-qi-pyd"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="qrCode"/>
+                                                <connections>
+                                                    <action selector="showQrButtonTapped:" destination="3jT-Lt-wvP" eventType="touchUpInside" id="410-dR-dyV"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="w2Y-Py-dZf" firstAttribute="leading" secondItem="0fJ-lq-02C" secondAttribute="leading" id="1WC-ai-vVN"/>
+                                            <constraint firstAttribute="trailing" secondItem="SXh-G2-xSg" secondAttribute="trailing" constant="20" id="1dZ-Xc-1n3"/>
                                             <constraint firstItem="wFq-RA-kxs" firstAttribute="top" secondItem="a8A-w5-8aW" secondAttribute="bottom" constant="20" id="3Lo-Am-fIN"/>
                                             <constraint firstAttribute="trailing" secondItem="a8A-w5-8aW" secondAttribute="trailing" id="6V8-eD-7BI"/>
                                             <constraint firstItem="wFq-RA-kxs" firstAttribute="centerX" secondItem="0fJ-lq-02C" secondAttribute="centerX" id="A2a-WW-Na8"/>
                                             <constraint firstItem="KnW-J5-9J3" firstAttribute="centerY" secondItem="w2Y-Py-dZf" secondAttribute="bottom" id="H42-Tx-9wM"/>
                                             <constraint firstAttribute="bottom" secondItem="wFq-RA-kxs" secondAttribute="bottom" constant="50" id="Hff-OV-SA6"/>
+                                            <constraint firstItem="SXh-G2-xSg" firstAttribute="top" secondItem="0fJ-lq-02C" secondAttribute="top" constant="20" id="JeU-Vt-5JX"/>
                                             <constraint firstItem="a8A-w5-8aW" firstAttribute="leading" secondItem="0fJ-lq-02C" secondAttribute="leading" id="K8l-00-CkS"/>
                                             <constraint firstItem="a8A-w5-8aW" firstAttribute="top" secondItem="w2Y-Py-dZf" secondAttribute="bottom" constant="100" id="KH5-oN-orM"/>
                                             <constraint firstItem="KnW-J5-9J3" firstAttribute="centerX" secondItem="w2Y-Py-dZf" secondAttribute="centerX" id="Qbn-rR-1Ca"/>
@@ -535,10 +533,20 @@
                                                     <color key="textColor" name="headerColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoG-Lg-AEx">
+                                                    <rect key="frame" x="52" y="65" width="15" height="15"/>
+                                                    <color key="backgroundColor" name="headerColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="15" id="1RM-N2-wAB"/>
+                                                        <constraint firstAttribute="width" secondItem="HoG-Lg-AEx" secondAttribute="height" multiplier="1:1" id="cjr-UE-GlY"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="aPQ-qU-Gzu" firstAttribute="centerY" secondItem="R2y-rZ-cj4" secondAttribute="centerY" id="4JQ-df-eyK"/>
+                                                <constraint firstItem="HoG-Lg-AEx" firstAttribute="centerX" secondItem="aPQ-qU-Gzu" secondAttribute="centerX" multiplier="1.35" id="8gV-oo-Khc"/>
                                                 <constraint firstItem="qQH-C6-f4k" firstAttribute="centerY" secondItem="aPQ-qU-Gzu" secondAttribute="centerY" id="FQZ-Gk-Ceo"/>
+                                                <constraint firstItem="HoG-Lg-AEx" firstAttribute="centerY" secondItem="aPQ-qU-Gzu" secondAttribute="bottom" multiplier="0.95" id="X9s-s6-NKR"/>
                                                 <constraint firstItem="aPQ-qU-Gzu" firstAttribute="leading" secondItem="R2y-rZ-cj4" secondAttribute="leading" constant="14" id="eJ7-vk-cVI"/>
                                                 <constraint firstAttribute="trailing" secondItem="qQH-C6-f4k" secondAttribute="trailing" constant="20" id="sof-xt-zue"/>
                                                 <constraint firstItem="qQH-C6-f4k" firstAttribute="leading" secondItem="aPQ-qU-Gzu" secondAttribute="trailing" constant="26" id="wq9-Ct-Qb0"/>
@@ -547,6 +555,7 @@
                                         <connections>
                                             <outlet property="affiliateImageView" destination="aPQ-qU-Gzu" id="xPg-HD-XbU"/>
                                             <outlet property="affiliateNameLabel" destination="qQH-C6-f4k" id="LZH-is-DLy"/>
+                                            <outlet property="connectionIndicatorView" destination="HoG-Lg-AEx" id="FuC-04-CFx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

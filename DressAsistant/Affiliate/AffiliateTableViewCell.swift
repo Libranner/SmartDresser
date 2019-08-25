@@ -12,14 +12,22 @@ class AffiliateTableViewCell: UITableViewCell {
   
   @IBOutlet var affiliateNameLabel: UILabel!
   @IBOutlet var affiliateImageView: RoundImageView!
+  @IBOutlet var connectionIndicatorView: UIView!
   
   override func awakeFromNib() {
     super.awakeFromNib()
   }
   
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    connectionIndicatorView.layer.cornerRadius = connectionIndicatorView.frame.height/2
+    connectionIndicatorView.layer.borderColor = UIColor.lightGray.cgColor
+  }
+  
   override func prepareForReuse() {
     affiliateNameLabel.text = ""
     affiliateImageView.image = nil
+    connectionIndicatorView.backgroundColor = .red
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {

@@ -94,6 +94,7 @@ extension AffiliatesListViewController: UITableViewDelegate, UITableViewDataSour
       cell.affiliateImageView.fillWithURL(avatarURL, placeholder: nil)
     }
     
+    cell.connectionIndicatorView.backgroundColor = affiliate.isConnected ? .green : .red
     return cell
   }
 

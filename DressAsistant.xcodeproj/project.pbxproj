@@ -62,6 +62,7 @@
 		EEAD790622AC2B330060F3E6 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD790522AC2B330060F3E6 /* RoundImageView.swift */; };
 		EEC003A22311F31D00827769 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC003A12311F31D00827769 /* ScannerViewController.swift */; };
 		EEC004122312E51D00827769 /* SelectUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC004112312E51D00827769 /* SelectUserTypeViewController.swift */; };
+		EEC004142313254800827769 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC004132313254800827769 /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EECB329922DBF454009D91BF /* UIViewControllerScrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */; };
 		EECB329B22DC1263009D91BF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329A22DC1263009D91BF /* Item.swift */; };
 		EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB329C22DC1456009D91BF /* ItemViewController.swift */; };
@@ -166,6 +167,7 @@
 		EEAD790522AC2B330060F3E6 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		EEC003A12311F31D00827769 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		EEC004112312E51D00827769 /* SelectUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTypeViewController.swift; sourceTree = "<group>"; };
+		EEC004132313254800827769 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		EECB329822DBF454009D91BF /* UIViewControllerScrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerScrollable.swift; sourceTree = "<group>"; };
 		EECB329A22DC1263009D91BF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EECB329C22DC1456009D91BF /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC004142313254800827769 /* CoreNFC.framework in Frameworks */,
 				6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +224,7 @@
 		A5FADC2F02D8A4DEBBED8783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EEC004132313254800827769 /* CoreNFC.framework */,
 				AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */,
 				19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */,
 			);
