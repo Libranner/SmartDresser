@@ -39,7 +39,7 @@ struct OutfitService {
                                     timeOfDay: TimeOfDay,
                                     eventType: EventType,
                                     season: Season, completion:@escaping (_ outfits: [Outfit]) -> Void) {
-    
+    //TODO: Fix this
     let affiliateId = AppManager.shared.currentAffiliate?.key as Any
     
     let db = Firestore.firestore()

@@ -116,7 +116,7 @@ struct AffiliateService {
       error in
       
       guard error == nil else {
-        print("Error updating document: \(error)")
+        print("Error updating document: \(String(describing: error))")
         completion(CustomError.errorSavingData)
         return
       }

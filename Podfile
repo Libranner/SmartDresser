@@ -14,6 +14,12 @@ target 'DressAsistant' do
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
   pod 'CodableFirebase'
+  
+  # Add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  
+  # Add the pod for Firebase Cloud Messaging
+  pod 'Firebase/Messaging'
 
   target 'DressAsistantUITests' do
     inherit! :search_paths

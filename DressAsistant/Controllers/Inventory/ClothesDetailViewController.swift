@@ -100,7 +100,7 @@ class ClothesDetailViewController: BaseViewController {
         
         let identifier = "\(element.key): \(element.value)"
         let infoLabel = UIHelper().makeInfoLabelFor(element.key, identifier: identifier)
-        let descLabel = UIHelper().makeDescriptionLabelFor(element.value, identifier: identifier)
+        //let descLabel = UIHelper().makeDescriptionLabelFor(element.value, identifier: identifier)
         
         rowStackView.addArrangedSubview(infoLabel)
         //rowStackView.addArrangedSubview(descLabel)

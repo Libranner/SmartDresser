@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import Fabric
 import Crashlytics
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     setupGlobalUI()
     setupFirebase()
     setupFabric()
+    
+    UNUserNotificationCenter.current().delegate = self
+    
+    let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+    UNUserNotificationCenter.current().requestAuthorization(
+      options: authOptions,
+      completionHandler: {_, _ in })
+
+    application.registerForRemoteNotifications()
     
     return true
   }
@@ -85,7 +95,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
-  
-  
 }
 
+extension AppDelegate : UNUserNotificationCenterDelegate {
+  
+  // Receive displayed notifications for iOS 10 devices.
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              willPresent notification: UNNotification,
+                              withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    let userInfo = notification.request.content.userInfo
+    
+    // Print full message.
+    print(userInfo)
+    
+    // Change this to your preferred presentation option
+    completionHandler([])
+  }
+  
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              didReceive response: UNNotificationResponse,
+                              withCompletionHandler completionHandler: @escaping () -> Void) {
+    let userInfo = response.notification.request.content.userInfo
+    
+    // Print full message.
+    //TODO: Cuando se reciba un mensaje necesitando outfit, tomar todos los parametros y llenarlos para que se pueda
+    //crear el outfit para el user, recordar incluir Id del afiliado
+    print(userInfo["weather"])
+    print(userInfo)
+    
+    completionHandler()
+  }
+}

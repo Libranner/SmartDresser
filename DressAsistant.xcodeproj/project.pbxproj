@@ -256,8 +256,8 @@
 			children = (
 				EEACC07D22BBEB2E00C37990 /* OptionPicker */,
 				EE56051522ADC33400C0096B /* Affiliate.storyboard */,
-				EE56051722ADC7D500C0096B /* AffiliateViewController.swift */,
 				EEA6702022D11D1B0002FE3D /* AffiliateCardViewController.swift */,
+				EE56051722ADC7D500C0096B /* AffiliateViewController.swift */,
 				EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */,
 				EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */,
 			);
@@ -582,6 +582,9 @@
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.SafariKeychain = {

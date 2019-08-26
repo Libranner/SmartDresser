@@ -10,19 +10,28 @@ import Foundation
 
 enum Material: String, Codable, CaseIterable {
   case none = ""
-  case denim = "denim"
-  case cottom = "cottom"
+  case algodón
+  case batista
+  case brocada
+  case crepe
+  case denim
+  case encaje
+  case fieltro
+  case lona
+  case seda
 }
 
 enum PatternType: String, Codable, CaseIterable {
   case none = ""
-  case overSize
+  case regular
   case slim
 }
 
 enum PrintType: String, Codable, CaseIterable {
   case none = ""
-  case uno
+  case subliminado
+  case serigrafiado
+  case vinilo
 }
 
 enum ItemColor: String, Codable, CaseIterable {
