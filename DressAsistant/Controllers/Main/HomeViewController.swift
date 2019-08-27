@@ -168,10 +168,6 @@ class HomeViewController: BaseViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == showRecomendationSegue {
-      if outfits.isEmpty {
-        showNoOutfitsAvailableAlert()
-        return
-      }
       let destinationVC = segue.destination as! RecommendationViewController
       destinationVC.outfits = outfits
     }
@@ -263,8 +259,21 @@ extension HomeViewController: EventPickerDelegate {
         DispatchQueue.main.async {
           self.outfits = outfits
           self.hideLoading()
-          self.performSegue(withIdentifier: self.showRecomendationSegue,
-                            sender: self)
+          
+          if outfits.isEmpty {
+            let outfitRequest = OutfitRequest(affiliateId: AppManager.shared.affiliateId!,
+                                              season: season,
+                                              weather: weather,
+                                              eventType: eventType,
+                                              timeOfDay: timeOfDay,
+                                              date: Date())
+            OutfitRequestService().save(outfitRequest)
+            self.showNoOutfitsAvailableAlert()
+          }
+          else {
+            self.performSegue(withIdentifier: self.showRecomendationSegue,
+                                sender: self)
+          }
         }
       }
     }

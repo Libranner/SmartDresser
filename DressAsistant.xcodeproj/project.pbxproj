@@ -80,6 +80,9 @@
 		EEE1D48E22D2C52C00EF78D0 /* AffiliatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */; };
 		EEE1D49022D2C6BC00EF78D0 /* AffiliateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */; };
 		EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1D49722DBA28700EF78D0 /* ItemService.swift */; };
+		EEEAD2F62315446F005498D2 /* OutfitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAD2F52315446F005498D2 /* OutfitRequest.swift */; };
+		EEEAD2F8231556E5005498D2 /* OutfitRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAD2F7231556E5005498D2 /* OutfitRequestService.swift */; };
+		EEEAD2FA23156730005498D2 /* DeeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEAD2F923156730005498D2 /* DeeplinkManager.swift */; };
 		EEF6C8CE22EA02E400D62FC4 /* ItemsPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6C8CD22EA02E400D62FC4 /* ItemsPictureViewController.swift */; };
 		EEF6C8D022EBDED200D62FC4 /* UIStackView+RemoveAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */; };
 		EEF855F82289FCDA005E5B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855F72289FCDA005E5B5C /* AppDelegate.swift */; };
@@ -185,6 +188,9 @@
 		EEE1D48D22D2C52C00EF78D0 /* AffiliatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatesListViewController.swift; sourceTree = "<group>"; };
 		EEE1D48F22D2C6BC00EF78D0 /* AffiliateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliateTableViewCell.swift; sourceTree = "<group>"; };
 		EEE1D49722DBA28700EF78D0 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		EEEAD2F52315446F005498D2 /* OutfitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitRequest.swift; sourceTree = "<group>"; };
+		EEEAD2F7231556E5005498D2 /* OutfitRequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitRequestService.swift; sourceTree = "<group>"; };
+		EEEAD2F923156730005498D2 /* DeeplinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkManager.swift; sourceTree = "<group>"; };
 		EEF6C8CD22EA02E400D62FC4 /* ItemsPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPictureViewController.swift; sourceTree = "<group>"; };
 		EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAll.swift"; sourceTree = "<group>"; };
 		EEF855F42289FCDA005E5B5C /* DressAsistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressAsistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +280,7 @@
 				EECB329A22DC1263009D91BF /* Item.swift */,
 				EED297E422E5257F00710814 /* Outfit.swift */,
 				EED5CE4722F631B900257AA1 /* WeatherResponse.swift */,
+				EEEAD2F52315446F005498D2 /* OutfitRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +400,7 @@
 				EEE1D49722DBA28700EF78D0 /* ItemService.swift */,
 				EED297E622E52B1700710814 /* OutfitService.swift */,
 				EED5CE4122F5F7E900257AA1 /* WeatherService.swift */,
+				EEEAD2F7231556E5005498D2 /* OutfitRequestService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				EED5CE3F22F5DD6800257AA1 /* AppManager.swift */,
+				EEEAD2F923156730005498D2 /* DeeplinkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -770,12 +779,15 @@
 				EED5CE4D22F6B47B00257AA1 /* EventTypePickerTableViewController.swift in Sources */,
 				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
+				EEEAD2F62315446F005498D2 /* OutfitRequest.swift in Sources */,
 				EE55C72822E878000075803C /* OutfitViewController.swift in Sources */,
 				EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */,
 				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */,
 				EE55C72A22E8C1EC0075803C /* ItemsCollectionLayout.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
+				EEEAD2FA23156730005498D2 /* DeeplinkManager.swift in Sources */,
+				EEEAD2F8231556E5005498D2 /* OutfitRequestService.swift in Sources */,
 				EE56050822AC6A6A00C0096B /* UserService.swift in Sources */,
 				EECB329D22DC1456009D91BF /* ItemViewController.swift in Sources */,
 				EECB329F22DCC7A3009D91BF /* InventoryViewController.swift in Sources */,

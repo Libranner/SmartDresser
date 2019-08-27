@@ -36,11 +36,11 @@ enum WeatherCondition: String, Codable, CaseIterable {
 
 enum EventType: String, Codable, CaseIterable {
   case none = ""
-  case gala
-  case wedding
-  case workRelated
+  case boda
   case casual
+  case gala
   case sport
+  case trabajo  
 }
 
 struct Outfit: Codable {
