@@ -48,8 +48,14 @@ class HomeViewController: BaseViewController {
   }
   
   private func setupAffiliateInfo() {
-    if AppManager.shared.affiliateId != nil {
-      showAlreadyAffiliatedText()
+    if let affiliateId = AppManager.shared.affiliateId {
+      AffiliateService().get(withId: affiliateId) { (error, affiliate) in
+        guard error == nil else {
+          return
+        }
+        AppManager.shared.currentAffiliate = affiliate
+        self.showAlreadyAffiliatedText()
+      }
     }
     else {
       showNotAffiliatedText()
@@ -262,6 +268,7 @@ extension HomeViewController: EventPickerDelegate {
           
           if outfits.isEmpty {
             let outfitRequest = OutfitRequest(affiliateId: AppManager.shared.affiliateId!,
+                                              assistantId: AppManager.shared.currentAffiliate!.userId!,
                                               season: season,
                                               weather: weather,
                                               eventType: eventType,

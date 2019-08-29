@@ -21,7 +21,7 @@
 "yes-action" = "Sí";
 "ok-action" = "Ok";
 "remove-action" = "Eliminar";
-"error-modal-title" = "Algo anda mal";
+"error-modal-title" = "";
 "remove-item" = "¿Está seguro que desea eliminar %@?";
 "save-title" = "Guardar";
 "new-item-title" = "Nuevo Item";

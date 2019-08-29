@@ -2,74 +2,47 @@
 
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-admin.initializeApp();
+admin.initializeApp(functions.config().firebase);
 
-/**
- * Triggers when a user gets a new follower and sends a notification.
- *
- * Followers add a flag to `/followers/{followedUid}/{followerUid}`.
- * Users save their device notification tokens to `/users/{followedUid}/notificationTokens/{notificationToken}`.
- */
+exports.sendOutfitRequestNotification = functions.firestore
+  .document('outfitRequests/{affiliateId}')
+  .onCreate(async (snap, context) => {
+    var newValue = snap.data();
 
-exports.sendFollowerNotification = functions.database.ref('/outfitRequests/{followedUid}/{followerUid}')
-    .onWrite(async (change, context) => {
-      const followerUid = context.params.followerUid;
-      const followedUid = context.params.followedUid;
-      // If un-follow we exit the function.
-      if (!change.after.val()) {
-        return console.log('User ', followerUid, 'un-followed user', followedUid);
+    const affiliateId = newValue.affiliateId;
+    const assistantId = newValue.assistantId;
+
+    // Get the list of device notification token.
+    const getDeviceTokensPromise = admin.firestore().collection('users')
+    .doc(`${assistantId}`).get();
+
+    // Get the affiliate profile.
+    const getAffiliateProfilePromise = admin.firestore().collection('affiliates')
+    .doc(`${affiliateId}`).get();
+
+    const results = await Promise.all([getDeviceTokensPromise, getAffiliateProfilePromise]);
+    const assistant = results[0].data();
+    const affiliate = results[1].data();
+
+    // Notification details.
+    const payload = {
+      notification: {
+        title: 'Solicitud de atuendo',
+        body: `${affiliate.name} necesita un atuendo.`
       }
-      console.log('We have a new follower UID:', followerUid, 'for user:', followedUid);
+    };
 
-      // Get the list of device notification tokens.
-      const getDeviceTokensPromise = admin.database()
-          .ref(`/users/${followedUid}/notificationTokens`).once('value');
-
-      // Get the follower profile.
-      const getFollowerProfilePromise = admin.auth().getUser(followerUid);
-
-      // The snapshot to the user's tokens.
-      let tokensSnapshot;
-
-      // The array containing all the user's tokens.
-      let tokens;
-
-      const results = await Promise.all([getDeviceTokensPromise, getFollowerProfilePromise]);
-      tokensSnapshot = results[0];
-      const follower = results[1];
-
-      // Check if there are any device tokens.
-      if (!tokensSnapshot.hasChildren()) {
-        return console.log('There are no notification tokens to send to.');
+    // Send notifications to all tokens.
+    let token = assistant.notificationToken;
+    const response = await admin.messaging().sendToDevice(token, payload);
+    
+    // For each message check if there was an error.
+    const tokensToRemove = [];
+    response.results.forEach((result, index) => {
+      const error = result.error;
+      if (error) {
+        console.error('Failure sending notification to', token, error);
       }
-      console.log('There are', tokensSnapshot.numChildren(), 'tokens to send notifications to.');
-      console.log('Fetched follower profile', follower);
-
-      // Notification details.
-      const payload = {
-        notification: {
-          title: 'You have a new follower!',
-          body: `${follower.displayName} is now following you.`,
-          icon: follower.photoURL
-        }
-      };
-
-      // Listing all tokens as an array.
-      tokens = Object.keys(tokensSnapshot.val());
-      // Send notifications to all tokens.
-      const response = await admin.messaging().sendToDevice(tokens, payload);
-      // For each message check if there was an error.
-      const tokensToRemove = [];
-      response.results.forEach((result, index) => {
-        const error = result.error;
-        if (error) {
-          console.error('Failure sending notification to', tokens[index], error);
-          // Cleanup the tokens who are not registered anymore.
-          if (error.code === 'messaging/invalid-registration-token' ||
-              error.code === 'messaging/registration-token-not-registered') {
-            tokensToRemove.push(tokensSnapshot.ref.child(tokens[index]).remove());
-          }
-        }
-      });
-      return Promise.all(tokensToRemove);
     });
+    return Promise.all(tokensToRemove);
+  });

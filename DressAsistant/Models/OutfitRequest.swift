@@ -10,6 +10,7 @@ import Foundation
 
 struct OutfitRequest: Codable {
   var affiliateId: String
+  var assistantId: String
   var season: Season
   var weather: WeatherCondition
   var eventType: EventType
