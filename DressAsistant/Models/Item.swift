@@ -108,6 +108,7 @@ struct Item: Codable {
   var printType: PrintType
   var color: ItemColor
   var type: ItemType
+  var location: String
   var affiliateId: String?
   var userId: String?
 }

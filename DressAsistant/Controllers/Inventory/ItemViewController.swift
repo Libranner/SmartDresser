@@ -19,6 +19,8 @@ class ItemViewController: BaseViewController {
     static let itemColorField = "item-color-field"
     static let printTypeField = "print-type-field"
     static let patternTypeField = "pattern-type-field"
+    static let locationField = "location-field"
+    static let nfcField = "nfc-field"
     static let saveTitle = "save-title"
     static let selectPhoto = "select-photo"
     static let newItemTitle = "new-item-title"
@@ -91,6 +93,12 @@ class ItemViewController: BaseViewController {
   
   fileprivate lazy var detailTextField: UITextField = {
     let textfield = UIHelper().makeTextFieldFor(Localizations.detailField,
+                                                identifier: nil)
+    return textfield
+  }()
+  
+  fileprivate lazy var locationTextField: UITextField = {
+    let textfield = UIHelper().makeTextFieldFor(Localizations.locationField,
                                                 identifier: nil)
     return textfield
   }()
@@ -223,6 +231,7 @@ class ItemViewController: BaseViewController {
   private func fillUpForm() {
     if let item = existingItem {
       detailTextField.text = item.detail
+      locationTextField.text = item.location
       selectedMaterial = item.material
       selectedItemType = item.type
       selectedColor = item.color
@@ -253,6 +262,7 @@ class ItemViewController: BaseViewController {
   }
   
   @objc fileprivate func save() {
+    self.nfcCode = "1212w"
     if (validateFields()) {
       showLoading()
       uploadPhoto { [weak self] photoURL in
@@ -261,16 +271,17 @@ class ItemViewController: BaseViewController {
           let affiliateId = AppManager.shared.currentAffiliate?.key
           
           let item = Item(key: nil,
-                                nfcCode: self.nfcCode!,
-                                imageURL: photoURL,
-                                detail: self.detailTextField.text!,
-                                material: self.selectedMaterial,
-                                patternType: self.selectedPatternType,
-                                printType: self.selectedPrintType,
-                                color: self.selectedColor,
-                                type: self.selectedItemType,
-                                affiliateId: affiliateId,
-                                userId: userId)
+                          nfcCode: self.nfcCode!,
+                          imageURL: photoURL,
+                          detail: self.detailTextField.text!,
+                          material: self.selectedMaterial,
+                          patternType: self.selectedPatternType,
+                          printType: self.selectedPrintType,
+                          color: self.selectedColor,
+                          type: self.selectedItemType,
+                          location: self.locationTextField.text!,
+                          affiliateId: affiliateId,
+                          userId: userId)
           
           self.persist(item)
         }
@@ -375,7 +386,8 @@ class ItemViewController: BaseViewController {
                 Localizations.itemTypeField: itemTypeTextField,
                 Localizations.itemColorField: itemColorTextField,
                 Localizations.patternTypeField: patternTypeTextField,
-                Localizations.printTypeField: printTypeTextField
+                Localizations.printTypeField: printTypeTextField,
+                Localizations.locationField: locationTextField
     ]
     
     let infoStackView = UIStackView()
@@ -386,7 +398,8 @@ class ItemViewController: BaseViewController {
     
     let keys = [Localizations.detailField, Localizations.materialField,
                 Localizations.itemTypeField, Localizations.itemColorField,
-                Localizations.patternTypeField, Localizations.printTypeField
+                Localizations.patternTypeField, Localizations.printTypeField,
+                Localizations.locationField
     ]
     
     for key in keys {
@@ -466,6 +479,12 @@ class ItemViewController: BaseViewController {
   }
   
   func validateFields() -> Bool {
+    guard nfcCode != nil else {
+      showErrorMessage(CustomError.emptyField(fieldName:
+        NSLocalizedString(Localizations.nfcField, comment: "")))
+      return false
+    }
+    
     guard itemImageView.image != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(Localizations.selectPhoto, comment: "")))

@@ -95,6 +95,8 @@
 "season-field" = "Estación";
 "event-type-field" = "Tipo de evento";
 "time-of-day-field" = "Tiempo";
+"location-field" = "Ubicación";
+"nfc-field" = "NFC";
 
 //Alerts
 "item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";
