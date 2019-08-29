@@ -30,7 +30,6 @@ class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     nicknameTextfield.delegate = self
-    // Do any additional setup after loading the view.
   }
   
   @IBAction func selectProfilePhoto(_ sender: Any) {
@@ -67,6 +66,7 @@ class CreateAccountViewController: BaseViewController, LoadingScreenDelegate {
         return
       }
       if let self = self {
+        UserService().updateUserInfo()
         self.performSegue(withIdentifier: self.showMainSegue, sender: self)
       }
     }
