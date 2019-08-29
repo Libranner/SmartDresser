@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 
 struct UserService {
+  private let root = "users"
   
   func saveUser(displayName: String, photoURL: URL?, completion:@escaping (_ saved: Bool)->Void) {
     if let request = Auth.auth().currentUser?.createProfileChangeRequest() {
@@ -25,4 +26,30 @@ struct UserService {
       }
     }
   }
+  
+  func updateUserInfo() {
+    if let userId = Auth.auth().currentUser?.uid {
+      InstanceID.instanceID().instanceID { (result, error) in
+        if let error = error {
+          print("Error fetching remote instance ID: \(error)")
+        } else if let result = result {
+          print("Remote instance ID token: \(result.token)")
+          self.save(user: User(userId: userId, notificationToken: result.token))
+        }
+      }
+    }
+  }
+  
+  private func save(user: User) {
+    let db = Firestore.firestore()
+    let docData = ["notificationToken": user.notificationToken]
+    
+    db.collection(root).document(user.userId).setData(docData) {
+      error in
+      if let error = error {
+        print("Error writing document: \(error)")
+      }
+    }
+  }
+  
 }

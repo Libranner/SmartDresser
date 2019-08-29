@@ -27,17 +27,22 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   private var selectedItems = [Item]()
   private var isInSelectMode = false
   var delegate: InventoryDelegate?
+  private var outfit: Outfit?
   
   convenience init(isInSelectMode: Bool) {
     self.init()
     self.isInSelectMode = isInSelectMode
   }
   
+  convenience init(outfit: Outfit) {
+    self.init(isInSelectMode: true)
+    self.outfit = outfit
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = NSLocalizedString(Localizations.inventoryTitle,
                                    comment: "")
-    
     if isInSelectMode {
       let chevronImage = UIImage(named: "chevron")
       let backButton = UIBarButtonItem(image: chevronImage,
@@ -64,8 +69,15 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
   }
   
   @objc func itemSelectedAction(_ sender: Any) {
-    dismiss(animated: true) {
-      self.delegate?.inventory(self, didSelect: self.selectedItems)
+    if var outfit = outfit {
+      outfit.items = self.selectedItems
+      let outfitVC = OutfitViewController(outfit: outfit, isDeeplink: true)
+      navigationController?.pushViewController(outfitVC, animated: true)
+    }
+    else {
+      dismiss(animated: true) {
+        self.delegate?.inventory(self, didSelect: self.selectedItems)
+      }
     }
   }
   

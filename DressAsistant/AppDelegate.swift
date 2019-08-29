@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UNUserNotificationCenter.current().requestAuthorization(
       options: authOptions,
       completionHandler: {_, _ in })
-
+    
     application.registerForRemoteNotifications()
     
     return true
@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   private func setupFirebase() {
     FirebaseApp.configure()
+    Messaging.messaging().delegate = self
     configureFirestore()
   }
   
@@ -97,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-extension AppDelegate : UNUserNotificationCenterDelegate {
+extension AppDelegate: UNUserNotificationCenterDelegate {
   
   // Receive displayed notifications for iOS 10 devices.
   func userNotificationCenter(_ center: UNUserNotificationCenter,
@@ -117,14 +118,67 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                               withCompletionHandler completionHandler: @escaping () -> Void) {
     let userInfo = response.notification.request.content.userInfo
     
-    // Print full message.
-    //TODO: Cuando se reciba un mensaje necesitando outfit, tomar todos los parametros y llenarlos para que se pueda
-    //crear el outfit para el user, recordar incluir Id del afiliado
-    print(userInfo["weather"])
-    print(userInfo)
-    
-    
+    if let outfit = getOutfitFrom(userInfo: userInfo) {
+      DeeplinkManager.shared.proceedTo(deeplinkType: .outfitCreation(outfit: outfit))
+    }
     
     completionHandler()
+  }
+  
+  private func getOutfitFrom(userInfo: [AnyHashable: Any]) -> Outfit? {
+    var weather: WeatherCondition?
+    var season: Season?
+    var eventType: EventType?
+    var timeOfDay: TimeOfDay?
+    
+    if let weatherValue = userInfo["weather"] as? String {
+      weather = WeatherCondition(rawValue: weatherValue)
+    }
+    
+    if let seasonValue = userInfo["season"] as? String {
+      season = Season(rawValue: seasonValue)
+    }
+    
+    if let evenTypeValue = userInfo["eventType"] as? String {
+      eventType = EventType(rawValue: evenTypeValue)
+    }
+    
+    if let timeOfDayValue = userInfo["timeOfDay"] as? String {
+      timeOfDay = TimeOfDay(rawValue: timeOfDayValue)
+    }
+    
+    let affiliatedId = userInfo["affiliateId"] as? String
+    
+    guard weather != nil,
+      season != nil,
+      eventType != nil,
+      timeOfDay != nil,
+      affiliatedId != nil  else {
+        return nil
+    }
+    
+    return Outfit(key: nil,
+                  season: season!,
+                  weather: weather!,
+                  eventType: eventType!,
+                  timeOfDay: timeOfDay!,
+                  items: [],
+                  affiliateId: affiliatedId,
+                  userId: nil)
+  }
+}
+
+extension AppDelegate : MessagingDelegate {
+  func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+    print("Firebase registration token: \(fcmToken)")
+    
+    UserService().updateUserInfo()
+  
+    let dataDict:[String: String] = ["token": fcmToken]
+    NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+  }
+
+  func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+    print("Received data message: \(remoteMessage.appData)")
   }
 }

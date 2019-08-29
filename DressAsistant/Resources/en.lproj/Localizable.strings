@@ -101,6 +101,7 @@
 "item-exists-message" = "Item existe. ¿Desea actualizarlo?";
 "email-sent" = "Se ha enviado un email a su correo. Favor verificar.";
 "no-affiliated-message" = "Debe afiliarse a un asistente para solicitar recomendaciones.";
+"outfit-saved-message" = "Atuendo creado.";
 
 //Miscelaneous
 "close-modal" = "Cerrar";

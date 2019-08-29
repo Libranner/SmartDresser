@@ -100,6 +100,10 @@ class OutfitsCollectionViewController: BaseViewController {
 // MARK: InventoryController Delegate
 extension OutfitsCollectionViewController: InventoryDelegate {
   func inventory(_ inventory: InventoryViewController, didSelect items: [Item]) {
+    guard !items.isEmpty else {
+      return
+    }
+    
     let outfitVC = OutfitViewController(items: items)
     navigationController?.pushViewController(outfitVC, animated: true)
   }

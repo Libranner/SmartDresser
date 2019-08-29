@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */; };
 		D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */; };
+		EE055267231751A6008F90BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE055266231751A6008F90BB /* User.swift */; };
 		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
 		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
 		EE55C72822E878000075803C /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72722E878000075803C /* OutfitViewController.swift */; };
@@ -111,6 +112,7 @@
 		A48AD236D1B6D5E046922A68 /* Pods-DressAsistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistant.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistant/Pods-DressAsistant.debug.xcconfig"; sourceTree = "<group>"; };
 		AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EE055266231751A6008F90BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		EE55C72722E878000075803C /* OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				EED297E422E5257F00710814 /* Outfit.swift */,
 				EED5CE4722F631B900257AA1 /* WeatherResponse.swift */,
 				EEEAD2F52315446F005498D2 /* OutfitRequest.swift */,
+				EE055266231751A6008F90BB /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 				EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */,
 				EEACC07722BAAAA800C37990 /* EyeColorService.swift in Sources */,
 				EED5CE4222F5F7E900257AA1 /* WeatherService.swift in Sources */,
+				EE055267231751A6008F90BB /* User.swift in Sources */,
 				EEAD78FC22AAD9350060F3E6 /* AssistantSignUpViewController.swift in Sources */,
 				EE55C72C22E8E7CC0075803C /* OutfitsCollectionViewController.swift in Sources */,
 				EECB329B22DC1263009D91BF /* Item.swift in Sources */,

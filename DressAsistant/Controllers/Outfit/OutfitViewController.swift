@@ -20,6 +20,7 @@ class OutfitViewController: BaseViewController {
     static let outfit = "outfit"
     static let saveTitle = "save-title"
     static let newOutfitTitle = "new-outfit-title"
+    static let outfitSavedMessage = "outfit-saved-message"
   }
   
   private let reuseIdentifier = "ItemCell"
@@ -34,6 +35,7 @@ class OutfitViewController: BaseViewController {
   lazy var loadingView = LoadingView()
   var existingOutfit: Outfit?
   var items = [Item]()
+  var isDeeplink: Bool = false
   
   private lazy var mainStackView: UIStackView = {
     let mainStackView = UIStackView()
@@ -114,10 +116,11 @@ class OutfitViewController: BaseViewController {
     return button
   }()
   
-  convenience init(outfit: Outfit) {
+  convenience init(outfit: Outfit, isDeeplink: Bool = false) {
     self.init()
-    existingOutfit = outfit
-    items = outfit.items
+    self.existingOutfit = outfit
+    self.items = outfit.items
+    self.isDeeplink = isDeeplink
   }
   
   convenience init(items: [Item]) {
@@ -126,7 +129,7 @@ class OutfitViewController: BaseViewController {
   }
   
   private var editMode: Bool {
-    return existingOutfit != nil
+    return existingOutfit != nil && !isDeeplink
   }
   
   override func viewDidLoad() {
@@ -151,6 +154,10 @@ class OutfitViewController: BaseViewController {
     if editMode {
       fillUpForm()
       deleteButton.isHidden = false
+    }
+    
+    if isDeeplink {
+      fillUpForm()
     }
   }
   
@@ -192,7 +199,6 @@ class OutfitViewController: BaseViewController {
       self.collectionView.reloadData()
     }
     else {
-      
       showErrorMessage(.errorGettingData)
     }
   }
@@ -256,12 +262,32 @@ class OutfitViewController: BaseViewController {
     hideLoading()
     if success {
       DispatchQueue.main.async {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.showOutfitSavedAlert()
       }
     }
     else {
       print(error ?? "")
     }
+  }
+  
+  func showOutfitSavedAlert() {
+    let okString = NSLocalizedString(BaseViewController.Localizations.okAction, comment: "")
+    let message = NSLocalizedString(Localizations.outfitSavedMessage, comment: "")
+    
+    let alertVC = UIAlertController(title: "", message: message,
+                                    preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: okString, style: .default) { _ in
+      if self.isDeeplink {
+        self.navigationController?.dismiss(animated: true)
+      }
+      else {
+        self.navigationController?.popToRootViewController(animated: true)
+      }
+    }
+    alertVC.addAction(okAction)
+    
+    present(alertVC, animated: true)
   }
   
   private func persist(_ outfit: Outfit) {
