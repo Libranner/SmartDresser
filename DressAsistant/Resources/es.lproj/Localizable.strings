@@ -106,8 +106,7 @@
 "outfit-saved-message" = "Atuendo creado.";
 
 //Miscelaneous
-"close-modal" = "Cerrar";
-
+"close-modal" = "X";
 
 //Buttons
 "affiliate-to-text" = "Afiliarse a un asistente";

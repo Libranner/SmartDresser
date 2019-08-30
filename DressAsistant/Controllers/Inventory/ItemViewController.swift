@@ -262,7 +262,6 @@ class ItemViewController: BaseViewController {
   }
   
   @objc fileprivate func save() {
-    self.nfcCode = "1212w"
     if (validateFields()) {
       showLoading()
       uploadPhoto { [weak self] photoURL in

@@ -13,8 +13,15 @@ protocol EventPickerDelegate {
 }
 
 class EventTypePickerTableViewController: UITableViewController {
+  lazy var eventTypes: [EventType] = {
+    return EventType.allCases.compactMap { (event) -> EventType? in
+      guard event != .none else {
+        return nil
+      }
+      return event
+    }
+  }()
   
-  private let eventTypes = EventType.allCases
   private let reuseIdentifier = "cellIdentifier"
   var delegate: EventPickerDelegate?
   
@@ -49,7 +56,7 @@ class EventTypePickerTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return eventTypes.count
+    return eventTypes.count - 1
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -59,7 +66,7 @@ class EventTypePickerTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
     
-    cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
+    cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 30)
     cell.textLabel?.textColor = CustomColor.mainColor
     cell.textLabel?.text = eventTypes[indexPath.row].rawValue.capitalized
     

@@ -18,7 +18,6 @@ class RecommendationViewController: BaseViewController {
     if index >= outfits.count || index < 0 {
       index = 0
     }
-    
     return outfits[index]
   }
   
@@ -98,24 +97,26 @@ class RecommendationViewController: BaseViewController {
       return "\(result), \(item.detail)"
     }
     
-    descLabel.text = "\(desc) \(currentOutfit.eventType.rawValue)"
+    descriptionLabel.text = desc
     collectionView.reloadData()
   }
   
   private lazy var selectButton: UIButton = {
-    return UIHelper().makeDefaultButton("Seleccionar", identifier: nil)
+    return UIHelper().makeDefaultButton("Elegir esta recomendación", identifier: nil)
   }()
   
-  private lazy var infoLabel: UILabel = {
-    let label = UIHelper().makeTitleLabelFor("Piezas de Ropa", identifier: nil)
+  private lazy var titleLabel: UILabel = {
+    let label = UIHelper().makeTitleLabelFor("Descripción del atuendo", identifier: nil)
+    label.font = UIFont.boldSystemFont(ofSize: 16)
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .center
     return label
   }()
   
-  private lazy var descLabel: UILabel = {
+  private lazy var descriptionLabel: UILabel = {
     let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    label.font = UIFont.boldSystemFont(ofSize: 20)
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     label.textAlignment = .center
@@ -164,7 +165,6 @@ class RecommendationViewController: BaseViewController {
   
   private func setupControlButtons() {
     mainStackView.addArrangedSubview(controlButtonStackView)
-    
     controlButtonStackView.snp.makeConstraints { make in
       make.height.equalTo(80)
     }
@@ -178,7 +178,6 @@ class RecommendationViewController: BaseViewController {
   }
   
   private func loadRecommendationInfo() {
-    
     let infoStackView = UIStackView()
     infoStackView.distribution = .fill
     infoStackView.axis = .vertical
@@ -192,20 +191,19 @@ class RecommendationViewController: BaseViewController {
     rowStackView.axis = .vertical
     rowStackView.spacing = 5
     
-    rowStackView.addArrangedSubview(infoLabel)
-    rowStackView.addArrangedSubview(descLabel)
+    rowStackView.addArrangedSubview(titleLabel)
+    rowStackView.addArrangedSubview(descriptionLabel)
     
     let separatorView = UIHelper().makeSeparatorView()
     rowStackView.addArrangedSubview(separatorView)
     
     separatorView.snp.makeConstraints { make in
       make.width.equalToSuperview().labeled("SeparatorViewWidth")
-      make.height.equalTo(1).labeled("SeparatorViewHeight")
+      make.height.equalTo(0.5).labeled("SeparatorViewHeight")
     }
     
     infoStackView.addArrangedSubview(rowStackView)
-    
-    
+
     mainStackView.addArrangedSubview(infoStackView)
     scrollView.addSubview(selectButton)
     
@@ -249,7 +247,6 @@ private class ClothesCollectionViewCell: UICollectionViewCell {
   }
 }
 
-
 //Collection View DataSource
 extension RecommendationViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -268,7 +265,6 @@ extension RecommendationViewController: UICollectionViewDataSource {
     
     cell.nameLabel.text = item.detail
     cell.selectItemButton.isHidden = true
-    
     
     return cell
   }
