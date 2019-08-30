@@ -26,20 +26,20 @@ struct WeatherData: Decodable {
     
     switch conditionId {
       case 2:
-        return .thunderstorm
+        return .tormenta
       case 3:
-        return .drizzle
+        return .llovizna
       case 5:
-        return .rain
+        return .lluvioso
       case 6:
-        return .snow
+        return .nevando
       case 7:
-        return .atmosphere
+        return .ambiente
       default:
         if weatherId == 800 {
-          return .clear
+          return .claro
         }
-        return .cloudy
+        return .nublado
     }
   }
 }

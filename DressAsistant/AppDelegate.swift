@@ -116,8 +116,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
   func userNotificationCenter(_ center: UNUserNotificationCenter,
                               didReceive response: UNNotificationResponse,
                               withCompletionHandler completionHandler: @escaping () -> Void) {
-    let userInfo = response.notification.request.content.userInfo
+    guard AppManager.shared.affiliateId == nil else {
+      return
+    }
     
+    let userInfo = response.notification.request.content.userInfo
     if let outfit = getOutfitFrom(userInfo: userInfo) {
       DeeplinkManager.shared.proceedTo(deeplinkType: .outfitCreation(outfit: outfit))
     }

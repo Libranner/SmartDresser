@@ -24,16 +24,16 @@ struct WeatherService {
     let month = components.month!
     
     if month >= 3 && month <= 6 {
-      return .spring
+      return .primavera
     }
     else if month >= 6 && month <= 8 {
-      return .summer
+      return .verano
     }
     else if month >= 9 && month <= 11 {
-      return .autumn
+      return .otoño
     }
     
-    return .winter
+    return .invierno
   }
   
   var currentTimeOfDay: TimeOfDay {
@@ -42,13 +42,13 @@ struct WeatherService {
     let hour = components.hour!
     
     if hour < 12 {
-      return .morning
+      return .mañana
     }
     else if hour < 19 {
-      return .afternoon
+      return .tarde
     }
     
-    return .evening
+    return .noche
   }
   
   func downloadCurrentWeather(completion:@escaping (_ response: WeatherResponse?) -> Void) {

@@ -10,28 +10,28 @@ import Foundation
 
 enum TimeOfDay: String, Codable, CaseIterable {
   case none = ""
-  case morning
-  case afternoon
-  case evening
+  case mañana
+  case tarde
+  case noche
 }
 
 enum Season: String, Codable, CaseIterable {
   case none = ""
-  case autumn
-  case spring
-  case summer
-  case winter
+  case invierno
+  case otoño
+  case primavera
+  case verano
 }
 
 enum WeatherCondition: String, Codable, CaseIterable {
   case none = ""
-  case atmosphere
-  case clear
-  case cloudy
-  case drizzle
-  case rain
-  case snow
-  case thunderstorm
+  case ambiente
+  case claro
+  case llovizna
+  case lluvioso
+  case nevando
+  case nublado
+  case tormenta
 }
 
 enum EventType: String, Codable, CaseIterable {

@@ -83,11 +83,11 @@ class HomeViewController: BaseViewController {
   private func setTitleAccordingTimeOfDay() {
     var welcomeStringId = ""
     switch WeatherService().currentTimeOfDay {
-    case .morning:
+    case .mañana:
       welcomeStringId = Localizations.welcomeMorning
-    case .afternoon:
+    case .tarde:
       welcomeStringId = Localizations.welcomeAfternoon
-    case .evening:
+    case .noche:
       welcomeStringId = Localizations.welcomeEvening
     default:
       welcomeStringId = Localizations.welcomeMorning
@@ -160,8 +160,12 @@ class HomeViewController: BaseViewController {
     temperatureLabel.alpha = 0
     iconImageView.alpha = 0
     UIView.animate(withDuration: 0.35, delay: 0, options: .curveEaseIn, animations: {
-      self.weatherLabel.text = weather.currentWeather?.largeDescription
+      if let weather = weather.currentWeather?.largeDescription {
+        self.weatherLabel.text = weather
+        self.weatherLabel.accessibilityLabel = "Temperatura \(weather)"
+      }
       self.temperatureLabel.text = "\(Int(weather.temperature.value))°C"
+      self.temperatureLabel.accessibilityLabel = "\(Int(weather.temperature.value)) Centígrados"
       
       if let path = weather.currentWeather?.iconPath  {
         self.iconImageView.fillWithURL(WeatherService().getIconUrlFromPath(path) , placeholder: nil)

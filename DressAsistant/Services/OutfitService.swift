@@ -39,16 +39,17 @@ struct OutfitService {
                                     timeOfDay: TimeOfDay,
                                     eventType: EventType,
                                     season: Season, completion:@escaping (_ outfits: [Outfit]) -> Void) {
-    //TODO: Fix this
+    
+    //TODO: Fix this make sure you use the conditionals
     let affiliateId = AppManager.shared.currentAffiliate?.key as Any
     
     let db = Firestore.firestore()
     let docRef = db.collection(root)
-      .whereField("affiliateId", isEqualTo: affiliateId)
+      /*.whereField("affiliateId", isEqualTo: affiliateId)
       .whereField("weather", isEqualTo: weather.rawValue)
       .whereField("timeOfDay", isEqualTo: timeOfDay.rawValue)
       .whereField("eventType", isEqualTo: eventType.rawValue)
-      .whereField("season", isEqualTo: season.rawValue)
+      .whereField("season", isEqualTo: season.rawValue)*/
     
     docRef.getDocuments { (querySnapshot, err) in
       var data = [Outfit]()

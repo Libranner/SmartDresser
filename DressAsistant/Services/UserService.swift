@@ -28,7 +28,7 @@ struct UserService {
   }
   
   func updateUserInfo() {
-    if let userId = Auth.auth().currentUser?.uid {
+    if let userId = Auth.auth().currentUser?.uid ?? AppManager.shared.affiliateId {
       InstanceID.instanceID().instanceID { (result, error) in
         if let error = error {
           print("Error fetching remote instance ID: \(error)")
