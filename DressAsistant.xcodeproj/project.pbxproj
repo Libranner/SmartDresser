@@ -10,6 +10,7 @@
 		6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */; };
 		D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */; };
 		EE055267231751A6008F90BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE055266231751A6008F90BB /* User.swift */; };
+		EE0552682319CED5008F90BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
 		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
 		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
 		EE55C72822E878000075803C /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72722E878000075803C /* OutfitViewController.swift */; };
@@ -31,7 +32,6 @@
 		EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5202295591D0046C43C /* ClothesDetailViewController.swift */; };
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
 		EE83C5272298F7EA0046C43C /* NotificationsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* NotificationsName.swift */; };
-		EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
 		EE83C53E229979080046C43C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53D229979080046C43C /* BaseViewController.swift */; };
 		EE83C540229985440046C43C /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53F229985440046C43C /* FinderViewController.swift */; };
 		EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C541229986830046C43C /* OptionDetailViewController.swift */; };
@@ -637,8 +637,8 @@
 			files = (
 				EE56050422AC3F1B00C0096B /* AssistantSignUp.storyboard in Resources */,
 				EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */,
-				EE83C52F22996EFF0046C43C /* Localizable.strings in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
+				EE0552682319CED5008F90BB /* Localizable.strings in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
 				EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */,
 				EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */,

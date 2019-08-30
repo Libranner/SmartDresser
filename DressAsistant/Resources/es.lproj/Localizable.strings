@@ -1,15 +1,118 @@
-/* 
-  Localizable.strings
-  DressAsistant
-
-  Created by Libranner Leonel Santos Espinal on 25/05/2019.
-  Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
-*/
+/*
+ Localizable.strings
+ DressAsistant
+ 
+ Created by Libranner Leonel Santos Espinal on 25/05/2019.
+ Copyright © 2019 Libranner Leonel Santos Espinal. All rights reserved.
+ */
 
 "Ropa identificada. ¿Qué deseas hacer ahora?" = "Ropa identificada. ¿Qué deseas hacer ahora?";
 "Escuchar datos de la ropa" = "Escuchar datos de la ropa";
 "Recibir recomendación" = "Recibir recomendación";
 "Terminar" = "Terminar";
 "Escanear otra ropa" = "Escanear otra ropa";
+"Identificar ropa" = "Identificar ropa";
+"loading" = "Cargando...";
 
+"select-photo" = "Favor seleccione una foto";
+"take-photo" = "Tomar foto";
+"choose-gallery-photo" = "Escoger foto de la galería";
+"cancel-action" = "Cancelar";
+"yes-action" = "Sí";
+"ok-action" = "Ok";
+"remove-action" = "Eliminar";
+"error-modal-title" = "";
+"remove-item" = "¿Está seguro que desea eliminar %@?";
+"save-title" = "Guardar";
+"new-item-title" = "Nuevo Item";
+"edit-item-title" = "Editar Item";
+"item-title" = "Detalles del Item";
+"new-outfit-title" = "Nuevo Atuendo";
+"remove-button-title" = "Eliminar";
+"inventory-title" = "Inventario";
+"inventory-selection-title" = "Items seleccionados (%d)";
+"number-of-items" = "%d piezas de ropa";
+"scan-QR-title" = "Escanear código";
+
+//Entitites
+"item" = "Item";
+"affiliate" = "Afiliado";
+"outfit" = "Atuendo";
+
+//Errors
+"error-generic-title" = "Error";
+"error-generic-msg" = "Ha ocurrido un error inesperado. Intente de nuevo más tarde";
+"error-empty-field-msg" = "Debe llenar el campo %@";
+"error-no-connection-msg" = "No hay conexión a internet";
+"error-could-no-authenticate-msg" = "Usuario debe autenticarse";
+"error-user-not-signed-msg" = "Usuario no ha iniciado sesión";
+"error-getting-data" = "No se puede obtener la data. Favor verifique su conexión.";
+"no-weather-msg" = "No se ha podido obtener el clima, favor verifique su conexión a internet.";
+"no-weather-title" = "No clima disponible";
+"no-outfits-title" = "No recomendaciones disponibles";
+
+"hecho" = "Hecho";
+
+//Fields
+"nickname-field" = "nombre";
+
+//Fields Affiliate
+"profile-picture-field" = "foto";
+"name-field" = "nombre";
+"birthdate-field" = "fecha de nacimiento";
+"sex-field" = "sexo";
+"height-field" = "altura";
+"weight-field" = "peso";
+"eye-color-field" = "color de ojos";
+"skin-color-field" = "color de piel";
+"hair-color-field" = "color de pelo";
+"email-field" = "correo electrónico";
+
+//Titles
+"items-title" = "Items";
+"outfits-list-title" = "Listado de Atuendos";
+"filter-outfits-title" = "Filtrar Atuendos";
+"welcome" = "Bienvenido!";
+"welcome-morning" = "Buen día";
+"welcome-afternoon" = "Buenas tardes";
+"welcome-evening" = "Buenas noches";
+"event-picker-title" = "Seleccione el tipo de evento";
+
+//Segments
+"accesories-segment" = "📿 accesorios";
+"shoes-segment" = "👟 zapatos";
+"clothes-segment" = "🥼 vestimenta";
+
+//Fields Item
+"detail-field" = "Detalle";
+"material-field" = "Material";
+"item-size-field" = "Tamaño";
+"item-color-field" = "Color";
+"print-type-field" = "Estampado";
+"pattern-type-field" = "Patrón";
+"item-type-field" = "Tipo";
+"weather-field" = "Clima";
+"season-field" = "Estación";
+"event-type-field" = "Tipo de evento";
+"time-of-day-field" = "Tiempo";
+"location-field" = "Ubicación";
+"nfc-field" = "NFC";
+
+//Alerts
+"item-not-exists-message" = "Item no existe. ¿Desea crear un Item nuevo?";
+"item-exists-message" = "Item existe. ¿Desea actualizarlo?";
+"email-sent" = "Se ha enviado un email a su correo. Favor verificar.";
+"no-affiliated-message" = "Debe afiliarse a un asistente para solicitar recomendaciones.";
+"outfit-saved-message" = "Atuendo creado.";
+
+//Miscelaneous
+"close-modal" = "Cerrar";
+
+
+//Buttons
+"affiliate-to-text" = "Afiliarse a un asistente";
+"deaffiliate-to-text" = "Desafiliarse al asistente";
+"affiliate-accessibility-text" = "Presione aquí para escanear código y crear relación con asistente";
+"deaffiliate-accessibility-text" = "Presione aquí desafiliarse";
+"Volver" = "Volver";
 

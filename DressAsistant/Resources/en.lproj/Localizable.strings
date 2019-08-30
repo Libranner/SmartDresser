@@ -112,5 +112,7 @@
 //Buttons
 "affiliate-to-text" = "Afiliarse a un asistente";
 "deaffiliate-to-text" = "Desafiliarse al asistente";
+"affiliate-accessibility-text" = "Presione aquí para escanear código y crear relación con asistente";
+"deaffiliate-accessibility-text" = "Presione aquí desafiliarse";
 "Volver" = "Volver";
 

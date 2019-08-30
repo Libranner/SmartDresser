@@ -36,6 +36,8 @@ class HomeViewController: BaseViewController {
     static let noAffiliatedMessage = "no-affiliated-message"
     static let affiliateToText = "affiliate-to-text"
     static let deaffiliateToText = "deaffiliate-to-text"
+    static let affiliateAccessibilityText = "affiliate-accessibility-text"
+    static let deaffiliateAccessibilityText = "deaffiliate-accessibility-text"
     static let closeModal = "close-modal"
   }
   
@@ -47,6 +49,10 @@ class HomeViewController: BaseViewController {
     setupWeatherInfo()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+  }
+
   private func setupAffiliateInfo() {
     if let affiliateId = AppManager.shared.affiliateId {
       AffiliateService().get(withId: affiliateId) { (error, affiliate) in
@@ -68,6 +74,10 @@ class HomeViewController: BaseViewController {
                                 for: .normal)
     affiliateToButton.backgroundColor = CustomColor.defaultButtonBackgroundColor
     affiliateToButton.isUserInteractionEnabled = true
+    affiliateToButton.accessibilityLabel = NSLocalizedString(Localizations.affiliateAccessibilityText,
+                                                             comment: "")
+    affiliateToButton.accessibilityHint = NSLocalizedString(Localizations.affiliateAccessibilityText,
+                                                            comment: "")
     isAffiliated = false
   }
   
@@ -77,6 +87,10 @@ class HomeViewController: BaseViewController {
                                 for: .normal)
     affiliateToButton.backgroundColor = .red
     affiliateToButton.isUserInteractionEnabled = true
+    affiliateToButton.accessibilityLabel = NSLocalizedString(Localizations.deaffiliateAccessibilityText,
+                                                             comment: "")
+    affiliateToButton.accessibilityHint = NSLocalizedString(Localizations.deaffiliateAccessibilityText,
+                                                            comment: "")
     isAffiliated = true
   }
   
