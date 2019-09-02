@@ -93,9 +93,9 @@ enum itemSize: String, Codable, CaseIterable {
 
 enum ItemType: String, Codable, CaseIterable {
   case none = ""
-  case clothes
-  case shoes
-  case accessory
+  case accesorio
+  case ropa
+  case zapatos
 }
 
 struct Item: Codable {

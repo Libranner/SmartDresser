@@ -11,13 +11,13 @@
 		D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */; };
 		EE055267231751A6008F90BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE055266231751A6008F90BB /* User.swift */; };
 		EE0552682319CED5008F90BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
+		EE05526B231D9C8B008F90BB /* AssistantSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE055269231D9C8B008F90BB /* AssistantSignUp.storyboard */; };
 		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
 		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
 		EE55C72822E878000075803C /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72722E878000075803C /* OutfitViewController.swift */; };
 		EE55C72A22E8C1EC0075803C /* ItemsCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */; };
 		EE55C72C22E8E7CC0075803C /* OutfitsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72B22E8E7CC0075803C /* OutfitsCollectionViewController.swift */; };
 		EE55C72E22E8EA570075803C /* OutfitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72D22E8EA570075803C /* OutfitCollectionViewCell.swift */; };
-		EE56050422AC3F1B00C0096B /* AssistantSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE5604FF22AC3E7C00C0096B /* AssistantSignUp.storyboard */; };
 		EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050522AC660E00C0096B /* RoundedButton.swift */; };
 		EE56050822AC6A6A00C0096B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050722AC6A6A00C0096B /* UserService.swift */; };
 		EE56050A22AC706700C0096B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE56050922AC706700C0096B /* ImageCache.swift */; };
@@ -33,8 +33,6 @@
 		EE83C5252298BC9C0046C43C /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5242298BC9C0046C43C /* UIHelper.swift */; };
 		EE83C5272298F7EA0046C43C /* NotificationsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C5262298F7EA0046C43C /* NotificationsName.swift */; };
 		EE83C53E229979080046C43C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53D229979080046C43C /* BaseViewController.swift */; };
-		EE83C540229985440046C43C /* FinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C53F229985440046C43C /* FinderViewController.swift */; };
-		EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C541229986830046C43C /* OptionDetailViewController.swift */; };
 		EE83C544229987100046C43C /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C543229987100046C43C /* RecommendationViewController.swift */; };
 		EE83C54622998D450046C43C /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C54522998D450046C43C /* UIConstants.swift */; };
 		EE83C54A229B8B580046C43C /* MosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C548229B8B580046C43C /* MosaicLayout.swift */; };
@@ -90,7 +88,6 @@
 		EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FB2289FCDA005E5B5C /* Main.storyboard */; };
 		EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF855FE2289FCDB005E5B5C /* Assets.xcassets */; };
 		EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */; };
-		EEF8560D2289FCDC005E5B5C /* DressAsistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */; };
 		EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566B228ADA04005E5B5C /* BaseNavigationViewController.swift */; };
 		EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566E228AF0DE005E5B5C /* CustomColor.swift */; };
 /* End PBXBuildFile section */
@@ -113,15 +110,13 @@
 		AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE055266231751A6008F90BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EE05526A231D9C8B008F90BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AssistantSignUp.storyboard; sourceTree = "<group>"; };
 		EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		EE55C72722E878000075803C /* OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
 		EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCollectionLayout.swift; sourceTree = "<group>"; };
 		EE55C72B22E8E7CC0075803C /* OutfitsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitsCollectionViewController.swift; sourceTree = "<group>"; };
 		EE55C72D22E8EA570075803C /* OutfitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitCollectionViewCell.swift; sourceTree = "<group>"; };
-		EE5604FE22AC3E7C00C0096B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AssistantSignUp.storyboard; sourceTree = "<group>"; };
-		EE56050122AC3EAD00C0096B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
-		EE56050322AC3EAE00C0096B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AssistantSignUp.strings; sourceTree = "<group>"; };
 		EE56050522AC660E00C0096B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EE56050722AC6A6A00C0096B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		EE56050922AC706700C0096B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
@@ -141,8 +136,6 @@
 		EE83C53A229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EE83C53B229970E70046C43C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EE83C53D229979080046C43C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		EE83C53F229985440046C43C /* FinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderViewController.swift; sourceTree = "<group>"; };
-		EE83C541229986830046C43C /* OptionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionDetailViewController.swift; sourceTree = "<group>"; };
 		EE83C543229987100046C43C /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		EE83C54522998D450046C43C /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		EE83C548229B8B580046C43C /* MosaicLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MosaicLayout.swift; sourceTree = "<group>"; };
@@ -202,8 +195,6 @@
 		EEF856012289FCDB005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEF856032289FCDB005E5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEF856082289FCDB005E5B5C /* DressAsistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DressAsistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DressAsistantUITests.swift; sourceTree = "<group>"; };
-		EEF8560E2289FCDC005E5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EEF8566B228ADA04005E5B5C /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		EEF8566E228AF0DE005E5B5C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +253,7 @@
 		EE56051422ADC30F00C0096B /* Affiliate */ = {
 			isa = PBXGroup;
 			children = (
+				EEC003A12311F31D00827769 /* ScannerViewController.swift */,
 				EEACC07D22BBEB2E00C37990 /* OptionPicker */,
 				EE56051522ADC33400C0096B /* Affiliate.storyboard */,
 				EEA6702022D11D1B0002FE3D /* AffiliateCardViewController.swift */,
@@ -291,13 +283,13 @@
 		EE83C51F229558FB0046C43C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE56051422ADC30F00C0096B /* Affiliate */,
+				EEAD78FA22AAD9020060F3E6 /* Assistant */,
 				EED5CE4B22F6B45A00257AA1 /* Main */,
 				EED5CE4622F6259900257AA1 /* User */,
 				EED5CE4522F6257F00257AA1 /* Recomendation */,
 				EE55C72622E877CE0075803C /* Outfit */,
 				EE83C53C229978F30046C43C /* Base */,
-				EE83C53F229985440046C43C /* FinderViewController.swift */,
-				EE83C541229986830046C43C /* OptionDetailViewController.swift */,
 				EEE1D49222DAA8C400EF78D0 /* Inventory */,
 			);
 			path = Controllers;
@@ -380,14 +372,14 @@
 			path = OptionPicker;
 			sourceTree = "<group>";
 		};
-		EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */ = {
+		EEAD78FA22AAD9020060F3E6 /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
-				EE5604FF22AC3E7C00C0096B /* AssistantSignUp.storyboard */,
+				EE055269231D9C8B008F90BB /* AssistantSignUp.storyboard */,
 				EEAD78FB22AAD9350060F3E6 /* AssistantSignUpViewController.swift */,
 				EEAD790322AC10550060F3E6 /* CreateAccountViewController.swift */,
 			);
-			path = AssistantSignUp;
+			path = Assistant;
 			sourceTree = "<group>";
 		};
 		EEAD78FE22AB5BB00060F3E6 /* Services */ = {
@@ -471,7 +463,6 @@
 			isa = PBXGroup;
 			children = (
 				EEF855F62289FCDA005E5B5C /* DressAsistant */,
-				EEF8560B2289FCDB005E5B5C /* DressAsistantUITests */,
 				EEF855F52289FCDA005E5B5C /* Products */,
 				F5B89FA8C265364B634A6C82 /* Pods */,
 				A5FADC2F02D8A4DEBBED8783 /* Frameworks */,
@@ -493,31 +484,19 @@
 				EED5CE3E22F5DD3A00257AA1 /* Managers */,
 				EE56051B22ADF1D400C0096B /* Models */,
 				EEAD78FE22AB5BB00060F3E6 /* Services */,
-				EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */,
 				EE83C52C22996AB30046C43C /* Resources */,
 				EE83C5222298BC7B0046C43C /* Helpers */,
 				EE83C547229B81E00046C43C /* Views */,
 				EEE1D49122DAA89E00EF78D0 /* Protocols */,
 				EE83C51F229558FB0046C43C /* Controllers */,
-				EE56051422ADC30F00C0096B /* Affiliate */,
-				EEAD78FA22AAD9020060F3E6 /* AssistantSignUp */,
 				EEF8566D228AF0D0005E5B5C /* Constants */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
-				EEC003A12311F31D00827769 /* ScannerViewController.swift */,
 				EEF855FE2289FCDB005E5B5C /* Assets.xcassets */,
 				EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */,
+				EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */,
 				EEF856032289FCDB005E5B5C /* Info.plist */,
 			);
 			path = DressAsistant;
-			sourceTree = "<group>";
-		};
-		EEF8560B2289FCDB005E5B5C /* DressAsistantUITests */ = {
-			isa = PBXGroup;
-			children = (
-				EEF8560C2289FCDC005E5B5C /* DressAsistantUITests.swift */,
-				EEF8560E2289FCDC005E5B5C /* Info.plist */,
-			);
-			path = DressAsistantUITests;
 			sourceTree = "<group>";
 		};
 		EEF8566D228AF0D0005E5B5C /* Constants */ = {
@@ -635,12 +614,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE56050422AC3F1B00C0096B /* AssistantSignUp.storyboard in Resources */,
 				EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
 				EE0552682319CED5008F90BB /* Localizable.strings in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
 				EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */,
+				EE05526B231D9C8B008F90BB /* AssistantSignUp.storyboard in Resources */,
 				EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,12 +760,10 @@
 				EE56051322ADB58000C0096B /* LoadingView.swift in Sources */,
 				EEF8566C228ADA04005E5B5C /* BaseNavigationViewController.swift in Sources */,
 				EED5CE4D22F6B47B00257AA1 /* EventTypePickerTableViewController.swift in Sources */,
-				EE83C540229985440046C43C /* FinderViewController.swift in Sources */,
 				EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */,
 				EEEAD2F62315446F005498D2 /* OutfitRequest.swift in Sources */,
 				EE55C72822E878000075803C /* OutfitViewController.swift in Sources */,
 				EE56050622AC660E00C0096B /* RoundedButton.swift in Sources */,
-				EE83C542229986830046C43C /* OptionDetailViewController.swift in Sources */,
 				EEE1D49822DBA28700EF78D0 /* ItemService.swift in Sources */,
 				EE55C72A22E8C1EC0075803C /* ItemsCollectionLayout.swift in Sources */,
 				EE83C5212295591D0046C43C /* ClothesDetailViewController.swift in Sources */,
@@ -822,7 +799,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF8560D2289FCDC005E5B5C /* DressAsistantUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,16 +813,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EE5604FF22AC3E7C00C0096B /* AssistantSignUp.storyboard */ = {
+		EE055269231D9C8B008F90BB /* AssistantSignUp.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EE5604FE22AC3E7C00C0096B /* Base */,
-				EE56050122AC3EAD00C0096B /* en */,
-				EE56050322AC3EAE00C0096B /* es */,
+				EE05526A231D9C8B008F90BB /* Base */,
 			);
 			name = AssistantSignUp.storyboard;
-			path = /Users/libranner/Desktop/Stuff/TFM/project/DressAsistant/DressAsistant/AssistantSignUp;
-			sourceTree = "<absolute>";
+			sourceTree = "<group>";
 		};
 		EE83C53122996EFF0046C43C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;

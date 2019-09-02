@@ -133,11 +133,11 @@ class InventoryViewController: BaseViewController, LoadingScreenDelegate {
       
       var localizationString = ""
       switch it {
-      case .clothes:
+      case .ropa:
         localizationString = NSLocalizedString(Localizations.clothesSegmentTitle, comment: "")
-      case .shoes:
+      case .zapatos:
         localizationString = NSLocalizedString(Localizations.shoesSegmentTitle, comment: "")
-      case .accessory:
+      case .accesorio:
         localizationString = NSLocalizedString(Localizations.accessoriesSegmentTitle, comment: "")
       default: break
       }
