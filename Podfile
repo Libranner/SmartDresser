@@ -18,10 +18,5 @@ target 'DressAsistant' do
   
   # Add the pod for Firebase Cloud Messaging
   pod 'Firebase/Messaging'
-
-  target 'DressAsistantUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
+
