@@ -42,6 +42,11 @@ class BaseViewController: UIViewController {
     view.addGestureRecognizer(recognizer)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    title = title?.uppercased()
+  }
+  
   @objc func hideKeyboard() {
     self.view.endEditing(true)
   }

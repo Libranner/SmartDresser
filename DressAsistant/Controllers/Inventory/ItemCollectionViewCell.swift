@@ -31,8 +31,8 @@ class ItemCollectionViewCell: UICollectionViewCell {
     let imageview = AsyncImageView()
     imageview.translatesAutoresizingMaskIntoConstraints = false
     imageview.clipsToBounds = true
+    imageview.isAccessibilityElement = true
     imageview.layer.cornerRadius = 10
-    imageview.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     
     return imageview
   }()
@@ -72,7 +72,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
   
   private lazy var mainStackView: UIStackView = {
     let stackview = UIStackView(arrangedSubviews:
-      [imageView, separatorView, labelContainerView])
+      [imageView])
     stackview.distribution = .equalSpacing
     stackview.axis = .vertical
     stackview.spacing = 0
@@ -125,9 +125,9 @@ class ItemCollectionViewCell: UICollectionViewCell {
       make.center.equalTo(imageView)
     }
     
-    separatorView.snp.makeConstraints { make in
+    /*separatorView.snp.makeConstraints { make in
       make.height.equalTo(UIConstants.separatorViewHeight)
-    }
+    }*/
     
     mainStackView.snp.makeConstraints { make in
       make.edges.equalToSuperview()

@@ -48,6 +48,7 @@ class ItemViewController: BaseViewController {
   convenience init(item: Item, previewMode: Bool = false) {
     self.init()
     existingItem = item
+    nfcCode = item.nfcCode
     self.previewMode = previewMode
   }
   

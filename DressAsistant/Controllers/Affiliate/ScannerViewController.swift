@@ -16,7 +16,7 @@ protocol ScannerViewControllerDelegate  {
   func dismissScan()
 }
 
-class ScannerViewController: UIViewController {
+class ScannerViewController: BaseViewController {
   private var captureSession: AVCaptureSession!
   private var previewLayer: AVCaptureVideoPreviewLayer!
   var delegate: ScannerViewControllerDelegate?

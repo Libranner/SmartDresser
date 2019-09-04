@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectUserTypeViewController: UIViewController {
+class SelectUserTypeViewController: BaseViewController {
   private let showAsistantSegueName = "showAsistantWF"
   private let showAffiliateSegueName = "showAffiliateWF"
   

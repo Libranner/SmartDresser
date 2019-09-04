@@ -12,12 +12,9 @@ class BaseNavigationViewController: UINavigationController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    /*let gradientLayer = CAGradientLayer()
-     gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
-     gradientLayer.locations = [0.0, 1.0]
-     
-     gradientLayer.frame = navigationBar.frame
-     navigationBar.layer.insertSublayer(gradientLayer, at: 0)*/    
+
+    let image = UIImage(named: "topBar")
+    navigationBar.setBackgroundImage(image, for: .default)
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {

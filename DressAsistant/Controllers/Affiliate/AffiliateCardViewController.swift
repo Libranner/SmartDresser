@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AffiliateCardViewController: UIViewController {
+class AffiliateCardViewController: BaseViewController {
   
   @IBOutlet weak var goToListButton: UIButton!
   @IBOutlet var qrImageView: UIImageView!

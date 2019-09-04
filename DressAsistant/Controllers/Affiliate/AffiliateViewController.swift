@@ -34,6 +34,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   @IBOutlet var heightTextfield: UITextField!
   @IBOutlet var weightTextfield: UITextField!
   @IBOutlet weak var showQrButton: UIButton!
+  @IBOutlet var topBackgroundView: GradientView!
   
   @IBOutlet weak var eyeColorImageView: RoundImageView!
   @IBOutlet weak var skinColorView: RoundedView!
@@ -83,7 +84,8 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   private var affiliateId: String?
   private var availableOptions = [Option]()
   private var optionPickerMode: OptionPickerMode?
-  
+
+
   var editMode = false
   
   enum OptionPickerMode {
@@ -94,6 +96,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     setupSexPickerView()
     setupBirthdatePickerView()
     
@@ -102,7 +105,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     NotificationCenter.default.addObserver(self, selector:
       #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
     
-    removeButton.isHidden = !editMode
+    removeButton.isHidden = true
     existingAffiliate = AppManager.shared.currentAffiliate
     
     if existingAffiliate != nil {
@@ -114,6 +117,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
                                        target: self,
                                        action: #selector(dismissAction))
       navigationItem.leftBarButtonItem = backButton
+      removeButton.isHidden = false
     }
   }
 
@@ -190,12 +194,12 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
     let PROFILE_PICTURE_FIELD_ID = "profile-picture-field"
     let NAME_FIELD_ID = "name-field"
     let BIRTHDATE_ID = "birthdate-field"
-    let SEX_ID = "sex-field"
+    /*let SEX_ID = "sex-field"
     let HEIGHT_FIELD_ID = "height-field"
     let WEIGHT_FIELD_ID = "weight-field"
     let EYE_COLOR_FIELD_ID = "eye-color-field"
     let SKIN_COLOR_FIELD_ID = "skin-color-field"
-    let HAIR_COLOR_FIELD_ID = "hair-color-field"
+    let HAIR_COLOR_FIELD_ID = "hair-color-field"*/
     
     guard profilePicture.image != nil else {
       showErrorMessage(CustomError.emptyField(fieldName:
@@ -215,6 +219,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
       return false
     }
     
+    /*
     guard !sexTextfield.text!.isEmpty && sexSelected != .none else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(SEX_ID, comment: "")))
@@ -249,7 +254,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(HAIR_COLOR_FIELD_ID, comment: "")))
       return false
-    }
+    }*/
     
     return true
   }
@@ -282,14 +287,14 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
                      name: nameTextfield.text!,
                      avatarUrl: avatarURL,
                      birthdate: birthdateSelected!,
-                     height: Float(heightTextfield.text!)!,
-                     weight: Float(weightTextfield.text!)!,
+                     height: Float(heightTextfield.text ?? "0") ?? 0,
+                     weight: Float(weightTextfield.text ?? "0") ?? 0,
                      sex: sexSelected,
-                     hairColor: hairColorSelected!,
-                     eyeColor: eyeColorSelected!,
-                     skinColor: skinColorSelected!,
+                     hairColor: hairColorSelected,
+                     eyeColor: eyeColorSelected,
+                     skinColor: skinColorSelected,
                      userId: userId,
-                    isConnected: false)
+                    isConnected: existingAffiliate?.isConnected ?? false)
   }
   
   func handleResponse(error: CustomError?, success: Bool) {
@@ -342,7 +347,7 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
         self?.hideLoading()
         if success {
           DispatchQueue.main.async {
-            self?.navigationController?.popToRootViewController(animated: true)
+            self?.dismiss(animated: true)
           }
         }
         else {

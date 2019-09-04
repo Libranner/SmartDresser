@@ -36,12 +36,12 @@ class EventTypePickerTableViewController: UITableViewController {
     title = NSLocalizedString(Localizations.title, comment: "")
     
     let closeModalTitle = NSLocalizedString(Localizations.closeModal, comment: "")
-    let doneButton = UIBarButtonItem(title: closeModalTitle,
+    let closeModalButton = UIBarButtonItem(title: closeModalTitle,
                                      style: .done,
                                     target: self,
                                     action: #selector(dismissModal))
     
-    navigationItem.rightBarButtonItem = doneButton
+    navigationItem.rightBarButtonItem = closeModalButton
     
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
   }

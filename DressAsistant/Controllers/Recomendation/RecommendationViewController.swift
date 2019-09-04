@@ -30,8 +30,18 @@ class RecommendationViewController: BaseViewController {
     super.viewDidLoad()
     
     if !outfits.isEmpty {
-      self.loadData()
-      self.setupUI()
+      if outfits.count > 1 {
+        let desc = """
+        Ahora selecciona cual de los atuendos
+        prefieres. Hay \(outfits.count) disponibles
+        """
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+          UIAccessibility.post(notification: .announcement, argument: desc)
+        }
+      }
+      
+      loadData()
+      setupUI()
     }
   }
   
@@ -70,27 +80,27 @@ class RecommendationViewController: BaseViewController {
     }
     
     scrollView.addSubview(mainStackView)
-    
     mainStackView.snp.makeConstraints { make in
       make.centerX.equalTo(scrollView).labeled("MainStackViewCenterX")
       make.top.equalTo(scrollView).offset(20).labeled("MainStackViewTop")
-      make.width.equalToSuperview().multipliedBy(0.95)
+      make.width.equalToSuperview().multipliedBy(0.95).labeled("MainStackViewWidth")
     }
     
     mainStackView.addArrangedSubview(collectionView)
+    let height = Int((((UIScreen.main.bounds.width * 0.90) - 25) / 2)) + 45
     collectionView.snp.makeConstraints { make in
       make.width.equalToSuperview().labeled("CollectionViewWidthAndCenter")
-      make.height.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.45).labeled("CollectionViewHeight")
+      make.height.equalTo(height).labeled("CollectionViewHeight")
     }
     
-    if outfits.count > 0 {
+    if !outfits.isEmpty {
       loadRecommendationInfo()
       setupControlButtons()
     }
   }
   
   private func loadData() {
-    let desc = currentOutfit.items.reduce("") { (result, item) -> String in
+    var desc = currentOutfit.items.reduce("") { (result, item) -> String in
       if result.isEmpty {
         return "\(result) \(item.detail)"
       }
@@ -98,6 +108,14 @@ class RecommendationViewController: BaseViewController {
     }
     
     descriptionLabel.text = desc
+    
+    self.title = "Recomendación \(index + 1)"
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+      desc = "Este atuendo está constituido por: \(desc)"
+      UIAccessibility.post(notification: .announcement, argument: desc)
+    }
+    
     collectionView.reloadData()
   }
   
@@ -115,7 +133,7 @@ class RecommendationViewController: BaseViewController {
   }()
   
   private lazy var descriptionLabel: UILabel = {
-    let label = UIHelper().makeInfoLabelFor("", identifier: nil)
+    let label = UIHelper().makeDescriptionLabelFor("", identifier: nil)
     label.font = UIFont.boldSystemFont(ofSize: 20)
     label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -129,25 +147,29 @@ class RecommendationViewController: BaseViewController {
     stackview.distribution = .equalSpacing
     stackview.translatesAutoresizingMaskIntoConstraints = false
     
-    let previousButton = UIButton()
-    previousButton.setBackgroundImage(UIImage(named: "previous"), for: .normal)
-    previousButton.addTarget(self, action: #selector(showPrevioustRecomendation), for: .touchUpInside)
-    previousButton.translatesAutoresizingMaskIntoConstraints = false
-    
-    let nextButton = UIButton()
-    nextButton.addTarget(self, action: #selector(showNextRecomendation), for: .touchUpInside)
-    nextButton.setBackgroundImage(UIImage(named: "next"), for: .normal)
-    nextButton.translatesAutoresizingMaskIntoConstraints = false
-    
-    stackview.addArrangedSubview(previousButton)
-    stackview.addArrangedSubview(nextButton)
-    
-    previousButton.snp.makeConstraints { make in
-      make.width.equalTo(80)
-    }
-    
-    nextButton.snp.makeConstraints { make in
-      make.width.equalTo(80)
+    if (outfits.count > 1) {
+      let previousButton = UIButton()
+      previousButton.accessibilityLabel = "Escuchar recomendación anterior"
+      previousButton.setBackgroundImage(UIImage(named: "previous"), for: .normal)
+      previousButton.addTarget(self, action: #selector(showPrevioustRecomendation), for: .touchUpInside)
+      previousButton.translatesAutoresizingMaskIntoConstraints = false
+      
+      let nextButton = UIButton()
+      nextButton.accessibilityLabel = "Escuchar recomendación siguiente"
+      nextButton.addTarget(self, action: #selector(showNextRecomendation), for: .touchUpInside)
+      nextButton.setBackgroundImage(UIImage(named: "next"), for: .normal)
+      nextButton.translatesAutoresizingMaskIntoConstraints = false
+      
+      stackview.addArrangedSubview(previousButton)
+      stackview.addArrangedSubview(nextButton)
+      
+      previousButton.snp.makeConstraints { make in
+        make.width.equalTo(80)
+      }
+      
+      nextButton.snp.makeConstraints { make in
+        make.width.equalTo(80)
+      }
     }
     
     return stackview
@@ -164,9 +186,12 @@ class RecommendationViewController: BaseViewController {
   }
   
   private func setupControlButtons() {
-    mainStackView.addArrangedSubview(controlButtonStackView)
+    view.addSubview(controlButtonStackView)
     controlButtonStackView.snp.makeConstraints { make in
+      make.top.equalTo(selectButton.snp.bottom).offset(60)
       make.height.equalTo(80)
+      make.width.equalTo(view.safeAreaLayoutGuide).multipliedBy(0.6)
+      make.centerX.equalToSuperview()
     }
   }
   
@@ -189,7 +214,7 @@ class RecommendationViewController: BaseViewController {
     rowStackView.distribution = .fill
     rowStackView.alignment = .leading
     rowStackView.axis = .vertical
-    rowStackView.spacing = 5
+    rowStackView.spacing = 15
     
     rowStackView.addArrangedSubview(titleLabel)
     rowStackView.addArrangedSubview(descriptionLabel)
@@ -208,8 +233,8 @@ class RecommendationViewController: BaseViewController {
     scrollView.addSubview(selectButton)
     
     selectButton.snp.makeConstraints { make in
-      make.height.equalTo(UIConstants.defaultButtonHeight)
-      make.top.equalTo(mainStackView.snp.bottom).offset(50)
+      make.height.equalTo(UIConstants.defaultBigButtonHeight)
+      make.top.equalTo(separatorView.snp.bottom).offset(40)
       make.width.equalToSuperview().multipliedBy(0.8)
       make.centerX.equalToSuperview()
     }
@@ -265,6 +290,7 @@ extension RecommendationViewController: UICollectionViewDataSource {
     
     cell.nameLabel.text = item.detail
     cell.selectItemButton.isHidden = true
+    cell.imageView.accessibilityLabel = item.detail
     
     return cell
   }

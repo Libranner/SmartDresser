@@ -68,10 +68,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="899.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2Y-Py-dZf" customClass="GradientView" customModule="DressAsistant" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                <rect key="frame" x="0.0" y="-200" width="414" height="320"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="ZRx-nN-h3w"/>
+                                                    <constraint firstAttribute="height" constant="320" id="ZRx-nN-h3w"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-user" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-J5-9J3" customClass="RoundImageView" customModule="DressAsistant" customModuleProvider="target">
@@ -127,7 +127,7 @@
                                                                 </constraints>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -351,7 +351,7 @@
                                             <constraint firstItem="wFq-RA-kxs" firstAttribute="width" secondItem="0fJ-lq-02C" secondAttribute="width" multiplier="0.85" id="VBf-QN-k9O"/>
                                             <constraint firstItem="kBf-K6-Wo4" firstAttribute="bottom" secondItem="KnW-J5-9J3" secondAttribute="bottom" id="b5U-OM-YjX"/>
                                             <constraint firstAttribute="trailing" secondItem="w2Y-Py-dZf" secondAttribute="trailing" id="iVP-eu-gBS"/>
-                                            <constraint firstItem="w2Y-Py-dZf" firstAttribute="top" secondItem="0fJ-lq-02C" secondAttribute="top" id="rEw-C1-7p4"/>
+                                            <constraint firstItem="w2Y-Py-dZf" firstAttribute="top" secondItem="0fJ-lq-02C" secondAttribute="top" constant="-200" id="rEw-C1-7p4"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -396,6 +396,7 @@
                         <outlet property="sexTextfield" destination="Akd-sa-Vvw" id="kGd-7o-HsK"/>
                         <outlet property="showQrButton" destination="SXh-G2-xSg" id="xdq-9J-zlP"/>
                         <outlet property="skinColorView" destination="lsE-jN-jNP" id="WMx-pu-z2Z"/>
+                        <outlet property="topBackgroundView" destination="w2Y-Py-dZf" id="9vh-3I-h8k"/>
                         <outlet property="weightTextfield" destination="OkY-eu-ay5" id="8hE-CQ-6kL"/>
                         <segue destination="Sa6-RJ-N3L" kind="presentation" identifier="showOptionPicker" id="BUj-5r-IWd"/>
                         <segue destination="hRj-Rs-8ja" kind="show" identifier="showAffiliateCard" id="U3Q-2g-CNP"/>
@@ -612,48 +613,6 @@
             </objects>
             <point key="canvasLocation" x="1565.217391304348" y="6.6964285714285712"/>
         </scene>
-        <!--Identificar Ropa-->
-        <scene sceneID="nZ0-KR-OBL">
-            <objects>
-                <viewController id="oST-8j-sVd" customClass="NFCReaderViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="W19-JQ-t1Z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TYh-mg-DeK">
-                                <rect key="frame" x="41.5" y="285" width="331" height="245.5"/>
-                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
-                                <state key="normal" backgroundImage="tapToScan">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Tocar para identificar">
-                                            <attributes>
-                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <font key="NSFont" size="22" name=".SFNSDisplay"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <action selector="startScanning" destination="oST-8j-sVd" eventType="touchUpInside" id="Dpq-wJ-emh"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="TYh-mg-DeK" firstAttribute="height" secondItem="03d-1c-1iK" secondAttribute="height" multiplier="0.3" id="SyF-hk-VeV"/>
-                            <constraint firstItem="TYh-mg-DeK" firstAttribute="centerX" secondItem="03d-1c-1iK" secondAttribute="centerX" id="scF-fe-rTd"/>
-                            <constraint firstItem="TYh-mg-DeK" firstAttribute="centerY" secondItem="03d-1c-1iK" secondAttribute="centerY" multiplier="0.9" id="yAB-sP-9Uc"/>
-                            <constraint firstItem="TYh-mg-DeK" firstAttribute="width" secondItem="03d-1c-1iK" secondAttribute="width" multiplier="0.8" id="zUa-0P-CvH"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="03d-1c-1iK"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Identificar Ropa" id="jtt-Oq-xFk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r89-LK-jpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6384.057971014493" y="-1728.3482142857142"/>
-        </scene>
         <!--Title-->
         <scene sceneID="ZOY-dv-A67">
             <objects>
@@ -686,11 +645,11 @@
             </objects>
             <point key="canvasLocation" x="4428.985507246377" y="-1001.1160714285713"/>
         </scene>
-        <!--Item-->
+        <!--Atuendos-->
         <scene sceneID="IOZ-tg-Pwm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="op8-9r-BO9" customClass="BaseNavigationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gUY-Cy-FbL"/>
+                    <tabBarItem key="tabBarItem" title="Atuendos" image="scan-tab-icon" id="gUY-Cy-FbL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BZZ-Jm-VT2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -705,11 +664,11 @@
             </objects>
             <point key="canvasLocation" x="3518.840579710145" y="-1787.2767857142856"/>
         </scene>
-        <!--Item-->
+        <!--Afiliado-->
         <scene sceneID="UFL-x4-ACM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LIq-yI-moS" customClass="BaseNavigationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YCR-US-PgX"/>
+                    <tabBarItem key="tabBarItem" title="Afiliado" image="user-tab-icon" id="YCR-US-PgX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OPA-Nj-J7s">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -724,11 +683,11 @@
             </objects>
             <point key="canvasLocation" x="2473.913043478261" y="6.6964285714285712"/>
         </scene>
-        <!--Item-->
+        <!--Armario-->
         <scene sceneID="fy6-cK-9t1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wD1-mS-Zft" customClass="BaseNavigationViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="closet-tab-icon" id="kUj-7Y-AA9"/>
+                    <tabBarItem key="tabBarItem" title="Armario" image="closet-tab-icon" id="kUj-7Y-AA9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="scE-M0-IvR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -749,7 +708,8 @@
         <image name="closet-tab-icon" width="39" height="41"/>
         <image name="default-user" width="165" height="165"/>
         <image name="qrCode" width="30" height="30"/>
-        <image name="tapToScan" width="83" height="34"/>
+        <image name="scan-tab-icon" width="48" height="36"/>
+        <image name="user-tab-icon" width="34" height="40"/>
         <namedColor name="InfoLabelTitle">
             <color red="0.50199997425079346" green="0.50199997425079346" blue="0.50199997425079346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

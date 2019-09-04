@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreNFC
+import AVFoundation
 
 class RecomendationItemViewController: BaseViewController {
   
@@ -29,12 +30,6 @@ class RecomendationItemViewController: BaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    itemImageView.layer.cornerRadius = 10
-    itemImageView.layer.masksToBounds = true
-    itemImageView.layer.borderWidth = 1.0
-    itemImageView.layer.borderColor = UIColor.gray.cgColor
-    
     loadData()
   }
   
@@ -48,10 +43,10 @@ class RecomendationItemViewController: BaseViewController {
     
     let desc =
     """
-    \(currentItem.detail)
-    Material: \(currentItem.material.rawValue)
-    Color: \(currentItem.color.rawValue)
-    Estampado: \(currentItem.printType.rawValue)
+    \(currentItem.detail).
+    Material: \(currentItem.material.rawValue).
+    Color: \(currentItem.color.rawValue).
+    Estampado: \(currentItem.printType.rawValue).
     """
     
     descLabel.text = desc
@@ -59,6 +54,26 @@ class RecomendationItemViewController: BaseViewController {
   
   @IBAction func nextButtonTapped(_ sender: Any) {
     showNextItem()
+  }
+  
+  var player: AVAudioPlayer?
+  
+  func playSound() {
+    guard let url = Bundle.main.url(forResource: "found", withExtension: "wav") else { return }
+    
+    do {
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+      try AVAudioSession.sharedInstance().setActive(true)
+      
+      player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+      
+      guard let player = player else { return }
+      
+      player.play()
+      
+    } catch let error {
+      print(error.localizedDescription)
+    }
   }
   
   private func showNextItem() {
@@ -86,8 +101,9 @@ extension RecomendationItemViewController: NFCNDEFReaderSessionDelegate {
             let exists = self.itemsIdentified.first(where: { (it) -> Bool in
               return it.nfcCode == itemNFC
             })
-          
+            
             if exists == nil {
+              self.playSound()
               self.itemsIdentified.append(self.currentItem)
               if self.itemsIdentified.count == self.items.count {
                 session.invalidate()
@@ -97,6 +113,7 @@ extension RecomendationItemViewController: NFCNDEFReaderSessionDelegate {
                 return
               }
             }
+
             self.showNextItem()
           }
           else {
@@ -109,9 +126,10 @@ extension RecomendationItemViewController: NFCNDEFReaderSessionDelegate {
   }
   
   private func allItemsFound() {
+    view.subviews.forEach { $0.isUserInteractionEnabled = false }
     let modal = ModalView(type: .success,
                           title: "Todo listo",
-                          message: "Haz identificado todas las piezas de ropa.")
+                          message: "Haz identificado todas las piezas del atuendo.")
     modal.delegate = self
     view.addSubview(modal)
   }

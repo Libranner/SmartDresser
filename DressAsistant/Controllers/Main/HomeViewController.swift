@@ -33,6 +33,7 @@ class HomeViewController: BaseViewController {
     static let noWeatherMessage = "no-weather-msg"
     static let noWeatherTitle = "no-weather-title"
     static let noOutfitsMessage = "no-outfits-title"
+    static let wrongAffiliateCodeMessage = "wrong-affiliate-title"
     static let noAffiliatedMessage = "no-affiliated-message"
     static let affiliateToText = "affiliate-to-text"
     static let deaffiliateToText = "deaffiliate-to-text"
@@ -211,6 +212,20 @@ class HomeViewController: BaseViewController {
     present(alertVC, animated: true)
   }
   
+  func showWrongAffiliateAlert() {
+    let title = NSLocalizedString(BaseViewController.Localizations.errorModalTitle, comment: "")
+    let okString = NSLocalizedString(BaseViewController.Localizations.okAction, comment: "")
+    let message = NSLocalizedString(Localizations.wrongAffiliateCodeMessage, comment: "")
+    
+    let alertVC = UIAlertController(title: title, message: message,
+                                    preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: okString, style: .default)
+    alertVC.addAction(okAction)
+    
+    present(alertVC, animated: true)
+  }
+  
   func showNoAffiliatedAlert() {
     let title = NSLocalizedString(BaseViewController.Localizations.errorModalTitle, comment: "")
     let okString = NSLocalizedString(BaseViewController.Localizations.okAction, comment: "")
@@ -246,8 +261,10 @@ extension HomeViewController: LoadingScreenDelegate {
 extension HomeViewController: ScannerViewControllerDelegate {
   func scannedCode(_ code: String) {
     affiliateToButton.isUserInteractionEnabled = false
-    AffiliateService().get(withId: code) { (error, affiliate) in
+    AffiliateService().get(withId: code) { [weak self] (error, affiliate) in
       guard affiliate != nil else {
+        self?.showWrongAffiliateAlert()
+        self?.showNotAffiliatedText()
         return
       }
       

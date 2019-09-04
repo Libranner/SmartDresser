@@ -26,8 +26,7 @@ struct AffiliateService {
         return
       }
       
-      //TODO:SE NECESITA OBTENER EL AFFILIADO PARA PODER CHEQUIAR SUS DATOS Y SABER SI YA SE CONECTO CON EL ASISTENTE
-      if let snapshot = snapshot {
+      if let snapshot = snapshot, snapshot.data() != nil {
         let affiliate = self.convertToAffiliate(document: snapshot)
         completion(nil, affiliate)
       }

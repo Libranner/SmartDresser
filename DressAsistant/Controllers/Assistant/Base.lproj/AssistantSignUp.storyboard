@@ -122,7 +122,7 @@
                                                                 </constraints>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76V-Fs-ixT" customClass="RoundedButton" customModule="DressAsistant">
                                                                 <rect key="frame" x="227" y="0.0" width="42" height="42"/>
@@ -228,6 +228,6 @@
         <image name="logotipo" width="273" height="88"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Iqo-tI-V1q"/>
+        <segue reference="PH3-dp-N5Z"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,8 +10,8 @@ import Foundation
 
 enum Sex: String, Codable, CaseIterable {
   case none = ""
-  case female = "Female"
-  case male = "Male"
+  case female = "Femenino"
+  case male = "Masculino"
   
   init?(id : Int) {
     switch id {

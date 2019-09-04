@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2CCBB023AA416F47224652 /* Pods_DressAsistant.framework */; };
-		D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */; };
 		EE055267231751A6008F90BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE055266231751A6008F90BB /* User.swift */; };
 		EE0552682319CED5008F90BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE83C53122996EFF0046C43C /* Localizable.strings */; };
 		EE05526B231D9C8B008F90BB /* AssistantSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE055269231D9C8B008F90BB /* AssistantSignUp.storyboard */; };
+		EE05526D231DEA01008F90BB /* found.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE05526C231DEA01008F90BB /* found.wav */; };
 		EE2C9FAD22DF990D00694032 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */; };
 		EE2C9FAF22DFA8BD00694032 /* NFCReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */; };
 		EE55C72822E878000075803C /* OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55C72722E878000075803C /* OutfitViewController.swift */; };
@@ -90,16 +90,6 @@
 		EEF8566F228AF0DE005E5B5C /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8566E228AF0DE005E5B5C /* CustomColor.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EEF856092289FCDB005E5B5C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EEF855EC2289FCDA005E5B5C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EEF855F32289FCDA005E5B5C;
-			remoteInfo = DressAsistant;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		19DC0707AD195C8CEEBC19C3 /* Pods_DressAsistantUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressAsistantUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3F34D6CF30EE7E75D549F5 /* Pods-DressAsistantUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.debug.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +99,7 @@
 		BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressAsistantUITests.release.xcconfig"; path = "Target Support Files/Pods-DressAsistantUITests/Pods-DressAsistantUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE055266231751A6008F90BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EE05526A231D9C8B008F90BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AssistantSignUp.storyboard; sourceTree = "<group>"; };
+		EE05526C231DEA01008F90BB /* found.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = found.wav; sourceTree = "<group>"; };
 		EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderViewController.swift; sourceTree = "<group>"; };
 		EE55C72722E878000075803C /* OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +181,6 @@
 		EEF855FE2289FCDB005E5B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEF856012289FCDB005E5B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEF856032289FCDB005E5B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEF856082289FCDB005E5B5C /* DressAsistantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DressAsistantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF8566B228ADA04005E5B5C /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		EEF8566E228AF0DE005E5B5C /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,14 +192,6 @@
 			files = (
 				EEC004142313254800827769 /* CoreNFC.framework in Frameworks */,
 				6F0D16B4669BAFECA690FA09 /* Pods_DressAsistant.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEF856052289FCDB005E5B5C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4C3F2198A8F6DAFE6595EA3 /* Pods_DressAsistantUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +441,6 @@
 			isa = PBXGroup;
 			children = (
 				EEF855F42289FCDA005E5B5C /* DressAsistant.app */,
-				EEF856082289FCDB005E5B5C /* DressAsistantUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -476,6 +457,7 @@
 				EEE1D49122DAA89E00EF78D0 /* Protocols */,
 				EE83C51F229558FB0046C43C /* Controllers */,
 				EEF855F72289FCDA005E5B5C /* AppDelegate.swift */,
+				EE05526C231DEA01008F90BB /* found.wav */,
 				EEF855FE2289FCDB005E5B5C /* Assets.xcassets */,
 				EEF856002289FCDB005E5B5C /* LaunchScreen.storyboard */,
 				EEAD78FD22AAE1AB0060F3E6 /* DressAsistant.entitlements */,
@@ -518,25 +500,6 @@
 			productReference = EEF855F42289FCDA005E5B5C /* DressAsistant.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EEF856072289FCDB005E5B5C /* DressAsistantUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EEF856142289FCDC005E5B5C /* Build configuration list for PBXNativeTarget "DressAsistantUITests" */;
-			buildPhases = (
-				C3EDC396796B3B46C5650822 /* [CP] Check Pods Manifest.lock */,
-				EEF856042289FCDB005E5B5C /* Sources */,
-				EEF856052289FCDB005E5B5C /* Frameworks */,
-				EEF856062289FCDB005E5B5C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EEF8560A2289FCDB005E5B5C /* PBXTargetDependency */,
-			);
-			name = DressAsistantUITests;
-			productName = DressAsistantUITests;
-			productReference = EEF856082289FCDB005E5B5C /* DressAsistantUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -561,10 +524,6 @@
 							};
 						};
 					};
-					EEF856072289FCDB005E5B5C = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = EEF855F32289FCDA005E5B5C;
-					};
 				};
 			};
 			buildConfigurationList = EEF855EF2289FCDA005E5B5C /* Build configuration list for PBXProject "DressAsistant" */;
@@ -582,7 +541,6 @@
 			projectRoot = "";
 			targets = (
 				EEF855F32289FCDA005E5B5C /* DressAsistant */,
-				EEF856072289FCDB005E5B5C /* DressAsistantUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -595,17 +553,11 @@
 				EEF856022289FCDB005E5B5C /* LaunchScreen.storyboard in Resources */,
 				EEF855FF2289FCDB005E5B5C /* Assets.xcassets in Resources */,
 				EE0552682319CED5008F90BB /* Localizable.strings in Resources */,
+				EE05526D231DEA01008F90BB /* found.wav in Resources */,
 				EEF855FD2289FCDA005E5B5C /* Main.storyboard in Resources */,
 				EE56051622ADC33400C0096B /* Affiliate.storyboard in Resources */,
 				EE05526B231D9C8B008F90BB /* AssistantSignUp.storyboard in Resources */,
 				EEAD790222AC06800060F3E6 /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEF856062289FCDB005E5B5C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,28 +601,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DressAsistant/Pods-DressAsistant-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C3EDC396796B3B46C5650822 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DressAsistantUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EE95C7C122A2F098009BCFDA /* ShellScript */ = {
@@ -771,22 +701,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEF856042289FCDB005E5B5C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EEF8560A2289FCDB005E5B5C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EEF855F32289FCDA005E5B5C /* DressAsistant */;
-			targetProxy = EEF856092289FCDB005E5B5C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EE055269231D9C8B008F90BB /* AssistantSignUp.storyboard */ = {
@@ -989,48 +904,6 @@
 			};
 			name = Release;
 		};
-		EEF856152289FCDC005E5B5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A3F34D6CF30EE7E75D549F5 /* Pods-DressAsistantUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TGA26CY25M;
-				INFOPLIST_FILE = DressAsistantUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.DressAsistantUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DressAsistant;
-			};
-			name = Debug;
-		};
-		EEF856162289FCDC005E5B5C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD27FA11FA46D90B784B3F4E /* Pods-DressAsistantUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TGA26CY25M;
-				INFOPLIST_FILE = DressAsistantUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.libranner.DressAsistantUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DressAsistant;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1048,15 +921,6 @@
 			buildConfigurations = (
 				EEF856122289FCDC005E5B5C /* Debug */,
 				EEF856132289FCDC005E5B5C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EEF856142289FCDC005E5B5C /* Build configuration list for PBXNativeTarget "DressAsistantUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EEF856152289FCDC005E5B5C /* Debug */,
-				EEF856162289FCDC005E5B5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

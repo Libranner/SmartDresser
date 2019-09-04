@@ -50,6 +50,7 @@
 "no-weather-msg" = "No se ha podido obtener el clima, favor verifique su conexión a internet.";
 "no-weather-title" = "No clima disponible";
 "no-outfits-title" = "No recomendaciones disponibles";
+"wrong-affiliate-title" = "Código QR no encontrado.";
 
 "hecho" = "Hecho";
 
@@ -106,7 +107,7 @@
 "outfit-saved-message" = "Atuendo creado.";
 
 //Miscelaneous
-"close-modal" = "X";
+"close-modal" = "Cerrar";
 
 //Buttons
 "affiliate-to-text" = "Afiliarse a un asistente";

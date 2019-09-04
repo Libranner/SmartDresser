@@ -525,6 +525,7 @@ extension OutfitViewController: UICollectionViewDataSource {
     
     cell.nameLabel.text = item.detail
     cell.selectItemButton.isHidden = true
+    cell.imageView.accessibilityLabel = item.detail
     
     return cell
   }

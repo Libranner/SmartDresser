@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 struct CustomColor {
-  static let topBarColor = UIColor(red: 0, green: 134/255.0, blue: 203/255.0, alpha: 1)
-  static let topBarTextColor: UIColor = .white
+  static let topBarColor = UIColor.white
+  static let topBarTextColor: UIColor = UIColor(red: 0, green: 134/255.0, blue: 203/255.0, alpha: 1)
   static let mainColor = UIColor(red: 0, green: 134/255.0, blue: 203/255.0, alpha: 1)
   static let selectedItemColor = UIColor(red: 0, green: 134/255.0, blue: 203/255.0, alpha: 1)
   static let defaultBackgroundColor: UIColor = .white
@@ -19,5 +19,4 @@ struct CustomColor {
   static let defaultButtonTextColor: UIColor = .white
   static let infoLabelColor: UIColor = UIColor(red: 56/255.0, green: 172/255.0, blue: 216/255.0, alpha: 1)
   static let secondaryColor: UIColor = UIColor(red: 135/255.0, green: 214/255.0, blue: 231/255.0, alpha: 1)
-  //static let bottomColor = UIColor(red: 104/255.0, green: 205/255.0, blue: 231/255.0, alpha: 1)
 }

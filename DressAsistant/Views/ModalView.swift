@@ -76,7 +76,7 @@ class ModalView: UIView {
   
   func setupLayout() {
     backgroundColor = .white
-    alpha = 0.95
+    alpha = 0.99
     layer.cornerRadius = 10
     layer.borderWidth = 1.0
     layer.borderColor = UIColor.clear.cgColor
@@ -97,9 +97,9 @@ class ModalView: UIView {
     }
     
     self.snp.makeConstraints { make in
-      make.center.equalToSuperview()
-      make.height.equalTo(self.superview!.safeAreaLayoutGuide).multipliedBy(0.80)
-      make.width.equalToSuperview().multipliedBy(0.80)
+      make.centerX.centerY.equalTo(self.superview!.safeAreaLayoutGuide)
+      make.height.equalTo(self.superview!.safeAreaLayoutGuide).multipliedBy(0.95)
+      make.width.equalTo(self.superview!.safeAreaLayoutGuide).multipliedBy(0.90)
     }
     
     titleLabel.snp.makeConstraints { make in
@@ -124,7 +124,7 @@ class ModalView: UIView {
     self.alpha = 0
     UIView.animate(withDuration: 0.35, delay: 0,
                    options: .curveEaseIn, animations: {
-      self.alpha = 0.97
+      self.alpha = 0.99
     })
   }
   

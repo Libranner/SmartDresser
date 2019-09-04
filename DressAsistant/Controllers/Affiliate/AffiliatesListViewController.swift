@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AffiliatesListViewController: UIViewController, LoadingScreenDelegate {
+class AffiliatesListViewController: BaseViewController, LoadingScreenDelegate {
   lazy var loadingView = LoadingView()
   
   @IBOutlet var tableView: UITableView!

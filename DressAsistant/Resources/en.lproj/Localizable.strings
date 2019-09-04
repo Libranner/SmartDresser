@@ -48,8 +48,9 @@
 "error-user-not-signed-msg" = "Usuario no ha iniciado sesión";
 "error-getting-data" = "No se puede obtener la data. Favor verifique su conexión.";
 "no-weather-msg" = "No se ha podido obtener el clima, favor verifique su conexión a internet.";
-"no-weather-title" = "No clima disponible";
-"no-outfits-title" = "No recomendaciones disponibles";
+"no-weather-title" = "No clima disponible.";
+"no-outfits-title" = "No recomendaciones disponibles.";
+"wrong-affiliate-title" = "Código QR no encontrado.";
 
 "hecho" = "Hecho";
 
@@ -106,7 +107,7 @@
 "outfit-saved-message" = "Atuendo creado.";
 
 //Miscelaneous
-"close-modal" = "X";
+"close-modal" = "Cerrar";
 
 
 //Buttons

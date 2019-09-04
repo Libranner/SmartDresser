@@ -29,10 +29,6 @@ class MosaicLayout: UICollectionViewLayout {
         cachedAttributes.removeAll()
         contentBounds = CGRect(origin: .zero, size: collectionView.bounds.size)
         
-        // For every item in the collection view:
-        //  - Prepare the attributes.
-        //  - Store attributes in the cachedAttributes array.
-        //  - Combine contentBounds with attributes.frame.
         let count = collectionView.numberOfItems(inSection: 0)
         
         var currentIndex = 0

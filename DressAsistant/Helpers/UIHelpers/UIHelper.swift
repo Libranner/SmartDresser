@@ -31,8 +31,17 @@ struct UIHelper {
   
   func makeTitleLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
     let label = makeLabel(localizationStringId, identifier: identifier)
+    label.text = label.text?.uppercased()
     label.font = UIFont.boldSystemFont(ofSize: 14)
-    label.textColor = CustomColor.mainColor
+    label.textColor = .lightGray
+    
+    return label
+  }
+  
+  func makeDescriptionLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
+    let label = makeLabel(localizationStringId, identifier: identifier)
+    label.font = UIFont.systemFont(ofSize: 16)
+    label.textColor = .black
     
     return label
   }
@@ -61,13 +70,6 @@ struct UIHelper {
     activityIndicatorView.startAnimating()
     
     return activityIndicatorView
-  }
-  
-  func makeDescriptionLabelFor(_ localizationStringId: String, identifier: String?) -> UILabel {
-    let label = makeLabel(localizationStringId, identifier: identifier)
-    label.font = UIFont.boldSystemFont(ofSize: 14)
-    label.textColor = .black
-    return label
   }
   
   func makeDefaultButton(_ localizationStringId: String, identifier: String?) -> UIButton {

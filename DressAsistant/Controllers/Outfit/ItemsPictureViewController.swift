@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class ItemsPictureViewController: UIViewController {
+class ItemsPictureViewController: BaseViewController {
   
   convenience init(picturesURLs: [URL]) {
     self.init()

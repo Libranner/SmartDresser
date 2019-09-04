@@ -40,7 +40,6 @@ struct OutfitService {
                                     eventType: EventType,
                                     season: Season, completion:@escaping (_ outfits: [Outfit]) -> Void) {
     
-    //TODO: Fix this make sure you use the conditionals
     let affiliateId = AppManager.shared.currentAffiliate?.key as Any
     
     let db = Firestore.firestore()
