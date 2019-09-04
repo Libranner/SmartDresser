@@ -326,6 +326,7 @@
 				EE56051922ADE48E00C0096B /* GradientView.swift */,
 				EEA6701C22D1013C0002FE3D /* RoundedView.swift */,
 				EED297E222E3E13800710814 /* ModalView.swift */,
+				EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */,
 				EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */,
 			);
 			path = Views;
@@ -419,10 +420,9 @@
 			isa = PBXGroup;
 			children = (
 				EE2C9FAE22DFA8BD00694032 /* NFCReaderViewController.swift */,
+				EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */,
 				EECB329C22DC1456009D91BF /* ItemViewController.swift */,
 				EECB329E22DCC7A3009D91BF /* InventoryViewController.swift */,
-				EE2C9FAC22DF990D00694032 /* ItemCollectionViewCell.swift */,
-				EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";

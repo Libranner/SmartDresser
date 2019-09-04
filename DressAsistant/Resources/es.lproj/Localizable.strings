@@ -29,7 +29,7 @@
 "item-title" = "Detalles del Item";
 "new-outfit-title" = "Nuevo Atuendo";
 "remove-button-title" = "Eliminar";
-"inventory-title" = "Inventario";
+"inventory-title" = "Armario";
 "inventory-selection-title" = "Items seleccionados (%d)";
 "number-of-items" = "%d piezas de ropa";
 "scan-QR-title" = "Escanear código";
@@ -71,7 +71,7 @@
 
 //Titles
 "items-title" = "Items";
-"outfits-list-title" = "Listado de Atuendos";
+"outfits-list-title" = "Atuendos";
 "filter-outfits-title" = "Filtrar Atuendos";
 "welcome" = "Bienvenido!";
 "welcome-morning" = "Buen día";
