@@ -14,6 +14,7 @@ class RecomendationItemViewController: BaseViewController {
   
   @IBOutlet weak var itemImageView: AsyncImageView!
   @IBOutlet weak var descLabel: UILabel!
+  private var player: AVAudioPlayer?
   
   var items = [Item]()
   private var itemsIdentified = [Item]()
@@ -41,13 +42,16 @@ class RecomendationItemViewController: BaseViewController {
   private func loadData() {
     itemImageView.fillWithURL(currentItem.imageURL, placeholder: nil)
     
-    let desc =
-    """
-    \(currentItem.detail).
-    Material: \(currentItem.material.rawValue).
-    Color: \(currentItem.color.rawValue).
-    Estampado: \(currentItem.printType.rawValue).
-    """
+    var desc = "\(currentItem.detail)."
+    desc = " \(desc)\n Color: \(currentItem.color.rawValue)."
+    
+    if currentItem.material != .none {
+      desc = "\(desc)\n Material: \(currentItem.material.rawValue)."
+    }
+    
+    if currentItem.printType != .none {
+      desc = "\(desc)\n Estampado: \(currentItem.printType.rawValue)."
+    }
     
     descLabel.text = desc
   }
@@ -55,8 +59,6 @@ class RecomendationItemViewController: BaseViewController {
   @IBAction func nextButtonTapped(_ sender: Any) {
     showNextItem()
   }
-  
-  var player: AVAudioPlayer?
   
   func playSound() {
     guard let url = Bundle.main.url(forResource: "found", withExtension: "wav") else { return }

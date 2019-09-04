@@ -43,6 +43,7 @@ class AffiliatesListViewController: BaseViewController, LoadingScreenDelegate {
   }
   
   @objc private func loadAffiliates() {
+    self.tableView.restore()
     AffiliateService().getAll { [weak self] (error, affiliates) in
       self?.affiliates = affiliates
       self?.tableView.reloadData()
@@ -77,6 +78,13 @@ extension AffiliatesListViewController: UITableViewDelegate, UITableViewDataSour
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if affiliates.isEmpty {
+      self.tableView.showEmpty(messageId: "no-data-message")
+    }
+    else {
+      self.tableView.restore()
+    }
+    
     return affiliates.count
   }
   

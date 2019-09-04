@@ -106,6 +106,9 @@
 "no-affiliated-message" = "Debe afiliarse a un asistente para solicitar recomendaciones.";
 "outfit-saved-message" = "Atuendo creado.";
 
+//Info Messages
+"no-data-message" = "No hay datos disponibles 😕";
+
 //Miscelaneous
 "close-modal" = "Cerrar";
 

@@ -38,6 +38,8 @@
 		EE83C54B229B8B580046C43C /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */; };
 		EE83C54E229B8BBC0046C43C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C54D229B8BBC0046C43C /* Utilities.swift */; };
 		EE95C7BC22A067A6009BCFDA /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */; };
+		EE9B691B23205E4D0087DDF7 /* UITableView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B691A23205E4D0087DDF7 /* UITableView+EmptyMessage.swift */; };
+		EE9B691D232062B10087DDF7 /* UICollectionView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9B691C232062B10087DDF7 /* UICollectionView+EmptyMessage.swift */; };
 		EEA6701722D0E35F0002FE3D /* SkinColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6701622D0E35F0002FE3D /* SkinColorService.swift */; };
 		EEA6701922D0E3A40002FE3D /* SkinColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6701822D0E3A40002FE3D /* SkinColor.swift */; };
 		EEA6701B22D0E4210002FE3D /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6701A22D0E4210002FE3D /* UIColor+Hex.swift */; };
@@ -130,6 +132,8 @@
 		EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		EE83C54D229B8BBC0046C43C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		EE95C7BB22A067A6009BCFDA /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		EE9B691A23205E4D0087DDF7 /* UITableView+EmptyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyMessage.swift"; sourceTree = "<group>"; };
+		EE9B691C232062B10087DDF7 /* UICollectionView+EmptyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+EmptyMessage.swift"; sourceTree = "<group>"; };
 		EEA6701622D0E35F0002FE3D /* SkinColorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinColorService.swift; sourceTree = "<group>"; };
 		EEA6701822D0E3A40002FE3D /* SkinColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinColor.swift; sourceTree = "<group>"; };
 		EEA6701A22D0E4210002FE3D /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -317,8 +321,8 @@
 		EE83C547229B81E00046C43C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */,
-				EE83C548229B8B580046C43C /* MosaicLayout.swift */,
+				EE9B691F232062E50087DDF7 /* Layouts */,
+				EE9B691E232062D20087DDF7 /* Extensions */,
 				EEAD790522AC2B330060F3E6 /* RoundImageView.swift */,
 				EE56050522AC660E00C0096B /* RoundedButton.swift */,
 				EE56050B22AC721100C0096B /* AsyncImageView.swift */,
@@ -326,10 +330,28 @@
 				EE56051922ADE48E00C0096B /* GradientView.swift */,
 				EEA6701C22D1013C0002FE3D /* RoundedView.swift */,
 				EED297E222E3E13800710814 /* ModalView.swift */,
-				EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */,
-				EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EE9B691E232062D20087DDF7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6C8CF22EBDED200D62FC4 /* UIStackView+RemoveAll.swift */,
+				EE9B691A23205E4D0087DDF7 /* UITableView+EmptyMessage.swift */,
+				EE9B691C232062B10087DDF7 /* UICollectionView+EmptyMessage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE9B691F232062E50087DDF7 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				EE83C549229B8B580046C43C /* ColumnFlowLayout.swift */,
+				EE83C548229B8B580046C43C /* MosaicLayout.swift */,
+				EE55C72922E8C1EC0075803C /* ItemsCollectionLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 		EEACC07D22BBEB2E00C37990 /* OptionPicker */ = {
@@ -637,6 +659,8 @@
 				EE56051A22ADE48E00C0096B /* GradientView.swift in Sources */,
 				EE56050A22AC706700C0096B /* ImageCache.swift in Sources */,
 				EEACC07522B9CED600C37990 /* HairColor.swift in Sources */,
+				EE9B691B23205E4D0087DDF7 /* UITableView+EmptyMessage.swift in Sources */,
+				EE9B691D232062B10087DDF7 /* UICollectionView+EmptyMessage.swift in Sources */,
 				EED297E522E5257F00710814 /* Outfit.swift in Sources */,
 				EEACC08122BBEF4C00C37990 /* Option.swift in Sources */,
 				EEA6701F22D10AF20002FE3D /* PhotoPickerDelegate.swift in Sources */,

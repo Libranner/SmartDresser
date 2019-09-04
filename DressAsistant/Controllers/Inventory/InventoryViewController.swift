@@ -180,6 +180,13 @@ extension InventoryViewController: UICollectionViewDelegate {
 //Mark: - Collection View Datasource
 extension InventoryViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    if items.isEmpty {
+      self.collectionView.showEmpty(messageId: "no-data-message")
+    }
+    else {
+      self.collectionView.restore()
+    }
+    
     return items.count
   }
   

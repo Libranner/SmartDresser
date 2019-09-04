@@ -233,9 +233,9 @@ class ItemViewController: BaseViewController {
     if let item = existingItem {
       detailTextField.text = item.detail
       locationTextField.text = item.location
-      selectedMaterial = item.material
       selectedItemType = item.type
       selectedColor = item.color
+      selectedMaterial = item.material
       selectedPatternType = item.patternType
       selectedPrintType = item.printType
       
@@ -503,7 +503,7 @@ class ItemViewController: BaseViewController {
       return false
     }
     
-    guard selectedPatternType != .none else {
+    /*guard selectedPatternType != .none else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(Localizations.patternTypeField, comment: "")))
       return false
@@ -515,18 +515,18 @@ class ItemViewController: BaseViewController {
       return false
     }
     
+    guard selectedPrintType != .none else {
+      showErrorMessage(CustomError.emptyField(fieldName:
+        NSLocalizedString(Localizations.printTypeField, comment: "")))
+      return false
+    }*/
+    
     guard selectedColor != .none else {
       showErrorMessage(CustomError.emptyField(fieldName:
         NSLocalizedString(Localizations.itemColorField, comment: "")))
       return false
     }
-    
-    guard selectedPrintType != .none else {
-      showErrorMessage(CustomError.emptyField(fieldName:
-        NSLocalizedString(Localizations.printTypeField, comment: "")))
-      return false
-    }
-    
+
     return true
   }
 }

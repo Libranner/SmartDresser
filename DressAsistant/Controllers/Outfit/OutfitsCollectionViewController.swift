@@ -116,6 +116,13 @@ extension OutfitsCollectionViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    if outfits.isEmpty {
+      self.collectionView.showEmpty(messageId: "no-data-message")
+    }
+    else {
+      self.collectionView.restore()
+    }
+    
     return outfits.count
   }
   
