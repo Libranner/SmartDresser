@@ -54,7 +54,7 @@ class RecomendationItemViewController: BaseViewController {
     }
     
     if !currentItem.location.isEmpty {
-      desc = "\(desc)\n Ubicado: \(currentItem.location)."
+      desc = "\(desc)\n Se encuentra en: \(currentItem.location)."
     }
     
     descLabel.text = desc
