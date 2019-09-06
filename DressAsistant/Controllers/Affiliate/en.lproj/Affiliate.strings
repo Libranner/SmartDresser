@@ -1,0 +1,102 @@
+
+/* Class = "UINavigationItem"; title = "Mis Afiliados"; ObjectID = "447-d1-Bln"; */
+"447-d1-Bln.title" = "MIS AFILIADOS";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "9FS-Hi-0dD"; */
+"9FS-Hi-0dD.title" = " ";
+
+/* Class = "UITextField"; placeholder = "Sexo"; ObjectID = "Akd-sa-Vvw"; */
+"Akd-sa-Vvw.placeholder" = "Sexo";
+
+/* Class = "UITextField"; placeholder = "Altura"; ObjectID = "Czc-T5-tmG"; */
+"Czc-T5-tmG.placeholder" = "Altura";
+
+/* Class = "UILabel"; text = "Altura (cm)"; ObjectID = "D5A-nT-hZA"; */
+"D5A-nT-hZA.text" = "Altura (cm)";
+
+/* Class = "UILabel"; text = "Peso (kg)"; ObjectID = "EII-ef-fWj"; */
+"EII-ef-fWj.text" = "Peso (kg)";
+
+/* Class = "UINavigationItem"; title = "Tarjeta Afiliado"; ObjectID = "INd-1D-Hlh"; */
+"INd-1D-Hlh.title" = "Tarjeta Afiliado";
+
+/* Class = "UILabel"; text = "Sexo"; ObjectID = "Ieu-9r-l2m"; */
+"Ieu-9r-l2m.text" = "Sexo";
+
+/* Class = "UINavigationItem"; title = "Seleccione una opción"; ObjectID = "JRR-eF-beH"; */
+"JRR-eF-beH.title" = "Seleccione una opción";
+
+/* Class = "UIButton"; normalTitle = "Eliminar"; ObjectID = "Jme-Fm-RZE"; */
+"Jme-Fm-RZE.normalTitle" = "Eliminar";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "K31-o6-nM0"; */
+"K31-o6-nM0.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Ir al listado de Afiliados"; ObjectID = "O6y-1x-y9Y"; */
+"O6y-1x-y9Y.normalTitle" = "Ir al listado de Afiliados";
+
+/* Class = "UITextField"; placeholder = "Peso"; ObjectID = "OkY-eu-ay5"; */
+"OkY-eu-ay5.placeholder" = "Peso";
+
+/* Class = "UILabel"; text = "Ojos"; ObjectID = "QxS-zb-WH3"; */
+"QxS-zb-WH3.text" = "Ojos";
+
+/* Class = "UITextField"; placeholder = "Fecha de Nacimiento"; ObjectID = "RuM-fO-5Ym"; */
+"RuM-fO-5Ym.placeholder" = "Fecha de Nacimiento";
+
+/* Class = "UIBarButtonItem"; title = "Guardar"; ObjectID = "Sck-Og-DLe"; */
+"Sck-Og-DLe.title" = "Guardar";
+
+/* Class = "UIBarButtonItem"; title = "Cerrar sesión"; ObjectID = "UJ4-QQ-GJH"; */
+"UJ4-QQ-GJH.title" = "Cerrar sesión";
+
+/* Class = "UITabBarItem"; title = "Afiliado"; ObjectID = "YCR-US-PgX"; */
+"YCR-US-PgX.title" = "AFILIADO";
+
+/* Class = "UILabel"; text = "Fecha de Nacimiento"; ObjectID = "cVK-Hs-fcp"; */
+"cVK-Hs-fcp.text" = "Fecha de Nacimiento";
+
+/* Class = "UILabel"; text = "Piel"; ObjectID = "caG-nr-hd9"; */
+"caG-nr-hd9.text" = "Piel";
+
+/* Class = "UILabel"; text = "Nombre"; ObjectID = "dpR-UV-dlH"; */
+"dpR-UV-dlH.text" = "Nombre";
+
+/* Class = "UIButton"; normalTitle = "Selecciona"; ObjectID = "gP8-oY-zXp"; */
+"gP8-oY-zXp.normalTitle" = "Selecciona";
+
+/* Class = "UITabBarItem"; title = "Atuendos"; ObjectID = "gUY-Cy-FbL"; */
+"gUY-Cy-FbL.title" = "ATUENDOS";
+
+/* Class = "UITabBarItem"; title = "Armario"; ObjectID = "kUj-7Y-AA9"; */
+"kUj-7Y-AA9.title" = "ARMARIO";
+
+/* Class = "UILabel"; text = "Muestre este código al afiliado para crear la relación entre ambos."; ObjectID = "oHH-zV-LIz"; */
+"oHH-zV-LIz.text" = "Muestre este código al afiliado para crear la relación entre ambos.";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "q6A-n8-L5I"; */
+"q6A-n8-L5I.title" = " ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qQH-C6-f4k"; */
+"qQH-C6-f4k.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "X"; ObjectID = "qgJ-DB-POD"; */
+"qgJ-DB-POD.title" = "X";
+
+/* Class = "UIButton"; normalTitle = "Selecciona"; ObjectID = "qqW-7f-Rr5"; */
+"qqW-7f-Rr5.normalTitle" = "Selecciona";
+
+/* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "rKX-cJ-iZw"; */
+"rKX-cJ-iZw.placeholder" = "Nombre";
+
+/* Class = "UIButton"; normalTitle = "Selecciona"; ObjectID = "vCo-e7-85I"; */
+"vCo-e7-85I.normalTitle" = "Selecciona";
+
+/* Class = "UILabel"; text = "Datos del Afiliado"; ObjectID = "xOQ-Yl-GYR"; */
+"xOQ-Yl-GYR.text" = "Datos del Afiliado";
+
+/* Class = "UINavigationItem"; title = "Crear Afiliado"; ObjectID = "ytI-7K-m6W"; */
+"ytI-7K-m6W.title" = "Crear Afiliado";
+
+/* Class = "UILabel"; text = "Pelo"; ObjectID = "zp5-jk-pmE"; */
+"zp5-jk-pmE.text" = "Pelo";

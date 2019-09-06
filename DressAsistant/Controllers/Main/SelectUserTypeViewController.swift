@@ -25,6 +25,7 @@ class SelectUserTypeViewController: BaseViewController {
   }
   
   @IBAction func startAsAffiliate(_ sender: Any) {
+    AuthService().logout()
     AppManager.shared.saveUserType(userType: .affiliate)
     performSegue(withIdentifier: showAffiliateSegueName, sender: self)
   }

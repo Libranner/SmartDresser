@@ -75,8 +75,10 @@ class HomeViewController: BaseViewController {
                                 for: .normal)
     affiliateToButton.backgroundColor = CustomColor.defaultButtonBackgroundColor
     affiliateToButton.isUserInteractionEnabled = true
+    
     affiliateToButton.accessibilityLabel = NSLocalizedString(Localizations.affiliateAccessibilityText,
                                                              comment: "")
+    
     affiliateToButton.accessibilityHint = NSLocalizedString(Localizations.affiliateAccessibilityText,
                                                             comment: "")
     isAffiliated = false

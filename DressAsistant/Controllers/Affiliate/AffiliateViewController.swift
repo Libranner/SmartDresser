@@ -84,8 +84,6 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
   private var affiliateId: String?
   private var availableOptions = [Option]()
   private var optionPickerMode: OptionPickerMode?
-
-
   var editMode = false
   
   enum OptionPickerMode {
@@ -118,6 +116,10 @@ class AffiliateViewController: BaseViewController, LoadingScreenDelegate {
                                        action: #selector(dismissAction))
       navigationItem.leftBarButtonItem = backButton
       removeButton.isHidden = false
+      title = "Datos Afiliado"
+    }
+    else {
+      title = "Crear Afiliado"
     }
   }
 

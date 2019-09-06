@@ -300,7 +300,7 @@
                                                             <constraint firstAttribute="height" constant="135" id="jdP-Lc-FuC"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-Fm-RZE">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-Fm-RZE" customClass="RoundedButton" customModule="DressAsistant" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="557.5" width="352" height="42"/>
                                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -502,7 +502,7 @@
             </objects>
             <point key="canvasLocation" x="-242.0289855072464" y="6.6964285714285712"/>
         </scene>
-        <!--Mis Afiliados-->
+        <!--MIS AFILIADOS-->
         <scene sceneID="029-We-jrJ">
             <objects>
                 <viewController id="vEy-J2-xKU" customClass="AffiliatesListViewController" customModule="DressAsistant" customModuleProvider="target" sceneMemberID="viewController">
@@ -571,7 +571,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z1i-lG-bqy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Mis Afiliados" id="447-d1-Bln">
+                    <navigationItem key="navigationItem" title="MIS AFILIADOS" id="447-d1-Bln">
                         <barButtonItem key="backBarButtonItem" title=" " id="9FS-Hi-0dD"/>
                         <barButtonItem key="leftBarButtonItem" title="Cerrar sesión" id="UJ4-QQ-GJH">
                             <connections>

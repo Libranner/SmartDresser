@@ -68,7 +68,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rcd-au-C9B"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gaJ-w1-k1v"/>
+                    <navigationItem key="navigationItem" id="gaJ-w1-k1v">
+                        <barButtonItem key="backBarButtonItem" title="Cerrar sesión" id="iXv-yr-iLd"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="DmF-jf-cLe" kind="show" identifier="showAffiliateWF" id="d4I-FO-fMb"/>
                         <segue destination="RkG-j3-Zej" kind="show" identifier="showAsistantWF" id="UZO-eb-xgW"/>
@@ -84,7 +86,7 @@
                 <viewControllerPlaceholder storyboardName="AssistantSignUp" id="RkG-j3-Zej" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txw-Py-gOg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5802" y="-1345"/>
+            <point key="canvasLocation" x="-5666" y="-1341"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="bzw-xd-fu3">

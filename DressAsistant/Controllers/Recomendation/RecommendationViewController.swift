@@ -113,7 +113,8 @@ class RecommendationViewController: BaseViewController {
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
       desc = "Este atuendo está constituido por: \(desc)"
-      UIAccessibility.post(notification: .announcement, argument: desc)
+      let message = ""
+      UIAccessibility.post(notification: .announcement, argument: message)
     }
     
     collectionView.reloadData()

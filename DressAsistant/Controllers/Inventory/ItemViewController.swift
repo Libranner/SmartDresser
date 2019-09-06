@@ -162,8 +162,8 @@ class ItemViewController: BaseViewController {
     return button
   }()
   
-  fileprivate lazy var deleteButton: UIButton = {
-    let button =  UIButton(type: .custom)
+  fileprivate lazy var deleteButton: RoundedButton = {
+    let button =  RoundedButton(type: .custom)
     let title = NSLocalizedString(Localizations.deleteButtonTitle, comment: "")
     button.setTitle(title, for: .normal)
     button.backgroundColor = .red

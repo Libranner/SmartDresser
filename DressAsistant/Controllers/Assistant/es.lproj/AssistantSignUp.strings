@@ -1,12 +1,12 @@
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9wF-YR-emk"; */
-"9wF-YR-emk.normalTitle" = "Button";
+"9wF-YR-emk.normalTitle" = "Crear usuario";
 
 /* Class = "UILabel"; text = "Primero, vamos crear tu perfil de usuario"; ObjectID = "LsP-bE-30q"; */
 "LsP-bE-30q.text" = "Primero, vamos crear tu perfil de usuario";
 
 /* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "eZ4-OF-IFp"; */
-"eZ4-OF-IFp.placeholder" = "Nombre";
+"eZ4-OF-IFp.placeholder" = "nombre";
 
 /* Class = "UILabel"; text = "Indique el email"; ObjectID = "g5x-sp-QMf"; */
 "g5x-sp-QMf.text" = "Indique su correo electrónico";
