@@ -53,6 +53,10 @@ class RecomendationItemViewController: BaseViewController {
       desc = "\(desc)\n Estampado: \(currentItem.printType.rawValue)."
     }
     
+    if !currentItem.location.isEmpty {
+      desc = "\(desc)\n Ubicado: \(currentItem.location)."
+    }
+    
     descLabel.text = desc
   }
   
